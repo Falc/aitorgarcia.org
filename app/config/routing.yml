@@ -1,4 +1,7 @@
-# Internal routing configuration to handle ESI
-#_internal:
-#    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
-#    prefix:   /_internal
+_portfolio:
+    resource: "@PortfolioBundle/Resources/config/routing.yml"
+    prefix: /test
+
+_admin:
+    resource: "@PortfolioBundle/Resources/config/admin_routing.yml"
+    prefix: /admin
