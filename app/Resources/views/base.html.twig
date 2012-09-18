@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}{% endblock %} - Aitor García</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <div id="header">
+        {% block header %}{% endblock %}
+        </div>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+        <div id="footer">
+        {% block footer %}{% endblock %}
+        </div>
+    </body>
+</html>
