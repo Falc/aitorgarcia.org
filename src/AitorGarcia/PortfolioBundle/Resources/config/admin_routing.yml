@@ -1,0 +1,19 @@
+admin_index:
+    pattern:  /
+    defaults: { _controller: PortfolioBundle:AdminDefault:index }
+
+admin_project_list:
+    pattern:  /project/list
+    defaults: { _controller: PortfolioBundle:AdminProject:list }
+
+admin_project_new:
+    pattern:  /project/new
+    defaults: { _controller: PortfolioBundle:AdminProject:new }
+
+admin_project_edit:
+    pattern:  /project/edit/{id}
+    defaults: { _controller: PortfolioBundle:AdminProject:edit }
+
+admin_project_delete:
+    pattern:  /project/delete/{id}
+    defaults: { _controller: PortfolioBundle:AdminProject:delete }
