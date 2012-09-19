@@ -5,15 +5,24 @@
         <title>{% block title %}{% endblock %} - Aitor García</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% block javascripts %}{% endblock %}
     </head>
     <body>
         <div id="header">
-        {% block header %}{% endblock %}
+            <div class="maxwidth">
+            {% block header %}{% endblock %}
+            </div>
         </div>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block featured %}{% endblock %}
+        <div id="page">
+            <div class="maxwidth">
+            {% block page %}{% endblock %}
+            </div>
+        </div>
         <div id="footer">
-        {% block footer %}{% endblock %}
+            <div class="maxwidth">
+            {% block footer %}{% endblock %}
+            </div>
         </div>
     </body>
 </html>
