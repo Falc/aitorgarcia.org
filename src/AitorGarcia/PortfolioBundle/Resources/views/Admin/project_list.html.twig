@@ -1,0 +1,38 @@
+{% extends "PortfolioBundle::admin_layout.html.twig" %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolio/css/main.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolio/css/admin.css') }}" />
+{% endblock %}
+
+{% block navigation %}
+<li><a href="{{ path('admin_index') }}">Portada</a></li>
+<li class="active"><a href="{{ path('admin_project_list') }}">Proyectos</a></li>
+{% endblock %}
+
+{% block page %}
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Desde</th>
+            <th>Hasta</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for project in projects %}
+        <tr>
+            <td>{{ project.name }}</td>
+            <td>{{ project.description }}</td>
+            <td>{{ project.date_from }}</td>
+            <td>{{ project.date_to }}</td>
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="4">No hay ningún proyecto</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
