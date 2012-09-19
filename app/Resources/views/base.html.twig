@@ -13,7 +13,11 @@
             {% block header %}{% endblock %}
             </div>
         </div>
-        {% block featured %}{% endblock %}
+        <div id="subnavigation">
+            <div class="maxwidth">
+            {% block subnavigation %}{% endblock %}
+            </div>
+        </div>
         <div id="page">
             <div class="maxwidth">
             {% block page %}{% endblock %}
