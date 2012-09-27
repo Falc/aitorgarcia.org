@@ -22,6 +22,8 @@ class Technology
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank()
+     * @Assert\MaxLength(255)
      */
     protected $name;
 
