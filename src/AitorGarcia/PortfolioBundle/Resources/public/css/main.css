@@ -357,6 +357,6 @@
     /*
      * OTHERS
      */
-  
+    .centered {text-align: center;}
     .clear {clear: both}
 }
