@@ -6,9 +6,9 @@ admin_project_list:
     pattern:  /project/list
     defaults: { _controller: PortfolioBundle:AdminProject:list }
 
-admin_project_new:
-    pattern:  /project/new
-    defaults: { _controller: PortfolioBundle:AdminProject:new }
+admin_project_create:
+    pattern:  /project/create
+    defaults: { _controller: PortfolioBundle:AdminProject:create }
 
 admin_project_edit:
     pattern:  /project/edit/{id}
