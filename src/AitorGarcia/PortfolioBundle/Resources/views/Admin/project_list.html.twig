@@ -1,10 +1,5 @@
 {% extends "PortfolioBundle::admin_layout.html.twig" %}
 
-{% block stylesheets %}
-<link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolio/css/main.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolio/css/admin.css') }}" />
-{% endblock %}
-
 {% block navigation %}
 <li><a href="{{ path('admin_index') }}">Portada</a></li>
 <li class="active"><a href="{{ path('admin_project_list') }}">Proyectos</a></li>
@@ -12,8 +7,8 @@
 
 {% block subnavigation %}
 <ul>
-    <li class="active"><a href="#">Lista</a></li>
-    <li><a href="#">Crear</a></li>
+    <li class="active"><a href="{{ path('admin_project_list') }}">Lista</a></li>
+    <li><a href="{{ path('admin_project_create') }}">Crear</a></li>
     <div class="clear"></div>
 </ul>
 {% endblock %}
