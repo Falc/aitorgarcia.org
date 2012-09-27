@@ -17,3 +17,19 @@ admin_project_edit:
 admin_project_delete:
     pattern:  /project/delete/{id}
     defaults: { _controller: PortfolioBundle:AdminProject:delete }
+
+admin_technology_list:
+    pattern:  /technology/list
+    defaults: { _controller: PortfolioBundle:AdminTechnology:list }
+
+admin_technology_create:
+    pattern:  /technology/create
+    defaults: { _controller: PortfolioBundle:AdminTechnology:create }
+
+admin_technology_edit:
+    pattern:  /technology/edit/{id}
+    defaults: { _controller: PortfolioBundle:AdminTechnology:edit }
+
+admin_technology_delete:
+    pattern:  /technology/delete/{id}
+    defaults: { _controller: PortfolioBundle:AdminTechnology:delete }
