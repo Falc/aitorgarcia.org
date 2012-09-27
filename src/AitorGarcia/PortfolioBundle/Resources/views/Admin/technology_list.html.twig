@@ -1,0 +1,36 @@
+{% extends "PortfolioBundle::admin_layout.html.twig" %}
+
+{% block navigation %}
+<li><a href="{{ path('admin_index') }}">Portada</a></li>
+<li><a href="{{ path('admin_project_list') }}">Proyectos</a></li>
+<li class="active"><a href="{{ path('admin_technology_list') }}">Tecnologías</a></li>
+{% endblock %}
+
+{% block subnavigation %}
+<ul>
+    <li class="active"><a href="{{ path('admin_technology_list') }}">Lista</a></li>
+    <li><a href="{{ path('admin_technology_create') }}">Crear</a></li>
+    <div class="clear"></div>
+</ul>
+{% endblock %}
+
+{% block page %}
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for technology in technologies %}
+        <tr>
+            <td>{{ technology.name }}</td>
+        </tr>
+    {% else %}
+        <tr>
+            <td>No hay ninguna tecnología</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
