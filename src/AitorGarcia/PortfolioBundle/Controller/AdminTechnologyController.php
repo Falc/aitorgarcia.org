@@ -9,6 +9,13 @@ class AdminTechnologyController extends Controller
 {
     public function listAction()
     {
+        $entityManager = $this->get('doctrine')->getEntityManager();
+        $technologies = $entityManager->getRepository('PortfolioBundle:Technology')->findAll();
+
+        return $this->render(
+            'PortfolioBundle:Admin:technology_list.html.twig',
+            array('technologies' => $technologies)
+        );
     }
 
     public function createAction()
