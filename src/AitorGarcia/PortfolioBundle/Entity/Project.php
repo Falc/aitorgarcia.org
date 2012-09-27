@@ -50,12 +50,10 @@ class Project
 
     /**
      * @ORM\ManyToMany(targetEntity="Technology", inversedBy="projects")
-     * @ORM\JoinTable(name="project_technologies",
-     *      joinColumns={@ORM\JoinColumn(name="project_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="technology_id", referencedColumnName="id")}
-     * )
+     * @ORM\JoinTable(name="project_technologies")
      */
     protected $technologies;
+
     /**
      * Constructor
      */
