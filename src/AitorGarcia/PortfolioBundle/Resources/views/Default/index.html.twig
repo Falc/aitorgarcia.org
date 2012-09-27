@@ -1,7 +1,7 @@
 {% extends "PortfolioBundle::layout.html.twig" %}
 
 {% block stylesheets %}
-<link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolio/css/main.css') }}" />
+{{ parent() }}
 <link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolio/css/featured.css') }}" />
 {% endblock %}
 
@@ -21,17 +21,13 @@
                 <img src="images/aluminium-screen.png" alt="Aluminium" />
                 <h2>Aluminium Framework</h2>
                 <p>Aluminium es un framework open source basado en componentes que permite desarrollar aplicaciones web con PHP 5.</p>
-                <div class="learn-more">
-                    <a href="#">Learn more</a>
-                </div>
+                <a class="button" href="#">Learn more</a>
             </li>
             <li class="green-gradient">
                 <img src="images/easyrpg-screen.png" alt="EasyRPG" />
                 <h2>EasyRPG Editor</h2>
                 <p>EasyRPG Editor es una aplicación que permite crear videojuegos RPG (Role-Playing Game) de una forma muy simple.</p>
-                <div class="learn-more">
-                    <a href="#">Learn more</a>
-                </div>
+                <a class="button" href="#">Learn more</a>
             </li>
             <li class="blue-dirty">3</li>
             <li class="black-dirty">4</li>
