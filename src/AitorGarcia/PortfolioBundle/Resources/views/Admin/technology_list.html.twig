@@ -18,12 +18,14 @@
 <table>
     <thead>
         <tr>
+            <th class="shrink">ID</th>
             <th>Nombre</th>
         </tr>
     </thead>
     <tbody>
     {% for technology in technologies %}
         <tr>
+            <td class="centered">{{ technology.id }}
             <td>{{ technology.name }}</td>
         </tr>
     {% else %}
