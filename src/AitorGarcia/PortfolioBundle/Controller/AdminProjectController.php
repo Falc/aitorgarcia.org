@@ -17,7 +17,7 @@ class AdminProjectController extends Controller
         );
     }
 
-    public function newAction()
+    public function createAction()
     {
     }
 
