@@ -1,0 +1,34 @@
+{% extends "PortfolioBundle::admin_layout.html.twig" %}
+
+{% block navigation %}
+<li><a href="{{ path('admin_index') }}">Portada</a></li>
+<li><a href="{{ path('admin_project_list') }}">Proyectos</a></li>
+<li class="active"><a href="{{ path('admin_technology_list') }}">Tecnologías</a></li>
+{% endblock %}
+
+{% block subnavigation %}
+<ul>
+    <li><a href="{{ path('admin_project_list') }}">Lista</a></li>
+    <li class="active"><a href="{{ path('admin_technology_create') }}">Crear</a></li>
+    <div class="clear"></div>
+</ul>
+{% endblock %}
+
+{% block page %}
+<h2>Nueva tecnología</h2>
+<form action="{{ path('admin_technology_create') }}" method="post">
+	<fieldset>
+		<legend>Información de la tecnología</legend>
+
+        <div class="_100">
+            {{ form_label(form.name) }}
+            {{ form_widget(form.name) }}
+        </div>
+
+        {{ form_rest(form) }}
+    </fieldset>
+
+	<input class="button" type="submit" name="save" value="Guardar" />
+	<input class="button" type="submit" name="cancel" value="Cancelar" />
+</form>
+{% endblock %}
