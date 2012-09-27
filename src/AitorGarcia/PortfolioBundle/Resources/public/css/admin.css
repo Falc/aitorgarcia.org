@@ -1,6 +1,9 @@
 @charset "utf-8";
 
 @media handheld, projection, screen, tv {
+    /*
+     * TABLES
+     */
 	table {
 		width: 100%;
 		font-size: 1em;
@@ -27,6 +30,14 @@
 		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#f0f0f0, endColorstr=#dddddd)";
 		color: #222222;
     }
+
+	th.shrink {
+		width: 1px;
+	}
+
+	th.expand {
+		width: 100%;
+	}
 
 	td {
 		background-color: #fff;
