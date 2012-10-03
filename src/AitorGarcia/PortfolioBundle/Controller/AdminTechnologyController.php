@@ -58,8 +58,59 @@ class AdminTechnologyController extends Controller
         );
     }
 
-    public function editAction()
+    public function editAction($id)
     {
+        // Get the entity manager and find the selected technology
+        $entityManager = $this->get('doctrine')->getEntityManager();
+        $technology = $entityManager->find('PortfolioBundle:Technology', $id);
+
+        // If the technology does not exist, display an error message
+        if ($technology === null)
+        {
+            throw new NotFoundHttpException('No existe la tecnología seleccionada');
+        }
+
+        // Create the form and set the data
+        $form = $this->createForm(new TechnologyType, $technology);
+
+        // Get the request
+        $request = $this->get('request');
+
+        // If the request method is POST, process the data
+        if ($request->getMethod() === 'POST')
+        {
+            // If the cancel button was pressed, redirect the user to the technology list
+            if ($request->request->has('cancel') === true)
+            {
+                return $this->redirect($this->generateUrl('admin_technology_list'));
+            }
+
+            // Bind the request
+            $form->bindRequest($request);
+
+            // If the form data is valid:
+            if ($form->isValid())
+            {
+                // 1) Persist the entity
+                $entityManager->persist($technology);
+                $entityManager->flush();
+
+                // 2) Display a success message
+                $request->getSession()->setFlash('notice', 'La tecnología ha sido modificada correctamente');
+
+                // 3) Redirect the user to the technology list
+                return $this->redirect($this->generateUrl('admin_technology_list'));
+            }
+        }
+
+        // Render the form
+        return $this->render(
+            'PortfolioBundle:Admin:technology_edit.html.twig',
+            array(
+                'form' => $form->createView(),
+                'technology_id' => $technology->getId()
+            )
+        );
     }
 
     public function deleteAction()
