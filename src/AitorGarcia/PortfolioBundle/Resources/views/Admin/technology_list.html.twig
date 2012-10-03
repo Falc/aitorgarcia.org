@@ -20,6 +20,7 @@
         <tr>
             <th class="shrink">ID</th>
             <th>Nombre</th>
+            <th class="shrink">Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -27,6 +28,10 @@
         <tr>
             <td class="centered">{{ technology.id }}
             <td>{{ technology.name }}</td>
+            <td>
+                <a href="{{ path('admin_technology_edit', { 'id': technology.id }) }}">Modificar</a>
+                <a href="{{ path('admin_technology_delete', { 'id': technology.id }) }}">Eliminar</a>
+            </td>
         </tr>
     {% else %}
         <tr>
