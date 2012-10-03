@@ -128,6 +128,9 @@ class AdminTechnologyController extends Controller
         // Get the request
         $request = $this->get('request');
 
+        // Create a "fake" form
+        $form = $this->createDeleteForm($id);
+
         // If the request method is POST, process the data
         if ($request->getMethod() === 'POST')
         {
@@ -137,20 +140,38 @@ class AdminTechnologyController extends Controller
                 return $this->redirect($this->generateUrl('admin_technology_list'));
             }
 
-            // Remove the entity
-            $entityManager->remove($technology);
-            $entityManager->flush();
+            // Bind the request
+            $form->bindRequest($request);
 
-            // Redirect the user to the technology list
-            return $this->redirect($this->generateUrl('admin_technology_list'));
+            // If the form data is valid:
+            if ($form->isValid())
+            {
+                // 1) Remove the entity
+                $entityManager->remove($technology);
+                $entityManager->flush();
+
+                // 2) Display a success message
+                $request->getSession()->setFlash('notice', 'La tecnología ha sido modificada correctamente');
+
+                // 3) Redirect the user to the technology list
+                return $this->redirect($this->generateUrl('admin_technology_list'));
+            }
         }
 
         // Render the form
         return $this->render(
             'PortfolioBundle:Admin:technology_delete.html.twig',
             array(
+                'form' => $form->createView(),
                 'technology_id' => $technology->getId()
             )
         );
+    }
+
+    private function createDeleteForm($id)
+    {
+        return $this->createFormBuilder(array('id' => $id))
+                    ->add('id', 'hidden')
+                    ->getForm();
     }
 }
