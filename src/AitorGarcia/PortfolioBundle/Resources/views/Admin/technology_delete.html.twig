@@ -19,6 +19,8 @@
 <form action="{{ path('admin_technology_delete', { 'id': technology_id }) }}" method="post">
     <p>¿Estás seguro de que quieres eliminar la tecnología?</p>
 
+    {{ form_rest(form) }}
+
 	<input class="button" type="submit" name="save" value="Confirmar" />
 	<input class="button" type="submit" name="cancel" value="Cancelar" />
 </form>
