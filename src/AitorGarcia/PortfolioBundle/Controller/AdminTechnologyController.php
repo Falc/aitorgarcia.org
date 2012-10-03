@@ -34,7 +34,7 @@ class AdminTechnologyController extends Controller
         if ($request->getMethod() === 'POST')
         {
             // Bind the request
-            $form->bindRequest($request);
+            $form->bind($request);
 
             // If the form data is valid:
             if ($form->isValid())
@@ -45,7 +45,7 @@ class AdminTechnologyController extends Controller
                 $entityManager->flush();
 
                 // 2) Display a success message
-                $request->getSession()->setFlash('notice', 'La tecnología ha sido creada correctamente');
+                $request->getSession()->getFlashBag()->add('success', 'La tecnología ha sido creada correctamente');
 
                 // 3) Redirect the user to the technology list
                 return $this->redirect($this->generateUrl('admin_technology_list'));
@@ -67,7 +67,7 @@ class AdminTechnologyController extends Controller
         // If the technology does not exist, display an error message
         if ($technology === null)
         {
-            throw new NotFoundHttpException('No existe la tecnología seleccionada');
+            throw $this->createNotFoundException('No existe la tecnología seleccionada');
         }
 
         // Create the form and set the data
@@ -86,7 +86,7 @@ class AdminTechnologyController extends Controller
             }
 
             // Bind the request
-            $form->bindRequest($request);
+            $form->bind($request);
 
             // If the form data is valid:
             if ($form->isValid())
@@ -96,7 +96,7 @@ class AdminTechnologyController extends Controller
                 $entityManager->flush();
 
                 // 2) Display a success message
-                $request->getSession()->setFlash('notice', 'La tecnología ha sido modificada correctamente');
+                $request->getSession()->getFlashBag()->add('sucess', 'La tecnología ha sido modificada correctamente');
 
                 // 3) Redirect the user to the technology list
                 return $this->redirect($this->generateUrl('admin_technology_list'));
@@ -122,7 +122,7 @@ class AdminTechnologyController extends Controller
         // If the technology does not exist, display an error message
         if ($technology === null)
         {
-            throw new NotFoundHttpException('No existe la tecnología seleccionada');
+            throw $this->createNotFoundException('No existe la tecnología seleccionada');
         }
 
         // Get the request
@@ -141,7 +141,7 @@ class AdminTechnologyController extends Controller
             }
 
             // Bind the request
-            $form->bindRequest($request);
+            $form->bind($request);
 
             // If the form data is valid:
             if ($form->isValid())
@@ -151,7 +151,7 @@ class AdminTechnologyController extends Controller
                 $entityManager->flush();
 
                 // 2) Display a success message
-                $request->getSession()->setFlash('notice', 'La tecnología ha sido modificada correctamente');
+                $request->getSession()->getFlashBag()->add('notice', 'La tecnología ha sido modificada correctamente');
 
                 // 3) Redirect the user to the technology list
                 return $this->redirect($this->generateUrl('admin_technology_list'));
