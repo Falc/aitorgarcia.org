@@ -52,6 +52,7 @@ class AdminTechnologyController extends Controller
             }
         }
 
+        // Render the form
         return $this->render(
             'PortfolioBundle:Admin:technology_create.html.twig',
             array('form' => $form->createView())
@@ -79,12 +80,6 @@ class AdminTechnologyController extends Controller
         // If the request method is POST, process the data
         if ($request->getMethod() === 'POST')
         {
-            // If the cancel button was pressed, redirect the user to the technology list
-            if ($request->request->has('cancel') === true)
-            {
-                return $this->redirect($this->generateUrl('admin_technology_list'));
-            }
-
             // Bind the request
             $form->bind($request);
 
@@ -134,12 +129,6 @@ class AdminTechnologyController extends Controller
         // If the request method is POST, process the data
         if ($request->getMethod() === 'POST')
         {
-            // If the cancel button was pressed, redirect the user to the technology list
-            if ($request->request->has('cancel') === true)
-            {
-                return $this->redirect($this->generateUrl('admin_technology_list'));
-            }
-
             // Bind the request
             $form->bind($request);
 
