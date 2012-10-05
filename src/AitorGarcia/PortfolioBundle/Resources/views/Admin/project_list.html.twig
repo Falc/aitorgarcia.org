@@ -20,8 +20,8 @@
         <tr>
             <th>Nombre</th>
             <th>Descripción</th>
-            <th>Desde</th>
-            <th>Hasta</th>
+            <th class="shrink">Desde</th>
+            <th class="shrink">Hasta</th>
         </tr>
     </thead>
     <tbody>
@@ -29,8 +29,8 @@
         <tr>
             <td>{{ project.name }}</td>
             <td>{{ project.description }}</td>
-            <td>{{ project.date_from }}</td>
-            <td>{{ project.date_to }}</td>
+            <td class="centered">{{ project.dateFrom | date('M/Y') }}</td>
+            <td class="centered">{{ project.dateTo | date('M/Y') }}</td>
         </tr>
     {% else %}
         <tr>
