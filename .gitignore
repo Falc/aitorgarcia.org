@@ -4,5 +4,3 @@ bin/
 src/Acme/
 src/AitorGarcia/PortfolioBundle/Tests/
 vendor/
-composer.json
-composer.lock
