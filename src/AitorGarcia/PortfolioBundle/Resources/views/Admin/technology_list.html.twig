@@ -34,9 +34,9 @@
     <tbody>
     {% for technology in technologies %}
         <tr>
-            <td class="centered">{{ technology.id }}
+            <td class="centered">{{ technology.id }}</td>
             <td>{{ technology.name }}</td>
-            <td>
+            <td class="centered">
                 <a href="{{ path('admin_technology_edit', { 'id': technology.id }) }}">Modificar</a>
                 <a href="{{ path('admin_technology_delete', { 'id': technology.id }) }}">Eliminar</a>
             </td>
