@@ -2,8 +2,8 @@
 
 namespace AitorGarcia\PortfolioBundle\Entity;
 
-use AitorGarcia\PortfolioBundle\Resources\util\Util;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -32,7 +32,8 @@ class Project
     protected $description;
 
     /**
-     * @ORM\Column(type="string")
+     * @Gedmo\Slug(fields={"name"})
+     * @ORM\Column(type="string", unique=true)
      */
     protected $url;
 
@@ -40,13 +41,13 @@ class Project
      * @ORM\Column(type="date")
      * @Assert\Date()
      */
-    protected $date_from;
+    protected $dateFrom;
 
     /**
      * @ORM\Column(type="date")
      * @Assert\Date()
      */
-    protected $date_to;
+    protected $dateTo;
 
     /**
      * @ORM\ManyToMany(targetEntity="Technology", inversedBy="projects")
@@ -81,7 +82,7 @@ class Project
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
@@ -142,49 +143,49 @@ class Project
     }
 
     /**
-     * Set date_from
+     * Set dateFrom
      *
      * @param \DateTime $dateFrom
      * @return Project
      */
     public function setDateFrom($dateFrom)
     {
-        $this->date_from = $dateFrom;
+        $this->dateFrom = $dateFrom;
     
         return $this;
     }
 
     /**
-     * Get date_from
+     * Get dateFrom
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateFrom()
     {
-        return $this->date_from;
+        return $this->dateFrom;
     }
 
     /**
-     * Set date_to
+     * Set dateTo
      *
      * @param \DateTime $dateTo
      * @return Project
      */
     public function setDateTo($dateTo)
     {
-        $this->date_to = $dateTo;
+        $this->dateTo = $dateTo;
     
         return $this;
     }
 
     /**
-     * Get date_to
+     * Get dateTo
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateTo()
     {
-        return $this->date_to;
+        return $this->dateTo;
     }
 
     /**
