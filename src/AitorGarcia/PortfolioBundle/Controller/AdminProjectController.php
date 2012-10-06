@@ -59,8 +59,53 @@ class AdminProjectController extends Controller
         );
     }
 
-    public function editAction()
+    public function editAction($id)
     {
+        // Get the entity manager and find the selected project
+        $entityManager = $this->get('doctrine')->getEntityManager();
+        $project = $entityManager->find('PortfolioBundle:Project', $id);
+
+        // If the project does not exist, display an error message
+        if ($project === null)
+        {
+            throw $this->createNotFoundException('No existe el proyecto seleccionada');
+        }
+
+        // Create the form and set the data
+        $form = $this->createForm(new ProjectType, $project);
+
+        // Get the request
+        $request = $this->get('request');
+
+        // If the request method is POST, process the data
+        if ($request->getMethod() === 'POST')
+        {
+            // Bind the request
+            $form->bind($request);
+
+            // If the form data is valid:
+            if ($form->isValid())
+            {
+                // 1) Persist the entity
+                $entityManager->persist($project);
+                $entityManager->flush();
+
+                // 2) Display a success message
+                $request->getSession()->getFlashBag()->add('sucess', 'El proyecto ha sido modificado correctamente');
+
+                // 3) Redirect the user to the project list
+                return $this->redirect($this->generateUrl('admin_project_list'));
+            }
+        }
+
+        // Render the form
+        return $this->render(
+            'PortfolioBundle:Admin:project_edit.html.twig',
+            array(
+                'form' => $form->createView(),
+                'project_id' => $project->getId()
+            )
+        );
     }
 
     public function deleteAction()
