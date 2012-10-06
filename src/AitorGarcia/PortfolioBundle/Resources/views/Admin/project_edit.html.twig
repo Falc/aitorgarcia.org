@@ -1,0 +1,53 @@
+{% extends "PortfolioBundle::admin_layout.html.twig" %}
+
+{% block navigation %}
+<li><a href="{{ path('admin_index') }}">Portada</a></li>
+<li class="active"><a href="{{ path('admin_project_list') }}">Proyectos</a></li>
+<li><a href="{{ path('admin_technology_list') }}">Tecnologías</a></li>
+{% endblock %}
+
+{% block subnavigation %}
+<ul>
+    <li><a href="{{ path('admin_project_list') }}">Lista</a></li>
+    <li><a href="{{ path('admin_project_create') }}">Crear</a></li>
+    <div class="clear"></div>
+</ul>
+{% endblock %}
+
+{% block page %}
+<h2>Modificar proyecto</h2>
+<form action="{{ path('admin_project_edit', { 'id': project_id }) }}" method="post">
+	<fieldset>
+		<legend>Información del proyecto</legend>
+
+        <div class="_100">
+            {{ form_label(form.name) }}
+            {{ form_widget(form.name) }}
+        </div>
+
+        <div class="_100">
+            {{ form_label(form.description) }}
+            {{ form_widget(form.description) }}
+        </div>
+
+        <div class="_25 date">
+            {{ form_label(form.dateFrom) }}
+            {{ form_widget(form.dateFrom) }}
+        </div>
+
+        <div class="_25 date">
+            {{ form_label(form.dateTo) }}
+            {{ form_widget(form.dateTo) }}
+        </div>
+
+        <div class="_25 clear">
+            {{ form_label(form.technologies) }}
+            {{ form_widget(form.technologies) }}
+        </div>
+
+        {{ form_rest(form) }}
+    </fieldset>
+
+	<input class="button" type="submit" name="save" value="Guardar" />
+</form>
+{% endblock %}
