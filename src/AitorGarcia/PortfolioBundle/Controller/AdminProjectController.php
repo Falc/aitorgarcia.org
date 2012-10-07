@@ -108,7 +108,65 @@ class AdminProjectController extends Controller
         );
     }
 
-    public function deleteAction()
+    public function deleteAction($id)
     {
+        // Get the entity manager and find the selected project
+        $entityManager = $this->get('doctrine')->getEntityManager();
+        $project = $entityManager->find('PortfolioBundle:Project', $id);
+
+        // If the project does not exist, display an error message
+        if ($project === null)
+        {
+            throw $this->createNotFoundException('No existe el proyecto seleccionado');
+        }
+
+        // Get the request
+        $request = $this->get('request');
+
+        // Create a "fake" form
+        $form = $this->createDeleteForm($id);
+
+        // If the request method is POST, process the data
+        if ($request->getMethod() === 'POST')
+        {
+            // If the cancel button was pressed, redirect the user to the project list
+            if ($request->request->has('cancel') === true)
+            {
+                return $this->redirect($this->generateUrl('admin_project_list'));
+            }
+
+            // Bind the request
+            $form->bind($request);
+
+            // If the form data is valid:
+            if ($form->isValid())
+            {
+                // 1) Remove the entity
+                $entityManager->remove($project);
+                $entityManager->flush();
+
+                // 2) Display a success message
+                $request->getSession()->getFlashBag()->add('notice', 'El proyecto ha sido modificado correctamente');
+
+                // 3) Redirect the user to the project list
+                return $this->redirect($this->generateUrl('admin_project_list'));
+            }
+        }
+
+        // Render the form
+        return $this->render(
+            'PortfolioBundle:Admin:project_delete.html.twig',
+            array(
+                'form' => $form->createView(),
+                'project_id' => $project->getId()
+            )
+        );
+    }
+
+    private function createDeleteForm($id)
+    {
+        return $this->createFormBuilder(array('id' => $id))
+                    ->add('id', 'hidden')
+                    ->getForm();
     }
 }
