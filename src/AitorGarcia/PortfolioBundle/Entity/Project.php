@@ -44,17 +44,23 @@ class Project
     protected $technologies;
 
     /**
+     * @ORM\OneToMany(targetEntity="ProjectScreenshot", mappedBy="project")
+     */
+    protected $screenshots;
+
+    /**
      * Constructor
      */
     public function __construct()
     {
         $this->technologies = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->screenshots = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -77,7 +83,7 @@ class Project
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -100,7 +106,7 @@ class Project
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -123,7 +129,7 @@ class Project
     /**
      * Get url
      *
-     * @return string 
+     * @return string
      */
     public function getUrl()
     {
@@ -156,10 +162,43 @@ class Project
     /**
      * Get technologies
      *
-     * @return Doctrine\Common\Collections\Collection 
+     * @return Doctrine\Common\Collections\Collection
      */
     public function getTechnologies()
     {
         return $this->technologies;
+    }
+
+    /**
+     * Add screenshot
+     *
+     * @param AitorGarcia\PortfolioBundle\Entity\ProjectScreenshot $screenshot
+     * @return Project
+     */
+    public function addScreenshot(\AitorGarcia\PortfolioBundle\Entity\ProjectScreenshot $screenshot)
+    {
+        $this->screenshots[] = $screenshot;
+    
+        return $this;
+    }
+
+    /**
+     * Remove screenshot
+     *
+     * @param AitorGarcia\PortfolioBundle\Entity\ProjectScreenshot $screenshot
+     */
+    public function removeScreenshot(\AitorGarcia\PortfolioBundle\Entity\ProjectScreenshot $screenshot)
+    {
+        $this->screenshots->removeElement($screenshot);
+    }
+
+    /**
+     * Get screenshots
+     *
+     * @return Doctrine\Common\Collections\Collection
+     */
+    public function getScreenshots()
+    {
+        return $this->screenshots;
     }
 }

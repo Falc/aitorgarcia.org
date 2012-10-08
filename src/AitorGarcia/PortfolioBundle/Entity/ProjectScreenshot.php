@@ -36,6 +36,12 @@ class ProjectScreenshot
     protected $fileName;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Project", inversedBy="screenshots")
+     * @ORM\JoinColumn(name="project_id", referencedColumnName="id")
+     */
+    protected $project;
+
+    /**
      * Constructor
      */
     public function __construct()
