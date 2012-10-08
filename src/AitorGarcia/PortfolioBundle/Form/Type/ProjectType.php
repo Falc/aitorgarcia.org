@@ -19,20 +19,6 @@ class ProjectType extends AbstractType
             'label' => 'Descripción:'
         ));
 
-        $builder->add('dateFrom', 'date', array(
-            'label'  => 'Desde:',
-            'format' => 'ddMMMyyyy',
-            'input'  => 'datetime',
-            'widget' => 'choice'
-        ));
-
-        $builder->add('dateTo', 'date', array(
-            'label'  => 'Hasta:',
-            'format' => 'ddMMMyyyy',
-            'input'  => 'datetime',
-            'widget' => 'choice'
-        ));
-
         $builder->add('technologies', 'entity', array(
             'label' => 'Tecnologías:',
             'class' => 'AitorGarcia\PortfolioBundle\Entity\Technology',
