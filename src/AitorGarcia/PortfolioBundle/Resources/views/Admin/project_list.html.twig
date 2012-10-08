@@ -21,8 +21,6 @@
             <th class="shrink">ID</th>
             <th>Nombre</th>
             <th>Descripción</th>
-            <th class="shrink">Desde</th>
-            <th class="shrink">Hasta</th>
             <th class="shrink">Acciones</th>
         </tr>
     </thead>
@@ -32,8 +30,6 @@
             <td class="centered">{{ project.id }}</td>
             <td>{{ project.name }}</td>
             <td>{{ project.description | truncate(50,true) }}</td>
-            <td class="centered">{{ project.dateFrom | date('M/Y') }}</td>
-            <td class="centered">{{ project.dateTo | date('M/Y') }}</td>
             <td class="centered">
                 <a href="{{ path('admin_project_edit', { 'id': project.id }) }}">Modificar</a>
                 <a href="{{ path('admin_project_delete', { 'id': project.id }) }}">Eliminar</a>
