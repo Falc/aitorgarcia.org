@@ -38,18 +38,6 @@ class Project
     protected $url;
 
     /**
-     * @ORM\Column(type="date")
-     * @Assert\Date()
-     */
-    protected $dateFrom;
-
-    /**
-     * @ORM\Column(type="date")
-     * @Assert\Date()
-     */
-    protected $dateTo;
-
-    /**
      * @ORM\ManyToMany(targetEntity="Technology", inversedBy="projects")
      * @ORM\JoinTable(name="project_technologies")
      */
@@ -140,52 +128,6 @@ class Project
     public function getUrl()
     {
         return $this->url;
-    }
-
-    /**
-     * Set dateFrom
-     *
-     * @param \DateTime $dateFrom
-     * @return Project
-     */
-    public function setDateFrom($dateFrom)
-    {
-        $this->dateFrom = $dateFrom;
-    
-        return $this;
-    }
-
-    /**
-     * Get dateFrom
-     *
-     * @return \DateTime
-     */
-    public function getDateFrom()
-    {
-        return $this->dateFrom;
-    }
-
-    /**
-     * Set dateTo
-     *
-     * @param \DateTime $dateTo
-     * @return Project
-     */
-    public function setDateTo($dateTo)
-    {
-        $this->dateTo = $dateTo;
-    
-        return $this;
-    }
-
-    /**
-     * Get dateTo
-     *
-     * @return \DateTime
-     */
-    public function getDateTo()
-    {
-        return $this->dateTo;
     }
 
     /**
