@@ -279,7 +279,7 @@
         min-height: 150px;
     }
 
-    fieldset input,
+    fieldset input[type="text"],
     fieldset textarea,
     fieldset select {
         width: 100%;
@@ -287,7 +287,7 @@
         margin-top: 3px;
     }
 
-    fieldset input,
+    fieldset input[type="text"],
     fieldset textarea {
         padding: 2px;
     }
@@ -362,5 +362,7 @@
      * OTHERS
      */
     .centered {text-align: center;}
+    .left {float: left;}
+    .right {float: right;}
     .clear {clear: both}
 }
