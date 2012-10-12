@@ -10,6 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @ORM\Table(name="project_screenshots")
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  */
 class ProjectScreenshot
 {
@@ -29,6 +30,11 @@ class ProjectScreenshot
      * @ORM\Column(type="string")
      */
     protected $path;
+
+    /**
+     * @Assert\File(maxSize="2M")
+     */
+    public $file;
 
     /**
      * @ORM\ManyToOne(targetEntity="Project", inversedBy="screenshots")
@@ -120,6 +126,51 @@ class ProjectScreenshot
     public function getProject()
     {
         return $this->project;
+    }
+
+    /**
+     * @ORM\PrePersist()
+     * @ORM\PreUpdate()
+     */
+    public function preUpload()
+    {
+        if ($this->file !== null)
+        {
+            // Sanitize and/or generate a unique name if needed
+            // $this->path = sha1(uniqid(mt_rand(), true)).'.'.$this->file->guessExtension();
+
+            // I don't sanitize it because nobody except me will be able to upload photos
+            $this->path = $this->file->getClientOriginalName();
+        }
+    }
+
+    /**
+     * @ORM\PostPersist()
+     * @ORM\PostUpdate()
+     */
+    public function upload()
+    {
+        if ($this->file === null)
+        {
+            return;
+        }
+
+        // Move the file to the correct place
+        $this->file->move($this->getUploadRootDir(), $this->path);
+
+        // Clean the file property
+        $this->file = null;
+    }
+
+    /**
+     * @ORM\PostRemove()
+     */
+    public function removeUpload()
+    {
+        if ($file = $this->getAbsolutePath())
+        {
+            unlink($file);
+        }
     }
 
     /**
