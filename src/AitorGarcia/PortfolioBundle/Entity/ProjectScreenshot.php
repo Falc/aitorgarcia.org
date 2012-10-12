@@ -121,4 +121,41 @@ class ProjectScreenshot
     {
         return $this->project;
     }
+
+    /**
+     * Get the absolute directory path where screenshots should be stored
+     *
+     * @return string
+     */
+    protected function getUploadRootDir()
+    {
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    /**
+     * Get the screenshots directory (relative to /web/files/)
+     *
+     * @return string
+     */
+    protected function getUploadDir()
+    {
+        // Get rid of the __DIR__ so it doesn't screw when displaying images in the view.
+        return 'files/project-screenshots';
+    }
+
+    /**
+     * Get the absolute path
+     */
+    public function getAbsolutePath()
+    {
+        return ($this->path === null) ? null : $this->getUploadRootDir().'/'.$this->path;
+    }
+
+    /**
+     * Get the web path (relative to /web/)
+     */
+    public function getWebPath()
+    {
+        return ($this->path === null) ? null : $this->getUploadDir().'/'.$this->path;
+    }
 }
