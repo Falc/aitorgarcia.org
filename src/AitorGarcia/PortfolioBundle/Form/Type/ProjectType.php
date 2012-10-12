@@ -20,12 +20,19 @@ class ProjectType extends AbstractType
         ));
 
         $builder->add('technologies', 'entity', array(
-            'label' => 'Tecnologías:',
-            'class' => 'AitorGarcia\PortfolioBundle\Entity\Technology',
-            'property' => 'name',
-            'multiple' => true
+            'label'     => 'Tecnologías:',
+            'class'     => 'AitorGarcia\PortfolioBundle\Entity\Technology',
+            'property'  => 'name',
+            'multiple'  => true
         ));
 
+        $builder->add('screenshots', 'collection', array(
+            'type'          => new ProjectScreenshotType(),
+            'allow_add'     => true,
+            'allow_delete'  => true,
+            'by_reference'  => false,
+            'required'      => false
+        ));
     }
 
     public function getDefaultOptions(array $options)
