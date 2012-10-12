@@ -28,12 +28,7 @@ class ProjectScreenshot
     /**
      * @ORM\Column(type="string")
      */
-    protected $filePath;
-
-    /**
-     * @ORM\Column(type="string")
-     */
-    protected $fileName;
+    protected $path;
 
     /**
      * @ORM\ManyToOne(targetEntity="Project", inversedBy="screenshots")
@@ -82,48 +77,48 @@ class ProjectScreenshot
     }
 
     /**
-     * Set filePath
+     * Set path
      *
-     * @param string $filePath
+     * @param string $path
      * @return ProjectScreenshot
      */
-    public function setFilePath($filePath)
+    public function setPath($path)
     {
-        $this->filePath = $filePath;
+        $this->path = $path;
 
         return $this;
     }
 
     /**
-     * Get filePath
+     * Get path
      *
-     * @return string $filePath
+     * @return string $path
      */
-    public function getFilePath()
+    public function getPath()
     {
-        return $this->filePath;
+        return $this->path;
     }
 
     /**
-     * Set fileName
+     * Set project
      *
-     * @param string $fileName
+     * @param AitorGarcia\PortfolioBundle\Entity\Project $project
      * @return ProjectScreenshot
      */
-    public function setFileName($fileName)
+    public function setProject(\AitorGarcia\PortfolioBundle\Entity\Project $project = null)
     {
-        $this->fileName = $fileName;
-
+        $this->project = $project;
+    
         return $this;
     }
 
     /**
-     * Get fileName
+     * Get project
      *
-     * @return string $fileName
+     * @return AitorGarcia\PortfolioBundle\Entity\Project
      */
-    public function getFileName()
+    public function getProject()
     {
-        return $this->fileName;
+        return $this->project;
     }
 }
