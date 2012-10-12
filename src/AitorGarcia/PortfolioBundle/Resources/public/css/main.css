@@ -213,12 +213,12 @@
         background-color: #1c6cab;
         background-image:    -moz-linear-gradient(top, #1c89df 0%, #1c6cab 100%);
         background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1c89df), color-stop(100%, #1c6cab));
-        background-image: -webkit-linear-gradient(top, #1c89df 0%, #e0e0e0 100%);
-        background-image:      -o-linear-gradient(top, #1c89df 0%, #e0e0e0 100%);
-        background-image:     -ms-linear-gradient(top, #1c89df 0%, #e0e0e0 100%);
-        background-image:         linear-gradient(to bottom, #1c89df 0%, #e0e0e0 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#1c89df, endColorstr=#e0e0e0);
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#1c89df, endColorstr=#e0e0e0)";
+        background-image: -webkit-linear-gradient(top, #1c89df 0%, #1c6cab 100%);
+        background-image:      -o-linear-gradient(top, #1c89df 0%, #1c6cab 100%);
+        background-image:     -ms-linear-gradient(top, #1c89df 0%, #1c6cab 100%);
+        background-image:         linear-gradient(to bottom, #1c89df 0%, #1c6cab 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#1c89df, endColorstr=#1c6cab);
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#1c89df, endColorstr=#1c6cab)";
         color: #fff;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
@@ -348,6 +348,10 @@
         -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
         box-shadow:         inset 0 0 3px rgba(0, 0, 0, 0.3);
 	}
+
+    .button:hover {
+        text-decoration: none;
+    }
 
 	input.button {
 		margin: 0 7px 0 0; /* Comprobar si en varios navegadores hay misma diferencia de 3px */
