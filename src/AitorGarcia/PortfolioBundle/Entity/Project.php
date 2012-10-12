@@ -44,7 +44,7 @@ class Project
     protected $technologies;
 
     /**
-     * @ORM\OneToMany(targetEntity="ProjectScreenshot", mappedBy="project")
+     * @ORM\OneToMany(targetEntity="ProjectScreenshot", mappedBy="project", cascade={"persist"})
      */
     protected $screenshots;
 
@@ -177,6 +177,7 @@ class Project
      */
     public function addScreenshot(\AitorGarcia\PortfolioBundle\Entity\ProjectScreenshot $screenshot)
     {
+        $screenshot->setProject($this);
         $this->screenshots[] = $screenshot;
     
         return $this;
