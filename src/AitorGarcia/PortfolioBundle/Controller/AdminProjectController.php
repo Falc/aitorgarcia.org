@@ -71,6 +71,13 @@ class AdminProjectController extends Controller
             throw $this->createNotFoundException('No existe el proyecto seleccionada');
         }
 
+        // Get a copy of the screenshots contained in the project before the form submission
+        $originalScreenshots = array();
+        foreach ($project->getScreenshots() as $screenshot)
+        {
+            $originalScreenshots[] = $screenshot;
+        }
+
         // Create the form and set the data
         $form = $this->createForm(new ProjectType, $project);
 
@@ -86,6 +93,26 @@ class AdminProjectController extends Controller
             // If the form data is valid:
             if ($form->isValid())
             {
+                // Compare the submitted screenshots with the original ones
+                foreach ($project->getScreenshots() as $screenshot)
+                {
+                    foreach ($originalScreenshots as $key => $originalScreenshot)
+                    {
+                        // $originalScreenshots will contain only the screenshots that should be deleted
+                        if ($originalScreenshot->getId() === $screenshot->getId())
+                        {
+                            unset($originalScreenshots[$key]);
+                        }
+                    }
+                }
+
+                // Delete every screenshot in $originalScreenshot
+                foreach ($originalScreenshots as $screenshot)
+                {
+                    $project->removeScreenshot($screenshot);
+                    $entityManager->remove($screenshot);
+                }
+
                 // 1) Persist the entity
                 $entityManager->persist($project);
                 $entityManager->flush();
