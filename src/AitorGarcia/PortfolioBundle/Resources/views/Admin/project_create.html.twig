@@ -1,5 +1,10 @@
 {% extends "PortfolioBundle::admin_layout.html.twig" %}
 
+{% block javascripts %}
+<script src="{{ asset('bundles/portfolio/js/jquery-1.8.2.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/portfolio/js/project-screenshot-rows.js') }}" type="text/javascript"></script>
+{% endblock %}
+
 {% block navigation %}
 <li><a href="{{ path('admin_index') }}">Portada</a></li>
 <li class="active"><a href="{{ path('admin_project_list') }}">Proyectos</a></li>
@@ -16,28 +21,28 @@
 
 {% block page %}
 <h2>Nuevo proyecto</h2>
-<form action="{{ path('admin_project_create') }}" method="post">
+<form action="{{ path('admin_project_create') }}" method="post" {{ form_enctype(form) }}>
 	<fieldset>
 		<legend>Información del proyecto</legend>
-
         <div class="_100">
             {{ form_label(form.name) }}
             {{ form_widget(form.name) }}
         </div>
-
         <div class="_100">
             {{ form_label(form.description) }}
             {{ form_widget(form.description) }}
         </div>
-
         <div class="_25">
             {{ form_label(form.technologies) }}
             {{ form_widget(form.technologies) }}
         </div>
-
-        {{ form_rest(form) }}
+        {{ form_widget(form._token) }}
     </fieldset>
-
+    <fieldset>
+        <legend>Imágenes</legend>
+        <div id="screenshots" data-prototype="{% filter escape %}{% include 'PortfolioBundle:prototypes:project_screenshot.html.twig' with {'screenshot': form.screenshots.vars.prototype} %}{% endfilter %}">
+        </div>
+    </fieldset>
 	<input class="button" type="submit" name="save" value="Guardar" />
 </form>
 {% endblock %}
