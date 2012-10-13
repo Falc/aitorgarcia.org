@@ -313,6 +313,8 @@
     /*
      * BUTTONS
      */
+     button,
+    .button-img,
     .button {
 		font-family: sans-serif; /* Igual que <body> */
 		background-color: #eee;
@@ -334,6 +336,14 @@
 		cursor: pointer;
     }
 
+    .button-img {
+        padding: 5px;
+    }
+    
+    .button-img img {
+        vertical-align: middle;
+    }
+
 	.button:active {
 		background-color: #dadada;
 		background-image:    -moz-linear-gradient(top, #dadada 0%, #f0f0f0 100%);
@@ -353,10 +363,35 @@
         text-decoration: none;
     }
 
+    button,
 	input.button {
 		margin: 0 7px 0 0; /* Comprobar si en varios navegadores hay misma diferencia de 3px */
 		padding: 5px 7px;  /* Comprobar si en varios navegadores hay misma diferencia de 3px */
 	}
+
+    .buttons-left {
+        float: left;
+    }
+
+    .buttons-left a {
+        margin-right: 0.25em;
+    }
+
+    .buttons-right {
+        float: right;
+    }
+
+    .buttons-right a {
+        margin-left: 0.25em;
+    }
+
+    .buttons-left a,
+    .buttons-right a {
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+    }
+    
 
     /*
      * OTHERS
