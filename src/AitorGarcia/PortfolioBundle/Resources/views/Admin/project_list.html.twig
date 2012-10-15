@@ -31,8 +31,8 @@
             <td>{{ project.name }}</td>
             <td>{{ project.description | truncate(50,true) }}</td>
             <td class="centered">
-                <a href="{{ path('admin_project_edit', { 'id': project.id }) }}">Modificar</a>
-                <a href="{{ path('admin_project_delete', { 'id': project.id }) }}">Eliminar</a>
+                <a class="button-img" href="{{ path('admin_project_edit', { 'id': project.id }) }}" title="Modificar el proyecto"><img src="/bundles/portfolio/images/edit.png" alt="Modificar" /></a>
+                <a class="button-img" href="{{ path('admin_project_delete', { 'id': project.id }) }}" title="Eliminar el proyecto"><img src="/bundles/portfolio/images/delete.png" alt="Eliminar" /></a>
             </td>
         </tr>
     {% else %}
