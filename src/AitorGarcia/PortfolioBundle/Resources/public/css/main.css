@@ -338,6 +338,9 @@
 
     .button-img {
         padding: 5px;
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
     }
     
     .button-img img {
@@ -384,14 +387,6 @@
     .buttons-right a {
         margin-left: 0.25em;
     }
-
-    .buttons-left a,
-    .buttons-right a {
-        display: inline-block;
-        zoom: 1;
-        *display: inline;
-    }
-    
 
     /*
      * OTHERS
