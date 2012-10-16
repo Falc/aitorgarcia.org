@@ -44,7 +44,7 @@ class Project
     protected $technologies;
 
     /**
-     * @ORM\OneToMany(targetEntity="ProjectScreenshot", mappedBy="project", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="ProjectScreenshot", mappedBy="project", cascade={"persist", "remove"})
      */
     protected $screenshots;
 
