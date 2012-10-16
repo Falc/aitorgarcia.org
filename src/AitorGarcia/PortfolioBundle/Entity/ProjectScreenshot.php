@@ -240,10 +240,26 @@ class ProjectScreenshot
     }
 
     /**
+     * Get the thumb absolute path
+     */
+    public function getThumbAbsolutePath()
+    {
+        return str_replace('.jpg', '_thumb.jpg', $this->getAbsolutePath());
+    }
+
+    /**
      * Get the web path (relative to /web/)
      */
     public function getWebPath()
     {
         return ($this->path === null) ? null : $this->getUploadDir().'/'.$this->path;
+    }
+
+    /**
+     * Get the thumb web path (relative to /web/)
+     */
+    public function getThumbWebPath()
+    {
+        return str_replace('.jpg', '_thumb.jpg', $this->getWebPath());
     }
 }
