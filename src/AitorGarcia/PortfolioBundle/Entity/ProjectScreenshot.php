@@ -174,6 +174,37 @@ class ProjectScreenshot
     }
 
     /**
+     * Creates a thumbnail with the specified size
+     */
+    protected function createThumbnail($dest_width = 300, $dest_height = 200)
+    {
+        // Get the source image and its size
+        $src_image = imagecreatefromjpeg($this->getAbsolutePath());
+        $src_width = imagesx($src_image);
+        $src_height = imagesy($src_image);
+
+        // Get the ratio and adapt the size to the ratio
+        $ratio = min($src_width / $dest_width, $src_height / $dest_height);
+        $width = $dest_width * $ratio;
+        $height = $dest_height * $ratio;
+
+        // If the image size is bigger than the desired size, it must be cropped
+        $src_x = ($src_width > $width) ? ($src_width - $width) / 2 : 0; // Center horizontally
+        $src_y = 0; // Top
+
+        // Resize the source image
+        $dest_image = imagecreatetruecolor($dest_width, $dest_height);
+        imagecopyresampled(
+	        $dest_image, $src_image, 0, 0, $src_x, $src_y,
+	        $dest_width, $dest_height, $width, $height
+        );
+
+        // Set the dest_path and save the thumbnail
+        $dest_path = str_replace('.jpg', '_thumb.jpg', $this->getAbsolutePath());
+        imagejpeg($dest_image, $dest_path, 88);
+    }
+
+    /**
      * Get the absolute directory path where screenshots should be stored
      *
      * @return string
