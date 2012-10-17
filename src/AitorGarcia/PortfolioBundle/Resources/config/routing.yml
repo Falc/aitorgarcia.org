@@ -1,3 +1,7 @@
 index:
     pattern:  /
     defaults: { _controller: PortfolioBundle:Default:index }
+
+project_list:
+    pattern:  /projects
+    defaults: { _controller: PortfolioBundle:Project:list }
