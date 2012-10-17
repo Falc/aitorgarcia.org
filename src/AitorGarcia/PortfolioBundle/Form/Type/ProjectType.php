@@ -16,7 +16,11 @@ class ProjectType extends AbstractType
         ));
 
         $builder->add('description', 'textarea', array(
-            'label' => 'Descripción:'
+            'label' => 'Descripción:',
+            'attr'  => array(
+                'class'      => 'tinymce',
+                'data-theme' => 'advanced'
+            )
         ));
 
         $builder->add('technologies', 'entity', array(
