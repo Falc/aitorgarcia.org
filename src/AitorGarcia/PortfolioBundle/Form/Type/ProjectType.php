@@ -23,6 +23,11 @@ class ProjectType extends AbstractType
             )
         ));
 
+        $builder->add('link', 'text', array(
+            'label' => 'Enlace:',
+            'trim'  => true
+        ));
+
         $builder->add('technologies', 'entity', array(
             'label'     => 'Tecnologías:',
             'class'     => 'AitorGarcia\PortfolioBundle\Entity\Technology',
