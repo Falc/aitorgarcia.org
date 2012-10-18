@@ -20,6 +20,7 @@
         <tr>
             <th class="shrink">ID</th>
             <th>Nombre</th>
+            <th>Enlace</th>
             <th>Descripción</th>
             <th class="shrink">Acciones</th>
         </tr>
@@ -29,6 +30,7 @@
         <tr>
             <td class="centered">{{ project.id }}</td>
             <td>{{ project.name }}</td>
+            <td>{{ project.link }}</td>
             <td>{{ project.description | striptags | truncate(50,true) }}</td>
             <td class="centered">
                 <a class="button-img" href="{{ path('admin_project_edit', { 'id': project.id }) }}" title="Modificar el proyecto"><img src="/bundles/portfolio/images/edit.png" alt="Modificar" /></a>
