@@ -32,6 +32,11 @@ class Project
     protected $description;
 
     /**
+     * @ORM\Column(type="string")
+     */
+    protected $link;
+
+    /**
      * @Gedmo\Slug(fields={"name"})
      * @ORM\Column(type="string", unique=true)
      */
@@ -111,6 +116,29 @@ class Project
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set link
+     *
+     * @param string $link
+     * @return Project
+     */
+    public function setLink($link)
+    {
+        $this->link = $link;
+
+        return $this;
+    }
+
+    /**
+     * Get link
+     *
+     * @return string
+     */
+    public function getLink()
+    {
+        return $this->link;
     }
 
     /**
