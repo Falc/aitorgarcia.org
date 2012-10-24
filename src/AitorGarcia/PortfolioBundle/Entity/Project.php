@@ -32,6 +32,11 @@ class Project
     protected $description;
 
     /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $client;
+
+    /**
      * @ORM\Column(type="string")
      */
     protected $link;
@@ -116,6 +121,29 @@ class Project
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set client
+     *
+     * @param string $client
+     * @return Project
+     */
+    public function setClient($client)
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+    /**
+     * Get client
+     *
+     * @return string
+     */
+    public function getClient()
+    {
+        return $this->client;
     }
 
     /**
