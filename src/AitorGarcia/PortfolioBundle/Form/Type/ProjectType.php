@@ -23,6 +23,12 @@ class ProjectType extends AbstractType
             )
         ));
 
+        $builder->add('client', 'text', array(
+            'label'     => 'Cliente:',
+            'required'  => false,
+            'trim'      => true
+        ));
+
         $builder->add('link', 'text', array(
             'label' => 'Enlace:',
             'trim'  => true
