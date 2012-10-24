@@ -1,63 +1,6 @@
 {% extends "PortfolioBundle::layout.html.twig" %}
 
-{% block stylesheets %}
-{{ parent() }}
-<link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolio/css/featured.css') }}" />
-{% endblock %}
-
-{% block javascripts %}
-<script src="{{ asset('bundles/portfolio/js/tinyslider2.js') }}" type="text/javascript"></script>
-{% endblock %}
-
-{% block subnavigation %}
-<p>Bienvenido a la web de Aitor García, desarrollador web.</p>
-{% endblock %}
-
 {% block page %}
-<div id="slider-wrapper">
-    <div id="slider">
-        <ul>
-            <li class="black-diamond">
-                <img src="images/aluminium-screen.png" alt="Aluminium" />
-                <h2>Aluminium Framework</h2>
-                <p>Aluminium es un framework open source basado en componentes que permite desarrollar aplicaciones web con PHP 5.</p>
-                <a class="button" href="#">Learn more</a>
-            </li>
-            <li class="green-gradient">
-                <img src="images/easyrpg-screen.png" alt="EasyRPG" />
-                <h2>EasyRPG Editor</h2>
-                <p>EasyRPG Editor es una aplicación que permite crear videojuegos RPG (Role-Playing Game) de una forma muy simple.</p>
-                <a class="button" href="#">Learn more</a>
-            </li>
-            <li class="blue-dirty">3</li>
-            <li class="black-dirty">4</li>
-        </ul>
-        <div class="sliderbutton" id="slideleft" onclick="slideshow.move(-1)"></div>
-        <div class="sliderbutton" id="slideright" onclick="slideshow.move(1)"></div>
-    </div>
-    <ul id="slider-pager">
-        <li onclick="slideshow.pos(0)"></li>
-        <li onclick="slideshow.pos(1)"></li>
-        <li onclick="slideshow.pos(2)"></li>
-        <li onclick="slideshow.pos(3)"></li>
-    </ul>
-</div>
-<script type="text/javascript">
-var slideshow=new TINY.slider.slide('slideshow',{
-    id:'slider',
-    auto:0,
-    resume:true,
-    vertical:false,
-    navid:'slider-pager',
-    activeclass:'current',
-    position:0,
-    rewind:false,
-    elastic:false,
-    left:'slideleft',
-    right:'slideright'
-});
-</script>
-
 <h2>Sobre mí</h2>
 <p>...</p>
 {% endblock %}
