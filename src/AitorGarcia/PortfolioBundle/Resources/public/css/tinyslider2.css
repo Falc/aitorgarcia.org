@@ -63,7 +63,7 @@
 	}
 
 	#slider-left {
-		background: url(../images/slide-left.png) center center no-repeat;
+		background: url(../images/slide-buttons.png) left center no-repeat;
 		left: 10px;
 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
 		filter: alpha(opacity=60);
@@ -82,7 +82,7 @@
     }
 
 	#slider-right {
-		background: url(../images/slide-right.png) center center no-repeat;
+		background: url(../images/slide-buttons.png) right center no-repeat;
 		right: 10px;
 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
 		filter: alpha(opacity=60);
