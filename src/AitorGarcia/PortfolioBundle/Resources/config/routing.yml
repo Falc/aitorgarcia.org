@@ -5,3 +5,7 @@ index:
 project_list:
     pattern:  /projects
     defaults: { _controller: PortfolioBundle:Project:list }
+
+project_show:
+    pattern:  /projects/{url}
+    defaults: { _controller: PortfolioBundle:Project:show }
