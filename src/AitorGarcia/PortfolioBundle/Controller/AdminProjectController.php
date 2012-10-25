@@ -68,7 +68,7 @@ class AdminProjectController extends Controller
         // If the project does not exist, display an error message
         if ($project === null)
         {
-            throw $this->createNotFoundException('No existe el proyecto seleccionada');
+            throw $this->createNotFoundException('No existe el proyecto seleccionado');
         }
 
         // Get a copy of the screenshots contained in the project before the form submission
