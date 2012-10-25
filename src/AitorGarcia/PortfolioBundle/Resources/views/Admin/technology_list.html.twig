@@ -37,8 +37,8 @@
             <td class="centered">{{ technology.id }}</td>
             <td>{{ technology.name }}</td>
             <td class="centered">
-                <a href="{{ path('admin_technology_edit', { 'id': technology.id }) }}">Modificar</a>
-                <a href="{{ path('admin_technology_delete', { 'id': technology.id }) }}">Eliminar</a>
+                <a class="button-img" href="{{ path('admin_technology_edit', { 'id': technology.id }) }}" title="Modificar la tecnología"><img src="/bundles/portfolio/images/edit.png" alt="Modificar" /></a>
+                <a class="button-img" href="{{ path('admin_technology_delete', { 'id': technology.id }) }}" title="Eliminar la tecnología"><img src="/bundles/portfolio/images/delete.png" alt="Eliminar" /></a>
             </td>
         </tr>
     {% else %}
