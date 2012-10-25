@@ -25,9 +25,7 @@
         <ul class="bg-dark-diamonds">
         {% for screenshot in project.screenshots %}
             <li>
-                <a href="/{{ screenshot.getWebPath() }}">
-                    <img src="/{{ screenshot.getThumbWebPath() }}" alt="{{ screenshot.name }}" />
-                </a>
+                <img src="/{{ screenshot.getWebPath() }}" alt="{{ screenshot.name }}" />
             </li>
         {% endfor %}
         </ul>
@@ -40,19 +38,19 @@
     {% endfor %}
     </ul>
     <script type="text/javascript">
-    var slideshow=new TINY.slider.slide('slideshow',{
-        id:'slider-content',
-        auto:0,
-        resume:true,
-        vertical:false,
-        navid:'slider-pager',
-        activeclass:'current',
-        position:0,
-        rewind:false,
-        elastic:false,
-        left:'slider-left',
-        right:'slider-right'
-    });
+        var slideshow=new TINY.slider.slide('slideshow',{
+            id:'slider-content',
+            auto:0,
+            resume:true,
+            vertical:false,
+            navid:'slider-pager',
+            activeclass:'current',
+            position:0,
+            rewind:false,
+            elastic:false,
+            left:'slider-left',
+            right:'slider-right'
+        });
     </script>
 {% endif %}
 </div>

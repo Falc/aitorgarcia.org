@@ -18,7 +18,7 @@
         {% if project.screenshots is empty %}
             <img src="/files/no-project-screenshot.jpg" alt="{{ project.name }}" title="{{ project.name }}" />
         {% else %}
-            <img src="/{{ project.screenshots[0].getThumbWebPath() }}" alt="{{ project.name }}" title="{{ project.name }}" />
+            <img src="/{{ project.screenshots[0].getWebPath() }}" alt="{{ project.name }}" title="{{ project.name }}" />
         {% endif %}
             <span>{{ project.name }}</span>
         </a>
