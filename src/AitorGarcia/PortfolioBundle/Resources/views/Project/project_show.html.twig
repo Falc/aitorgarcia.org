@@ -17,8 +17,10 @@
 
 {% block page %}
 <h2>{{ project.name }}</h2>
-{% if project.screenshots is not empty %}
 <div id="slider">
+{% if project.screenshots is empty %}
+    <img src="/files/no-project-screenshot.jpg" alt="{{ project.name }}" title="{{ project.name }}" />
+{% else %}
     <div id="slider-content">
         <ul>
         {% for screenshot in project.screenshots %}
@@ -37,6 +39,22 @@
         <li onclick="slideshow.pos({{ i-1 }})"></li>
     {% endfor %}
     </ul>
+    <script type="text/javascript">
+    var slideshow=new TINY.slider.slide('slideshow',{
+        id:'slider-content',
+        auto:0,
+        resume:true,
+        vertical:false,
+        navid:'slider-pager',
+        activeclass:'current',
+        position:0,
+        rewind:false,
+        elastic:false,
+        left:'slider-left',
+        right:'slider-right'
+    });
+    </script>
+{% endif %}
 </div>
 
 <div id="project-info">
@@ -56,22 +74,5 @@
         <a class="button" href="{{ project.link }}">Ver proyecto</a>
     </div>
 </div>
-
 <div class="clear"></div>
-<script type="text/javascript">
-var slideshow=new TINY.slider.slide('slideshow',{
-    id:'slider-content',
-    auto:0,
-    resume:true,
-    vertical:false,
-    navid:'slider-pager',
-    activeclass:'current',
-    position:0,
-    rewind:false,
-    elastic:false,
-    left:'slider-left',
-    right:'slider-right'
-});
-</script>
-{% endif %}
 {% endblock %}
