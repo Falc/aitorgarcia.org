@@ -1,0 +1,77 @@
+{% extends "PortfolioBundle::layout.html.twig" %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolio/css/tinyslider2.css') }}" />
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ asset('bundles/portfolio/js/tinyslider2.js') }}" type="text/javascript"></script>
+{% endblock %}
+
+{% block navigation %}
+<li><a href="{{ path('index') }}">Portada</a></li>
+<li class="active"><a href="{{ path('project_list') }}">Proyectos</a></li>
+<li><a href="#">Contacto</a></li>
+{% endblock %}
+
+{% block page %}
+<h2>{{ project.name }}</h2>
+{% if project.screenshots is not empty %}
+<div id="slider">
+    <div id="slider-content">
+        <ul>
+        {% for screenshot in project.screenshots %}
+            <li>
+                <a href="/{{ screenshot.getWebPath() }}">
+                    <img src="/{{ screenshot.getThumbWebPath() }}" alt="{{ screenshot.name }}" />
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+    <div class="slider-button" id="slider-left" onclick="slideshow.move(-1)"></div>
+    <div class="slider-button" id="slider-right" onclick="slideshow.move(1)"></div>
+    <ul id="slider-pager">
+    {% for i in 1..project.screenshots.count() %}
+        <li onclick="slideshow.pos({{ i-1 }})"></li>
+    {% endfor %}
+    </ul>
+</div>
+
+<div id="project-info">
+    <h3>Descripción</h3>
+    {{ project.description | raw }}
+    {% if project.client is not empty %}
+    <h3>Cliente</h3>
+    <p>{{ project.client }}</p>
+    {% endif %}
+    <h3>Tecnologías</h3>
+    <p>
+    {%- for technology in project.technologies -%}
+        {{ technology.name }}{% if not loop.last %}, {% endif %}
+    {%- endfor -%}
+    </p>
+    <div id="project-view">
+        <a class="button" href="{{ project.link }}">Ver proyecto</a>
+    </div>
+</div>
+
+<div class="clear"></div>
+<script type="text/javascript">
+var slideshow=new TINY.slider.slide('slideshow',{
+    id:'slider-content',
+    auto:0,
+    resume:true,
+    vertical:false,
+    navid:'slider-pager',
+    activeclass:'current',
+    position:0,
+    rewind:false,
+    elastic:false,
+    left:'slider-left',
+    right:'slider-right'
+});
+</script>
+{% endif %}
+{% endblock %}
