@@ -70,6 +70,7 @@
 		-moz-opacity: 0.6;
 		-khtml-opacity: 0.6;
 		opacity: 0.6;
+		visibility: hidden;
 	}
 
     #slider-left:hover {
@@ -88,6 +89,7 @@
 		-moz-opacity: 0.6;
 		-khtml-opacity: 0.6;
 		opacity: 0.6;
+		visibility: hidden;
 	}
 
     #slider-right:hover {
@@ -104,6 +106,7 @@
         z-index: 9999;
         display: inline;
         bottom: 25px;
+        visibility: hidden;
 	}
 
 	#slider-pager li {
