@@ -65,7 +65,7 @@
 
 	#slider-left {
 		background: url(../images/slide-left.png) center center no-repeat;
-		left: -20px;
+		left: 10px;
 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
 		filter: alpha(opacity=60);
 		-moz-opacity: 0.6;
@@ -83,7 +83,7 @@
 
 	#slider-right {
 		background: url(../images/slide-right.png) center center no-repeat;
-		right: -20px;
+		right: 10px;
 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
 		filter: alpha(opacity=60);
 		-moz-opacity: 0.6;
