@@ -159,7 +159,8 @@ class ProjectScreenshot
         $this->file->move($this->getUploadRootDir(), $this->path);
 
         // Create a thumbnail
-        $this->createThumbnail(600, 400);
+        // Disabled: I don't need thumnails at the moment but this code could be useful
+        //$this->createThumbnail(480, 320);
 
         // Clean the file property
         $this->file = null;
@@ -172,10 +173,10 @@ class ProjectScreenshot
     {
         if ($file = $this->getAbsolutePath())
         {
-            $thumbnail = str_replace('.jpg', '_thumb.jpg', $file);
-
             unlink($file);
-            unlink($thumbnail);
+            // Disabled: I don't need thumnails at the moment but this code could be useful
+            //$thumbnail = str_replace('.jpg', '_thumb.jpg', $file);
+            //unlink($thumbnail);
         }
     }
 
