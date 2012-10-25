@@ -6,6 +6,7 @@ function T$$(e,p){return p.getElementsByTagName(e)}
 TINY.slider=function(){
 	function slide(n,p){this.n=n; this.init(p)}
 	slide.prototype.init=function(p){
+        T$(p.left).style.visibility="visible";T$(p.right).style.visibility="visible";T$(p.navid).style.visibility="visible";
 		var s=this.x=T$(p.id), u=this.u=T$$('ul',s)[0], c=this.m=T$$('li',u), l=c.length, i=this.l=this.c=0; this.b=1;
 		if(p.navid&&p.activeclass){this.g=T$$('li',T$(p.navid)); this.s=p.activeclass}
 		this.a=p.auto||0; this.p=p.resume||0; this.r=p.rewind||0; this.e=p.elastic||false; this.v=p.vertical||0; s.style.overflow='hidden';
