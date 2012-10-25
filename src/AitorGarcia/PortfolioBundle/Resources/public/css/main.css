@@ -357,8 +357,6 @@ min-height: 400px;
 
     a.project {
         width: 440px;
-        background: #333 url(../images/pattern-diamond.png);
-        color: #fff;
         text-decoration: none;
         text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
         border: 5px solid #ccc;
@@ -445,6 +443,11 @@ min-height: 400px;
 		background-image:         linear-gradient(to bottom, #1965a6 0%, #2e8eda 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#1965a6, endColorstr=#2e8eda);
 		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#1965a6, endColorstr=#2e8eda)";    
+    }
+
+    .bg-dark-diamonds {
+        background: #333 url(../images/pattern-diamond.png);
+        color: #fff;
     }
 
     /*

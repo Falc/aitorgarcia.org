@@ -22,7 +22,7 @@
     <img src="/files/no-project-screenshot.jpg" alt="{{ project.name }}" title="{{ project.name }}" />
 {% else %}
     <div id="slider-content">
-        <ul>
+        <ul class="bg-dark-diamonds">
         {% for screenshot in project.screenshots %}
             <li>
                 <a href="/{{ screenshot.getWebPath() }}">
