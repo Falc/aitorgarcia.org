@@ -59,6 +59,12 @@ class Project
     protected $screenshots;
 
     /**
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(type="datetime")
+     */
+    protected $created;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -257,5 +263,15 @@ class Project
     public function getScreenshots()
     {
         return $this->screenshots;
+    }
+
+    /**
+     * Get the creation date
+     *
+     * @return DateTime
+     */
+     public function getCreated()
+     {
+        return $this->created;
     }
 }
