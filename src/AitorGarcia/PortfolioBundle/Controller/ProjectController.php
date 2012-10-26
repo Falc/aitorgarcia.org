@@ -10,7 +10,12 @@ class ProjectController extends Controller
     public function listAction()
     {
         $entityManager = $this->get('doctrine')->getEntityManager();
-        $projects = $entityManager->getRepository('PortfolioBundle:Project')->findAll();
+        $projectRepository = $entityManager->getRepository('PortfolioBundle:Project');
+
+        $projects = $projectRepository->findBy(
+            array(),
+            array('created' => 'DESC')
+        );
 
         return $this->render(
             'PortfolioBundle:Project:project_list.html.twig',
