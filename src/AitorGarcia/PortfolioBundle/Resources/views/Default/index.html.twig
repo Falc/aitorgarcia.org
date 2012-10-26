@@ -1,6 +1,22 @@
 {% extends "PortfolioBundle::layout.html.twig" %}
 
+{% block subnavigation %}
+<p>Bienvenido a la web de Aitor García, desarrollador web.</p>
+{% endblock %}
+
 {% block page %}
-<h2>Sobre mí</h2>
-<p>...</p>
+<div id="block-aboutme" class="block">
+    <h2>Sobre mí</h2>
+    <ul>
+        <li id="icon-user">Me llamo Aitor García, nací en Bilbao en 1987 y soy Ingeniero Técnico en Informática de Gestión.</li>
+        <li id="icon-web-app">Tengo experiencia en <strong>desarrollo web</strong> con PHP y Symfony2, además de otras tecnologías relacionadas como HTML, CSS o Javascript (jQuery).</li>
+        <li id="icon-desktop-app">También utilizo tecnologías como Vala, Python o GTK con cierta frecuencia, para programar aplicaciones de escritorio.</li>
+        <li id="icon-server">Estoy aprendiendo sobre <strong>administración de sistemas</strong>. Esta web está alojada en mi propio servidor virtual privado (<a href="http://en.wikipedia.org/wiki/Virtual_private_server">VPS</a>).</li>
+    </ul>
+</div>
+<div id="block-technologies" class="block">
+    <h2>¿Qué tecnologías utilizo?</h2>
+    <img src="{{ asset('bundles/portfolio/images/technologies.png') }}" alt="Technologies" style="margin: 0 auto; display: block;" />
+</div>
+<div class="clear"></div>
 {% endblock %}
