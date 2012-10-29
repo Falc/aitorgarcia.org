@@ -1,11 +1,16 @@
-function addScreenshotRowButtons(container) {
+function addScreenshotRowButtons(screenshotRow) {
     // Create the "move up" link
     var $linkMoveUp = $('<a class="button-img" href="#" title="Mover arriba"><img src="/bundles/portfolio/images/up.png" alt="Arriba" /></a>');
     // On click, move the row up
     $linkMoveUp.on('click', function(e) {
         e.preventDefault();
-        var current = $(this).parent().parent();
-        current.prev().before(current);
+        screenshotRow.prev().before(screenshotRow);
+
+        // Adjust every index
+        var weightInputs = screenshotRow.parent().find('input[id$="weight"]');
+        weightInputs.each(function(index) {
+            $(this).val(index);
+        });
     });
 
     // Create the "move down" link
@@ -13,8 +18,13 @@ function addScreenshotRowButtons(container) {
     // On click, move the row down
     $linkMoveDown.on('click', function(e) {
         e.preventDefault();
-        var current = $(this).parent().parent();
-        current.next().after(current);
+        screenshotRow.next().after(screenshotRow);
+
+        // Adjust every index
+        var weightInputs = screenshotRow.parent().find('input[id$="weight"]');
+        weightInputs.each(function(index) {
+            $(this).val(index);
+        });
     });
 
     // Create the "remove" link
@@ -22,7 +32,14 @@ function addScreenshotRowButtons(container) {
     // On click, remove the row
     $linkRemove.on('click', function(e) {
         e.preventDefault();
-        container.remove();
+        var container = screenshotRow.parent();
+        screenshotRow.detach();
+
+        // Adjust every index
+        var weightInputs = container.find('input[id$="weight"]');
+        weightInputs.each(function(index) {
+            $(this).val(index);
+        });
     });
 
     // Create a div and add the links to it
@@ -31,8 +48,8 @@ function addScreenshotRowButtons(container) {
     $divButtons.append($linkMoveDown);
     $divButtons.append($linkRemove);
 
-    // Add the div to the container
-    container.append($divButtons);
+    // Add the div to the screenshotRow
+    screenshotRow.append($divButtons);
 }
 
 function addScreenshotRow(collectionHolder) {
