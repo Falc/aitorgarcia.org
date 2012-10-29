@@ -32,6 +32,11 @@ class ProjectScreenshot
     protected $path;
 
     /**
+     * @ORM\Column(type="integer")
+     */
+    protected $weight = 0;
+
+    /**
      * @Assert\File(maxSize="2M")
      */
     public $file;
@@ -103,6 +108,29 @@ class ProjectScreenshot
     public function getPath()
     {
         return $this->path;
+    }
+
+    /**
+     * Set weight
+     *
+     * @param integer $weight
+     * @return ProjectScreenshot
+     */
+    public function setWeight($weight)
+    {
+        $this->weight = $weight;
+
+        return $this;
+    }
+
+    /**
+     * Get weight
+     *
+     * @return integer $weight
+     */
+    public function getWeight()
+    {
+        return $this->weight;
     }
 
     /**
