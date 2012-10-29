@@ -20,6 +20,7 @@ class ProjectScreenshotType extends AbstractType
         ));
 
         $builder->add('path', 'hidden');
+        $builder->add('weight', 'hidden');
     }
     
     public function getDefaultOptions(array $options)
