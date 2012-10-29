@@ -55,6 +55,7 @@ class Project
 
     /**
      * @ORM\OneToMany(targetEntity="ProjectScreenshot", mappedBy="project", cascade={"persist", "remove"})
+     * @ORM\OrderBy({"weight" = "ASC", "id" = "ASC"})
      */
     protected $screenshots;
 
