@@ -2,4 +2,5 @@
     {{ form_widget(screenshot.name) }}
     <input type="text" name="fake_path" value="{{ screenshot.get('value').getPath }}" disabled="disabled" />
     {{ form_widget(screenshot.path) }}
+    {{ form_widget(screenshot.weight) }}
 </div>
