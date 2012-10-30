@@ -1,0 +1,11 @@
+{% block field_errors %}
+    {% if errors is not empty %}
+    <div class="message-error">
+    <ul>
+        {% for error in errors %}
+            <li>{{ error.messageTemplate|trans(error.messageParameters, 'validators') }}</li>
+        {% endfor %}
+    </ul>
+    </div>
+    {% endif %}
+{% endblock %}
