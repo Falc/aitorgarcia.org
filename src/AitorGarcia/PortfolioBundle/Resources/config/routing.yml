@@ -9,3 +9,7 @@ project_list:
 project_show:
     pattern:  /projects/{url}
     defaults: { _controller: PortfolioBundle:Project:show }
+
+contact:
+    pattern: /contact
+    defaults: { _controller: PortfolioBundle:Default:contact }
