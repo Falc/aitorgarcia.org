@@ -1,0 +1,45 @@
+{% extends "PortfolioBundle::layout.html.twig" %}
+
+{% block navigation %}
+<li><a href="{{ path('index') }}">Portada</a></li>
+<li><a href="{{ path('project_list') }}">Proyectos</a></li>
+<li class="active"><a href="#">Contacto</a></li>
+{% endblock %}
+
+{% block page %}
+{% for type, messages in app.session.flashbag.all() %}
+    {% for message in messages %}
+        <div class="message-{{ type }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
+
+{{ form_errors(form) }}
+
+<h2>Contacto</h2>
+<form action="{{ path('contact') }}" method="post" {{ form_enctype(form) }}>
+	<fieldset>
+		<legend>Información</legend>
+        <div class="_50">
+            {{ form_label(form.name) }}
+            {{ form_widget(form.name) }}
+        </div>
+        <div class="_50">
+            {{ form_label(form.email) }}
+            {{ form_widget(form.email) }}
+        </div>
+        <div class="_100">
+            {{ form_label(form.subject) }}
+            {{ form_widget(form.subject) }}
+        </div>
+        <div class="_100">
+            {{ form_label(form.body) }}
+            {{ form_errors(form.body) }}
+            {{ form_widget(form.body) }}
+        </div>
+        {{ form_rest(form) }}
+    </fieldset>
+	<input class="button" type="submit" name="send" value="Enviar" />
+</form>
+{% endblock %}
