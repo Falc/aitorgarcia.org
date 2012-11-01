@@ -11,11 +11,11 @@ admin_project_create:
     defaults: { _controller: PortfolioBundle:AdminProject:create }
 
 admin_project_edit:
-    pattern:  /project/edit/{id}
+    pattern:  /project/{id}/edit
     defaults: { _controller: PortfolioBundle:AdminProject:edit }
 
 admin_project_delete:
-    pattern:  /project/delete/{id}
+    pattern:  /project/{id}/delete
     defaults: { _controller: PortfolioBundle:AdminProject:delete }
 
 admin_technology_list:
@@ -27,9 +27,9 @@ admin_technology_create:
     defaults: { _controller: PortfolioBundle:AdminTechnology:create }
 
 admin_technology_edit:
-    pattern:  /technology/edit/{id}
+    pattern:  /technology/{id}/edit
     defaults: { _controller: PortfolioBundle:AdminTechnology:edit }
 
 admin_technology_delete:
-    pattern:  /technology/delete/{id}
+    pattern:  /technology/{id}/delete
     defaults: { _controller: PortfolioBundle:AdminTechnology:delete }
