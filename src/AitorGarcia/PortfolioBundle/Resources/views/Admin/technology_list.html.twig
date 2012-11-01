@@ -17,7 +17,7 @@
 {% block page %}
 {% for type, messages in app.session.flashbag.all() %}
     {% for message in messages %}
-        <div class="message {{ type }}">
+        <div class="message-{{ type }}">
             {{ message }}
         </div>
     {% endfor %}
@@ -43,7 +43,7 @@
         </tr>
     {% else %}
         <tr>
-            <td>No hay ninguna tecnología</td>
+            <td class="centered" colspan="3">No hay ninguna tecnología</td>
         </tr>
     {% endfor %}
     </tbody>
