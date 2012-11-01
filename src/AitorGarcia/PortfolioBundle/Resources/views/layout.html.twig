@@ -1,5 +1,7 @@
 {% extends "::base.html.twig" %}
 
+{% form_theme form 'PortfolioBundle:Form:fields.html.twig' %}
+
 {% block stylesheets %}
 <link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolio/css/main.css') }}" />
 {% endblock %}
@@ -14,9 +16,6 @@
 {% endblock %}
 
 {% block footer %}
-
-
-
 {% if app.request.locale == 'es' %}
 <span>Español</span> <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params') | merge({'locale': 'en'})) }}">English</a>
 {% else %}
