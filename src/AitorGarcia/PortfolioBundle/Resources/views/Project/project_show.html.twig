@@ -10,9 +10,9 @@
 {% endblock %}
 
 {% block navigation %}
-<li><a href="{{ path('index') }}">Portada</a></li>
-<li class="active"><a href="{{ path('project_list') }}">Proyectos</a></li>
-<li><a href="#">Contacto</a></li>
+<li><a href="{{ path('index') }}">{{ 'navigation.index' | trans }}</a></li>
+<li class="active"><a href="{{ path('project_list') }}">{{ 'navigation.projects' | trans }}</a></li>
+<li><a href="{{ path('contact') }}">{{ 'navigation.contact' | trans }}</a></li>
 {% endblock %}
 
 {% block page %}
@@ -25,7 +25,7 @@
         <ul class="bg-dark-diamonds">
         {% for screenshot in project.screenshots %}
             <li>
-                <img src="/{{ screenshot.getWebPath() }}" alt="{{ screenshot.name }}" />
+                <img src="/{{ screenshot.getWebPath() }}" alt="{{ screenshot.name }}" title="{{ screenshot.name }}" />
             </li>
         {% endfor %}
         </ul>
@@ -56,20 +56,20 @@
 </div>
 
 <div id="project-info">
-    <h3>Descripción</h3>
+    <h3>{{ 'projects.description' | trans }}</h3>
     {{ project.description | raw }}
     {% if project.client is not empty %}
-    <h3>Cliente</h3>
+    <h3>{{ 'projects.client' | trans }}</h3>
     <p>{{ project.client }}</p>
     {% endif %}
-    <h3>Tecnologías</h3>
+    <h3>{{ 'common.technologies' | trans }}</h3>
     <p>
     {%- for technology in project.technologies -%}
         {{ technology.name }}{% if not loop.last %}, {% endif %}
     {%- endfor -%}
     </p>
     <div id="project-view">
-        <a class="button" href="{{ project.link }}">Ver proyecto</a>
+        <a class="button" href="{{ project.link }}">{{ 'projects.view_project' | trans }}</a>
     </div>
 </div>
 <div class="clear"></div>

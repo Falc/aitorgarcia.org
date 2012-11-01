@@ -1,15 +1,15 @@
 {% extends "PortfolioBundle::layout.html.twig" %}
 
 {% block navigation %}
-<li><a href="{{ path('index') }}">Portada</a></li>
-<li class="active"><a href="{{ path('project_list') }}">Proyectos</a></li>
-<li><a href="{{ path('contact') }}">Contacto</a></li>
+<li><a href="{{ path('index') }}">{{ 'navigation.index' | trans }}</a></li>
+<li class="active"><a href="{{ path('project_list') }}">{{ 'navigation.projects' | trans }}</a></li>
+<li><a href="{{ path('contact') }}">{{ 'navigation.contact' | trans }}</a></li>
 {% endblock %}
 
 {% block page %}
-<h2>Estos son algunos de mis trabajos</h2>
+<h2>{{ 'titles.some_projects' | trans }}</h2>
 {% if projects is empty %}
-<p> No hay ningún proyecto.</p>
+<p>{{ 'projects.empty_list' | trans }}</p>
 {% else %}
 <ul id="project-list">
 {% for project in projects %}
