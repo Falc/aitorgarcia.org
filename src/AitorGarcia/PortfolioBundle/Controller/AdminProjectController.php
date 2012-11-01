@@ -4,6 +4,7 @@ namespace AitorGarcia\PortfolioBundle\Controller;
 
 use AitorGarcia\PortfolioBundle\Entity\Project;
 use AitorGarcia\PortfolioBundle\Form\Type\ProjectType;
+use AitorGarcia\PortfolioBundle\Form\Type\ProjectTranslationType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class AdminProjectController extends Controller
@@ -186,6 +187,62 @@ class AdminProjectController extends Controller
             array(
                 'form' => $form->createView(),
                 'project_id' => $project->getId()
+            )
+        );
+    }
+
+    public function translationEditAction($id, $lang)
+    {
+        // Get the entity manager and find the selected project
+        $entityManager = $this->get('doctrine')->getEntityManager();
+        $project = $entityManager->find('PortfolioBundle:Project', $id);
+
+        // If the project does not exist, display an error message
+        if ($project === null)
+        {
+            throw $this->createNotFoundException('No existe el proyecto seleccionado');
+        }
+
+        // Load the translation specified by $lang
+        $project->setLocale($lang);
+        $entityManager->refresh($project);
+
+        // Create the form and set the data
+        $form = $this->createForm(new ProjectTranslationType(), $project);
+
+        // Get the request
+        $request = $this->get('request');
+
+        // If the request method is POST, process the data
+        if ($request->getMethod() === 'POST')
+        {
+            // Bind the request
+            $form->bind($request);
+
+            // If the form data is valid:
+            if ($form->isValid())
+            {
+                // 1) Persist the entity translation
+                $project->setLocale($lang);
+                $entityManager->persist($project);
+                $entityManager->flush();
+
+                // 2) Display a success message
+                $request->getSession()->getFlashBag()->add('success', 'La traducción se ha guardado correctamente');
+
+                // 3) Redirect the user to the project translation list
+                return $this->redirect($this->generateUrl('admin_project_list'));
+            }
+        }
+
+        // Render the form
+        return $this->render(
+            'PortfolioBundle:Admin:project_translation_edit.html.twig',
+            array(
+                'form' => $form->createView(),
+                'project_id' => $project->getId(),
+                'project_name' => $project->getName(),
+                'lang' => $lang
             )
         );
     }
