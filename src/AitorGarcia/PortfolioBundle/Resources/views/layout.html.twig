@@ -8,10 +8,18 @@
     <h1>Aitor García</h1>
     <ul id="navigation">
     {% block navigation %}
-        <li class="active"><a href="{{ path('index') }}#">Portada</a></li>
-        <li><a href="{{ path('project_list') }}">Proyectos</a></li>
-        <li><a href="{{ path('contact') }}">Contacto</a></li>
     {% endblock %}
     </ul>
     <div class="clear"></div>
+{% endblock %}
+
+{% block footer %}
+
+
+
+{% if app.request.locale == 'es' %}
+<span>Español</span> <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params') | merge({'locale': 'en'})) }}">English</a>
+{% else %}
+<a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params') | merge({'locale': 'es'})) }}">Español</a> <span>English</span>
+{% endif %}
 {% endblock %}
