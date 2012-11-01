@@ -1,15 +1,19 @@
-index:
+_index:
     pattern:  /
+    defaults: { _controller: PortfolioBundle:Default:preIndex }
+
+index:
+    locales:  { en: "/home", es: "/portada" }
     defaults: { _controller: PortfolioBundle:Default:index }
 
 project_list:
-    pattern:  /projects
+    locales:  { en: "/projects", es: "/proyectos" }
     defaults: { _controller: PortfolioBundle:Project:list }
 
 project_show:
-    pattern:  /projects/{url}
+    locales:  { en: "/projects/{url}", es: "/proyectos/{url}" }
     defaults: { _controller: PortfolioBundle:Project:show }
 
 contact:
-    pattern: /contact
+    locales:  { en: "/contact", es: "/contacto" }
     defaults: { _controller: PortfolioBundle:Default:contact }
