@@ -46,7 +46,7 @@ class AdminProjectController extends Controller
                 $entityManager->flush();
 
                 // 2) Display a success message
-                $request->getSession()->getFlashBag()->add('success', 'El proyecto ha sido creado correctamente');
+                $request->getSession()->getFlashBag()->add('success', 'El proyecto ha sido creado correctamente.');
 
                 // 3) Redirect the user to the project list
                 return $this->redirect($this->generateUrl('admin_project_list'));
@@ -69,7 +69,7 @@ class AdminProjectController extends Controller
         // If the project does not exist, display an error message
         if ($project === null)
         {
-            throw $this->createNotFoundException('No existe el proyecto seleccionado');
+            throw $this->createNotFoundException('No existe el proyecto seleccionado.');
         }
 
         // Get a copy of the screenshots contained in the project before the form submission
@@ -119,7 +119,7 @@ class AdminProjectController extends Controller
                 $entityManager->flush();
 
                 // 2) Display a success message
-                $request->getSession()->getFlashBag()->add('success', 'El proyecto ha sido modificado correctamente');
+                $request->getSession()->getFlashBag()->add('success', 'El proyecto ha sido modificado correctamente.');
 
                 // 3) Redirect the user to the project list
                 return $this->redirect($this->generateUrl('admin_project_list'));
@@ -145,7 +145,7 @@ class AdminProjectController extends Controller
         // If the project does not exist, display an error message
         if ($project === null)
         {
-            throw $this->createNotFoundException('No existe el proyecto seleccionado');
+            throw $this->createNotFoundException('No existe el proyecto seleccionado.');
         }
 
         // Get the request
@@ -174,7 +174,7 @@ class AdminProjectController extends Controller
                 $entityManager->flush();
 
                 // 2) Display a success message
-                $request->getSession()->getFlashBag()->add('notice', 'El proyecto ha sido modificado correctamente');
+                $request->getSession()->getFlashBag()->add('success', 'El proyecto ha sido eliminado correctamente.');
 
                 // 3) Redirect the user to the project list
                 return $this->redirect($this->generateUrl('admin_project_list'));
@@ -200,7 +200,7 @@ class AdminProjectController extends Controller
         // If the project does not exist, display an error message
         if ($project === null)
         {
-            throw $this->createNotFoundException('No existe el proyecto seleccionado');
+            throw $this->createNotFoundException('No existe el proyecto seleccionado.');
         }
 
         // Load the translation specified by $lang
@@ -228,7 +228,7 @@ class AdminProjectController extends Controller
                 $entityManager->flush();
 
                 // 2) Display a success message
-                $request->getSession()->getFlashBag()->add('success', 'La traducción se ha guardado correctamente');
+                $request->getSession()->getFlashBag()->add('success', 'La traducción se ha guardado correctamente.');
 
                 // 3) Redirect the user to the project translation list
                 return $this->redirect($this->generateUrl('admin_project_list'));
