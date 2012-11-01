@@ -16,7 +16,6 @@
 {% endfor %}
 
 {{ form_errors(form) }}
-
 <h2>{{ 'titles.contact' | trans }}</h2>
 <form action="{{ path('contact') }}" method="post" {{ form_enctype(form) }}>
 	<fieldset>
@@ -24,22 +23,25 @@
         <div class="_50">
             {{ form_label(form.name, 'form.name' | trans ) }}
             {{ form_widget(form.name) }}
+            {{ form_errors(form.name) }}
         </div>
         <div class="_50">
             {{ form_label(form.email, 'form.email' | trans ) }}
             {{ form_widget(form.email) }}
+            {{ form_errors(form.email) }}
         </div>
         <div class="_100">
             {{ form_label(form.subject, 'form.subject' | trans ) }}
             {{ form_widget(form.subject) }}
+            {{ form_errors(form.subject) }}
         </div>
         <div class="_100">
             {{ form_label(form.body, 'form.body' | trans ) }}
-            {{ form_errors(form.body) }}
             {{ form_widget(form.body) }}
+            {{ form_errors(form.body) }}
         </div>
         {{ form_rest(form) }}
     </fieldset>
-	<input class="button" type="submit" name="send" value="{{ 'send' | trans }}" />
+	<input class="button" type="submit" name="send" value="{{ 'form.send' | trans }}" />
 </form>
 {% endblock %}
