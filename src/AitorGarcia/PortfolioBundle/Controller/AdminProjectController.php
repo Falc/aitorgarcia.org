@@ -119,7 +119,7 @@ class AdminProjectController extends Controller
                 $entityManager->flush();
 
                 // 2) Display a success message
-                $request->getSession()->getFlashBag()->add('sucess', 'El proyecto ha sido modificado correctamente');
+                $request->getSession()->getFlashBag()->add('success', 'El proyecto ha sido modificado correctamente');
 
                 // 3) Redirect the user to the project list
                 return $this->redirect($this->generateUrl('admin_project_list'));
