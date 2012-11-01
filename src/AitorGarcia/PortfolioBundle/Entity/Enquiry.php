@@ -15,6 +15,7 @@ class Enquiry
     protected $name;
 
     /**
+     * @Assert\NotBlank()
      * @Assert\Email()
      */
     protected $email;
