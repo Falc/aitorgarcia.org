@@ -8,6 +8,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
+
+    public function preIndexAction()
+    {
+        return $this->redirect($this->generateUrl('index'));
+    }
+
     public function indexAction()
     {
         // Render the index view
