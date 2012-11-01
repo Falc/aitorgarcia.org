@@ -14,7 +14,7 @@
 {% block subnavigation %}
 <ul>
     <li><a href="{{ path('admin_project_list') }}">Lista</a></li>
-    <li><a href="{{ path('admin_project_create') }}">Crear</a></li>
+    <li class="active"><a href="{{ path('admin_project_edit', { 'id': project_id }) }}">Modificar</a></li>
     <div class="clear"></div>
 </ul>
 {% endblock %}

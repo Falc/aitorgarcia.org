@@ -9,7 +9,7 @@
 {% block subnavigation %}
 <ul>
     <li><a href="{{ path('admin_technology_list') }}">Lista</a></li>
-    <li><a href="{{ path('admin_technology_create') }}">Crear</a></li>
+    <li class="active"><a href="{{ path('admin_technology_edit', { 'id': technology_id }) }}">Modificar</a></li>
     <div class="clear"></div>
 </ul>
 {% endblock %}
