@@ -11,6 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @ORM\Table(name="projects")
  * @ORM\Entity(repositoryClass="AitorGarcia\PortfolioBundle\Entity\ProjectRepository")
+ * @Gedmo\TranslationEntity(class="AitorGarcia\PortfolioBundle\Entity\Translation\ProjectTranslation")
  */
 class Project
 {
@@ -23,11 +24,13 @@ class Project
 
     /**
      * @ORM\Column(type="string")
+     * @Gedmo\Translatable
      */
     protected $name;
 
     /**
      * @ORM\Column(type="text")
+     * @Gedmo\Translatable
      */
     protected $description;
 
@@ -64,6 +67,11 @@ class Project
      * @ORM\Column(type="datetime")
      */
     protected $created;
+
+    /**
+     * @Gedmo\Locale
+     */
+    protected $locale;
 
     /**
      * Constructor
@@ -271,8 +279,28 @@ class Project
      *
      * @return DateTime
      */
-     public function getCreated()
-     {
+    public function getCreated()
+    {
         return $this->created;
+    }
+
+    /**
+     * Set locale
+     *
+     * @param string $locale
+     */
+    public function setLocale($locale)
+    {
+        $this->locale = $locale;
+    }
+
+    /**
+     * Get locale
+     *
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
     }
 }
