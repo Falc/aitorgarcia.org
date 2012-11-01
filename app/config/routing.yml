@@ -1,6 +1,7 @@
 _portfolio:
     resource: "@PortfolioBundle/Resources/config/routing.yml"
     prefix: /test
+    type: be_simple_i18n
 
 _admin:
     resource: "@PortfolioBundle/Resources/config/admin_routing.yml"
