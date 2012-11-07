@@ -1,8 +1,8 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
-    - { resource: doctrine_extensions.yml }
     - { resource: stfalcon_tinymce.yml }
+    - { resource: stof_doctrine_extensions.yml }
     - { resource: twig_core_extensions.yml }
 
 framework:
@@ -53,11 +53,11 @@ doctrine:
         auto_generate_proxy_classes: %kernel.debug%
         auto_mapping: true
         mappings:
-            translatable:
-                type: annotation
-                alias: Gedmo
-                prefix: Gedmo\Translatable\Entity
-                dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translatable/Entity/MappedSuperclass"
+            gedmo_translatable:
+                type:      annotation
+                prefix:    Gedmo\Translatable\Entity
+                dir:       "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translatable/Entity/MappedSuperclass"
+                is_bundle: false
 
 # Swiftmailer Configuration
 swiftmailer:
