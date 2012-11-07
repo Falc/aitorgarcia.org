@@ -207,6 +207,12 @@ class AdminProjectController extends Controller
         $project->setTranslatableLocale($lang);
         $entityManager->refresh($project);
 
+        foreach ($project->getScreenshots() as $screenshot)
+        {
+            $screenshot->setTranslatableLocale($lang);
+            $entityManager->refresh($screenshot);
+        }
+
         // Create the form and set the data
         $form = $this->createForm(new ProjectTranslationType(), $project);
 
