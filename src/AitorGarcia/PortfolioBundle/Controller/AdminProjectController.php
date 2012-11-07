@@ -204,7 +204,7 @@ class AdminProjectController extends Controller
         }
 
         // Load the translation specified by $lang
-        $project->setLocale($lang);
+        $project->setTranslatableLocale($lang);
         $entityManager->refresh($project);
 
         // Create the form and set the data
@@ -223,7 +223,7 @@ class AdminProjectController extends Controller
             if ($form->isValid())
             {
                 // 1) Persist the entity translation
-                $project->setLocale($lang);
+                $project->setTranslatableLocale($lang);
                 $entityManager->persist($project);
                 $entityManager->flush();
 
