@@ -289,7 +289,7 @@ class Project
      *
      * @param string $locale
      */
-    public function setLocale($locale)
+    public function setTranslatableLocale($locale)
     {
         $this->locale = $locale;
     }
