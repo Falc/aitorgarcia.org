@@ -3,6 +3,7 @@
 namespace AitorGarcia\PortfolioBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -10,6 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @ORM\Table(name="project_screenshots")
  * @ORM\Entity
+ * @Gedmo\TranslationEntity(class="AitorGarcia\PortfolioBundle\Entity\Translation\ProjectScreenshotTranslation")
  * @ORM\HasLifecycleCallbacks
  */
 class ProjectScreenshot
@@ -23,6 +25,7 @@ class ProjectScreenshot
 
     /**
      * @ORM\Column(type="string")
+     * @Gedmo\Translatable
      */
     protected $name;
 
@@ -46,6 +49,11 @@ class ProjectScreenshot
      * @ORM\JoinColumn(name="project_id", referencedColumnName="id")
      */
     protected $project;
+
+    /**
+     * @Gedmo\Locale
+     */
+    protected $locale;
 
     /**
      * Constructor
@@ -290,5 +298,25 @@ class ProjectScreenshot
     public function getThumbWebPath()
     {
         return str_replace('.jpg', '_thumb.jpg', $this->getWebPath());
+    }
+
+    /**
+     * Set locale
+     *
+     * @param string $locale
+     */
+    public function setTranslatableLocale($locale)
+    {
+        $this->locale = $locale;
+    }
+
+    /**
+     * Get locale
+     *
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
     }
 }
