@@ -1,5 +1,5 @@
 {
-    "hash": "9bc6d1ae63540afdf22dcd9443bde98f",
+    "hash": "64b60f62e08d9f832bd53adad5dc4de6",
     "packages": [
         {
             "name": "besimple/i18n-routing-bundle",
@@ -333,34 +333,34 @@
         },
         {
             "name": "gedmo/doctrine-extensions",
-            "version": "v2.3.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git://github.com/l3pp4rd/DoctrineExtensions.git",
-                "reference": "v2.3.2"
+                "reference": "75bd4b73d8900a217c49baf4c7fc73da7609c847"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/l3pp4rd/DoctrineExtensions/zipball/v2.3.2",
-                "reference": "v2.3.2",
+                "url": "https://github.com/l3pp4rd/DoctrineExtensions/zipball/473210190cf196674da2304c30bc98906800fed7",
+                "reference": "75bd4b73d8900a217c49baf4c7fc73da7609c847",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
-                "doctrine/common": ">=2.1,<2.4-dev"
+                "doctrine/common": ">=2.2,<2.5-dev"
             },
             "suggest": {
                 "doctrine/orm": ">=2.1",
                 "doctrine/mongodb-odm": "*"
             },
-            "time": "2012-07-13 22:26:40",
+            "time": "1352229618",
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "2.3.x-dev"
                 }
             },
-            "installation-source": "dist",
+            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Gedmo": "lib/"
@@ -958,6 +958,68 @@
             ]
         },
         {
+            "name": "stof/doctrine-extensions-bundle",
+            "version": "dev-master",
+            "target-dir": "Stof/DoctrineExtensionsBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stof/StofDoctrineExtensionsBundle",
+                "reference": "9a1931f9c9d8a1d045008142b275239c0160b95a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/stof/StofDoctrineExtensionsBundle/zipball/9a1931f9c9d8a1d045008142b275239c0160b95a",
+                "reference": "9a1931f9c9d8a1d045008142b275239c0160b95a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": ">=2.1,<2.3-dev",
+                "gedmo/doctrine-extensions": "2.3.*"
+            },
+            "suggest": {
+                "doctrine/doctrine-bundle": "*",
+                "doctrine/mongodb-odm-bundle": "2.1.*"
+            },
+            "time": "1351778487",
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Stof\\DoctrineExtensionsBundle": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christophe Coevoet",
+                    "email": "stof@notk.org"
+                }
+            ],
+            "description": "Integration of the gedmo/doctrine-extensions with Symfony2",
+            "homepage": "https://github.com/stof/StofDoctrineExtensionsBundle",
+            "keywords": [
+                "tree",
+                "behaviors",
+                "doctrine2",
+                "extensions",
+                "gedmo",
+                "sluggable",
+                "loggable",
+                "translatable",
+                "nestedset",
+                "sortable",
+                "timestampable"
+            ]
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v4.2.2",
             "source": {
@@ -1375,6 +1437,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "stfalcon/tinymce-bundle": 20,
-        "besimple/i18n-routing-bundle": 20
+        "besimple/i18n-routing-bundle": 20,
+        "gedmo/doctrine-extensions": 20,
+        "stof/doctrine-extensions-bundle": 20
     }
 }
