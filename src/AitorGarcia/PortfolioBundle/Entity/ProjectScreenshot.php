@@ -309,14 +309,4 @@ class ProjectScreenshot
     {
         $this->locale = $locale;
     }
-
-    /**
-     * Get locale
-     *
-     * @return string
-     */
-    public function getLocale()
-    {
-        return $this->locale;
-    }
 }
