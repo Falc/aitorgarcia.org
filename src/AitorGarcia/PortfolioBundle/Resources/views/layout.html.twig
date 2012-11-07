@@ -1,6 +1,8 @@
 {% extends "::base.html.twig" %}
 
+{% if form is defined %}
 {% form_theme form 'PortfolioBundle:Form:fields.html.twig' %}
+{% endif %}
 
 {% block stylesheets %}
 <link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolio/css/main.css') }}" />
