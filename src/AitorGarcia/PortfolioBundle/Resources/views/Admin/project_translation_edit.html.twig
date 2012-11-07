@@ -29,6 +29,14 @@
         </div>
         {{ form_widget(form._token) }}
     </fieldset>
+    <fieldset>
+        <legend>Imágenes</legend>
+        <div id="screenshots">
+        {% for screenshot in form.screenshots %}
+            {% include 'PortfolioBundle:Admin:project_screenshot_row.html.twig' with {'screenshot': screenshot} %}
+        {% endfor %}
+        </div>
+    </fieldset>
 	<input class="button" type="submit" name="save" value="Guardar" />
 </form>
 {{ tinymce_init() }}
