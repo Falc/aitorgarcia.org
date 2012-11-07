@@ -366,22 +366,26 @@ min-height: 300px;
         padding-top: 2px;
         padding-left: 32px;
     }
-
     
     #icon-user {
         background: url(../images/icon-user.png) no-repeat left top;
     }
 
-    #icon-web-app {
+    #icon-web-dev {
         background: url(../images/icon-web-app.png) no-repeat left top;
     }
 
-    #icon-desktop-app {
+    #icon-desktop-dev {
         background: url(../images/icon-desktop-app.png) no-repeat left top;
     }
 
     #icon-server {
         background: url(../images/icon-server.png) no-repeat left top;
+    }
+
+    #block-technologies img {
+        display: block;
+        margin: 0 auto;
     }
 
     /*
@@ -505,7 +509,7 @@ min-height: 300px;
     .message-success {
         background-color: #bfffc4;
         border: 1px solid #8cff96;
-        padding: 1em;
+        padding: 0.5em;
         margin-bottom: 1em;
     }
 
