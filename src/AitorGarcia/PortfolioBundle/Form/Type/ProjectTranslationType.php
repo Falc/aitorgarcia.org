@@ -21,6 +21,11 @@ class ProjectTranslationType extends AbstractType
                 'data-theme' => 'advanced'
             )
         ));
+
+        $builder->add('screenshots', 'collection', array(
+            'type'          => new ProjectScreenshotType(),
+            'by_reference'  => false
+        ));
     }
 
     public function getDefaultOptions(array $options)
