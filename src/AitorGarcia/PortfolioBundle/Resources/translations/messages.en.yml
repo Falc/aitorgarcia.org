@@ -3,20 +3,18 @@ navigation:
     projects:   Projects
     contact:    Contact
 
-subnavigation:
-    index:  Welcome to the portfolio of Aitor García, web developer.
-
 titles:
-    about_me:       About me
-    which_techs:    Which technologies do i use?
+    index:          Welcome to the portfolio of Aitor García, web developer.
     some_projects:  These are some of my projects
     contact:        Contact
 
 index:
+    about_me:       About me
     info:           My name is Aitor García. I am a <em title="Equivalent to a Bachelor's degree in Computer Science">Technical Engineer in Computer Science</em> born in 1987 in Bilbao (Spain).
     web_dev:        I do have experience in <strong>web development</strong> with PHP and Symfony2, besides other related technologies like HTML, CSS and Javascript (jQuery).
     desktop_dev:    Ocasionally, I write <strong>desktop apps</strong> with Vala and GTK. And I used Python to write my <em>Degree Project</em>.
     sys_admin:      I am learning about <strong>system administration</strong>. This web is being hosted on my own virtual private server (<a href="http://en.wikipedia.org/wiki/Virtual_private_server">VPS</a>).
+    which_techs:    Which technologies do i use?
 
 projects:
     empty_list:     There is not any project.

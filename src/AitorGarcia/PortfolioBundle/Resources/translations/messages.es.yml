@@ -3,20 +3,18 @@ navigation:
     projects:   Proyectos
     contact:    Contacto
 
-subnavigation:
-    index:  Bienvenido a la web de Aitor García, desarrollador web.
-
 titles:
-    about_me:       Sobre mí
-    which_techs:    ¿Qué tecnologías utilizo?
+    index:          Bienvenido a la web de Aitor García, desarrollador web.
     some_projects:  Estos son algunos de mis proyectos
     contact:        Contacto
 
 index:
+    about_me:       Sobre mí
     info:           Me llamo Aitor García. Nací en Bilbao en 1987 y soy <em>Ingeniero Técnico en Informática de Gestión</em>.
     web_dev:        Tengo experiencia en <strong>desarrollo web</strong> con PHP y Symfony2, además de otras tecnologías relacionadas, como HTML, CSS y Javascript (jQuery).
     desktop_dev:    De vez en cuando programo <strong>aplicaciones de escritorio</strong> con Vala y GTK. Para mi <em>Proyecto de Fin de Carrera</em> utilicé Python.
     sys_admin:      Estoy aprendiendo sobre <strong>administración de sistemas</strong>. Esta web está alojada en mi propio servidor virtual privado (<a href="http://en.wikipedia.org/wiki/Virtual_private_server">VPS</a>).
+    which_techs:    ¿Qué tecnologías utilizo?
 
 projects:
     empty_list:     No hay ningún proyecto.
