@@ -180,9 +180,76 @@ min-height: 300px;
 
     #footer {
         background-color: #181818;
-        color: #f0f0f0;
-        padding: 10px 0;
-                min-height: 60px;
+        color: #fff;
+        padding: 1em 0;
+    }
+
+    #footer a {
+        color: #888;
+    }
+
+    #footer a:hover {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+    #social-icons {
+        list-style: none;
+        float: left;
+    }
+
+    #social-icons li {
+        float: left;
+        margin-right: 0.5em;
+    }
+
+    #social-icons a {
+        width: 32px;
+        height: 32px;
+        text-indent: -9999px;
+        overflow: hidden;
+        display: block;
+    }
+
+    #icon-github {
+        background-image: url(../images/social-icons.png);
+        background-position: left top;
+    }
+
+    #icon-github:hover {
+        background-position: left bottom;
+    }
+
+    #icon-bitbucket {
+        background-image: url(../images/social-icons.png);
+        background-position: -32px top;
+    }
+
+    #icon-bitbucket:hover {
+        background-position: -32px bottom;
+    }
+
+    #icon-masterbranch {
+        background-image: url(../images/social-icons.png);
+        background-position: -64px top;
+    }
+
+    #icon-masterbranch:hover {
+        background-position: -64px bottom;
+    }
+
+    #icon-linkedin {
+        background-image: url(../images/social-icons.png);
+        background-position: right top;
+    }
+
+    #icon-linkedin:hover {
+        background-position: right bottom;
+    }
+
+    #more-info {
+        float: right;
+        line-height: 32px;
     }
 
     /*
