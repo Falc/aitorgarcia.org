@@ -9,7 +9,7 @@
 		font-size: 1em;
 		border-collapse: collapse;
 		border: 1px solid #ccc;
-		margin: 1em 0 2em 0;
+		margin-bottom: 2em;
 	}
 
 	th, tr, td {
