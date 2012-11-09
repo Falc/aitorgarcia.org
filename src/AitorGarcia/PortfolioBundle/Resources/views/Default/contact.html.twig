@@ -19,7 +19,7 @@
 <h2>{{ 'titles.contact' | trans }}</h2>
 <form action="{{ path('contact') }}" method="post" {{ form_enctype(form) }}>
 	<fieldset>
-		<legend>{{ 'information' | trans }}</legend>
+		<legend>{{ 'form.information' | trans }}</legend>
         <div class="_50">
             {{ form_label(form.name, 'form.name' | trans ) }}
             {{ form_widget(form.name) }}
