@@ -6,6 +6,10 @@
 <li class="active"><a href="{{ path('contact') }}">{{ 'navigation.contact' | trans }}</a></li>
 {% endblock %}
 
+{% block subnavigation %}
+<h2>{{ 'titles.contact' | trans }}</h2>
+{% endblock %}
+
 {% block page %}
 {% for type, messages in app.session.flashbag.all() %}
     {% for message in messages %}
@@ -16,7 +20,6 @@
 {% endfor %}
 
 {{ form_errors(form) }}
-<h2>{{ 'titles.contact' | trans }}</h2>
 <form action="{{ path('contact') }}" method="post" {{ form_enctype(form) }}>
 	<fieldset>
 		<legend>{{ 'form.information' | trans }}</legend>
