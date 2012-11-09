@@ -7,13 +7,13 @@
 {% endblock %}
 
 {% block subnavigation %}
-<h2>{{ 'subnavigation.index' | trans }}</h2>
+<h2>{{ 'titles.index' | trans }}</h2>
 {{ parent() }}
 {% endblock %}
 
 {% block page %}
 <div id="block-aboutme" class="block">
-    <h3>{{ 'titles.about_me' | trans }}</h3>
+    <h3>{{ 'index.about_me' | trans }}</h3>
     <ul>
         <li id="icon-user">{{ 'index.info' | trans | raw }}</li>
         <li id="icon-web-dev">{{ 'index.web_dev' | trans | raw }}</li>
@@ -22,7 +22,7 @@
     </ul>
 </div>
 <div id="block-technologies" class="block">
-    <h2>{{ 'titles.which_techs' | trans }}</h2>
+    <h2>{{ 'index.which_techs' | trans }}</h2>
     <img src="{{ asset('bundles/portfolio/images/technologies.png') }}" alt="{{ 'common.technologies' | trans }}" />
 </div>
 <div class="clear"></div>
