@@ -6,8 +6,11 @@
 <li><a href="{{ path('contact') }}">{{ 'navigation.contact' | trans }}</a></li>
 {% endblock %}
 
-{% block page %}
+{% block subnavigation %}
 <h2>{{ 'titles.some_projects' | trans }}</h2>
+{% endblock %}
+
+{% block page %}
 {% if projects is empty %}
 <p>{{ 'projects.empty_list' | trans }}</p>
 {% else %}

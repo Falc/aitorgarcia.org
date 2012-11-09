@@ -15,8 +15,11 @@
 <li><a href="{{ path('contact') }}">{{ 'navigation.contact' | trans }}</a></li>
 {% endblock %}
 
-{% block page %}
+{% block subnavigation %}
 <h2>{{ project.name }}</h2>
+{% endblock %}
+
+{% block page %}
 <div id="slider">
 {% if project.screenshots is empty %}
     <img src="/files/no-project-screenshot.jpg" alt="{{ project.name }}" title="{{ project.name }}" />
