@@ -32,5 +32,9 @@ form:
     body:           Message:
     send:           Send
 
+footer:
+    more_information:   More information
+    source_code:        Source code
+
 common:
     technologies:   Technologies
