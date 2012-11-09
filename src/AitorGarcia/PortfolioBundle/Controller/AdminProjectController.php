@@ -11,9 +11,11 @@ class AdminProjectController extends Controller
 {
     public function listAction()
     {
+        // Get the entity manager and find all the projects
         $entityManager = $this->get('doctrine')->getEntityManager();
         $projects = $entityManager->getRepository('PortfolioBundle:Project')->findAll();
 
+        // Render the view
         return $this->render(
             'PortfolioBundle:Admin:project_list.html.twig',
             array('projects' => $projects)
@@ -203,7 +205,7 @@ class AdminProjectController extends Controller
             throw $this->createNotFoundException('No existe el proyecto seleccionado.');
         }
 
-        // Load the translation specified by $lang
+        // Load the translations specified by $lang
         $project->setTranslatableLocale($lang);
         $entityManager->refresh($project);
 

@@ -10,9 +10,11 @@ class AdminTechnologyController extends Controller
 {
     public function listAction()
     {
+        // Get the entity manager and find all the technologies
         $entityManager = $this->get('doctrine')->getEntityManager();
         $technologies = $entityManager->getRepository('PortfolioBundle:Technology')->findAll();
 
+        // Render the view
         return $this->render(
             'PortfolioBundle:Admin:technology_list.html.twig',
             array('technologies' => $technologies)

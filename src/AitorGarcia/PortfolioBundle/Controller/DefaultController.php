@@ -11,6 +11,7 @@ class DefaultController extends Controller
 
     public function preIndexAction()
     {
+        // Redirect to the localized index
         return $this->redirect($this->generateUrl('index'));
     }
 
@@ -43,12 +44,8 @@ class DefaultController extends Controller
                 // 1) Create the email
                 $message = \Swift_Message::newInstance();
                 $message->setSubject('Email de contacto');
-                $message->setFrom(
-                    $this->container->getParameter('contact_from')
-                );
-                $message->setTo(
-                    $this->container->getParameter('contact_email')
-                );
+                $message->setFrom($this->container->getParameter('contact_from'));
+                $message->setTo($this->container->getParameter('contact_email'));
                 $message->setBody(
                     $this->renderView(
                         'PortfolioBundle:Default:contact_email.txt.twig',

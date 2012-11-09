@@ -9,14 +9,17 @@ class ProjectController extends Controller
 {
     public function listAction()
     {
+        // Get the entity manager and the project repository
         $entityManager = $this->get('doctrine')->getEntityManager();
         $projectRepository = $entityManager->getRepository('PortfolioBundle:Project');
 
+        // Find all the projects sorted by DESC creation date
         $projects = $projectRepository->findBy(
             array(),
             array('created' => 'DESC')
         );
 
+        // Render the view
         return $this->render(
             'PortfolioBundle:Project:project_list.html.twig',
             array('projects' => $projects)
@@ -25,6 +28,7 @@ class ProjectController extends Controller
 
     public function showAction($url)
     {
+        // Get the entity manager and find the selected project
         $entityManager = $this->get('doctrine')->getEntityManager();
         $project = $entityManager->getRepository('PortfolioBundle:Project')->findOneByUrl($url);
 
@@ -34,6 +38,7 @@ class ProjectController extends Controller
             throw $this->createNotFoundException('No existe el proyecto seleccionado');
         }
 
+        // Render the view
         return $this->render(
             'PortfolioBundle:Project:project_show.html.twig',
             array('project' => $project)
