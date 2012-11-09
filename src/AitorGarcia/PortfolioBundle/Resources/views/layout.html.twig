@@ -18,9 +18,24 @@
 {% endblock %}
 
 {% block footer %}
+<ul id="social-icons">
+    <li><a id="icon-github" href="https://github.com/Falc" title="Github">Github</a></li>
+    <li><a id="icon-bitbucket" href="https://bitbucket.org/Falc" title="Bitbucket">Bitbucket</a></li>
+    <li><a id="icon-masterbranch" href="https://masterbranch.com/Falc" title="Masterbranch">Masterbranch</a></li>
+    <li><a id="icon-linkedin" href="http://www.linkedin.com/in/aitorgarciamartinez" title="Linkedin">Linkedin</a></li>
+</ul>
+
+<div id="more-info">
+    Aitor García Martínez | <a href="#">Más información</a> | <a href="#">Código fuente</a>
+</div>
+
+<div class="clear"></div>
+
+<div style="text-align: center">
 {% if app.request.locale == 'es' %}
 <span>Español</span> <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params') | merge({'locale': 'en'})) }}">English</a>
 {% else %}
 <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params') | merge({'locale': 'es'})) }}">Español</a> <span>English</span>
+</div>
 {% endif %}
 {% endblock %}
