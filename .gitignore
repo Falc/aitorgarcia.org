@@ -2,5 +2,5 @@ app/cache/
 app/logs/
 bin/
 src/Acme/
-src/AitorGarcia/PortfolioBundle/Tests/
+src/AitorGarcia/*Bundle/Tests/
 vendor/
