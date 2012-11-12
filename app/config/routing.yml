@@ -6,3 +6,8 @@ _portfolio:
 _admin:
     resource: "@PortfolioBundle/Resources/config/admin_routing.yml"
     prefix: /admin
+
+_user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+    type: be_simple_i18n
