@@ -1,6 +1,7 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
+    - { resource: fos_user.yml }
     - { resource: stfalcon_tinymce.yml }
     - { resource: stof_doctrine_extensions.yml }
     - { resource: twig_core_extensions.yml }
