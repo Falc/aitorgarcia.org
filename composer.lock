@@ -911,19 +911,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/stfalcon/TinymceBundle",
-                "reference": "c983ec823f31fca6821107c81b0f2abab4cd0ffa"
+                "reference": "c344aca589076d4096dea95bb6f5eada36522a02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/stfalcon/TinymceBundle/zipball/c983ec823f31fca6821107c81b0f2abab4cd0ffa",
-                "reference": "c983ec823f31fca6821107c81b0f2abab4cd0ffa",
+                "url": "https://github.com/stfalcon/TinymceBundle/archive/c344aca589076d4096dea95bb6f5eada36522a02.zip",
+                "reference": "c344aca589076d4096dea95bb6f5eada36522a02",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0",
                 "symfony/symfony": ">=2.1"
             },
-            "time": "1348832215",
+            "time": "1352729930",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1382,26 +1382,26 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.10.3",
+            "version": "v1.11.1",
             "source": {
                 "type": "git",
                 "url": "git://github.com/fabpot/Twig.git",
-                "reference": "v1.10.3"
+                "reference": "v1.11.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Twig/zipball/v1.10.3",
-                "reference": "v1.10.3",
+                "url": "https://github.com/fabpot/Twig/archive/v1.11.1.zip",
+                "reference": "v1.11.1",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "2012-10-19 03:45:49",
+            "time": "2012-11-11 17:17:59",
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.10-dev"
+                    "dev-master": "1.11-dev"
                 }
             },
             "installation-source": "dist",
