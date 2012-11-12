@@ -131,6 +131,7 @@
     #subnavigation h2 {
         font-style: italic;
         margin: 0.75em 0;
+        display: inline-block;
     }
     
     #subnavigation ul {
@@ -165,6 +166,16 @@
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         border-radius: 5px;
+    }
+
+    #lang-selector {
+        float: right;
+        display: inline-block;
+        margin: 1em 0;
+    }
+
+    #lang-selector li {
+        margin: 0 0 0 0.5em;
     }
     
     #page {
