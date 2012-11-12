@@ -1,0 +1,73 @@
+fos_user_security_login:
+    locales:  { en: "/login", es: "/iniciar-sesion" }
+    defaults: { _controller: FOSUserBundle:Security:login }
+
+fos_user_security_check:
+    locales:  { en: "/login/check", es: "/iniciar-sesion/validar" }
+    defaults: { _controller: FOSUserBundle:Security:check }
+
+fos_user_security_logout:
+    locales:  { en: "/user/logout", es: "/usuario/cerrar-sesion" }
+    defaults: { _controller: FOSUserBundle:Security:logout }
+
+#fos_user_profile_show:
+#    locales:  { en: "/user/profile", es: "/usuario/perfil" }
+#    defaults: { _controller: FOSUserBundle:Profile:show }
+#    requirements:
+#        _method:  GET
+
+#fos_user_profile_edit:
+#    locales:  { en: "/user/profile/edit", es: "/usuario/perfil/modificar" }
+#    defaults: { _controller: FOSUserBundle:Profile:edit }
+
+#fos_user_registration_register:
+#    locales:  { en: "/register", es: "/registro" }
+#    defaults: { _controller: FOSUserBundle:Registration:register }
+
+#fos_user_registration_check_email:
+#    locales:  { en: "/register/check-email", es: "/registro/comprobar-email" }
+#    defaults: { _controller: FOSUserBundle:Registration:checkEmail }
+#    requirements:
+#        _method:  GET
+
+#fos_user_registration_confirm:
+#    locales:  { en: "/register/confirm/{token}", es: "/registro/confirmar/{token}" }
+#    defaults: { _controller: FOSUserBundle:Registration:confirm }
+#    requirements:
+#        _method:  GET
+
+#fos_user_registration_confirmed:
+#    locales:  { en: "/register/confirmed", es: "/registro/confirmado" }
+#    defaults: { _controller: FOSUserBundle:Registration:confirmed }
+#    requirements:
+#        _method:  GET
+
+#fos_user_resetting_request:
+#    locales:  { en: "/user/reset-password", es: "/usuario/recuperar-password" }
+#    defaults: { _controller: FOSUserBundle:Resetting:request }
+#    requirements:
+#        _method:  GET
+
+#fos_user_resetting_send_email:
+#    locales:  { en: "/user/reset-password/send-email", es: "/usuario/recuperar-password/enviar-email" }
+#    defaults: { _controller: FOSUserBundle:Resetting:sendEmail }
+#    requirements:
+#        _method:  POST
+
+#fos_user_resetting_check_email:
+#    locales:  { en: "/user/reset-password/check-email", es: "/usuario/recuperar-password/comprobar-email" }
+#    defaults: { _controller: FOSUserBundle:Resetting:checkEmail }
+#    requirements:
+#        _method:  GET
+
+#fos_user_resetting_reset:
+#    locales:  { en: "/user/reset-password/confirm/{token}", es: "/usuario/recuperar-password/confirmar/{token}" }
+#    defaults: { _controller: FOSUserBundle:Resetting:reset }
+#    requirements:
+#        _method:  GET|POST
+
+#fos_user_change_password:
+#    locales:  { en: "/user/change-password", es: "/usuario/cambiar-password" }
+#    defaults: { _controller: FOSUserBundle:ChangePassword:changePassword }
+#    requirements:
+#        _method:  GET|POST
