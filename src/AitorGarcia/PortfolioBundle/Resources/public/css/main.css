@@ -296,6 +296,7 @@ min-height: 300px;
 
     fieldset input[type="text"],
     fieldset input[type="email"],
+    fieldset input[type="password"],
     fieldset textarea,
     fieldset select {
         width: 100%;
@@ -305,6 +306,7 @@ min-height: 300px;
 
     fieldset input[type="text"],
     fieldset input[type="email"],
+    fieldset input[type="password"],
     fieldset textarea {
         padding: 2px;
     }
@@ -603,6 +605,11 @@ min-height: 300px;
     .message-error li{
     font-style: italic;
         margin-left: 1em;
+    }
+
+    #login-error {
+        margin-top: 0;
+        margin-bottom: 1em;
     }
 
     /*
