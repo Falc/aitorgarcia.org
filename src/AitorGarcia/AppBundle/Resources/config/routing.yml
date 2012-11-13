@@ -1,0 +1,3 @@
+more_info:
+    locales:  { en: "/more-info", es: "/mas-informacion" }
+    defaults: { _controller: AppBundle:Default:moreInfo }

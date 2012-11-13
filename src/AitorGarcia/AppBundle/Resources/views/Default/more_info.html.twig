@@ -1,0 +1,27 @@
+{% extends "::layout.html.twig" %}
+
+{% block stylesheets %}
+{% stylesheets filter="cssrewrite,?yui_css" output='css/frontend-*.css'
+    'css/main.css'
+    'bundles/portfolio/css/index.css'
+%}
+    <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
+{% endstylesheets %}
+{% endblock %}
+
+{% block navigation %}
+<li class="active"><a href="{{ path('index') }}">{{ 'navigation.index' | trans }}</a></li>
+<li><a href="{{ path('project_list') }}">{{ 'navigation.projects' | trans }}</a></li>
+<li><a href="{{ path('contact') }}">{{ 'navigation.contact' | trans }}</a></li>
+{% endblock %}
+
+{% block subnavigation %}
+<h2>{{ 'titles.more_info' | trans }}</h2>
+{{ parent() }}
+{% endblock %}
+
+{% block page %}
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum porta lacinia eros, dignissim gravida metus sollicitudin et. Etiam lacus dui, tristique et ultrices ut, pharetra a lorem. Fusce nisl augue, venenatis vel rhoncus varius, fermentum ac mauris. Nulla at convallis ipsum. Curabitur sagittis, nunc vel vehicula venenatis, orci mauris lacinia neque, et blandit mi ligula in quam. Duis nec velit lacus, eget mollis diam. Quisque ante nibh, porttitor quis fermentum ac, ultrices non sapien. Quisque semper adipiscing cursus. Donec tellus diam, sollicitudin ac bibendum ac, accumsan ut erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at neque quam. Quisque rhoncus cursus tortor eget hendrerit. Suspendisse eget laoreet dui.</p>
+<p>Phasellus eros sapien, tempus vel accumsan sit amet, sagittis id leo. Nam quis velit sapien. Quisque tincidunt tempus lacus quis fringilla. Aenean mi velit, adipiscing et semper vel, fringilla in elit. Etiam convallis eros non ante sollicitudin ac rutrum libero semper. Integer viverra fringilla libero, nec sagittis mi tempor vel. Nam quis felis nec diam sollicitudin placerat. Aenean lobortis tincidunt porta. Morbi vel urna massa. Maecenas interdum ultrices nisi in ultrices. Aenean et mi a nulla auctor convallis sed sed urna. Proin a lacus velit.</p>
+<p>Aliquam dapibus dignissim aliquam. Aliquam vehicula, lectus id vulputate ornare, quam velit feugiat tellus, non faucibus sem nulla vitae felis. Donec ornare sapien ut elit ultrices ac malesuada enim fringilla. Sed quis quam sed orci elementum lobortis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam in sem eu ligula hendrerit consequat non ac libero. Donec sed sem id lacus sagittis pretium eget a est. Nulla leo tellus, mattis ac ornare eget, interdum in enim. Aliquam volutpat mauris vitae dui ultrices varius.</p>
+{% endblock %}
