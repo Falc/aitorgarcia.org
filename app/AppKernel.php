@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new BeSimple\I18nRoutingBundle\BeSimpleI18nRoutingBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new AitorGarcia\AppBundle\AppBundle(),
             new AitorGarcia\UserBundle\UserBundle(),
             new AitorGarcia\PortfolioBundle\PortfolioBundle()
         );

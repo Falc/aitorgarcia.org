@@ -1,3 +1,8 @@
+_app:
+    resource: "@AppBundle/Resources/config/routing.yml"
+    prefix: /
+    type: be_simple_i18n
+
 _portfolio:
     resource: "@PortfolioBundle/Resources/config/routing.yml"
     prefix: /test
@@ -9,5 +14,5 @@ _admin:
 
 _user:
     resource: "@UserBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix: /
     type: be_simple_i18n
