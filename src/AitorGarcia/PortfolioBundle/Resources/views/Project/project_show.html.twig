@@ -1,8 +1,13 @@
 {% extends "::layout.html.twig" %}
 
 {% block stylesheets %}
-{{ parent() }}
-<link rel="stylesheet" type="text/css" href="{{ asset('bundles/portfolio/css/tinyslider2.css') }}" />
+{% stylesheets
+    'css/main.css'
+    'bundles/portfolio/css/projects.css'
+    'bundles/portfolio/css/tinyslider2.css'
+    output='css/frontend-*.css' filter="cssrewrite" %}
+    <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
+{% endstylesheets %}
 {% endblock %}
 
 {% block javascripts %}
