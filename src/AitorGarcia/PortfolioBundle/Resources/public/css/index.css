@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+@media handheld, projection, screen, tv {
+    .block {
+        width: 450px;
+        float: left;
+    }
+
+    .block h2 {
+        font-size: 1.4285em;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 0.75em;
+    }
+
+    #block-aboutme,
+    #block-philosophy {
+        margin-right: 20px;
+    }
+
+    #block-technologies,
+    #block-others {
+        margin-left: 20px;
+    }
+
+    #block-aboutme ul {
+        list-style-type: none;
+    }
+
+    #block-aboutme li {
+        margin-bottom: 1.25em;
+        padding-top: 2px;
+        padding-left: 32px;
+    }
+    
+    #icon-user {
+        background: url(../images/icon-user.png) no-repeat left top;
+    }
+
+    #icon-web-dev {
+        background: url(../images/icon-web-app.png) no-repeat left top;
+    }
+
+    #icon-desktop-dev {
+        background: url(../images/icon-desktop-app.png) no-repeat left top;
+    }
+
+    #icon-server {
+        background: url(../images/icon-server.png) no-repeat left top;
+    }
+
+    #block-technologies img {
+        display: block;
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+@media handheld, projection, screen, tv {
+	fieldset {
+		border: 1px solid #ccc;
+		margin: 0 0 1.5em 0;
+		padding: 0% 1% 1% 1%;
+	}
+
+	legend {
+		font-size: 1.142em;
+		line-height: 1.25em;
+		font-weight: normal;
+		margin-left: 1%;
+		padding: 0 0.5em;
+	}
+
+    label {
+        width: 100%;
+        font-weight: bold;
+    }
+
+	input,
+	textarea,
+	select {
+		color: #333;
+		border: 1px solid #ccc;
+	}
+
+    textarea {
+        min-height: 150px;
+    }
+
+    fieldset input[type="text"],
+    fieldset input[type="email"],
+    fieldset input[type="password"],
+    fieldset textarea,
+    fieldset select {
+        width: 100%;
+        -moz-border-radius: 3px;
+        margin-top: 3px;
+    }
+
+    fieldset input[type="text"],
+    fieldset input[type="email"],
+    fieldset input[type="password"],
+    fieldset textarea {
+        padding: 2px;
+    }
+
+    fieldset .date select {
+        width: 33%;
+    }
+
+    fieldset ._25,
+    fieldset ._50,
+    fieldset ._75,
+    fieldset ._100 {
+        margin: 0.75em 2%;
+        display: inline;
+        float: left;
+    }
+
+    fieldset ._25 {width: 21%;}
+    fieldset ._50 {width: 46%;}
+    fieldset ._75 {width: 71%;}
+    fieldset ._100 {width: 96%;}
+}
