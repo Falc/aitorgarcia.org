@@ -1,5 +1,14 @@
 {% extends "UserBundle::layout.html.twig" %}
 
+{% block stylesheets %}
+{% stylesheets
+    'css/main.css'
+    'css/forms.css'
+    output='css/frontend-*.css' filter="cssrewrite" %}
+    <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
+{% endstylesheets %}
+{% endblock %}
+
 {% block subnavigation %}
 <h2>{{ 'titles.login' | trans }}</h2>
 {{ parent() }}
