@@ -1,0 +1,8 @@
+navigation:
+    index:      Portada
+    projects:   Proyectos
+    contact:    Contacto
+
+footer:
+    more_information:   Más información
+    source_code:        Código fuente

@@ -1,8 +1,3 @@
-navigation:
-    index:      Portada
-    projects:   Proyectos
-    contact:    Contacto
-
 titles:
     index:          Bienvenido a la web de Aitor García, desarrollador web.
     some_projects:  Estos son algunos de mis proyectos
@@ -15,6 +10,7 @@ index:
     desktop_dev:    De vez en cuando programo <strong>aplicaciones de escritorio</strong> con Vala y GTK. Para mi <em>Proyecto de Fin de Carrera</em> utilicé Python.
     sys_admin:      Estoy aprendiendo sobre <strong>administración de sistemas</strong>. Esta web está alojada en mi propio servidor virtual privado (<a href="http://en.wikipedia.org/wiki/Virtual_private_server">VPS</a>).
     which_techs:    ¿Qué tecnologías utilizo?
+    tech_logos:     Tecnologías
 
 projects:
     empty_list:     No hay ningún proyecto.
@@ -29,10 +25,3 @@ form:
     subject:        Asunto:
     body:           Mensaje:
     send:           Enviar
-
-footer:
-    more_information:   Más información
-    source_code:        Código fuente
-
-common:
-    technologies:   Tecnologías
