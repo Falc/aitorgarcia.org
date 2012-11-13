@@ -5,7 +5,7 @@ _app:
 
 _portfolio:
     resource: "@PortfolioBundle/Resources/config/routing.yml"
-    prefix: /test
+    prefix: /
     type: be_simple_i18n
 
 _admin:
