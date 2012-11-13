@@ -1,5 +1,15 @@
 {% extends "::admin_layout.html.twig" %}
 
+{% block stylesheets %}
+{% stylesheets
+    'css/main.css'
+    'css/forms.css'
+    'bundles/portfolio/css/admin.css'
+    output='css/backend-*.css' filter="cssrewrite" %}
+    <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
+{% endstylesheets %}
+{% endblock %}
+
 {% block navigation %}
 <li><a href="{{ path('admin_index') }}">Portada</a></li>
 <li><a href="{{ path('admin_project_list') }}">Proyectos</a></li>
