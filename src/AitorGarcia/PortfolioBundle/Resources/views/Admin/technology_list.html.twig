@@ -1,10 +1,10 @@
 {% extends "::admin_layout.html.twig" %}
 
 {% block stylesheets %}
-{% stylesheets
+{% stylesheets filter="cssrewrite,?yui_css" output='css/backend-*.css'
     'css/main.css'
     'bundles/portfolio/css/admin.css'
-    output='css/backend-*.css' filter="cssrewrite" %}
+%}
     <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
 {% endstylesheets %}
 {% endblock %}

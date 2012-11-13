@@ -1,11 +1,11 @@
 {% extends "::layout.html.twig" %}
 
 {% block stylesheets %}
-{% stylesheets
+{% stylesheets filter="cssrewrite,?yui_css" output='css/frontend-*.css'
     'css/main.css'
     'bundles/portfolio/css/projects.css'
     'bundles/portfolio/css/tinyslider2.css'
-    output='css/frontend-*.css' filter="cssrewrite" %}
+%}
     <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
 {% endstylesheets %}
 {% endblock %}
