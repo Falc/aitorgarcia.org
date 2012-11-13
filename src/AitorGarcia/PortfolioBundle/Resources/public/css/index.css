@@ -6,11 +6,11 @@
         float: left;
     }
 
-    .block h2 {
+    .block h3 {
         font-size: 1.4285em;
         font-weight: bold;
         text-align: center;
-        margin-bottom: 0.75em;
+        margin-bottom: 1em;
     }
 
     #block-aboutme,
