@@ -1,5 +1,14 @@
 {% extends "::layout.html.twig" %}
 
+{% block stylesheets %}
+{% stylesheets
+    'css/main.css'
+    'css/forms.css'
+    output='css/frontend-*.css' filter="cssrewrite" %}
+    <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
+{% endstylesheets %}
+{% endblock %}
+
 {% block navigation %}
 <li><a href="{{ path('index') }}">{{ 'navigation.index' | trans }}</a></li>
 <li><a href="{{ path('project_list') }}">{{ 'navigation.projects' | trans }}</a></li>
