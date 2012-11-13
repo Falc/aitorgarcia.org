@@ -1,0 +1,9 @@
+titles:
+    more_info:      More Information
+
+more_info:
+    source_code:    Source Code
+    developed_with: This website was developed with Symfony2.
+    get_source:     You can <a href="#">get the code</a> in Github, it is released under the <a href="#">Simplified BSD License</a>.
+    icons:          Icons
+    yusuke_icons:   Some of the icons used in this website were designed by <a href="http://p.yusukekamiyamane.com/">Yusuke Kamiyamane</a>. They belong to the "Fugue Icons" package, published under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0</a> license.
