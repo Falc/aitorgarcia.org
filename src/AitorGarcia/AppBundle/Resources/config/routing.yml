@@ -1,3 +1,7 @@
 more_info:
     locales:  { en: "/more-info", es: "/mas-informacion" }
     defaults: { _controller: AppBundle:Default:moreInfo }
+
+_admin:
+    resource: "@AppBundle/Resources/config/admin_routing.yml"
+    prefix: /admin
