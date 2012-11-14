@@ -9,12 +9,6 @@
 {% endstylesheets %}
 {% endblock %}
 
-{% block navigation %}
-<li><a href="{{ path('index') }}">{{ 'navigation.index' | trans }}</a></li>
-<li><a href="{{ path('project_list') }}">{{ 'navigation.projects' | trans }}</a></li>
-<li class="active"><a href="{{ path('contact') }}">{{ 'navigation.contact' | trans }}</a></li>
-{% endblock %}
-
 {% block subnavigation %}
 <h2>{{ 'titles.contact' | trans }}</h2>
 {{ parent() }}
