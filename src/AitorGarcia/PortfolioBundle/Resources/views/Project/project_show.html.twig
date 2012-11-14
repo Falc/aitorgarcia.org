@@ -3,15 +3,15 @@
 {% block stylesheets %}
 {% stylesheets filter="cssrewrite,?yui_css" output='css/frontend-*.css'
     'css/main.css'
+    'css/tinyslider2.css'
     'bundles/portfolio/css/project.css'
-    'bundles/portfolio/css/tinyslider2.css'
 %}
     <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
 {% endstylesheets %}
 {% endblock %}
 
 {% block javascripts %}
-<script src="{{ asset('bundles/portfolio/js/tinyslider2.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/tinyslider2.min.js') }}" type="text/javascript"></script>
 {% endblock %}
 
 {% block subnavigation %}
