@@ -7,8 +7,17 @@
 {% block header %}
     <h1>Aitor García</h1>
     <ul id="navigation">
-    {% block navigation %}
-    {% endblock %}
+        {% block navigation %}
+        <li{% if app.request.attributes.get('_route') in ['index','more_info'] %} class="active"{% endif %}>
+            <a href="{{ path('index') }}">{{ 'navigation.index' | trans }}</a>
+        </li>
+        <li{% if 'project_' in app.request.attributes.get('_route') %} class="active"{% endif %}>
+            <a href="{{ path('project_list') }}">{{ 'navigation.projects' | trans }}</a>
+        </li>
+        <li{% if app.request.attributes.get('_route') == 'contact' %} class="active"{% endif %}>
+            <a href="{{ path('contact') }}">{{ 'navigation.contact' | trans }}</a>
+        </li>
+        {% endblock %}
     </ul>
     <div class="clear"></div>
 {% endblock %}
