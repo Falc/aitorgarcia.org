@@ -15,12 +15,6 @@
 <script src="{{ asset('bundles/portfolio/js/project-screenshot-rows.js') }}" type="text/javascript"></script>
 {% endblock %}
 
-{% block navigation %}
-<li><a href="{{ path('admin_index') }}">Portada</a></li>
-<li class="active"><a href="{{ path('admin_project_list') }}">Proyectos</a></li>
-<li><a href="{{ path('admin_technology_list') }}">Tecnologías</a></li>
-{% endblock %}
-
 {% block subnavigation %}
 <ul>
     <li><a href="{{ path('admin_project_list') }}">Lista</a></li>
