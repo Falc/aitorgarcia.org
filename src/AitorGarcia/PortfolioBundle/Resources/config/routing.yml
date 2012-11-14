@@ -17,3 +17,7 @@ project_show:
 contact:
     locales:  { en: "/contact", es: "/contacto" }
     defaults: { _controller: PortfolioBundle:Default:contact }
+
+_portfolio_admin:
+    resource: "@PortfolioBundle/Resources/config/admin_routing.yml"
+    prefix: /admin
