@@ -406,7 +406,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/l3pp4rd/DoctrineExtensions/zipball/473210190cf196674da2304c30bc98906800fed7",
+                "url": "https://github.com/l3pp4rd/DoctrineExtensions/archive/3d838ada9a100ca56ec2487294761e64001f48c2.zip",
                 "reference": "75bd4b73d8900a217c49baf4c7fc73da7609c847",
                 "shasum": ""
             },
@@ -437,7 +437,7 @@
             "authors": [
                 {
                     "name": "Gediminas Morkevicius",
-                    "email": "gediminas.morkevicius@gmail"
+                    "email": "gediminas.morkevicius@gmail.com"
                 }
             ],
             "description": "Doctrine2 behavioral extensions",
@@ -682,7 +682,7 @@
                 "symfony/form": "*",
                 "symfony/validator": "*"
             },
-            "time": "2012-09-06 16:12:03",
+            "time": "2012-09-06 09:12:03",
             "type": "symfony-bundle",
             "installation-source": "dist",
             "autoload": {
@@ -697,7 +697,7 @@
                 {
                     "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
