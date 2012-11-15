@@ -65,7 +65,7 @@
     <h3>{{ 'projects.client' | trans }}</h3>
     <p>{{ project.client }}</p>
     {% endif %}
-    <h3>{{ 'common.technologies' | trans }}</h3>
+    <h3>{{ 'projects.technologies' | trans }}</h3>
     <p>
     {%- for technology in project.technologies -%}
         {{ technology.name }}{% if not loop.last %}, {% endif %}

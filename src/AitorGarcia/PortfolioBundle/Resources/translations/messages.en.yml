@@ -17,6 +17,7 @@ projects:
     description:    Description
     client:         Client
     view_project:   View project
+    technologies:   Technologies
 
 contact:
     email_sent:     The message was sent successfully.
