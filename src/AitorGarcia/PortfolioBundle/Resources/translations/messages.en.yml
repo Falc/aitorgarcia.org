@@ -18,6 +18,9 @@ projects:
     client:         Client
     view_project:   View project
 
+contact:
+    email_sent:     The message was sent successfully.
+
 form:
     information:    Information
     name:           Name:
