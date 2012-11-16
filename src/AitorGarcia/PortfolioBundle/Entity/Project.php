@@ -46,6 +46,7 @@ class Project
 
     /**
      * @Gedmo\Slug(fields={"name"})
+     * @Gedmo\Translatable
      * @ORM\Column(type="string", unique=true)
      */
     protected $url;
