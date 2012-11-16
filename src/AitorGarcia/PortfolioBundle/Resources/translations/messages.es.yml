@@ -1,7 +1,11 @@
-titles:
+title:
+    projects:   Proyectos
+    contact:    Contacto
+
+subnavigation:
     index:          Bienvenido a la web de Aitor García, desarrollador web.
     some_projects:  Estos son algunos de mis proyectos
-    contact:        Contacto
+    contact:        Formulario de contacto
 
 index:
     about_me:       Sobre mí
