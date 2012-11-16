@@ -1,5 +1,7 @@
 {% extends "::layout.html.twig" %}
 
+{% block title %}{{ 'title.contact' | trans }} - Aitor García{% endblock %}
+
 {% block stylesheets %}
 {% stylesheets filter="cssrewrite,?yui_css" output='css/frontend-*.css'
     'css/main.css'
@@ -10,7 +12,7 @@
 {% endblock %}
 
 {% block subnavigation %}
-<h2>{{ 'titles.contact' | trans }}</h2>
+<h2>{{ 'subnavigation.contact' | trans }}</h2>
 {{ parent() }}
 {% endblock %}
 
