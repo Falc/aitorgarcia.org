@@ -23,14 +23,14 @@ class Project
     protected $id;
 
     /**
-     * @ORM\Column(type="string")
      * @Gedmo\Translatable
+     * @ORM\Column(type="string")
      */
     protected $name;
 
     /**
-     * @ORM\Column(type="text")
      * @Gedmo\Translatable
+     * @ORM\Column(type="text")
      */
     protected $description;
 

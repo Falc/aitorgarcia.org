@@ -24,8 +24,8 @@ class ProjectScreenshot
     protected $id;
 
     /**
-     * @ORM\Column(type="string")
      * @Gedmo\Translatable
+     * @ORM\Column(type="string")
      */
     protected $name;
 
