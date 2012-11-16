@@ -5,7 +5,7 @@
 {% endif %}
 
 {% block header %}
-    <h1>Aitor García</h1>
+    <h1>Aitor García{% if 'admin_' in app.request.attributes.get('_route') %} » Backend{% endif %}</h1>
     <ul id="navigation">
         {% block navigation %}
             {% if 'admin_' in app.request.attributes.get('_route') %}
