@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+@media handheld, projection, screen, tv {
+    /* #lang-selector {float:right} [Workaround] */
+    #subnavigation .maxwidth {
+        position: relative;
+    }
+
+    #lang-selector {
+        position: absolute;
+        top: 0;
+        right: 0;
+        float: none;
+    }
+
+    /* #slider-pager {display:inline-block} [Workaround] */
+    #slider-pager li {
+        zoom: 1;
+        *display: inline;
+    }
+
+    /* Project title outside the block [Fix] */
+    a.project span {
+        left: 0;
+    }
+}
