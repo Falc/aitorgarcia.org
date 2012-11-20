@@ -74,7 +74,10 @@
     {%- endfor -%}
     </p>
     <div id="project-view">
-        <a class="button" href="{{ project.link }}">{{ 'projects.view_project' | trans }}</a>
+        <a id="project-link" class="button" href="{{ project.link }}">{{ 'projects.button_view' | trans }}</a>
+        {%- if project.sourceLink is not empty -%}
+            <a id="project-source" class="button" href="{{ project.sourceLink }}">{{ 'projects.button_source' | trans }}</a>
+        {% endif %}
     </div>
 </div>
 <div class="clear"></div>
