@@ -1,3 +1,11 @@
+_index:
+    pattern:  /
+    defaults: { _controller: AitorGarciaAppBundle:Default:preIndex }
+
+index:
+    locales:  { en: "/home", es: "/portada" }
+    defaults: { _controller: AitorGarciaAppBundle:Default:index }
+
 more_info:
     locales:  { en: "/more-info", es: "/mas-informacion" }
     defaults: { _controller: AitorGarciaAppBundle:Default:moreInfo }

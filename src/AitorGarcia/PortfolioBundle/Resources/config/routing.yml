@@ -1,11 +1,3 @@
-_index:
-    pattern:  /
-    defaults: { _controller: AitorGarciaPortfolioBundle:Default:preIndex }
-
-index:
-    locales:  { en: "/home", es: "/portada" }
-    defaults: { _controller: AitorGarciaPortfolioBundle:Default:index }
-
 project_list:
     locales:  { en: "/projects", es: "/proyectos" }
     defaults: { _controller: AitorGarciaPortfolioBundle:Project:list }
