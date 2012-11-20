@@ -3,7 +3,7 @@
 {% block stylesheets %}
 {% stylesheets filter="cssrewrite,?yui_css" output='css/frontend-*.css'
     'css/main.css'
-    'bundles/portfolio/css/index.css'
+    'bundles/aitorgarciaapp/css/index.css'
 %}
     <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
 {% endstylesheets %}
@@ -26,7 +26,7 @@
 </div>
 <div id="block-technologies" class="block">
     <h3>{{ 'index.which_techs' | trans }}</h3>
-    <img src="{{ asset('bundles/portfolio/images/technologies.png') }}" alt="{{ 'common.technologies' | trans }}" />
+    <img src="{{ asset('bundles/aitorgarciaapp/images/technologies.png') }}" alt="{{ 'index.tech_logos' | trans }}" />
 </div>
 <div class="clear"></div>
 {% endblock %}
