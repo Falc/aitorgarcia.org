@@ -45,6 +45,11 @@ class Project
     protected $link;
 
     /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $sourceLink;
+
+    /**
      * @Gedmo\Slug(fields={"name"})
      * @Gedmo\Translatable
      * @ORM\Column(type="string", unique=true)
@@ -183,6 +188,29 @@ class Project
     public function getLink()
     {
         return $this->link;
+    }
+
+    /**
+     * Set source link
+     *
+     * @param string $sourceLink
+     * @return Project
+     */
+    public function setSourceLink($sourceLink)
+    {
+        $this->sourceLink = $sourceLink;
+
+        return $this;
+    }
+
+    /**
+     * Get source link
+     *
+     * @return string
+     */
+    public function getSourceLink()
+    {
+        return $this->sourceLink;
     }
 
     /**
