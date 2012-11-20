@@ -97,7 +97,7 @@
         -moz-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
         -webkit-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
         box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
-        padding: 10px 20px;
+        padding: 10px 15px;
     }
 
     #project-view a.button:active {
@@ -110,6 +110,10 @@
 		background-image:         linear-gradient(to bottom, #1965a6 0%, #2e8eda 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#1965a6, endColorstr=#2e8eda);
 		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#1965a6, endColorstr=#2e8eda)";    
+    }
+
+    #project-source {
+        margin-left: 10px;
     }
 
     .bg-dark-diamonds {
