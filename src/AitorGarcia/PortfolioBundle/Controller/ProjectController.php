@@ -11,7 +11,7 @@ class ProjectController extends Controller
     {
         // Get the entity manager and the project repository
         $entityManager = $this->get('doctrine')->getEntityManager();
-        $projectRepository = $entityManager->getRepository('PortfolioBundle:Project');
+        $projectRepository = $entityManager->getRepository('AitorGarciaPortfolioBundle:Project');
 
         // Find all the projects sorted by DESC creation date
         $projects = $projectRepository->findBy(
@@ -21,7 +21,7 @@ class ProjectController extends Controller
 
         // Render the view
         return $this->render(
-            'PortfolioBundle:Project:project_list.html.twig',
+            'AitorGarciaPortfolioBundle:Project:project_list.html.twig',
             array('projects' => $projects)
         );
     }
@@ -30,7 +30,7 @@ class ProjectController extends Controller
     {
         // Get the entity manager and find the selected project
         $entityManager = $this->get('doctrine')->getEntityManager();
-        $project = $entityManager->getRepository('PortfolioBundle:Project')->findOneByUrl($url);
+        $project = $entityManager->getRepository('AitorGarciaPortfolioBundle:Project')->findOneByUrl($url);
 
         // If the project does not exist, display an error message
         if ($project === null)
@@ -40,7 +40,7 @@ class ProjectController extends Controller
 
         // Render the view
         return $this->render(
-            'PortfolioBundle:Project:project_show.html.twig',
+            'AitorGarciaPortfolioBundle:Project:project_show.html.twig',
             array('project' => $project)
         );
     }

@@ -18,7 +18,7 @@ class DefaultController extends Controller
     public function indexAction()
     {
         // Render the index view
-        return $this->render('PortfolioBundle:Default:index.html.twig');
+        return $this->render('AitorGarciaPortfolioBundle:Default:index.html.twig');
     }
 
     public function contactAction()
@@ -48,7 +48,7 @@ class DefaultController extends Controller
                 $message->setTo($this->container->getParameter('contact_email'));
                 $message->setBody(
                     $this->renderView(
-                        'PortfolioBundle:Default:contact_email.txt.twig',
+                        'AitorGarciaPortfolioBundle:Default:contact_email.txt.twig',
                         array('enquiry' => $enquiry)
                     )
                 );
@@ -67,7 +67,7 @@ class DefaultController extends Controller
 
         // Render the form
         return $this->render(
-            'PortfolioBundle:Default:contact.html.twig',
+            'AitorGarciaPortfolioBundle:Default:contact.html.twig',
             array('form' => $form->createView())
         );
     }

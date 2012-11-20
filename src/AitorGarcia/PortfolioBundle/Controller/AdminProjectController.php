@@ -13,11 +13,11 @@ class AdminProjectController extends Controller
     {
         // Get the entity manager and find all the projects
         $entityManager = $this->get('doctrine')->getEntityManager();
-        $projects = $entityManager->getRepository('PortfolioBundle:Project')->findAll();
+        $projects = $entityManager->getRepository('AitorGarciaPortfolioBundle:Project')->findAll();
 
         // Render the view
         return $this->render(
-            'PortfolioBundle:Admin:project_list.html.twig',
+            'AitorGarciaPortfolioBundle:Admin:project_list.html.twig',
             array('projects' => $projects)
         );
     }
@@ -57,7 +57,7 @@ class AdminProjectController extends Controller
 
         // Render the form
         return $this->render(
-            'PortfolioBundle:Admin:project_create.html.twig',
+            'AitorGarciaPortfolioBundle:Admin:project_create.html.twig',
             array('form' => $form->createView())
         );
     }
@@ -66,7 +66,7 @@ class AdminProjectController extends Controller
     {
         // Get the entity manager and find the selected project
         $entityManager = $this->get('doctrine')->getEntityManager();
-        $project = $entityManager->find('PortfolioBundle:Project', $id);
+        $project = $entityManager->find('AitorGarciaPortfolioBundle:Project', $id);
 
         // If the project does not exist, display an error message
         if ($project === null)
@@ -130,7 +130,7 @@ class AdminProjectController extends Controller
 
         // Render the form
         return $this->render(
-            'PortfolioBundle:Admin:project_edit.html.twig',
+            'AitorGarciaPortfolioBundle:Admin:project_edit.html.twig',
             array(
                 'form' => $form->createView(),
                 'project_id' => $project->getId()
@@ -142,7 +142,7 @@ class AdminProjectController extends Controller
     {
         // Get the entity manager and find the selected project
         $entityManager = $this->get('doctrine')->getEntityManager();
-        $project = $entityManager->find('PortfolioBundle:Project', $id);
+        $project = $entityManager->find('AitorGarciaPortfolioBundle:Project', $id);
 
         // If the project does not exist, display an error message
         if ($project === null)
@@ -185,7 +185,7 @@ class AdminProjectController extends Controller
 
         // Render the form
         return $this->render(
-            'PortfolioBundle:Admin:project_delete.html.twig',
+            'AitorGarciaPortfolioBundle:Admin:project_delete.html.twig',
             array(
                 'form' => $form->createView(),
                 'project_id' => $project->getId()
@@ -197,7 +197,7 @@ class AdminProjectController extends Controller
     {
         // Get the entity manager and find the selected project
         $entityManager = $this->get('doctrine')->getEntityManager();
-        $project = $entityManager->find('PortfolioBundle:Project', $id);
+        $project = $entityManager->find('AitorGarciaPortfolioBundle:Project', $id);
 
         // If the project does not exist, display an error message
         if ($project === null)
@@ -245,7 +245,7 @@ class AdminProjectController extends Controller
 
         // Render the form
         return $this->render(
-            'PortfolioBundle:Admin:project_translation_edit.html.twig',
+            'AitorGarciaPortfolioBundle:Admin:project_translation_edit.html.twig',
             array(
                 'form' => $form->createView(),
                 'project_id' => $project->getId(),

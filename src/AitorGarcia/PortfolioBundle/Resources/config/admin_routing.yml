@@ -1,35 +1,35 @@
 admin_project_list:
     pattern:  /project/list
-    defaults: { _controller: PortfolioBundle:AdminProject:list }
+    defaults: { _controller: AitorGarciaPortfolioBundle:AdminProject:list }
 
 admin_project_create:
     pattern:  /project/create
-    defaults: { _controller: PortfolioBundle:AdminProject:create }
+    defaults: { _controller: AitorGarciaPortfolioBundle:AdminProject:create }
 
 admin_project_edit:
     pattern:  /project/{id}/edit
-    defaults: { _controller: PortfolioBundle:AdminProject:edit }
+    defaults: { _controller: AitorGarciaPortfolioBundle:AdminProject:edit }
 
 admin_project_delete:
     pattern:  /project/{id}/delete
-    defaults: { _controller: PortfolioBundle:AdminProject:delete }
+    defaults: { _controller: AitorGarciaPortfolioBundle:AdminProject:delete }
 
 admin_project_translation_edit:
     pattern:  /project/{id}/translation/{lang}/edit
-    defaults: { _controller: PortfolioBundle:AdminProject:translationEdit }
+    defaults: { _controller: AitorGarciaPortfolioBundle:AdminProject:translationEdit }
 
 admin_technology_list:
     pattern:  /technology/list
-    defaults: { _controller: PortfolioBundle:AdminTechnology:list }
+    defaults: { _controller: AitorGarciaPortfolioBundle:AdminTechnology:list }
 
 admin_technology_create:
     pattern:  /technology/create
-    defaults: { _controller: PortfolioBundle:AdminTechnology:create }
+    defaults: { _controller: AitorGarciaPortfolioBundle:AdminTechnology:create }
 
 admin_technology_edit:
     pattern:  /technology/{id}/edit
-    defaults: { _controller: PortfolioBundle:AdminTechnology:edit }
+    defaults: { _controller: AitorGarciaPortfolioBundle:AdminTechnology:edit }
 
 admin_technology_delete:
     pattern:  /technology/{id}/delete
-    defaults: { _controller: PortfolioBundle:AdminTechnology:delete }
+    defaults: { _controller: AitorGarciaPortfolioBundle:AdminTechnology:delete }

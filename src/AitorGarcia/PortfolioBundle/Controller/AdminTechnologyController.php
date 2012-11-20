@@ -12,11 +12,11 @@ class AdminTechnologyController extends Controller
     {
         // Get the entity manager and find all the technologies
         $entityManager = $this->get('doctrine')->getEntityManager();
-        $technologies = $entityManager->getRepository('PortfolioBundle:Technology')->findAll();
+        $technologies = $entityManager->getRepository('AitorGarciaPortfolioBundle:Technology')->findAll();
 
         // Render the view
         return $this->render(
-            'PortfolioBundle:Admin:technology_list.html.twig',
+            'AitorGarciaPortfolioBundle:Admin:technology_list.html.twig',
             array('technologies' => $technologies)
         );
     }
@@ -56,7 +56,7 @@ class AdminTechnologyController extends Controller
 
         // Render the form
         return $this->render(
-            'PortfolioBundle:Admin:technology_create.html.twig',
+            'AitorGarciaPortfolioBundle:Admin:technology_create.html.twig',
             array('form' => $form->createView())
         );
     }
@@ -65,7 +65,7 @@ class AdminTechnologyController extends Controller
     {
         // Get the entity manager and find the selected technology
         $entityManager = $this->get('doctrine')->getEntityManager();
-        $technology = $entityManager->find('PortfolioBundle:Technology', $id);
+        $technology = $entityManager->find('AitorGarciaPortfolioBundle:Technology', $id);
 
         // If the technology does not exist, display an error message
         if ($technology === null)
@@ -102,7 +102,7 @@ class AdminTechnologyController extends Controller
 
         // Render the form
         return $this->render(
-            'PortfolioBundle:Admin:technology_edit.html.twig',
+            'AitorGarciaPortfolioBundle:Admin:technology_edit.html.twig',
             array(
                 'form' => $form->createView(),
                 'technology_id' => $technology->getId()
@@ -114,7 +114,7 @@ class AdminTechnologyController extends Controller
     {
         // Get the entity manager and find the selected technology
         $entityManager = $this->get('doctrine')->getEntityManager();
-        $technology = $entityManager->find('PortfolioBundle:Technology', $id);
+        $technology = $entityManager->find('AitorGarciaPortfolioBundle:Technology', $id);
 
         // If the technology does not exist, display an error message
         if ($technology === null)
@@ -157,7 +157,7 @@ class AdminTechnologyController extends Controller
 
         // Render the form
         return $this->render(
-            'PortfolioBundle:Admin:technology_delete.html.twig',
+            'AitorGarciaPortfolioBundle:Admin:technology_delete.html.twig',
             array(
                 'form' => $form->createView(),
                 'technology_id' => $technology->getId()

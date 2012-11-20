@@ -1,23 +1,23 @@
 _index:
     pattern:  /
-    defaults: { _controller: PortfolioBundle:Default:preIndex }
+    defaults: { _controller: AitorGarciaPortfolioBundle:Default:preIndex }
 
 index:
     locales:  { en: "/home", es: "/portada" }
-    defaults: { _controller: PortfolioBundle:Default:index }
+    defaults: { _controller: AitorGarciaPortfolioBundle:Default:index }
 
 project_list:
     locales:  { en: "/projects", es: "/proyectos" }
-    defaults: { _controller: PortfolioBundle:Project:list }
+    defaults: { _controller: AitorGarciaPortfolioBundle:Project:list }
 
 project_show:
     locales:  { en: "/projects/{url}", es: "/proyectos/{url}" }
-    defaults: { _controller: PortfolioBundle:Project:show }
+    defaults: { _controller: AitorGarciaPortfolioBundle:Project:show }
 
 contact:
     locales:  { en: "/contact", es: "/contacto" }
-    defaults: { _controller: PortfolioBundle:Default:contact }
+    defaults: { _controller: AitorGarciaPortfolioBundle:Default:contact }
 
 _portfolio_admin:
-    resource: "@PortfolioBundle/Resources/config/admin_routing.yml"
+    resource: "@AitorGarciaPortfolioBundle/Resources/config/admin_routing.yml"
     prefix: /admin

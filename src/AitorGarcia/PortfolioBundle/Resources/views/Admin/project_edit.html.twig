@@ -52,9 +52,9 @@
     </fieldset>
     <fieldset>
         <legend>Imágenes</legend>
-        <div id="screenshots" data-prototype="{% filter escape %}{% include 'PortfolioBundle:prototypes:project_screenshot.html.twig' with {'screenshot': form.screenshots.vars.prototype} %}{% endfilter %}">
+        <div id="screenshots" data-prototype="{% filter escape %}{% include 'AitorGarciaPortfolioBundle:prototypes:project_screenshot.html.twig' with {'screenshot': form.screenshots.vars.prototype} %}{% endfilter %}">
         {% for screenshot in form.screenshots %}
-            {% include 'PortfolioBundle:Admin:project_screenshot_row.html.twig' with {'screenshot': screenshot} %}
+            {% include 'AitorGarciaPortfolioBundle:Admin:project_screenshot_row.html.twig' with {'screenshot': screenshot} %}
         {% endfor %}
         </div>
     </fieldset>
