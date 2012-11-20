@@ -10,7 +10,8 @@ projects:
     empty_list:     No hay ningún proyecto.
     description:    Descripción
     client:         Cliente
-    view_project:   Ver proyecto
+    button_view:    Ver proyecto
+    button_source:  Código fuente
     technologies:   Technologías
 
 contact:
