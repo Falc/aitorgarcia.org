@@ -30,7 +30,12 @@ class ProjectType extends AbstractType
         ));
 
         $builder->add('link', 'text', array(
-            'label' => 'Enlace:',
+            'label' => 'Enlace al proyecto:',
+            'trim'  => true
+        ));
+
+        $builder->add('sourceLink', 'text', array(
+            'label' => 'Enlace al código fuente:',
             'trim'  => true
         ));
 
