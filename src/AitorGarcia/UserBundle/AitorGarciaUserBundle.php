@@ -4,7 +4,7 @@ namespace AitorGarcia\UserBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class UserBundle extends Bundle
+class AitorGarciaUserBundle extends Bundle
 {
     public function getParent()
     {
