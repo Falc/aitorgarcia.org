@@ -9,6 +9,6 @@ class AdminController extends Controller
     public function indexAction()
     {
         // Render the admin index view
-        return $this->render('AppBundle:Admin:index.html.twig');
+        return $this->render('AitorGarciaAppBundle:Admin:index.html.twig');
     }
 }

@@ -9,6 +9,6 @@ class DefaultController extends Controller
     public function moreInfoAction()
     {
         // Render the more_info view
-        return $this->render('AppBundle:Default:more_info.html.twig');
+        return $this->render('AitorGarciaAppBundle:Default:more_info.html.twig');
     }
 }

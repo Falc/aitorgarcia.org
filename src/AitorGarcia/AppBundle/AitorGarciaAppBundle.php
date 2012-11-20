@@ -4,6 +4,6 @@ namespace AitorGarcia\AppBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class AppBundle extends Bundle
+class AitorGarciaAppBundle extends Bundle
 {
 }
