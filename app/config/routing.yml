@@ -1,14 +1,14 @@
 _app:
-    resource: "@AppBundle/Resources/config/routing.yml"
+    resource: "@AitorGarciaAppBundle/Resources/config/routing.yml"
     prefix: /
     type: be_simple_i18n
 
 _portfolio:
-    resource: "@PortfolioBundle/Resources/config/routing.yml"
+    resource: "@AitorGarciaPortfolioBundle/Resources/config/routing.yml"
     prefix: /
     type: be_simple_i18n
 
 _user:
-    resource: "@UserBundle/Resources/config/routing.yml"
+    resource: "@AitorGarciaUserBundle/Resources/config/routing.yml"
     prefix: /
     type: be_simple_i18n

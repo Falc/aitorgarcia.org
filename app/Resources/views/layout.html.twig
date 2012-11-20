@@ -9,9 +9,9 @@
     <ul id="navigation">
         {% block navigation %}
             {% if 'admin_' in app.request.attributes.get('_route') %}
-                {% include 'AppBundle::admin_navigation.html.twig' %}
+                {% include 'AitorGarciaAppBundle::admin_navigation.html.twig' %}
             {% else %}
-                {% include 'AppBundle::navigation.html.twig' %}
+                {% include 'AitorGarciaAppBundle::navigation.html.twig' %}
             {% endif %}
         {% endblock %}
     </ul>
