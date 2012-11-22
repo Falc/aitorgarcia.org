@@ -72,6 +72,10 @@ form:
     send:           Enviar
     confirm:        Confirmar
     cancel:         Cancelar
+    add_image:      Añadir imagen
+    move_up:        Mover arriba
+    move_down:      Mover abajo
+    remove_image:   Eliminar imagen
 
 lang:
     english:    Inglés
