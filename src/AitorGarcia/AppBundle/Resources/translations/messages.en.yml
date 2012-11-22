@@ -2,12 +2,15 @@ navigation:
     index:          Home
     projects:       Projects
     contact:        Contact
+    technologies:   Technologies
 
 title:
     more_info:      More Information
 
 subnavigation:
     index:          Welcome to the portfolio of Aitor García, web developer.
+    admin:
+        welcome:    Welcome to the admin panel!
 
 index:
     about_me:       About me
@@ -24,3 +27,6 @@ more_info:
     get_source:     You can <a href="https://github.com/Falc/aitorgarcia.org">get the code</a> in Github, it is released under the <a href="https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE">Simplified BSD License</a>.
     icons:          Icons
     yusuke_icons:   Some of the icons used in this website were designed by <a href="http://p.yusukekamiyamane.com/">Yusuke Kamiyamane</a>. They belong to the "Fugue Icons" package, published under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0</a> license.
+
+admin:
+    some_info:      You can add some information here about how the panel admin works.

@@ -2,12 +2,15 @@ navigation:
     index:          Portada
     projects:       Proyectos
     contact:        Contacto
+    technologies:   Tecnologías
 
 title:
     more_info:      Más información
 
 subnavigation:
     index:          Bienvenido a la web de Aitor García, desarrollador web.
+    admin:
+        welcome:    ¡Bienvenido al panel de administración!
 
 index:
     about_me:       Sobre mí
@@ -24,3 +27,6 @@ more_info:
     get_source:     Puedes <a href="https://github.com/Falc/aitorgarcia.org">acceder al código</a> en Github, está publicado bajo la <a href="https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE">Licencia BSD simplificada</a>.
     icons:          Iconos
     yusuke_icons:   Algunos de los iconos utilizados en este sitio están diseñados por <a href="http://p.yusukekamiyamane.com/">Yusuke Kamiyamane</a>. Pertenecen al paquete "Fugue Icons", publicado bajo una licencia <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0</a>.
+
+admin:
+    some_info:      Aquí puedes añadir información sobre el funcionamiento del panel de administración.
