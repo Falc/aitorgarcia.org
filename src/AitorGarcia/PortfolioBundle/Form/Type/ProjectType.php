@@ -11,12 +11,10 @@ class ProjectType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('name', 'text', array(
-            'label' => 'Nombre:',
             'trim'  => true
         ));
 
         $builder->add('description', 'textarea', array(
-            'label' => 'Descripción:',
             'attr'  => array(
                 'class'      => 'tinymce',
                 'data-theme' => 'advanced'
@@ -24,24 +22,20 @@ class ProjectType extends AbstractType
         ));
 
         $builder->add('client', 'text', array(
-            'label'     => 'Cliente:',
             'required'  => false,
             'trim'      => true
         ));
 
         $builder->add('link', 'text', array(
-            'label' => 'Enlace al proyecto:',
             'trim'  => true
         ));
 
         $builder->add('sourceLink', 'text', array(
-            'label'     => 'Enlace al código fuente:',
             'required'  => false,
             'trim'      => true
         ));
 
         $builder->add('technologies', 'entity', array(
-            'label'     => 'Tecnologías:',
             'class'     => 'AitorGarcia\PortfolioBundle\Entity\Technology',
             'property'  => 'name',
             'multiple'  => true
