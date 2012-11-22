@@ -12,38 +12,38 @@
 
 {% block subnavigation %}
 <ul>
-    <li><a href="{{ path('admin_project_list') }}">Lista</a></li>
-    <li><a href="{{ path('admin_project_create') }}">Crear</a></li>
+    <li><a href="{{ path('admin_project_list') }}">{{ 'subnavigation.admin.list' | trans }}</a></li>
+    <li><a href="{{ path('admin_project_create') }}">{{ 'subnavigation.admin.create' | trans }}</a></li>
     <div class="clear"></div>
 </ul>
 {% endblock %}
 
 {% block page %}
-<h2>Traducción de "{{ project_name }}" a "{{ lang }}"</h2>
+<h2>{{ 'projects.admin.translate_project' | trans({'%project_name%': project_name, '%lang%': lang}) }}</h2>
 <form action="{{ path('admin_project_translation_edit', { 'id': project_id, 'lang': lang }) }}" method="post" {{ form_enctype(form) }}>
 	<fieldset>
-		<legend>Información</legend>
+		<legend>{{ 'projects.admin.project_info' | trans }}</legend>
         <div class="_100">
-            {{ form_label(form.name) }}
+            {{ form_label(form.name, 'form.name' | trans ) }}
             {{ form_widget(form.name) }}
             {{ form_errors(form.name) }}
         </div>
         <div class="_100">
-            {{ form_label(form.description) }}
+            {{ form_label(form.description, 'form.description' | trans ) }}
             {{ form_widget(form.description) }}
             {{ form_errors(form.description) }}
         </div>
         {{ form_widget(form._token) }}
     </fieldset>
     <fieldset>
-        <legend>Imágenes</legend>
+        <legend>{{ 'projects.admin.images' | trans }}</legend>
         <div id="screenshots">
         {% for screenshot in form.screenshots %}
             {% include 'AitorGarciaPortfolioBundle:Admin:project_screenshot_row.html.twig' with {'screenshot': screenshot} %}
         {% endfor %}
         </div>
     </fieldset>
-	<input class="button" type="submit" name="save" value="Guardar" />
+	<input class="button" type="submit" name="save" value="{{ 'form.send' | trans }}" />
 </form>
 {{ tinymce_init() }}
 {% endblock %}

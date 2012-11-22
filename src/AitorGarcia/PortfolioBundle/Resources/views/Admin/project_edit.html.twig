@@ -17,58 +17,58 @@
 
 {% block subnavigation %}
 <ul>
-    <li><a href="{{ path('admin_project_list') }}">Lista</a></li>
-    <li class="active"><a href="{{ path('admin_project_edit', { 'id': project_id }) }}">Modificar</a></li>
+    <li><a href="{{ path('admin_project_list') }}">{{ 'subnavigation.admin.list' | trans }}</a></li>
+    <li class="active"><a href="{{ path('admin_project_edit', { 'id': project_id }) }}">{{ 'subnavigation.admin.edit' | trans }}</a></li>
     <div class="clear"></div>
 </ul>
 {% endblock %}
 
 {% block page %}
-<h2>Modificar proyecto</h2>
+<h2>{{ 'projects.admin.edit_project' | trans }}</h2>
 <form action="{{ path('admin_project_edit', { 'id': project_id }) }}" method="post" {{ form_enctype(form) }}>
 	<fieldset>
-		<legend>Información del proyecto</legend>
+		<legend>{{ 'projects.admin.project_info' | trans }}</legend>
         <div class="_100">
-            {{ form_label(form.name) }}
+            {{ form_label(form.name, 'form.name' | trans ) }}
             {{ form_widget(form.name) }}
             {{ form_errors(form.name) }}
         </div>
         <div class="_100">
-            {{ form_label(form.description) }}
+            {{ form_label(form.description, 'form.description' | trans ) }}
             {{ form_widget(form.description) }}
             {{ form_errors(form.description) }}
         </div>
         <div class="_100">
-            {{ form_label(form.client) }}
+            {{ form_label(form.client, 'form.client' | trans ) }}
             {{ form_widget(form.client) }}
             {{ form_errors(form.client) }}
         </div>
         <div class="_100">
-            {{ form_label(form.link) }}
+            {{ form_label(form.link, 'form.link' | trans ) }}
             {{ form_widget(form.link) }}
             {{ form_errors(form.link) }}
         </div>
         <div class="_100">
-            {{ form_label(form.sourceLink) }}
+            {{ form_label(form.sourceLink, 'form.source_link' | trans ) }}
             {{ form_widget(form.sourceLink) }}
             {{ form_errors(form.sourceLink) }}
         </div>
         <div class="_50">
-            {{ form_label(form.technologies) }}
+            {{ form_label(form.technologies, 'form.technologies' | trans ) }}
             {{ form_widget(form.technologies) }}
             {{ form_errors(form.technologies) }}
         </div>
         {{ form_widget(form._token) }}
     </fieldset>
     <fieldset>
-        <legend>Imágenes</legend>
+        <legend>{{ 'projects.admin.images' | trans }}</legend>
         <div id="screenshots" data-prototype="{% filter escape %}{% include 'AitorGarciaPortfolioBundle:prototypes:project_screenshot.html.twig' with {'screenshot': form.screenshots.vars.prototype} %}{% endfilter %}">
         {% for screenshot in form.screenshots %}
             {% include 'AitorGarciaPortfolioBundle:Admin:project_screenshot_row.html.twig' with {'screenshot': screenshot} %}
         {% endfor %}
         </div>
     </fieldset>
-	<input class="button" type="submit" name="save" value="Guardar" />
+	<input class="button" type="submit" name="save" value="{{ 'form.send' | trans }}" />
 </form>
 {{ tinymce_init() }}
 {% endblock %}

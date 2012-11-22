@@ -10,20 +10,18 @@
 
 {% block subnavigation %}
 <ul>
-    <li><a href="{{ path('admin_project_list') }}">Lista</a></li>
-    <li><a href="{{ path('admin_project_create') }}">Crear</a></li>
+    <li><a href="{{ path('admin_project_list') }}">{{ 'subnavigation.admin.list' | trans }}</a></li>
+    <li><a href="{{ path('admin_project_create') }}">{{ 'subnavigation.admin.create' | trans }}</a></li>
     <div class="clear"></div>
 </ul>
 {% endblock %}
 
 {% block page %}
-<h2>Eliminar proyecto</h2>
+<h2>{{ 'projects.admin.delete_project' | trans }}</h2>
 <form action="{{ path('admin_project_delete', { 'id': project_id }) }}" method="post">
-    <p>¿Estás seguro de que quieres eliminar el proyecto?</p>
-
+    <p>{{ 'projects.admin.confirm_deletion' | trans }}</p>
     {{ form_rest(form) }}
-
-	<input class="button" type="submit" name="save" value="Confirmar" />
-	<input class="button" type="submit" name="cancel" value="Cancelar" />
+	<input class="button" type="submit" name="save" value="{{ 'form.confirm' | trans }}" />
+	<input class="button" type="submit" name="cancel" value="{{ 'form.cancel' | trans }}" />
 </form>
 {% endblock %}
