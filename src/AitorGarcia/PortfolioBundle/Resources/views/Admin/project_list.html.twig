@@ -44,7 +44,7 @@
             <td>{{ project.name }}</td>
             <td>{{ project.link }}</td>
             <td class="centered">
-                <a class="button-img" href="{{ path('admin_project_translation_edit', { 'id': project.id, 'lang': 'en' }) }}" title="Inglés">EN</a>
+                <a class="button-img" href="{{ path('admin_project_translation_edit', { 'id': project.id, 'lang': 'en' }) }}" title="{{ 'lang.english' | trans }}">EN</a>
             </td>
             <td class="centered">
                 <a class="button-img" href="{{ path('admin_project_edit', { 'id': project.id }) }}" title="{{ 'projects.admin.action_edit' | trans }}"><img src="/bundles/aitorgarciaportfolio/images/edit.png" alt="{{ 'projects.admin.action_edit' | trans }}" /></a>

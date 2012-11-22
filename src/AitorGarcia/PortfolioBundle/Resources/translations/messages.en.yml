@@ -72,3 +72,6 @@ form:
     send:           Send
     confirm:        Confirm
     cancel:         Cancel
+
+lang:
+    english:    English
