@@ -65,6 +65,9 @@
         <legend>{{ 'projects.admin.images' | trans }}</legend>
         <div id="screenshots" data-prototype="{% filter escape %}{% include 'AitorGarciaPortfolioBundle:prototypes:project_screenshot.html.twig' with {'screenshot': form.screenshots.vars.prototype} %}{% endfilter %}">
         </div>
+        <div class="_100 clear">
+            <button id="button-add-image" type="button">{{ 'form.add_image' | trans }}</button>
+        </div>
     </fieldset>
 	<input class="button" type="submit" name="save" value="{{ 'form.send' | trans }}" />
 </form>

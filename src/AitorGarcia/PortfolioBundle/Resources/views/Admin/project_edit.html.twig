@@ -68,6 +68,9 @@
             {% include 'AitorGarciaPortfolioBundle:Admin:project_screenshot_row.html.twig' with {'screenshot': screenshot} %}
         {% endfor %}
         </div>
+        <div class="_100 clear">
+            <button id="button-add-image" type="button">{{ 'form.add_image' | trans }}</button>
+        </div>
     </fieldset>
 	<input class="button" type="submit" name="save" value="{{ 'form.send' | trans }}" />
 </form>

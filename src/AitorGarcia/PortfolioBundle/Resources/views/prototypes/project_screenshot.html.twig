@@ -1,4 +1,9 @@
 <div class="_100">
     {{ form_widget(screenshot.name) }} {{ form_widget(screenshot.file) }}
     {{ form_widget(screenshot.weight, {'attr': {'value': '__name__'} } ) }}
+    <div class="buttons-right">
+        <a class="button-img button-move-up" href="#" title="{{ 'form.move_up' | trans }}"><img alt="{{ 'form.move_up' | trans }}" src="/bundles/aitorgarciaportfolio/images/up.png"></a>
+        <a class="button-img button-move-down" href="#" title="{{ 'form.move_down' | trans }}"><img alt="{{ 'form.move_down' | trans }}" src="/bundles/aitorgarciaportfolio/images/down.png"></a>
+        <a class="button-img button-remove-image" href="#" title="{{ 'form.remove_image' | trans }}"><img alt="{{ 'form.remove_image' | trans }}" src="/bundles/aitorgarciaportfolio/images/delete.png"></a>
+    </div>
 </div>
