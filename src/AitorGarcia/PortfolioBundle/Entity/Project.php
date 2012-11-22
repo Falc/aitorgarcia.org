@@ -25,27 +25,36 @@ class Project
     /**
      * @Gedmo\Translatable
      * @ORM\Column(type="string")
+     * @Assert\NotBlank()
+     * @Assert\MaxLength(255)
      */
     protected $name;
 
     /**
      * @Gedmo\Translatable
      * @ORM\Column(type="text")
+     * @Assert\NotBlank()
      */
     protected $description;
 
     /**
      * @ORM\Column(type="string", nullable=true)
+     * @Assert\MaxLength(255)
      */
     protected $client;
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank()
+     * @Assert\MaxLength(255)
+     * @Assert\Url()
      */
     protected $link;
 
     /**
      * @ORM\Column(type="string", nullable=true)
+     * @Assert\MaxLength(255)
+     * @Assert\Url()
      */
     protected $sourceLink;
 
@@ -59,6 +68,7 @@ class Project
     /**
      * @ORM\ManyToMany(targetEntity="Technology", inversedBy="projects")
      * @ORM\JoinTable(name="project_technologies")
+     * @Assert\Count(min = "1")
      */
     protected $technologies;
 
