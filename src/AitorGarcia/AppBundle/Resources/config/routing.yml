@@ -13,3 +13,4 @@ more_info:
 _admin:
     resource: "@AitorGarciaAppBundle/Resources/config/admin_routing.yml"
     prefix: /admin
+    type: be_simple_i18n
