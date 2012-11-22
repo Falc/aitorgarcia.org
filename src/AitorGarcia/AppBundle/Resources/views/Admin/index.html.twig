@@ -9,9 +9,10 @@
 {% endblock %}
 
 {% block subnavigation %}
-<h2>¡Bienvenido al panel de administración!</h2>
+<h2>{{ 'subnavigation.admin.welcome' | trans }}</h2>
+{{ parent() }}
 {% endblock %}
 
 {% block page %}
-<p>Aquí se puede añadir información sobre el funcionamiento del panel de administración.</p>
+<p>{{ 'admin.some_info' | trans }}</p>
 {% endblock %}

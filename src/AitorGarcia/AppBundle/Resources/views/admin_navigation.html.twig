@@ -1,9 +1,9 @@
 <li{% if app.request.attributes.get('_route') == 'admin_index' %} class="active"{% endif %}>
-    <a href="{{ path('admin_index') }}">Portada</a>
+    <a href="{{ path('admin_index') }}">{{ 'navigation.index' | trans }}</a>
 </li>
 <li{% if 'admin_project_' in app.request.attributes.get('_route') %} class="active"{% endif %}>
-    <a href="{{ path('admin_project_list') }}">Proyectos</a>
+    <a href="{{ path('admin_project_list') }}">{{ 'navigation.projects' | trans }}</a>
 </li>
 <li{% if 'admin_technology_' in app.request.attributes.get('_route') %} class="active"{% endif %}>
-    <a href="{{ path('admin_technology_list') }}">Tecnologías</a>
+    <a href="{{ path('admin_technology_list') }}">{{ 'navigation.technologies' | trans }}</a>
 </li>
