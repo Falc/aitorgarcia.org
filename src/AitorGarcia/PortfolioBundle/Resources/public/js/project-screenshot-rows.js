@@ -1,6 +1,6 @@
 function addScreenshotRowButtons(screenshotRow) {
     // Create the "move up" link
-    var $linkMoveUp = $('<a class="button-img" href="#" title="Mover arriba"><img src="/bundles/portfolio/images/up.png" alt="Arriba" /></a>');
+    var $linkMoveUp = $('<a class="button-img" href="#" title="Mover arriba"><img src="/bundles/aitorgarciaportfolio/images/up.png" alt="Arriba" /></a>');
     // On click, move the row up
     $linkMoveUp.on('click', function(e) {
         e.preventDefault();
@@ -14,7 +14,7 @@ function addScreenshotRowButtons(screenshotRow) {
     });
 
     // Create the "move down" link
-    var $linkMoveDown = $('<a class="button-img" href="#" title="Mover abajo"><img src="/bundles/portfolio/images/down.png" alt="Abajo" /></a>');
+    var $linkMoveDown = $('<a class="button-img" href="#" title="Mover abajo"><img src="/bundles/aitorgarciaportfolio/images/down.png" alt="Abajo" /></a>');
     // On click, move the row down
     $linkMoveDown.on('click', function(e) {
         e.preventDefault();
@@ -28,7 +28,7 @@ function addScreenshotRowButtons(screenshotRow) {
     });
 
     // Create the "remove" link
-    var $linkRemove = $('<a class="button-img" href="#" title="Eliminar imagen"><img src="/bundles/portfolio/images/delete.png" alt="Eliminar" /></a>');
+    var $linkRemove = $('<a class="button-img" href="#" title="Eliminar imagen"><img src="/bundles/aitorgarciaportfolio/images/delete.png" alt="Eliminar" /></a>');
     // On click, remove the row
     $linkRemove.on('click', function(e) {
         e.preventDefault();
