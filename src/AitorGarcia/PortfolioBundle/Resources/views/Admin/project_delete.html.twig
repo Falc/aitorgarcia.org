@@ -9,11 +9,12 @@
 {% endblock %}
 
 {% block subnavigation %}
-<ul>
+<ul class="actions">
     <li><a href="{{ path('admin_project_list') }}">{{ 'subnavigation.admin.list' | trans }}</a></li>
     <li><a href="{{ path('admin_project_create') }}">{{ 'subnavigation.admin.create' | trans }}</a></li>
-    <div class="clear"></div>
 </ul>
+{{ parent() }}
+<div class="clear"></div>
 {% endblock %}
 
 {% block page %}
