@@ -26,10 +26,12 @@
         <div class="_100">
             {{ form_label(form.name) }}
             {{ form_widget(form.name) }}
+            {{ form_errors(form.name) }}
         </div>
         <div class="_100">
             {{ form_label(form.description) }}
             {{ form_widget(form.description) }}
+            {{ form_errors(form.description) }}
         </div>
         {{ form_widget(form._token) }}
     </fieldset>
