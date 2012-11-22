@@ -35,8 +35,9 @@ class ProjectType extends AbstractType
         ));
 
         $builder->add('sourceLink', 'text', array(
-            'label' => 'Enlace al código fuente:',
-            'trim'  => true
+            'label'     => 'Enlace al código fuente:',
+            'required'  => false,
+            'trim'      => true
         ));
 
         $builder->add('technologies', 'entity', array(
