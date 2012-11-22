@@ -26,6 +26,8 @@ class ProjectScreenshot
     /**
      * @Gedmo\Translatable
      * @ORM\Column(type="string")
+     * @Assert\NotBlank()
+     * @Assert\MaxLength(255)
      */
     protected $name;
 
@@ -36,6 +38,7 @@ class ProjectScreenshot
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Type(type="integer")
      */
     protected $weight = 0;
 
