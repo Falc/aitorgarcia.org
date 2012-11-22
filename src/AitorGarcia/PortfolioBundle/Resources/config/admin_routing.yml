@@ -1,35 +1,35 @@
 admin_project_list:
-    pattern:  /project/list
+    locales:  { en: "/project/list", es: "/proyectos/lista" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminProject:list }
 
 admin_project_create:
-    pattern:  /project/create
+    locales:  { en: "/project/create", es: "/proyectos/crear" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminProject:create }
 
 admin_project_edit:
-    pattern:  /project/{id}/edit
+    locales:  { en: "/project/{id}/edit", es: "/proyectos/{id}/modificar" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminProject:edit }
 
 admin_project_delete:
-    pattern:  /project/{id}/delete
+    locales:  { en: "/project/{id}/delete", es: "/proyectos/{id}/eliminar" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminProject:delete }
 
 admin_project_translation_edit:
-    pattern:  /project/{id}/translation/{lang}/edit
+    locales:  { en: "/project/{id}/translation/{lang}/edit", es: "/proyectos/{id}/traduccion/{lang}/modificar" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminProject:translationEdit }
 
 admin_technology_list:
-    pattern:  /technology/list
+    locales:  { en: "/technology/list", es: "/tecnologias/lista" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminTechnology:list }
 
 admin_technology_create:
-    pattern:  /technology/create
+    locales:  { en: "/technology/create", es: "/tecnologias/crear" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminTechnology:create }
 
 admin_technology_edit:
-    pattern:  /technology/{id}/edit
+    locales:  { en: "/technology/{id}/edit", es: "/tecnologias/{id}/modificar" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminTechnology:edit }
 
 admin_technology_delete:
-    pattern:  /technology/{id}/delete
+    locales:  { en: "/technology/{id}/delete", es: "/tecnologias/{id}/eliminar" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminTechnology:delete }

@@ -13,3 +13,4 @@ contact:
 _portfolio_admin:
     resource: "@AitorGarciaPortfolioBundle/Resources/config/admin_routing.yml"
     prefix: /admin
+    type: be_simple_i18n
