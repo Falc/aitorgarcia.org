@@ -1,8 +1,3 @@
-navigation:
-    index:      Home
-    projects:   Projects
-    contact:    Contact
-
 footer:
     more_information:   More information
     source_code:        Source code
