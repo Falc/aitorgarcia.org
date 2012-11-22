@@ -33,6 +33,19 @@ projects:
         images:             Images
         confirm_deletion:   Are you sure to delete the project?
 
+technologies:
+    admin:
+        id:                 ID
+        name:               Name
+        actions:            Actions
+        action_edit:        Edit the technology
+        action_delete:      Delete the technology
+        new_technology:     New Technology
+        edit_technology:    Edit Technology
+        delete_technology:  Delete Technology
+        technology_info:    Technology information
+        confirm_deletion:   Are you sure to delete the technology?
+
 contact:
     email_sent:     The message was sent successfully.
 
