@@ -1,8 +1,8 @@
-function addScreenshotRowButtons(screenshotRow) {
-    // Create the "move up" link
-    var $linkMoveUp = $('<a class="button-img" href="#" title="Mover arriba"><img src="/bundles/aitorgarciaportfolio/images/up.png" alt="Arriba" /></a>');
+function setLinkEvents(screenshotRow) {
+    // Get the "move up" link
+    var linkMoveUp = screenshotRow.find('a.button-move-up');
     // On click, move the row up
-    $linkMoveUp.on('click', function(e) {
+    linkMoveUp.on('click', function(e) {
         e.preventDefault();
         screenshotRow.prev().before(screenshotRow);
 
@@ -13,10 +13,10 @@ function addScreenshotRowButtons(screenshotRow) {
         });
     });
 
-    // Create the "move down" link
-    var $linkMoveDown = $('<a class="button-img" href="#" title="Mover abajo"><img src="/bundles/aitorgarciaportfolio/images/down.png" alt="Abajo" /></a>');
+    // Get the "move down" link
+    var linkMoveDown = screenshotRow.find('a.button-move-down');
     // On click, move the row down
-    $linkMoveDown.on('click', function(e) {
+    linkMoveDown.on('click', function(e) {
         e.preventDefault();
         screenshotRow.next().after(screenshotRow);
 
@@ -27,10 +27,10 @@ function addScreenshotRowButtons(screenshotRow) {
         });
     });
 
-    // Create the "remove" link
-    var $linkRemove = $('<a class="button-img" href="#" title="Eliminar imagen"><img src="/bundles/aitorgarciaportfolio/images/delete.png" alt="Eliminar" /></a>');
+    // Get the "remove" link
+    var linkRemove = screenshotRow.find('a.button-remove-image');
     // On click, remove the row
-    $linkRemove.on('click', function(e) {
+    linkRemove.on('click', function(e) {
         e.preventDefault();
         var container = screenshotRow.parent();
         screenshotRow.detach();
@@ -41,21 +41,9 @@ function addScreenshotRowButtons(screenshotRow) {
             $(this).val(index);
         });
     });
-
-    // Create a div and add the links to it
-    var $divButtons = $('<div class="buttons-right"></div>');
-    $divButtons.append($linkMoveUp);
-    $divButtons.append($linkMoveDown);
-    $divButtons.append($linkRemove);
-
-    // Add the div to the screenshotRow
-    screenshotRow.append($divButtons);
 }
 
 function addScreenshotRow(collectionHolder) {
-    // Remove the empty row
-    $('div.empty-row').remove();
-
     // Get the data-prototype
     var prototype = collectionHolder.attr('data-prototype');
 
@@ -65,29 +53,21 @@ function addScreenshotRow(collectionHolder) {
     // Add the screenshot row to the collection holder
     collectionHolder.append(screenshotRow);
 
-    // Add some buttons/links to the new screenshot row
-    addScreenshotRowButtons(screenshotRow);
+    // Set the link events
+    setLinkEvents(screenshotRow);
 }
 
 jQuery(document).ready(function() {
-    // Get the div that holds the collection of screenshots
+    // Get the div that holds the screenshots collection
     var collectionHolder = $('#screenshots');
 
-    // Create an "add" button and add it to the collection holder
-    var $btnAdd = $('<button type="button">Añadir imagen</button>');
-    var $divBtnAdd = $('<div class="_100 clear"></div>').append($btnAdd);
-    collectionHolder.after($divBtnAdd);
-
-    // Add the action links to each screenshot row
-    collectionHolder.find('div').each(function() {
-        addScreenshotRowButtons($(this));
+    // For each screenshot row, set the link events
+    collectionHolder.children('div').each(function() {
+        setLinkEvents($(this));
     });
 
-    // On click, add a new screenshot row
-    $btnAdd.on('click', function(e) {
-        // Prevent the link from creating a "#" on the URL
-        //e.preventDefault();
-
+    // Set the "add image" button event
+    collectionHolder.parent().find('#button-add-image').on('click', function(e) {
         addScreenshotRow(collectionHolder);
     });
 });
