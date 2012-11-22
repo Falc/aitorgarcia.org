@@ -11,27 +11,24 @@
 
 {% block subnavigation %}
 <ul>
-    <li><a href="{{ path('admin_technology_list') }}">Lista</a></li>
-    <li class="active"><a href="{{ path('admin_technology_edit', { 'id': technology_id }) }}">Modificar</a></li>
+    <li><a href="{{ path('admin_technology_list') }}">{{ 'subnavigation.admin.list' | trans }}</a></li>
+    <li class="active"><a href="{{ path('admin_technology_edit', { 'id': technology_id }) }}">{{ 'subnavigation.admin.edit' | trans }}</a></li>
     <div class="clear"></div>
 </ul>
 {% endblock %}
 
 {% block page %}
-<h2>Modificar tecnología</h2>
+<h2>{{ 'technologies.admin.edit_technology' | trans }}</h2>
 <form action="{{ path('admin_technology_edit', { 'id': technology_id }) }}" method="post">
 	<fieldset>
-		<legend>Información de la tecnología</legend>
-
+		<legend>{{ 'technologies.admin.technology_info' | trans }}</legend>
         <div class="_100">
-            {{ form_label(form.name) }}
+            {{ form_label(form.name, 'form.name' | trans ) }}
             {{ form_widget(form.name) }}
             {{ form_errors(form.name) }}
         </div>
-
         {{ form_rest(form) }}
     </fieldset>
-
-	<input class="button" type="submit" name="save" value="Guardar" />
+	<input class="button" type="submit" name="save" value="{{ 'form.send' | trans }}" />
 </form>
 {% endblock %}

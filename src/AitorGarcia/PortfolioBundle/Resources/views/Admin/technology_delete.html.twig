@@ -10,20 +10,18 @@
 
 {% block subnavigation %}
 <ul>
-    <li><a href="{{ path('admin_technology_list') }}">Lista</a></li>
-    <li><a href="{{ path('admin_technology_create') }}">Crear</a></li>
+    <li><a href="{{ path('admin_technology_list') }}">{{ 'subnavigation.admin.list' | trans }}</a></li>
+    <li><a href="{{ path('admin_technology_create') }}">{{ 'subnavigation.admin.create' | trans }}</a></li>
     <div class="clear"></div>
 </ul>
 {% endblock %}
 
 {% block page %}
-<h2>Eliminar tecnología</h2>
+<h2>{{ 'technologies.admin.delete_technology' | trans }}</h2>
 <form action="{{ path('admin_technology_delete', { 'id': technology_id }) }}" method="post">
-    <p>¿Estás seguro de que quieres eliminar la tecnología?</p>
-
+    <p>{{ 'technologies.admin.confirm_deletion' | trans }}</p>
     {{ form_rest(form) }}
-
-	<input class="button" type="submit" name="save" value="Confirmar" />
-	<input class="button" type="submit" name="cancel" value="Cancelar" />
+	<input class="button" type="submit" name="save" value="{{ 'form.confirm' | trans }}" />
+	<input class="button" type="submit" name="cancel" value="{{ 'form.cancel' | trans }}" />
 </form>
 {% endblock %}
