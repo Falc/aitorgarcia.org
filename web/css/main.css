@@ -157,7 +157,7 @@
     }
     
     #subnavigation li {
-        margin: 1em 1em 1em 0;
+        margin: 0 1em 0 0;
         float: left;
     }
 
@@ -183,6 +183,12 @@
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         border-radius: 5px;
+    }
+
+    #subnavigation ul.actions {
+        float: left;
+        display: inline-block;
+        margin: 1em 0;
     }
 
     #lang-selector {
