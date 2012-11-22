@@ -47,7 +47,8 @@ class AdminTechnologyController extends Controller
                 $entityManager->flush();
 
                 // 2) Display a success message
-                $request->getSession()->getFlashBag()->add('success', 'La tecnología ha sido creada correctamente.');
+                $successMessage = $this->get('translator')->trans('technologies.admin.success_creation');
+                $request->getSession()->getFlashBag()->add('success', $successMessage);
 
                 // 3) Redirect the user to the technology list
                 return $this->redirect($this->generateUrl('admin_technology_list'));
@@ -70,7 +71,8 @@ class AdminTechnologyController extends Controller
         // If the technology does not exist, display an error message
         if ($technology === null)
         {
-            throw $this->createNotFoundException('No existe la tecnología seleccionada.');
+            $successMessage = $this->get('translator')->trans('technologies.admin.error_not_exists');
+            throw $this->createNotFoundException($successMessage);
         }
 
         // Create the form and set the data
@@ -93,7 +95,8 @@ class AdminTechnologyController extends Controller
                 $entityManager->flush();
 
                 // 2) Display a success message
-                $request->getSession()->getFlashBag()->add('success', 'La tecnología ha sido modificada correctamente.');
+                $successMessage = $this->get('translator')->trans('technologies.admin.success_edition');
+                $request->getSession()->getFlashBag()->add('success', $successMessage);
 
                 // 3) Redirect the user to the technology list
                 return $this->redirect($this->generateUrl('admin_technology_list'));
@@ -119,7 +122,8 @@ class AdminTechnologyController extends Controller
         // If the technology does not exist, display an error message
         if ($technology === null)
         {
-            throw $this->createNotFoundException('No existe la tecnología seleccionada.');
+            $successMessage = $this->get('translator')->trans('technologies.admin.error_not_exists');
+            throw $this->createNotFoundException($successMessage);
         }
 
         // Get the request
@@ -148,7 +152,8 @@ class AdminTechnologyController extends Controller
                 $entityManager->flush();
 
                 // 2) Display a success message
-                $request->getSession()->getFlashBag()->add('success', 'La tecnología ha sido eliminada correctamente.');
+                $successMessage = $this->get('translator')->trans('technologies.admin.success_deletion');
+                $request->getSession()->getFlashBag()->add('success', $successMessage);
 
                 // 3) Redirect the user to the technology list
                 return $this->redirect($this->generateUrl('admin_technology_list'));
