@@ -18,20 +18,25 @@ projects:
     button_source:  Source code
     technologies:   Technologies
     admin:
-        id:                 ID
-        name:               Name
-        link:               Link
-        translations:       Translations
-        actions:            Actions
-        action_edit:        Edit the project
-        action_delete:      Delete the project
-        new_project:        New Project
-        edit_project:       Edit Project
-        delete_project:     Delete Project
-        translate_project:  Translate "%project_name%" to "%lang%"
-        project_info:       Project information
-        images:             Images
-        confirm_deletion:   Are you sure to delete the project?
+        id:                     ID
+        name:                   Name
+        link:                   Link
+        translations:           Translations
+        actions:                Actions
+        action_edit:            Edit the project
+        action_delete:          Delete the project
+        new_project:            New Project
+        edit_project:           Edit Project
+        delete_project:         Delete Project
+        translate_project:      Translate "%project_name%" to "%lang%"
+        project_info:           Project information
+        images:                 Images
+        confirm_deletion:       Are you sure to delete the project?
+        success_creation:       The project was created successfully.
+        success_edition:        The project was edited successfully.
+        success_deletion:       The project was deleted successfully.
+        success_translation:    The translation was saved successfully.
+        error_not_exists:       The selected project does not exist.
 
 technologies:
     admin:
@@ -45,6 +50,10 @@ technologies:
         delete_technology:  Delete Technology
         technology_info:    Technology information
         confirm_deletion:   Are you sure to delete the technology?
+        success_creation:   The technology was created successfully.
+        success_edition:    The technology was edited successfully.
+        success_deletion:   The technology was deleted successfully.
+        error_not_exists:   The selected technology does not exist.
 
 contact:
     email_sent:     The message was sent successfully.

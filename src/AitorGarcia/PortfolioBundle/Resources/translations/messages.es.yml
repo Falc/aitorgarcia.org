@@ -18,20 +18,25 @@ projects:
     button_source:  Código fuente
     technologies:   Technologías
     admin:
-        id:                 ID
-        name:               Nombre
-        link:               Enlace
-        translations:       Traducciones
-        actions:            Acciones
-        action_edit:        Modificar el proyecto
-        action_delete:      Eliminar el proyecto
-        new_project:        Nuevo proyecto
-        edit_project:       Modificar proyecto
-        delete_project:     Eliminar proyecto
-        translate_project:  Traducir "%project_name%" a "%lang%"
-        project_info:       Información del proyecto
-        images:             Imágenes
-        confirm_deletion:   ¿Estás seguro de que quieres eliminar el proyecto?
+        id:                     ID
+        name:                   Nombre
+        link:                   Enlace
+        translations:           Traducciones
+        actions:                Acciones
+        action_edit:            Modificar el proyecto
+        action_delete:          Eliminar el proyecto
+        new_project:            Nuevo proyecto
+        edit_project:           Modificar proyecto
+        delete_project:         Eliminar proyecto
+        translate_project:      Traducir "%project_name%" a "%lang%"
+        project_info:           Información del proyecto
+        images:                 Imágenes
+        confirm_deletion:       ¿Estás seguro de que quieres eliminar el proyecto?
+        success_creation:       El proyecto ha sido creado correctamente.
+        success_edition:        El proyecto ha sido modificado correctamente.
+        success_deletion:       El proyecto ha sido eliminado correctamente.
+        success_translation:    La traducción se ha guardado correctamente.
+        error_not_exists:       No existe el proyecto seleccionado.
 
 technologies:
     admin:
@@ -45,6 +50,10 @@ technologies:
         delete_technology:  Eliminar tecnología
         technology_info:    Información de la tecnología
         confirm_deletion:   ¿Estás seguro de que quieres eliminar la tecnología?
+        success_creation:   La tecnología ha sido creada correctamente.
+        success_edition:    La tecnología ha sido modificada correctamente.
+        success_deletion:   La tecnología ha sido eliminada correctamente.
+        error_not_exists:   No existe la tecnología seleccionada.
 
 contact:
     email_sent:     El email ha sido enviado correctamente.
