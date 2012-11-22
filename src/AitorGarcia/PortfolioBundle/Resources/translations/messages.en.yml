@@ -5,6 +5,10 @@ title:
 subnavigation:
     some_projects:  These are some of my projects
     contact:        Contact Form
+    admin:
+        list:       List
+        create:     Create
+        edit:       Edit
 
 projects:
     empty_list:     There is not any project.
@@ -13,6 +17,21 @@ projects:
     button_view:    View project
     button_source:  Source code
     technologies:   Technologies
+    admin:
+        id:                 ID
+        name:               Name
+        link:               Link
+        translations:       Translations
+        actions:            Actions
+        action_edit:        Edit the project
+        action_delete:      Delete the project
+        new_project:        New Project
+        edit_project:       Edit Project
+        delete_project:     Delete Project
+        translate_project:  Translate "%project_name%" to "%lang%"
+        project_info:       Project information
+        images:             Images
+        confirm_deletion:   Are you sure to delete the project?
 
 contact:
     email_sent:     The message was sent successfully.
@@ -20,7 +39,14 @@ contact:
 form:
     information:    Information
     name:           Name:
+    description:    Description:
+    client:         Client:
+    link:           Project Link:
+    source_link:    Source Code Link:
+    technologies:   Technologies:
     email:          Email:
     subject:        Subject:
     body:           Message:
     send:           Send
+    confirm:        Confirm
+    cancel:         Cancel
