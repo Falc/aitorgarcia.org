@@ -47,7 +47,7 @@ class AdminTechnologyController extends Controller
                 $entityManager->flush();
 
                 // 2) Display a success message
-                $successMessage = $this->get('translator')->trans('technologies.admin.success_creation');
+                $successMessage = $this->get('translator')->trans('technologies.message.success_creation');
                 $request->getSession()->getFlashBag()->add('success', $successMessage);
 
                 // 3) Redirect the user to the technology list
@@ -71,7 +71,7 @@ class AdminTechnologyController extends Controller
         // If the technology does not exist, display an error message
         if ($technology === null)
         {
-            $successMessage = $this->get('translator')->trans('technologies.admin.error_not_exists');
+            $successMessage = $this->get('translator')->trans('technologies.message.do_not_exist');
             throw $this->createNotFoundException($successMessage);
         }
 
@@ -95,7 +95,7 @@ class AdminTechnologyController extends Controller
                 $entityManager->flush();
 
                 // 2) Display a success message
-                $successMessage = $this->get('translator')->trans('technologies.admin.success_edition');
+                $successMessage = $this->get('translator')->trans('technologies.message.success_edition');
                 $request->getSession()->getFlashBag()->add('success', $successMessage);
 
                 // 3) Redirect the user to the technology list
@@ -122,7 +122,7 @@ class AdminTechnologyController extends Controller
         // If the technology does not exist, display an error message
         if ($technology === null)
         {
-            $successMessage = $this->get('translator')->trans('technologies.admin.error_not_exists');
+            $successMessage = $this->get('translator')->trans('technologies.message.do_not_exist');
             throw $this->createNotFoundException($successMessage);
         }
 
@@ -152,7 +152,7 @@ class AdminTechnologyController extends Controller
                 $entityManager->flush();
 
                 // 2) Display a success message
-                $successMessage = $this->get('translator')->trans('technologies.admin.success_deletion');
+                $successMessage = $this->get('translator')->trans('technologies.message.success_deletion');
                 $request->getSession()->getFlashBag()->add('success', $successMessage);
 
                 // 3) Redirect the user to the technology list

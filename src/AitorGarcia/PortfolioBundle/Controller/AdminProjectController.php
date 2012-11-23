@@ -48,7 +48,7 @@ class AdminProjectController extends Controller
                 $entityManager->flush();
 
                 // 2) Display a success message
-                $successMessage = $this->get('translator')->trans('projects.admin.success_creation');
+                $successMessage = $this->get('translator')->trans('projects.message.success_creation');
                 $request->getSession()->getFlashBag()->add('success', $successMessage);
 
                 // 3) Redirect the user to the project list
@@ -72,7 +72,7 @@ class AdminProjectController extends Controller
         // If the project does not exist, display an error message
         if ($project === null)
         {
-            $successMessage = $this->get('translator')->trans('projects.admin.error_not_exists');
+            $successMessage = $this->get('translator')->trans('projects.message.do_not_exist');
             throw $this->createNotFoundException($successMessage);
         }
 
@@ -123,7 +123,7 @@ class AdminProjectController extends Controller
                 $entityManager->flush();
 
                 // 2) Display a success message
-                $successMessage = $this->get('translator')->trans('projects.admin.success_edition');
+                $successMessage = $this->get('translator')->trans('projects.message.success_edition');
                 $request->getSession()->getFlashBag()->add('success', $successMessage);
 
                 // 3) Redirect the user to the project list
@@ -150,7 +150,7 @@ class AdminProjectController extends Controller
         // If the project does not exist, display an error message
         if ($project === null)
         {
-            $successMessage = $this->get('translator')->trans('projects.admin.error_not_exists');
+            $successMessage = $this->get('translator')->trans('projects.message.do_not_exist');
             throw $this->createNotFoundException($successMessage);
         }
 
@@ -180,7 +180,7 @@ class AdminProjectController extends Controller
                 $entityManager->flush();
 
                 // 2) Display a success message
-                $successMessage = $this->get('translator')->trans('projects.admin.success_deletion');
+                $successMessage = $this->get('translator')->trans('projects.message.success_deletion');
                 $request->getSession()->getFlashBag()->add('success', $successMessage);
 
                 // 3) Redirect the user to the project list
@@ -207,7 +207,7 @@ class AdminProjectController extends Controller
         // If the project does not exist, display an error message
         if ($project === null)
         {
-            $successMessage = $this->get('translator')->trans('projects.admin.error_not_exists');
+            $successMessage = $this->get('translator')->trans('projects.message.do_not_exist');
             throw $this->createNotFoundException($successMessage);
         }
 
@@ -242,7 +242,7 @@ class AdminProjectController extends Controller
                 $entityManager->flush();
 
                 // 2) Display a success message
-                $successMessage = $this->get('translator')->trans('projects.admin.success_translation');
+                $successMessage = $this->get('translator')->trans('projects.message.success_translation');
                 $request->getSession()->getFlashBag()->add('success', $successMessage);
 
                 // 3) Redirect the user to the project translation list

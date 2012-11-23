@@ -44,7 +44,7 @@ class DefaultController extends Controller
                 $this->get('mailer')->send($message);
 
                 // 3) Display a success message
-                $successMessage = $this->get('translator')->trans('contact.email_sent');
+                $successMessage = $this->get('translator')->trans('contact.message.success_send');
                 $request->getSession()->getFlashBag()->add('success', $successMessage);
 
                 // 4) Redirect the user to the contact page again
