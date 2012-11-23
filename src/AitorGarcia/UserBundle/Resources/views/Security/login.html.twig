@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block subnavigation %}
-<h2>{{ 'titles.login' | trans }}</h2>
+<h2>{{ 'login.title' | trans }}</h2>
 {{ parent() }}
 {% endblock %}
 
@@ -23,21 +23,21 @@
 
 <form action="{{ path("fos_user_security_check") }}" method="post">
 	<fieldset>
-		<legend>{{ 'form.user_info' | trans }}</legend>
+		<legend>{{ 'login.legend.info' | trans }}</legend>
         <div class="_100">
-            <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
+            <label for="username">{{ 'field.username' | trans }}</label>
             <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
         </div>
         <div class="_100">
-            <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
+            <label for="password">{{ 'field.password' | trans }}</label>
             <input type="password" id="password" name="_password" required="required" />
         </div>
         <div class="_100">
             <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-            <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+            <label for="remember_me">{{ 'field.remember_me' | trans }}</label>
         </div>
         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
     </fieldset>
-    <input class="button" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+    <input class="button" type="submit" id="_submit" name="_submit" value="{{ 'button.send' | trans }}" />
 </form>
 {% endblock fos_user_content %}
