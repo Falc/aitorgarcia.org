@@ -38,7 +38,10 @@ class ProjectType extends AbstractType
         $builder->add('technologies', 'entity', array(
             'class'     => 'AitorGarcia\PortfolioBundle\Entity\Technology',
             'property'  => 'name',
-            'multiple'  => true
+            'multiple'  => true,
+            'attr'      => array(
+                'size'  =>  6
+            )
         ));
 
         $builder->add('screenshots', 'collection', array(
