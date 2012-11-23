@@ -31,6 +31,10 @@
         min-height: 150px;
     }
 
+    fieldset input[type="checkbox"] {
+        vertical-align: middle;
+    }
+
     fieldset input[type="text"],
     fieldset input[type="email"],
     fieldset input[type="password"],
@@ -46,10 +50,6 @@
     fieldset input[type="password"],
     fieldset textarea {
         padding: 2px;
-    }
-
-    fieldset .date select {
-        width: 33%;
     }
 
     fieldset ._25,
