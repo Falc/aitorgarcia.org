@@ -315,7 +315,9 @@
     }
 
     .button-img {
-        padding: 5px;
+        width: 20px;
+        height: 20px;
+        padding: 4px;
         display: inline-block;
         zoom: 1;
         *display: inline;
@@ -358,6 +360,7 @@
     }
 
     .buttons-left a {
+        float: left;
         margin-right: 0.25em;
     }
 
@@ -366,6 +369,7 @@
     }
 
     .buttons-right a {
+        float: left;
         margin-left: 0.25em;
     }
 
