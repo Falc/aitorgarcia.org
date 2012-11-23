@@ -11,8 +11,8 @@
 
 {% block subnavigation %}
 <ul class="actions">
-    <li class="active"><a href="{{ path('admin_project_list') }}">{{ 'subnavigation.admin.list' | trans }}</a></li>
-    <li><a href="{{ path('admin_project_create') }}">{{ 'subnavigation.admin.create' | trans }}</a></li>
+    <li class="active"><a href="{{ path('admin_project_list') }}">{{ 'button.list' | trans }}</a></li>
+    <li><a href="{{ path('admin_project_create') }}">{{ 'button.create' | trans }}</a></li>
 </ul>
 {{ parent() }}
 <div class="clear"></div>
@@ -30,11 +30,11 @@
 <table>
     <thead>
         <tr>
-            <th class="shrink">{{ 'projects.admin.id' | trans }}</th>
-            <th>{{ 'projects.admin.name' | trans }}</th>
-            <th>{{ 'projects.admin.link' | trans }}</th>
-            <th class="shrink">{{ 'projects.admin.translations' | trans }}</th>
-            <th class="shrink">{{ 'projects.admin.actions' | trans }}</th>
+            <th class="shrink">{{ 'field.id' | trans }}</th>
+            <th>{{ 'field.name' | trans }}</th>
+            <th>{{ 'field.link' | trans }}</th>
+            <th class="shrink">{{ 'field.translations' | trans }}</th>
+            <th class="shrink">{{ 'field.actions' | trans }}</th>
         </tr>
     </thead>
     <tbody>
@@ -47,13 +47,13 @@
                 <a class="button-img" href="{{ path('admin_project_translation_edit', { 'id': project.id, 'lang': 'en' }) }}" title="{{ 'lang.english' | trans }}">EN</a>
             </td>
             <td class="centered">
-                <a class="button-img" href="{{ path('admin_project_edit', { 'id': project.id }) }}" title="{{ 'projects.admin.action_edit' | trans }}"><img src="/bundles/aitorgarciaportfolio/images/edit.png" alt="{{ 'projects.admin.action_edit' | trans }}" /></a>
-                <a class="button-img" href="{{ path('admin_project_delete', { 'id': project.id }) }}" title="{{ 'projects.admin.action_delete' | trans }}"><img src="/bundles/aitorgarciaportfolio/images/delete.png" alt="{{ 'projects.admin.action_delete' | trans }}" /></a>
+                <a class="button-img" href="{{ path('admin_project_edit', { 'id': project.id }) }}" title="{{ 'button.edit_ext' | trans }}"><img src="/bundles/aitorgarciaportfolio/images/edit.png" alt="{{ 'button.edit' | trans }}" /></a>
+                <a class="button-img" href="{{ path('admin_project_delete', { 'id': project.id }) }}" title="{{ 'button.delete_ext' | trans }}"><img src="/bundles/aitorgarciaportfolio/images/delete.png" alt="{{ 'button.delete' | trans }}" /></a>
             </td>
         </tr>
     {% else %}
         <tr>
-            <td class="centered" colspan="5">{{ 'projects.empty_list' | trans }}</td>
+            <td class="centered" colspan="5">{{ 'projects.message.empty_list' | trans }}</td>
         </tr>
     {% endfor %}
     </tbody>

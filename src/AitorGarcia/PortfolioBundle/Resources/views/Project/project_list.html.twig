@@ -1,6 +1,6 @@
 {% extends "::layout.html.twig" %}
 
-{% block title %}{{ 'title.projects' | trans }} - Aitor García{% endblock %}
+{% block title %}{{ 'projects.title' | trans }} - Aitor García{% endblock %}
 
 {% block stylesheets %}
 {% stylesheets filter="cssrewrite,?yui_css" output='css/frontend-*.css'
@@ -12,13 +12,13 @@
 {% endblock %}
 
 {% block subnavigation %}
-<h2>{{ 'subnavigation.some_projects' | trans }}</h2>
+<h2>{{ 'projects.subnavigation.project_list' | trans }}</h2>
 {{ parent() }}
 {% endblock %}
 
 {% block page %}
 {% if projects is empty %}
-<p>{{ 'projects.empty_list' | trans }}</p>
+<p>{{ 'projects.message.empty_list' | trans }}</p>
 {% else %}
 <ul id="project-list">
 {% for project in projects %}

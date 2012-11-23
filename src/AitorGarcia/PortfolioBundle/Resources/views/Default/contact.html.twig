@@ -1,6 +1,6 @@
 {% extends "::layout.html.twig" %}
 
-{% block title %}{{ 'title.contact' | trans }} - Aitor García{% endblock %}
+{% block title %}{{ 'contact.title' | trans }} - Aitor García{% endblock %}
 
 {% block stylesheets %}
 {% stylesheets filter="cssrewrite,?yui_css" output='css/frontend-*.css'
@@ -12,7 +12,7 @@
 {% endblock %}
 
 {% block subnavigation %}
-<h2>{{ 'subnavigation.contact' | trans }}</h2>
+<h2>{{ 'contact.subnavigation.contact_form' | trans }}</h2>
 {{ parent() }}
 {% endblock %}
 
@@ -28,29 +28,29 @@
 {{ form_errors(form) }}
 <form action="{{ path('contact') }}" method="post" {{ form_enctype(form) }}>
 	<fieldset>
-		<legend>{{ 'form.information' | trans }}</legend>
+		<legend>{{ 'contact.legend.info' | trans }}</legend>
         <div class="_50">
-            {{ form_label(form.name, 'form.name' | trans ) }}
+            {{ form_label(form.name, 'field.name' | trans ) }}
             {{ form_widget(form.name) }}
             {{ form_errors(form.name) }}
         </div>
         <div class="_50">
-            {{ form_label(form.email, 'form.email' | trans ) }}
+            {{ form_label(form.email, 'field.email' | trans ) }}
             {{ form_widget(form.email) }}
             {{ form_errors(form.email) }}
         </div>
         <div class="_100">
-            {{ form_label(form.subject, 'form.subject' | trans ) }}
+            {{ form_label(form.subject, 'field.subject' | trans ) }}
             {{ form_widget(form.subject) }}
             {{ form_errors(form.subject) }}
         </div>
         <div class="_100">
-            {{ form_label(form.body, 'form.body' | trans ) }}
+            {{ form_label(form.body, 'field.body' | trans ) }}
             {{ form_widget(form.body) }}
             {{ form_errors(form.body) }}
         </div>
         {{ form_rest(form) }}
     </fieldset>
-	<input class="button" type="submit" name="send" value="{{ 'form.send' | trans }}" />
+	<input class="button" type="submit" name="send" value="{{ 'button.send' | trans }}" />
 </form>
 {% endblock %}

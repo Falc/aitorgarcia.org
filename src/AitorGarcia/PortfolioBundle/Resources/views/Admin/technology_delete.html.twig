@@ -10,19 +10,19 @@
 
 {% block subnavigation %}
 <ul class="actions">
-    <li><a href="{{ path('admin_technology_list') }}">{{ 'subnavigation.admin.list' | trans }}</a></li>
-    <li><a href="{{ path('admin_technology_create') }}">{{ 'subnavigation.admin.create' | trans }}</a></li>
+    <li><a href="{{ path('admin_technology_list') }}">{{ 'button.list' | trans }}</a></li>
+    <li><a href="{{ path('admin_technology_create') }}">{{ 'button.create' | trans }}</a></li>
 </ul>
 {{ parent() }}
 <div class="clear"></div>
 {% endblock %}
 
 {% block page %}
-<h2>{{ 'technologies.admin.delete_technology' | trans }}</h2>
+<h2>{{ 'technologies.heading.delete' | trans }}</h2>
 <form action="{{ path('admin_technology_delete', { 'id': technology_id }) }}" method="post">
-    <p>{{ 'technologies.admin.confirm_deletion' | trans }}</p>
+    <p>{{ 'technologies.message.confirm_deletion' | trans }}</p>
     {{ form_rest(form) }}
-	<input class="button" type="submit" name="save" value="{{ 'form.confirm' | trans }}" />
-	<input class="button" type="submit" name="cancel" value="{{ 'form.cancel' | trans }}" />
+	<input class="button" type="submit" name="save" value="{{ 'button.confirm' | trans }}" />
+	<input class="button" type="submit" name="cancel" value="{{ 'button.cancel' | trans }}" />
 </form>
 {% endblock %}

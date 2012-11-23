@@ -61,22 +61,22 @@
 </div>
 
 <div id="project-info">
-    <h3>{{ 'projects.description' | trans }}</h3>
+    <h3>{{ 'field.description' | trans }}</h3>
     {{ project.description | raw }}
     {% if project.client is not empty %}
-    <h3>{{ 'projects.client' | trans }}</h3>
+    <h3>{{ 'field.client' | trans }}</h3>
     <p>{{ project.client }}</p>
     {% endif %}
-    <h3>{{ 'projects.technologies' | trans }}</h3>
+    <h3>{{ 'field.technologies' | trans }}</h3>
     <p>
     {%- for technology in project.technologies -%}
         {{ technology.name }}{% if not loop.last %}, {% endif %}
     {%- endfor -%}
     </p>
     <div id="project-view">
-        <a id="project-link" class="button" href="{{ project.link }}">{{ 'projects.button_view' | trans }}</a>
+        <a id="project-link" class="button" href="{{ project.link }}">{{ 'button.view_project' | trans }}</a>
         {%- if project.sourceLink is not empty -%}
-            <a id="project-source" class="button" href="{{ project.sourceLink }}">{{ 'projects.button_source' | trans }}</a>
+            <a id="project-source" class="button" href="{{ project.sourceLink }}">{{ 'button.source_code' | trans }}</a>
         {% endif %}
     </div>
 </div>

@@ -11,25 +11,25 @@
 
 {% block subnavigation %}
 <ul class="actions">
-    <li><a href="{{ path('admin_technology_list') }}">{{ 'subnavigation.admin.list' | trans }}</a></li>
-    <li class="active"><a href="{{ path('admin_technology_create') }}">{{ 'subnavigation.admin.create' | trans }}</a></li>
+    <li><a href="{{ path('admin_technology_list') }}">{{ 'button.list' | trans }}</a></li>
+    <li class="active"><a href="{{ path('admin_technology_create') }}">{{ 'button.create' | trans }}</a></li>
 </ul>
 {{ parent() }}
 <div class="clear"></div>
 {% endblock %}
 
 {% block page %}
-<h2>{{ 'technologies.admin.new_technology' | trans }}</h2>
+<h2>{{ 'technologies.heading.new' | trans }}</h2>
 <form action="{{ path('admin_technology_create') }}" method="post">
 	<fieldset>
-		<legend>{{ 'technologies.admin.technology_info' | trans }}</legend>
+		<legend>{{ 'technologies.legend.info' | trans }}</legend>
         <div class="_100">
-            {{ form_label(form.name, 'form.name' | trans ) }}
+            {{ form_label(form.name, 'field.name' | trans ) }}
             {{ form_widget(form.name) }}
             {{ form_errors(form.name) }}
         </div>
         {{ form_rest(form) }}
     </fieldset>
-	<input class="button" type="submit" name="save" value="{{ 'form.send' | trans }}" />
+	<input class="button" type="submit" name="save" value="{{ 'button.send' | trans }}" />
 </form>
 {% endblock %}

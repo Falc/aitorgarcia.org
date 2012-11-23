@@ -12,39 +12,39 @@
 
 {% block subnavigation %}
 <ul class="actions">
-    <li><a href="{{ path('admin_project_list') }}">{{ 'subnavigation.admin.list' | trans }}</a></li>
-    <li><a href="{{ path('admin_project_create') }}">{{ 'subnavigation.admin.create' | trans }}</a></li>
+    <li><a href="{{ path('admin_project_list') }}">{{ 'button.list' | trans }}</a></li>
+    <li><a href="{{ path('admin_project_create') }}">{{ 'button.create' | trans }}</a></li>
 </ul>
 {{ parent() }}
 <div class="clear"></div>
 {% endblock %}
 
 {% block page %}
-<h2>{{ 'projects.admin.translate_project' | trans({'%project_name%': project_name, '%lang%': lang}) }}</h2>
+<h2>{{ 'projects.heading.translate' | trans({'%project_name%': project_name, '%lang%': lang}) }}</h2>
 <form action="{{ path('admin_project_translation_edit', { 'id': project_id, 'lang': lang }) }}" method="post" {{ form_enctype(form) }}>
 	<fieldset>
-		<legend>{{ 'projects.admin.project_info' | trans }}</legend>
+		<legend>{{ 'projects.legend.info' | trans }}</legend>
         <div class="_100">
-            {{ form_label(form.name, 'form.name' | trans ) }}
+            {{ form_label(form.name, 'field.name' | trans ) }}
             {{ form_widget(form.name) }}
             {{ form_errors(form.name) }}
         </div>
         <div class="_100">
-            {{ form_label(form.description, 'form.description' | trans ) }}
+            {{ form_label(form.description, 'field.description' | trans ) }}
             {{ form_widget(form.description) }}
             {{ form_errors(form.description) }}
         </div>
         {{ form_widget(form._token) }}
     </fieldset>
     <fieldset>
-        <legend>{{ 'projects.admin.images' | trans }}</legend>
+        <legend>{{ 'projects.legend.images' | trans }}</legend>
         <div id="screenshots">
         {% for screenshot in form.screenshots %}
             {% include 'AitorGarciaPortfolioBundle:Admin:project_screenshot_row.html.twig' with {'screenshot': screenshot} %}
         {% endfor %}
         </div>
     </fieldset>
-	<input class="button" type="submit" name="save" value="{{ 'form.send' | trans }}" />
+	<input class="button" type="submit" name="save" value="{{ 'button.send' | trans }}" />
 </form>
 {{ tinymce_init() }}
 {% endblock %}
