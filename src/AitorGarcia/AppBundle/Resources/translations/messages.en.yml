@@ -1,32 +1,35 @@
 navigation:
+    contact:        Contact
     index:          Home
     projects:       Projects
-    contact:        Contact
     technologies:   Technologies
 
-title:
-    more_info:      More Information
-
-subnavigation:
-    index:          Welcome to the portfolio of Aitor García, web developer.
-    admin:
-        welcome:    Welcome to the admin panel!
-
 index:
-    about_me:       About me
-    info:           My name is Aitor García. I am a <em title="Equivalent to a Bachelor's degree in Computer Science">Technical Engineer in Computer Science</em> born in 1987 in Bilbao (Spain).
-    web_dev:        I do have experience in <strong>web development</strong> with PHP and Symfony2, besides other related technologies like HTML, CSS and Javascript (jQuery).
-    desktop_dev:    Ocasionally, I write <strong>desktop apps</strong> with Vala and GTK. And I used Python to write my <em>Degree Project</em>.
-    sys_admin:      I am learning about <strong>system administration</strong>. This web is being hosted on my own virtual private server (<a href="http://en.wikipedia.org/wiki/Virtual_private_server">VPS</a>).
-    which_techs:    Which technologies do i use?
-    tech_logos:     Technologies
+    heading:
+        about_me:       About me
+        which_techs:    Which technologies do i use?
+    image:
+        tech_logos:     Technologies
+    paragraph:
+        desktop_dev:    Ocasionally, I write <strong>desktop apps</strong> with Vala and GTK. And I used Python to write my <em>Degree Project</em>.
+        info:           My name is Aitor García. I am a <em title="Equivalent to a Bachelor's degree in Computer Science">Technical Engineer in Computer Science</em> born in 1987 in Bilbao (Spain).
+        sys_admin:      I am learning about <strong>system administration</strong>. This web is being hosted on my own virtual private server (<a href="http://en.wikipedia.org/wiki/Virtual_private_server">VPS</a>).
+        web_dev:        I do have experience in <strong>web development</strong> with PHP and Symfony2, besides other related technologies like HTML, CSS and Javascript (jQuery).
+    subnavigation:      Welcome to the portfolio of Aitor García, web developer.
 
 more_info:
-    source_code:    Source Code
-    developed_with: This website was developed with Symfony2.
-    get_source:     You can <a href="https://github.com/Falc/aitorgarcia.org">get the code</a> in Github, it is released under the <a href="https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE">Simplified BSD License</a>.
-    icons:          Icons
-    yusuke_icons:   Some of the icons used in this website were designed by <a href="http://p.yusukekamiyamane.com/">Yusuke Kamiyamane</a>. They belong to the "Fugue Icons" package, published under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0</a> license.
+    heading:
+        icons:          Icons
+        source_code:    Source Code
+    paragraph:
+        developed_with: This website was developed with Symfony2.
+        get_source:     You can <a href="https://github.com/Falc/aitorgarcia.org">get the code</a> in Github, it is released under the <a href="https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE">Simplified BSD License</a>.
+        yusuke_icons:   Some of the icons used in this website were designed by <a href="http://p.yusukekamiyamane.com/">Yusuke Kamiyamane</a>. They belong to the "Fugue Icons" package, published under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0</a> license.
+    subnavigation:      More Information
+    title:              More Information
 
 admin:
-    some_info:      You can add some information here about how the panel admin works.
+    paragraph:
+        some_info:      You can add some information here about how the panel admin works.
+    subnavigation:
+        index:          Welcome to the admin panel!
