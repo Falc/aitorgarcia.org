@@ -1,81 +1,75 @@
-title:
-    projects:   Proyectos
-    contact:    Contacto
-
-subnavigation:
-    some_projects:  Estos son algunos de mis proyectos
-    contact:        Formulario de contacto
-    admin:
-        list:       Lista
-        create:     Crear
-        edit:       Modificar
-
 projects:
-    empty_list:     No hay ningún proyecto.
-    description:    Descripción
-    client:         Cliente
-    button_view:    Ver proyecto
-    button_source:  Código fuente
-    technologies:   Technologías
-    admin:
-        id:                     ID
-        name:                   Nombre
-        link:                   Enlace
-        translations:           Traducciones
-        actions:                Acciones
-        action_edit:            Modificar el proyecto
-        action_delete:          Eliminar el proyecto
-        new_project:            Nuevo proyecto
-        edit_project:           Modificar proyecto
-        delete_project:         Eliminar proyecto
-        translate_project:      Traducir "%project_name%" a "%lang%"
-        project_info:           Información del proyecto
+    fieldset:
         images:                 Imágenes
+        info:                   Información del proyecto
+    heading:
+        delete:                 Eliminar proyecto
+        edit:                   Modificar proyecto
+        new:                    Nuevo proyecto
+        translate:              Traducir "%project_name%" a "%lang%"
+    message:
         confirm_deletion:       ¿Estás seguro de que quieres eliminar el proyecto?
+        empty_list:             No hay ningún proyecto.
+        do_not_exist:           El proyecto seleccionado no existe.
         success_creation:       El proyecto ha sido creado correctamente.
-        success_edition:        El proyecto ha sido modificado correctamente.
         success_deletion:       El proyecto ha sido eliminado correctamente.
+        success_edition:        El proyecto ha sido modificado correctamente.
         success_translation:    La traducción se ha guardado correctamente.
-        error_not_exists:       No existe el proyecto seleccionado.
+    subnavigation:
+        project_list:           Estos son algunos de mis proyectos
+    title:                      Proyectos
 
 technologies:
-    admin:
-        id:                 ID
-        name:               Nombre
-        actions:            Acciones
-        action_edit:        Modificar la tecnología
-        action_delete:      Eliminar la tecnologías
-        new_technology:     Nueva tecnologías
-        edit_technology:    Modificar tecnología
-        delete_technology:  Eliminar tecnología
-        technology_info:    Información de la tecnología
+    fieldset:
+        info:               Información de la tecnología
+    heading:
+        delete:             Eliminar tecnología
+        edit:               Modificar tecnología
+        new:                Nueva tecnologías
+    message:
         confirm_deletion:   ¿Estás seguro de que quieres eliminar la tecnología?
+        do_not_exist:       La tecnología seleccionada no existe.
         success_creation:   La tecnología ha sido creada correctamente.
-        success_edition:    La tecnología ha sido modificada correctamente.
         success_deletion:   La tecnología ha sido eliminada correctamente.
-        error_not_exists:   No existe la tecnología seleccionada.
+        success_edition:    La tecnología ha sido modificada correctamente.
 
 contact:
-    email_sent:     El email ha sido enviado correctamente.
+    message:
+        success_send:   El mensaje ha sido enviado correctamente.
+    subnavigation:
+        contact_form:   Formulario de contacto
+    title:              Contacto
 
-form:
-    information:    Información
-    name:           Nombre:
-    description:    Descripción:
-    client:         Cliente:
-    link:           Enlace al proyecto:
-    source_link:    Enlace al código fuente:
-    technologies:   Tecnologías:
-    email:          Email:
-    subject:        Asunto:
-    body:           Mensaje:
-    send:           Enviar
-    confirm:        Confirmar
-    cancel:         Cancelar
+field:
+    actions:        Acciones
+    body:           Mensaje
+    client:         Cliente
+    description:    Descripción
+    email:          Email
+    id:             ID
+    link:           Enlace al proyecto
+    name:           Nombre
+    source_link:    Enlace al código fuente
+    subject:        Asunto
+    technologies:   Tecnologías
+    translations:   Traducciones
+
+button:
     add_image:      Añadir imagen
-    move_up:        Mover arriba
+    cancel:         Cancelar
+    confirm:        Confirmar
+    create:         Crear
+    delete:         Eliminar
+    delete_ext:     Eliminar este elemento.
+    edit:           Modificar
+    edit_ext:       Modificar este elemento.
+    list:           Lista
     move_down:      Mover abajo
+    move_up:        Mover arriba
     remove_image:   Eliminar imagen
+    send:           Enviar
+    source_code:    Código fuente
+    view_project:   Ver proyecto
 
 lang:
     english:    Inglés

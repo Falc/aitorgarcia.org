@@ -1,81 +1,75 @@
-title:
-    projects:   Projects
-    contact:    Contact
-
-subnavigation:
-    some_projects:  These are some of my projects
-    contact:        Contact Form
-    admin:
-        list:       List
-        create:     Create
-        edit:       Edit
-
 projects:
-    empty_list:     There is not any project.
-    description:    Description
-    client:         Client
-    button_view:    View project
-    button_source:  Source code
-    technologies:   Technologies
-    admin:
-        id:                     ID
-        name:                   Name
-        link:                   Link
-        translations:           Translations
-        actions:                Actions
-        action_edit:            Edit the project
-        action_delete:          Delete the project
-        new_project:            New Project
-        edit_project:           Edit Project
-        delete_project:         Delete Project
-        translate_project:      Translate "%project_name%" to "%lang%"
-        project_info:           Project information
+    fieldset:
         images:                 Images
+        info:                   Project Information
+    heading:
+        delete:                 Delete Project
+        edit:                   Edit Project
+        new:                    New Project
+        translate:              Translate "%project_name%" to "%lang%"
+    message:
         confirm_deletion:       Are you sure to delete the project?
+        empty_list:             There is not any project.
+        do_not_exist:           The selected project does not exist.
         success_creation:       The project was created successfully.
-        success_edition:        The project was edited successfully.
         success_deletion:       The project was deleted successfully.
+        success_edition:        The project was edited successfully.
         success_translation:    The translation was saved successfully.
-        error_not_exists:       The selected project does not exist.
+    subnavigation:
+        project_list:           These are some of my projects
+    title:                      Projects
 
 technologies:
-    admin:
-        id:                 ID
-        name:               Name
-        actions:            Actions
-        action_edit:        Edit the technology
-        action_delete:      Delete the technology
-        new_technology:     New Technology
-        edit_technology:    Edit Technology
-        delete_technology:  Delete Technology
-        technology_info:    Technology information
+    fieldset:
+        info:               Technology Information
+    heading:
+        delete:             Delete Technology
+        edit:               Edit Technology
+        new:                New Technology
+    message:
         confirm_deletion:   Are you sure to delete the technology?
+        do_not_exist:       The selected technology does not exist.
         success_creation:   The technology was created successfully.
-        success_edition:    The technology was edited successfully.
         success_deletion:   The technology was deleted successfully.
-        error_not_exists:   The selected technology does not exist.
+        success_edition:    The technology was edited successfully.
 
 contact:
-    email_sent:     The message was sent successfully.
+    message:
+        success_send:   The message was sent successfully.
+    subnavigation:
+        contact_form:   Contact Form
+    title:              Contact
 
-form:
-    information:    Information
-    name:           Name:
-    description:    Description:
-    client:         Client:
-    link:           Project Link:
-    source_link:    Source Code Link:
-    technologies:   Technologies:
-    email:          Email:
-    subject:        Subject:
-    body:           Message:
-    send:           Send
-    confirm:        Confirm
-    cancel:         Cancel
+field:
+    actions:        Actions
+    body:           Message
+    client:         Client
+    description:    Description
+    email:          Email
+    id:             ID
+    link:           Project Link
+    name:           Name
+    source_link:    Source Code Link
+    subject:        Subject
+    technologies:   Technologies
+    translations:   Translations
+
+button:
     add_image:      Add Image
-    move_up:        Move Up
+    cancel:         Cancel
+    confirm:        Confirm
+    create:         Create
+    delete:         Delete
+    delete_ext:     Delete this element.
+    edit:           Edit
+    edit_ext:       Edit this element.
+    list:           List
     move_down:      Move Down
+    move_up:        Move Up
     remove_image:   Remove Image
+    send:           Send
+    source_code:    Source code
+    view_project:   View project
 
 lang:
     english:    English
