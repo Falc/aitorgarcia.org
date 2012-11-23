@@ -1,6 +1,6 @@
 {% extends "::layout.html.twig" %}
 
-{% block title %}{{ 'title.more_info' | trans }} - Aitor García{% endblock %}
+{% block title %}{{ 'more_info.title' | trans }} - Aitor García{% endblock %}
 
 {% block stylesheets %}
 {% stylesheets filter="cssrewrite,?yui_css" output='css/frontend-*.css'
@@ -12,18 +12,18 @@
 {% endblock %}
 
 {% block subnavigation %}
-<h2>{{ 'title.more_info' | trans }}</h2>
+<h2>{{ 'more_info.subnavigation' | trans }}</h2>
 {{ parent() }}
 {% endblock %}
 
 {% block page %}
 <div id="block-source-code">
-    <h3>{{ 'more_info.source_code' | trans | raw }}</h3>
-    <p>{{ 'more_info.developed_with' | trans | raw }}</p>
-    <p>{{ 'more_info.get_source' | trans | raw }}</p>
+    <h3>{{ 'more_info.heading.source_code' | trans | raw }}</h3>
+    <p>{{ 'more_info.paragraph.developed_with' | trans | raw }}</p>
+    <p>{{ 'more_info.paragraph.get_source' | trans | raw }}</p>
 </div>
 <div id="block-icons">
-    <h3>{{ 'more_info.icons' | trans }}</h3>
-    <p>{{ 'more_info.yusuke_icons' | trans | raw }}</p>
+    <h3>{{ 'more_info.heading.icons' | trans }}</h3>
+    <p>{{ 'more_info.paragraph.yusuke_icons' | trans | raw }}</p>
 </div>
 {% endblock %}

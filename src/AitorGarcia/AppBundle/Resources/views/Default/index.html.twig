@@ -10,23 +10,23 @@
 {% endblock %}
 
 {% block subnavigation %}
-<h2>{{ 'subnavigation.index' | trans }}</h2>
+<h2>{{ 'index.subnavigation' | trans }}</h2>
 {{ parent() }}
 {% endblock %}
 
 {% block page %}
 <div id="block-aboutme" class="block">
-    <h3>{{ 'index.about_me' | trans }}</h3>
+    <h3>{{ 'index.heading.about_me' | trans }}</h3>
     <ul>
-        <li id="icon-user">{{ 'index.info' | trans | raw }}</li>
-        <li id="icon-web-dev">{{ 'index.web_dev' | trans | raw }}</li>
-        <li id="icon-desktop-dev">{{ 'index.desktop_dev' | trans | raw }}</li>
-        <li id="icon-server">{{ 'index.sys_admin' | trans | raw }}</li>
+        <li id="icon-user">{{ 'index.paragraph.info' | trans | raw }}</li>
+        <li id="icon-web-dev">{{ 'index.paragraph.web_dev' | trans | raw }}</li>
+        <li id="icon-desktop-dev">{{ 'index.paragraph.desktop_dev' | trans | raw }}</li>
+        <li id="icon-server">{{ 'index.paragraph.sys_admin' | trans | raw }}</li>
     </ul>
 </div>
 <div id="block-technologies" class="block">
-    <h3>{{ 'index.which_techs' | trans }}</h3>
-    <img src="{{ asset('bundles/aitorgarciaapp/images/technologies.png') }}" alt="{{ 'index.tech_logos' | trans }}" />
+    <h3>{{ 'index.heading.which_techs' | trans }}</h3>
+    <img src="{{ asset('bundles/aitorgarciaapp/images/technologies.png') }}" alt="{{ 'index.image.tech_logos' | trans }}" />
 </div>
 <div class="clear"></div>
 {% endblock %}
