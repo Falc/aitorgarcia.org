@@ -38,8 +38,7 @@ contact:
         info:           Information
     message:
         success_send:   El mensaje ha sido enviado correctamente.
-    subnavigation:
-        contact_form:   Formulario de contacto
+    subnavigation:      Formulario de contacto
     title:              Contacto
 
 field:
