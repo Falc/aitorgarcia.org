@@ -1,12 +1,12 @@
 projects:
-    fieldset:
-        images:                 Images
-        info:                   Project Information
     heading:
         delete:                 Delete Project
         edit:                   Edit Project
         new:                    New Project
         translate:              Translate "%project_name%" to "%lang%"
+    legend:
+        images:                 Images
+        info:                   Project Information
     message:
         confirm_deletion:       Are you sure to delete the project?
         empty_list:             There is not any project.
@@ -20,12 +20,12 @@ projects:
     title:                      Projects
 
 technologies:
-    fieldset:
-        info:               Technology Information
     heading:
         delete:             Delete Technology
         edit:               Edit Technology
         new:                New Technology
+    legend:
+        info:               Technology Information
     message:
         confirm_deletion:   Are you sure to delete the technology?
         do_not_exist:       The selected technology does not exist.
@@ -34,6 +34,8 @@ technologies:
         success_edition:    The technology was edited successfully.
 
 contact:
+    legend:
+        info:           Information
     message:
         success_send:   The message was sent successfully.
     subnavigation:
@@ -60,12 +62,14 @@ button:
     confirm:        Confirm
     create:         Create
     delete:         Delete
-    delete_ext:     Delete this element.
+    delete_ext:     Delete this element
     edit:           Edit
-    edit_ext:       Edit this element.
+    edit_ext:       Edit this element
     list:           List
-    move_down:      Move Down
-    move_up:        Move Up
+    move_down:      Down
+    move_down_ext:  Move Down
+    move_up:        Up
+    move_up_ext:    Move Up
     remove_image:   Remove Image
     send:           Send
     source_code:    Source code

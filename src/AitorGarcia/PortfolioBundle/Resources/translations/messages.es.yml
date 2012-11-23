@@ -1,12 +1,12 @@
 projects:
-    fieldset:
-        images:                 Imágenes
-        info:                   Información del proyecto
     heading:
         delete:                 Eliminar proyecto
         edit:                   Modificar proyecto
         new:                    Nuevo proyecto
         translate:              Traducir "%project_name%" a "%lang%"
+    legend:
+        images:                 Imágenes
+        info:                   Información del proyecto
     message:
         confirm_deletion:       ¿Estás seguro de que quieres eliminar el proyecto?
         empty_list:             No hay ningún proyecto.
@@ -20,12 +20,12 @@ projects:
     title:                      Proyectos
 
 technologies:
-    fieldset:
-        info:               Información de la tecnología
     heading:
         delete:             Eliminar tecnología
         edit:               Modificar tecnología
         new:                Nueva tecnologías
+    legend:
+        info:               Información de la tecnología
     message:
         confirm_deletion:   ¿Estás seguro de que quieres eliminar la tecnología?
         do_not_exist:       La tecnología seleccionada no existe.
@@ -34,6 +34,8 @@ technologies:
         success_edition:    La tecnología ha sido modificada correctamente.
 
 contact:
+    legend:
+        info:           Information
     message:
         success_send:   El mensaje ha sido enviado correctamente.
     subnavigation:
@@ -60,12 +62,14 @@ button:
     confirm:        Confirmar
     create:         Crear
     delete:         Eliminar
-    delete_ext:     Eliminar este elemento.
+    delete_ext:     Eliminar este elemento
     edit:           Modificar
-    edit_ext:       Modificar este elemento.
+    edit_ext:       Modificar este elemento
     list:           Lista
-    move_down:      Mover abajo
-    move_up:        Mover arriba
+    move_down:      Abajo
+    move_down_ext:  Move Down
+    move_up:        Arriba
+    move_up_ext:    Move Up
     remove_image:   Eliminar imagen
     send:           Enviar
     source_code:    Código fuente
