@@ -16,4 +16,12 @@
         margin-top: 2px;
         margin-bottom: 2px;
     }
+
+    #button-add-image {
+        display: none;
+    }
+
+    .buttons-right {
+        display: none;
+    }
 }

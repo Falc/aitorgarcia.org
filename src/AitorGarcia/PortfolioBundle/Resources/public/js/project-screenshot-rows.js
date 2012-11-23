@@ -53,7 +53,8 @@ function addScreenshotRow(collectionHolder) {
     // Add the screenshot row to the collection holder
     collectionHolder.append(screenshotRow);
 
-    // Set the link events
+    // Display the buttons and set the events
+    screenshotRow.find('div.buttons-right').show();
     setLinkEvents(screenshotRow);
 }
 
@@ -61,13 +62,16 @@ jQuery(document).ready(function() {
     // Get the div that holds the screenshots collection
     var collectionHolder = $('#screenshots');
 
-    // For each screenshot row, set the link events
+    // For each screenshot row, display the buttons and set the events
     collectionHolder.children('div').each(function() {
+        $(this).find('div.buttons-right').show();
         setLinkEvents($(this));
     });
 
-    // Set the "add image" button event
-    collectionHolder.parent().find('#button-add-image').on('click', function(e) {
+    // Get the "add image" button, display it and set its event
+    var buttonAddImage = collectionHolder.parent().find('#button-add-image');
+    buttonAddImage.show();
+    buttonAddImage.on('click', function(e) {
         addScreenshotRow(collectionHolder);
     });
 });
