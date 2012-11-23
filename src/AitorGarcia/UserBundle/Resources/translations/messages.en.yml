@@ -1,5 +1,12 @@
-titles:
-    login:  Login
+login:
+    legend:
+        info:   User Info
+    title:      Login
 
-form:
-    user_info:  User Info
+field:
+    username:       Username
+    password:       Password
+    remember_me:    Remember me
+
+button:
+    send:   Send

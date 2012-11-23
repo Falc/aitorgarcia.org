@@ -1,5 +1,12 @@
-titles:
-    login:  Iniciar sesión
+login:
+    legend:
+        info:   Información de usuario
+    title:      Iniciar sesión
 
-form:
-    user_info:  Información del usuario
+field:
+    username:       Nombre de usuario
+    password:       Contraseña
+    remember_me:    Recordar
+
+button:
+    send:   Enviar
