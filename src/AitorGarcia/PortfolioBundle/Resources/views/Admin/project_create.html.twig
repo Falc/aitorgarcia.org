@@ -1,5 +1,7 @@
 {% extends "::layout.html.twig" %}
 
+{% block title %}{{ 'projects.title.create' | trans }} - Aitor García (Backend){% endblock %}
+
 {% block stylesheets %}
 {% stylesheets filter="cssrewrite,?yui_css" output='css/backend-*.css'
     'css/main.css'
@@ -25,7 +27,7 @@
 {% endblock %}
 
 {% block page %}
-<h2>{{ 'projects.heading.new' | trans }}</h2>
+<h2>{{ 'projects.title.create' | trans }}</h2>
 <form action="{{ path('admin_project_create') }}" method="post" {{ form_enctype(form) }}>
 	<fieldset>
 		<legend>{{ 'projects.legend.info' | trans }}</legend>

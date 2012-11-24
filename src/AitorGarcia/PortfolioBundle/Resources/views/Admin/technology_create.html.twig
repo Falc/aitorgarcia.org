@@ -1,5 +1,7 @@
 {% extends "::layout.html.twig" %}
 
+{% block title %}{{ 'technologies.title.create' | trans }} - Aitor García (Backend){% endblock %}
+
 {% block stylesheets %}
 {% stylesheets filter="cssrewrite,?yui_css" output='css/backend-*.css'
     'css/main.css'
@@ -19,7 +21,7 @@
 {% endblock %}
 
 {% block page %}
-<h2>{{ 'technologies.heading.new' | trans }}</h2>
+<h2>{{ 'technologies.title.create' | trans }}</h2>
 <form action="{{ path('admin_technology_create') }}" method="post">
 	<fieldset>
 		<legend>{{ 'technologies.legend.info' | trans }}</legend>

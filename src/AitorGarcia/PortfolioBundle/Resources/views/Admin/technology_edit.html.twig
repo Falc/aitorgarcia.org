@@ -1,5 +1,7 @@
 {% extends "::layout.html.twig" %}
 
+{% block title %}{{ 'technologies.title.edit' | trans }} - Aitor García (Backend){% endblock %}
+
 {% block stylesheets %}
 {% stylesheets filter="cssrewrite,?yui_css" output='css/backend-*.css'
     'css/main.css'
@@ -19,7 +21,7 @@
 {% endblock %}
 
 {% block page %}
-<h2>{{ 'technologies.heading.edit' | trans }}</h2>
+<h2>{{ 'technologies.title.edit' | trans }}</h2>
 <form action="{{ path('admin_technology_edit', { 'id': technology_id }) }}" method="post">
 	<fieldset>
 		<legend>{{ 'technologies.legend.info' | trans }}</legend>

@@ -1,5 +1,7 @@
 {% extends "::layout.html.twig" %}
 
+{% block title %}{{ 'projects.title.edit' | trans }} - Aitor García (Backend){% endblock %}
+
 {% block stylesheets %}
 {% stylesheets filter="cssrewrite,?yui_css" output='css/backend-*.css'
     'css/main.css'
@@ -25,7 +27,7 @@
 {% endblock %}
 
 {% block page %}
-<h2>{{ 'projects.heading.edit' | trans }}</h2>
+<h2>{{ 'projects.title.edit' | trans }}</h2>
 <form action="{{ path('admin_project_edit', { 'id': project_id }) }}" method="post" {{ form_enctype(form) }}>
 	<fieldset>
 		<legend>{{ 'projects.legend.info' | trans }}</legend>

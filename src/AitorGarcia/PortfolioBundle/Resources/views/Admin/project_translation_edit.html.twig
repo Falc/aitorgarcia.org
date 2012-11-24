@@ -1,5 +1,7 @@
 {% extends "::layout.html.twig" %}
 
+{% block title %}{{ 'projects.title.translate' | trans({'%project_name%': project_name, '%lang%': lang}) }} - Aitor García (Backend){% endblock %}
+
 {% block stylesheets %}
 {% stylesheets filter="cssrewrite,?yui_css" output='css/backend-*.css'
     'css/main.css'
@@ -20,7 +22,7 @@
 {% endblock %}
 
 {% block page %}
-<h2>{{ 'projects.heading.translate' | trans({'%project_name%': project_name, '%lang%': lang}) }}</h2>
+<h2>{{ 'projects.title.translate' | trans({'%project_name%': project_name, '%lang%': lang}) }}</h2>
 <form action="{{ path('admin_project_translation_edit', { 'id': project_id, 'lang': lang }) }}" method="post" {{ form_enctype(form) }}>
 	<fieldset>
 		<legend>{{ 'projects.legend.info' | trans }}</legend>

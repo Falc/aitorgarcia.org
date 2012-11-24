@@ -1,5 +1,7 @@
 {% extends "::layout.html.twig" %}
 
+{% block title %}{{ 'projects.title.delete' | trans }} - Aitor García (Backend){% endblock %}
+
 {% block stylesheets %}
 {% stylesheets filter="cssrewrite,?yui_css" output='css/backend-*.css'
     'css/main.css'
@@ -18,7 +20,7 @@
 {% endblock %}
 
 {% block page %}
-<h2>{{ 'projects.heading.delete' | trans }}</h2>
+<h2>{{ 'projects.title.delete' | trans }}</h2>
 <form action="{{ path('admin_project_delete', { 'id': project_id }) }}" method="post">
     <p>{{ 'projects.message.confirm_deletion' | trans }}</p>
     {{ form_rest(form) }}

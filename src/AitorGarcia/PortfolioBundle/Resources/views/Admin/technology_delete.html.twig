@@ -1,5 +1,7 @@
 {% extends "::layout.html.twig" %}
 
+{% block title %}{{ 'technologies.title.delete' | trans }} - Aitor García (Backend){% endblock %}
+
 {% block stylesheets %}
 {% stylesheets filter="cssrewrite,?yui_css" output='css/backend-*.css'
     'css/main.css'
@@ -18,7 +20,7 @@
 {% endblock %}
 
 {% block page %}
-<h2>{{ 'technologies.heading.delete' | trans }}</h2>
+<h2>{{ 'technologies.title.delete' | trans }}</h2>
 <form action="{{ path('admin_technology_delete', { 'id': technology_id }) }}" method="post">
     <p>{{ 'technologies.message.confirm_deletion' | trans }}</p>
     {{ form_rest(form) }}
