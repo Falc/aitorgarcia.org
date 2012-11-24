@@ -1,9 +1,4 @@
 projects:
-    heading:
-        delete:                 Delete Project
-        edit:                   Edit Project
-        new:                    New Project
-        translate:              Translate "%project_name%" to "%lang%"
     legend:
         images:                 Images
         info:                   Project Information
@@ -17,13 +12,14 @@ projects:
         success_translation:    The translation was saved successfully.
     subnavigation:
         project_list:           These are some of my projects
-    title:                      Projects
+    title:
+        create:                 New Project
+        delete:                 Delete Project
+        edit:                   Edit Project
+        list:                   Projects
+        translate:              Translate "%project_name%" to "%lang%"
 
 technologies:
-    heading:
-        delete:             Delete Technology
-        edit:               Edit Technology
-        new:                New Technology
     legend:
         info:               Technology Information
     message:
@@ -32,6 +28,11 @@ technologies:
         success_creation:   The technology was created successfully.
         success_deletion:   The technology was deleted successfully.
         success_edition:    The technology was edited successfully.
+    title:
+        create:             New Technology
+        delete:             Delete Technology
+        edit:               Edit Technology
+        list:               Technologies
 
 contact:
     legend:
