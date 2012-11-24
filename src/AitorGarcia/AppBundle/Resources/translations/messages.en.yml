@@ -29,7 +29,8 @@ more_info:
     title:              More Information
 
 admin:
-    paragraph:
-        some_info:      You can add some information here about how the panel admin works.
-    subnavigation:
-        index:          Welcome to the admin panel!
+    index:
+        paragraph:
+            some_info:  You can add some information here about how the panel admin works.
+        subnavigation:  Welcome to the admin panel!
+        title:          Home

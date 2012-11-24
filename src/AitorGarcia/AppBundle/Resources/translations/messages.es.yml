@@ -29,7 +29,8 @@ more_info:
     title:              Más información
 
 admin:
-    paragraph:
-        some_info:      Aquí puedes añadir información sobre el funcionamiento del panel de administración.
-    subnavigation:
-        index:          ¡Bienvenido al panel de administración!
+    index:
+        paragraph:
+            some_info:  Aquí puedes añadir información sobre el funcionamiento del panel de administración.
+        subnavigation:  Bienvenido al panel de administración!
+        title:          Portada
