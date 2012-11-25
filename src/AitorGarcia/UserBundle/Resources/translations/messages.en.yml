@@ -1,7 +1,7 @@
 login:
     legend:
         info:   User Info
-    title:      Login
+    title:      Log In
 
 field:
     username:       Username
@@ -9,4 +9,4 @@ field:
     remember_me:    Remember me
 
 button:
-    send:   Send
+    log_in: Log In

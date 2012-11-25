@@ -9,4 +9,4 @@ field:
     remember_me:    Recordar
 
 button:
-    send:   Enviar
+    log_in: Iniciar sesión
