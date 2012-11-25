@@ -11,6 +11,7 @@ namespace AitorGarcia\PortfolioBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
  * This form type will be used for the technology creation/edition forms.
@@ -31,16 +32,15 @@ class TechnologyType extends AbstractType
     }
 
     /**
-     * Returns the default options for this type.
+     * Sets the default options for this type.
      *
-     * @param   array   $options
-     * @return  array   The default options.
+     * @param   \Symfony\Component\OptionsResolver\OptionsResolverInterface  $resolver  The resolver for the options.
      */
-    public function getDefaultOptions(array $options)
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        return array(
+        $resolver->setDefaults(array(
             'data_class' => 'AitorGarcia\PortfolioBundle\Entity\Technology'
-        );
+        ));
     }
 
     /**

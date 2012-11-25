@@ -11,6 +11,7 @@ namespace AitorGarcia\PortfolioBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
  * This form type will be used for the contact/enquiry form.

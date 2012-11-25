@@ -12,6 +12,7 @@ namespace AitorGarcia\PortfolioBundle\Form\Type;
 use AitorGarcia\PortfolioBundle\Entity\Technology;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
  * This form type will be used for the project creation/edition forms.
@@ -56,8 +57,9 @@ class ProjectType extends AbstractType
             'property'  => 'name',
             'multiple'  => true,
             'attr'      => array(
-                'size'  =>  6
-            )
+                'size'  => 6
+            ),
+            'required'  => false
         ));
 
         $builder->add('screenshots', 'collection', array(
@@ -70,16 +72,15 @@ class ProjectType extends AbstractType
     }
 
     /**
-     * Returns the default options for this type.
+     * Sets the default options for this type.
      *
-     * @param   array   $options
-     * @return  array   The default options.
+     * @param   \Symfony\Component\OptionsResolver\OptionsResolverInterface  $resolver  The resolver for the options.
      */
-    public function getDefaultOptions(array $options)
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        return array(
-            'data_class' => 'AitorGarcia\PortfolioBundle\Entity\Project',
-        );
+        $resolver->setDefaults(array(
+            'data_class' => 'AitorGarcia\PortfolioBundle\Entity\Project'
+        ));
     }
 
     /**
