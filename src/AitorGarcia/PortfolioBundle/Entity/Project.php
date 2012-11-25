@@ -17,7 +17,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Represents a project.
  *
  * @ORM\Table(name="projects")
- * @ORM\Entity(repositoryClass="AitorGarcia\PortfolioBundle\Entity\ProjectRepository")
+ * @ORM\Entity
  * @Gedmo\TranslationEntity(class="AitorGarcia\PortfolioBundle\Entity\Translation\ProjectTranslation")
  */
 class Project
