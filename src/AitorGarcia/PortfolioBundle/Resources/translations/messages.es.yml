@@ -71,6 +71,7 @@ button:
     move_up:        Arriba
     move_up_ext:    Move Up
     remove_image:   Eliminar imagen
+    save_changes:   Guardar cambios
     send:           Enviar
     source_code:    Código fuente
     view_project:   Ver proyecto
