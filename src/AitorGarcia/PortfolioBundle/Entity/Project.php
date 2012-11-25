@@ -111,7 +111,7 @@ class Project
      *
      * @ORM\ManyToMany(targetEntity="Technology", inversedBy="projects")
      * @ORM\JoinTable(name="project_technologies")
-     * @Assert\Count(min = "1")
+     * @Assert\Count(min = "1", minMessage = "projects.select_min_technologies")
      */
     protected $technologies;
 

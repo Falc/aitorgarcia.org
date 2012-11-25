@@ -1,0 +1,2 @@
+projects:
+    select_min_technologies:    Debes seleccionar al menos {{ limit }} tecnología.|Debes seleccionar al menos {{ limit }} tecnologías.
