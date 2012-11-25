@@ -1,4 +1,11 @@
 <?php
+/**
+ * This file contains the Project class.
+ *
+ * @author		Aitor García <aitor.falc@gmail.com>
+ * @copyright	2012 Aitor García <aitor.falc@gmail.com>
+ * @license		https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE Simplified BSD License
+ */
 
 namespace AitorGarcia\PortfolioBundle\Entity;
 
@@ -7,7 +14,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * AitorGarcia\PortfolioBundle\Entity
+ * Represents a project.
  *
  * @ORM\Table(name="projects")
  * @ORM\Entity(repositoryClass="AitorGarcia\PortfolioBundle\Entity\ProjectRepository")
@@ -16,6 +23,10 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Project
 {
     /**
+     * The project ID.
+     *
+     * @var integer
+     *
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="IDENTITY")
@@ -23,6 +34,10 @@ class Project
     protected $id;
 
     /**
+     * The project name.
+     *
+     * @var string
+     *
      * @Gedmo\Translatable
      * @ORM\Column(type="string")
      * @Assert\NotBlank()
@@ -31,6 +46,10 @@ class Project
     protected $name;
 
     /**
+     * The project description.
+     *
+     * @var string
+     *
      * @Gedmo\Translatable
      * @ORM\Column(type="text")
      * @Assert\NotBlank()
@@ -38,12 +57,22 @@ class Project
     protected $description;
 
     /**
+     * The project client.
+     *
+     * This is optional. The project view will not display the client block if no client was entered.
+     *
+     * @var string|null
+     *
      * @ORM\Column(type="string", nullable=true)
      * @Assert\MaxLength(255)
      */
     protected $client;
 
     /**
+     * A link to the project.
+     *
+     * @var string
+     *
      * @ORM\Column(type="string")
      * @Assert\NotBlank()
      * @Assert\MaxLength(255)
@@ -52,6 +81,12 @@ class Project
     protected $link;
 
     /**
+     * A link to the source code.
+     *
+     * This is optional. The project view will not display the "Source Code" button if not source code link was entered.
+     *
+     * @var string|null
+     *
      * @ORM\Column(type="string", nullable=true)
      * @Assert\MaxLength(255)
      * @Assert\Url()
@@ -59,6 +94,10 @@ class Project
     protected $sourceLink;
 
     /**
+     * The project slug.
+     *
+     * @var string
+     *
      * @Gedmo\Slug(fields={"name"})
      * @Gedmo\Translatable
      * @ORM\Column(type="string", unique=true)
@@ -66,6 +105,10 @@ class Project
     protected $url;
 
     /**
+     * This represents the ManyToMany projects-technologies relationship.
+     *
+     * @var Doctrine\Common\Collections\Collection
+     *
      * @ORM\ManyToMany(targetEntity="Technology", inversedBy="projects")
      * @ORM\JoinTable(name="project_technologies")
      * @Assert\Count(min = "1")
@@ -73,24 +116,36 @@ class Project
     protected $technologies;
 
     /**
+     * This represents the OneToMany project-screenshots relationship.
+     *
+     * @var Doctrine\Common\Collections\Collection
+     *
      * @ORM\OneToMany(targetEntity="ProjectScreenshot", mappedBy="project", cascade={"persist", "remove"})
      * @ORM\OrderBy({"weight" = "ASC", "id" = "ASC"})
      */
     protected $screenshots;
 
     /**
+     * The project creation date.
+     *
+     * @var DateTime
+     *
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime")
      */
     protected $created;
 
     /**
+     * The translation locale code.
+     *
+     * @var string
+     *
      * @Gedmo\Locale
      */
     protected $locale;
 
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -99,9 +154,9 @@ class Project
     }
     
     /**
-     * Get id
+     * Gets the ID.
      *
-     * @return integer
+     * @return  integer
      */
     public function getId()
     {
@@ -109,10 +164,10 @@ class Project
     }
 
     /**
-     * Set name
+     * Sets the name.
      *
-     * @param string $name
-     * @return Project
+     * @param   string  $name
+     * @return  Project
      */
     public function setName($name)
     {
@@ -122,9 +177,9 @@ class Project
     }
 
     /**
-     * Get name
+     * Gets the name.
      *
-     * @return string
+     * @return  string
      */
     public function getName()
     {
@@ -132,10 +187,10 @@ class Project
     }
 
     /**
-     * Set description
+     * Sets the description.
      *
-     * @param string $description
-     * @return Project
+     * @param   string  $description
+     * @return  Project
      */
     public function setDescription($description)
     {
@@ -145,9 +200,9 @@ class Project
     }
 
     /**
-     * Get description
+     * Gets the description.
      *
-     * @return string
+     * @return  string
      */
     public function getDescription()
     {
@@ -155,10 +210,10 @@ class Project
     }
 
     /**
-     * Set client
+     * Sets the client.
      *
-     * @param string $client
-     * @return Project
+     * @param   string  $client
+     * @return  Project
      */
     public function setClient($client)
     {
@@ -168,9 +223,9 @@ class Project
     }
 
     /**
-     * Get client
+     * Gets the client.
      *
-     * @return string
+     * @return  string
      */
     public function getClient()
     {
@@ -178,10 +233,10 @@ class Project
     }
 
     /**
-     * Set link
+     * Sets the link.
      *
-     * @param string $link
-     * @return Project
+     * @param   string  $link
+     * @return  Project
      */
     public function setLink($link)
     {
@@ -191,9 +246,9 @@ class Project
     }
 
     /**
-     * Get link
+     * Gets the link.
      *
-     * @return string
+     * @return  string
      */
     public function getLink()
     {
@@ -201,10 +256,10 @@ class Project
     }
 
     /**
-     * Set source link
+     * Sets the source link.
      *
-     * @param string $sourceLink
-     * @return Project
+     * @param   string  $sourceLink
+     * @return  Project
      */
     public function setSourceLink($sourceLink)
     {
@@ -214,9 +269,9 @@ class Project
     }
 
     /**
-     * Get source link
+     * Gets the source link.
      *
-     * @return string
+     * @return  string
      */
     public function getSourceLink()
     {
@@ -224,10 +279,10 @@ class Project
     }
 
     /**
-     * Set url
+     * Sets the url.
      *
-     * @param string $url
-     * @return Project
+     * @param   string  $url
+     * @return  Project
      */
     public function setUrl($url)
     {
@@ -237,9 +292,9 @@ class Project
     }
 
     /**
-     * Get url
+     * Gets the url.
      *
-     * @return string
+     * @return  string
      */
     public function getUrl()
     {
@@ -247,10 +302,10 @@ class Project
     }
 
     /**
-     * Add technology
+     * Adds a technology.
      *
-     * @param AitorGarcia\PortfolioBundle\Entity\Technology $technology
-     * @return Project
+     * @param   Technology   $technology
+     * @return  Project
      */
     public function addTechnology(\AitorGarcia\PortfolioBundle\Entity\Technology $technology)
     {
@@ -260,9 +315,9 @@ class Project
     }
 
     /**
-     * Remove technology
+     * Removes a technology.
      *
-     * @param AitorGarcia\PortfolioBundle\Entity\Technology $technology
+     * @param   Technology   $technology
      */
     public function removeTechnology(\AitorGarcia\PortfolioBundle\Entity\Technology $technology)
     {
@@ -270,9 +325,9 @@ class Project
     }
 
     /**
-     * Get technologies
+     * Get the technologies.
      *
-     * @return Doctrine\Common\Collections\Collection
+     * @return  Doctrine\Common\Collections\Collection
      */
     public function getTechnologies()
     {
@@ -280,10 +335,10 @@ class Project
     }
 
     /**
-     * Add screenshot
+     * Adds a screenshot.
      *
-     * @param AitorGarcia\PortfolioBundle\Entity\ProjectScreenshot $screenshot
-     * @return Project
+     * @param   ProjectScreenshot    $screenshot
+     * @return  Project
      */
     public function addScreenshot(\AitorGarcia\PortfolioBundle\Entity\ProjectScreenshot $screenshot)
     {
@@ -294,9 +349,9 @@ class Project
     }
 
     /**
-     * Remove screenshot
+     * Removes a screenshot.
      *
-     * @param AitorGarcia\PortfolioBundle\Entity\ProjectScreenshot $screenshot
+     * @param   ProjectScreenshot    $screenshot
      */
     public function removeScreenshot(\AitorGarcia\PortfolioBundle\Entity\ProjectScreenshot $screenshot)
     {
@@ -304,9 +359,9 @@ class Project
     }
 
     /**
-     * Get screenshots
+     * Gets the screenshots.
      *
-     * @return Doctrine\Common\Collections\Collection
+     * @return  Doctrine\Common\Collections\Collection
      */
     public function getScreenshots()
     {
@@ -314,9 +369,9 @@ class Project
     }
 
     /**
-     * Get the creation date
+     * Gets the creation date.
      *
-     * @return DateTime
+     * @return  DateTime
      */
     public function getCreated()
     {
@@ -324,9 +379,9 @@ class Project
     }
 
     /**
-     * Set locale
+     * Sets the locale.
      *
-     * @param string $locale
+     * @param   string  $locale
      */
     public function setTranslatableLocale($locale)
     {

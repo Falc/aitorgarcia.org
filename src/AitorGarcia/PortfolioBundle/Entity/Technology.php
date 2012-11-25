@@ -1,4 +1,11 @@
 <?php
+/**
+ * This file contains the Technology class.
+ *
+ * @author		Aitor García <aitor.falc@gmail.com>
+ * @copyright	2012 Aitor García <aitor.falc@gmail.com>
+ * @license		https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE Simplified BSD License
+ */
 
 namespace AitorGarcia\PortfolioBundle\Entity;
 
@@ -6,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * AitorGarcia\PortfolioBundle\Entity
+ * Represents a technology.
  *
  * @ORM\Table(name="technologies")
  * @ORM\Entity
@@ -14,6 +21,10 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Technology
 {
     /**
+     * The technology ID.
+     *
+     * @var integer
+     *
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="IDENTITY")
@@ -21,6 +32,10 @@ class Technology
     protected $id;
 
     /**
+     * The technology name.
+     *
+     * @var string
+     *
      * @ORM\Column(type="string")
      * @Assert\NotBlank()
      * @Assert\MaxLength(255)
@@ -28,11 +43,16 @@ class Technology
     protected $name;
 
     /**
-    * @ORM\ManyToMany(targetEntity="Project", mappedBy="technologies")
-    */
+     * This represents the ManyToMany project-technologies relationship.
+     *
+     * @var Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Project", mappedBy="technologies")
+     */
 	protected $projects;
+
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -40,9 +60,9 @@ class Technology
     }
     
     /**
-     * Get id
+     * Gets the ID.
      *
-     * @return integer 
+     * @return  integer 
      */
     public function getId()
     {
@@ -50,10 +70,10 @@ class Technology
     }
 
     /**
-     * Set name
+     * Sets the name.
      *
-     * @param string $name
-     * @return Technology
+     * @param   string  $name
+     * @return  Technology
      */
     public function setName($name)
     {
@@ -63,9 +83,9 @@ class Technology
     }
 
     /**
-     * Get name
+     * Gets the name.
      *
-     * @return string 
+     * @return  string 
      */
     public function getName()
     {
@@ -73,10 +93,10 @@ class Technology
     }
 
     /**
-     * Add projects
+     * Adds a project.
      *
-     * @param AitorGarcia\PortfolioBundle\Entity\Project $project
-     * @return Technology
+     * @param   Project $project
+     * @return  Technology
      */
     public function addProject(\AitorGarcia\PortfolioBundle\Entity\Project $project)
     {
@@ -86,9 +106,9 @@ class Technology
     }
 
     /**
-     * Remove project
+     * Removes a project.
      *
-     * @param AitorGarcia\PortfolioBundle\Entity\Project $project
+     * @param   Project $project
      */
     public function removeProject(\AitorGarcia\PortfolioBundle\Entity\Project $project)
     {
@@ -96,9 +116,9 @@ class Technology
     }
 
     /**
-     * Get projects
+     * Gets the projects.
      *
-     * @return Doctrine\Common\Collections\Collection 
+     * @return  Doctrine\Common\Collections\Collection
      */
     public function getProjects()
     {

@@ -1,4 +1,11 @@
 <?php
+/**
+ * This file contains the ProjectTranslation class.
+ *
+ * @author		Aitor García <aitor.falc@gmail.com>
+ * @copyright	2012 Aitor García <aitor.falc@gmail.com>
+ * @license		https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE Simplified BSD License
+ */
 
 namespace AitorGarcia\PortfolioBundle\Entity\Translation;
 
@@ -6,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Translatable\Entity\MappedSuperclass\AbstractTranslation;
 
 /**
- * AitorGarcia\PortfolioBundle\Entity\Translation
+ * Represents a project translation.
  *
  * @ORM\Table(
  *     name="projects_translations",

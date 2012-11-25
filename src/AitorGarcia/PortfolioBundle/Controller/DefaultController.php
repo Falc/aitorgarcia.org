@@ -1,4 +1,11 @@
 <?php
+/**
+ * This file contains the DefaultController class.
+ *
+ * @author		Aitor García <aitor.falc@gmail.com>
+ * @copyright	2012 Aitor García <aitor.falc@gmail.com>
+ * @license		https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE Simplified BSD License
+ */
 
 namespace AitorGarcia\PortfolioBundle\Controller;
 
@@ -6,8 +13,14 @@ use AitorGarcia\PortfolioBundle\Entity\Enquiry;
 use AitorGarcia\PortfolioBundle\Form\Type\EnquiryType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+/**
+ * Contains some basic actions.
+ */
 class DefaultController extends Controller
 {
+    /**
+     * Displays the contact form and processes it.
+     */
     public function contactAction()
     {
         // Create a blank enquiry

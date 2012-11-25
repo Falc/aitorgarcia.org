@@ -1,4 +1,11 @@
 <?php
+/**
+ * This file contains the AdminTechnologyController class.
+ *
+ * @author		Aitor García <aitor.falc@gmail.com>
+ * @copyright	2012 Aitor García <aitor.falc@gmail.com>
+ * @license		https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE Simplified BSD License
+ */
 
 namespace AitorGarcia\PortfolioBundle\Controller;
 
@@ -6,8 +13,14 @@ use AitorGarcia\PortfolioBundle\Entity\Technology;
 use AitorGarcia\PortfolioBundle\Form\Type\TechnologyType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+/**
+ * Contains backend actions related to technologies.
+ */
 class AdminTechnologyController extends Controller
 {
+    /**
+     * Displays a list of technologies.
+     */
     public function listAction()
     {
         // Get the entity manager and find all the technologies
@@ -21,6 +34,9 @@ class AdminTechnologyController extends Controller
         );
     }
 
+    /**
+     * Displays the "technology create" form and processes it.
+     */
     public function createAction()
     {
         // Create a blank technology
@@ -62,6 +78,11 @@ class AdminTechnologyController extends Controller
         );
     }
 
+    /**
+     * Displays the "technology edit" form and processes it.
+     *
+     * @param   integer $id The ID of the technology to edit.
+     */
     public function editAction($id)
     {
         // Get the entity manager and find the selected technology
@@ -113,6 +134,11 @@ class AdminTechnologyController extends Controller
         );
     }
 
+    /**
+     * Displays the "technology delete" form and processes it.
+     *
+     * @param   integer $id The ID of the technology to delete.
+     */
     public function deleteAction($id)
     {
         // Get the entity manager and find the selected technology
@@ -170,6 +196,11 @@ class AdminTechnologyController extends Controller
         );
     }
 
+    /**
+     * Creates a helper delete form.
+     *
+     * @param   integer $id     The ID of the technology to delete.
+     */
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder(array('id' => $id))

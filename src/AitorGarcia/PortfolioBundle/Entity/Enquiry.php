@@ -1,41 +1,64 @@
 <?php
+/**
+ * This file contains the Enquiry class.
+ *
+ * @author		Aitor García <aitor.falc@gmail.com>
+ * @copyright	2012 Aitor García <aitor.falc@gmail.com>
+ * @license		https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE Simplified BSD License
+ */
 
 namespace AitorGarcia\PortfolioBundle\Entity;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * AitorGarcia\PortfolioBundle\Entity
+ * Represents an enquiry.
  */
 class Enquiry
 {
     /**
+     * The enquirer name.
+     *
+     * @var string
+     *
      * @Assert\NotBlank()
      */
     protected $name;
 
     /**
+     * The enquirer email.
+     *
+     * @var string
+     *
      * @Assert\NotBlank()
      * @Assert\Email()
      */
     protected $email;
 
     /**
+     * The enquiry subject.
+     *
+     * @var string
+     *
      * @Assert\NotBlank()
      * @Assert\MaxLength(80)
      */
     protected $subject;
 
     /**
+     * The enquiry body.
+     *
+     * @var string
+     *
      * @Assert\NotBlank()
      * @Assert\MinLength(20)
      */
     protected $body;
 
     /**
-     * Get name
+     * Gets the name.
      *
-     * @return string
+     * @return  string
      */
     public function getName()
     {
@@ -43,10 +66,10 @@ class Enquiry
     }
 
     /**
-     * Set name
+     * Sets the name.
      *
-     * @param string $name
-     * @return Enquiry
+     * @param   string  $name
+     * @return  Enquiry
      */
     public function setName($name)
     {
@@ -56,9 +79,9 @@ class Enquiry
     }
 
     /**
-     * Get email
+     * Gets the email.
      *
-     * @return string
+     * @return  string
      */
     public function getEmail()
     {
@@ -66,10 +89,10 @@ class Enquiry
     }
 
     /**
-     * Set email
+     * Sets the email.
      *
-     * @param string $email
-     * @return Enquiry
+     * @param   string  $email
+     * @return  Enquiry
      */
     public function setEmail($email)
     {
@@ -79,9 +102,9 @@ class Enquiry
     }
 
     /**
-     * Get subject
+     * Gets the subject.
      *
-     * @return string
+     * @return  string
      */
     public function getSubject()
     {
@@ -89,10 +112,10 @@ class Enquiry
     }
 
     /**
-     * Set subject
+     * Sets the subject.
      *
-     * @param string $subject
-     * @return Enquiry
+     * @param   string  $subject
+     * @return  Enquiry
      */
     public function setSubject($subject)
     {
@@ -102,9 +125,9 @@ class Enquiry
     }
 
     /**
-     * Get body
+     * Gets the body.
      *
-     * @return string
+     * @return  string
      */
     public function getBody()
     {
@@ -112,10 +135,10 @@ class Enquiry
     }
 
     /**
-     * Set body
+     * Sets the body.
      *
-     * @param string $body
-     * @return Enquiry
+     * @param   string  $body
+     * @return  Enquiry
      */
     public function setBody($body)
     {

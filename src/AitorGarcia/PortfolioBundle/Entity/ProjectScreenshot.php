@@ -1,4 +1,11 @@
 <?php
+/**
+ * This file contains the ProjectScreenshot class.
+ *
+ * @author		Aitor García <aitor.falc@gmail.com>
+ * @copyright	2012 Aitor García <aitor.falc@gmail.com>
+ * @license		https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE Simplified BSD License
+ */
 
 namespace AitorGarcia\PortfolioBundle\Entity;
 
@@ -7,7 +14,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * AitorGarcia\PortfolioBundle\Entity
+ * Represents a project screenshot.
  *
  * @ORM\Table(name="project_screenshots")
  * @ORM\Entity
@@ -17,6 +24,10 @@ use Symfony\Component\Validator\Constraints as Assert;
 class ProjectScreenshot
 {
     /**
+     * The screenshot ID.
+     *
+     * @var integer
+     *
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="IDENTITY")
@@ -24,6 +35,10 @@ class ProjectScreenshot
     protected $id;
 
     /**
+     * The screenshot name.
+     *
+     * @var string
+     *
      * @Gedmo\Translatable
      * @ORM\Column(type="string")
      * @Assert\NotBlank()
@@ -32,43 +47,58 @@ class ProjectScreenshot
     protected $name;
 
     /**
+     * The screenshot file path.
+     *
+     * @var string
+     *
      * @ORM\Column(type="string")
      */
     protected $path;
 
     /**
+     * The screenshot weight.
+     *
+     * A screenshot with a weight (i.e. 2) will be displayed below/after screenshots with a lower weight (<2).
+     *
+     * @var integer
+     *
      * @ORM\Column(type="integer")
      * @Assert\Type(type="integer")
      */
     protected $weight = 0;
 
     /**
+     * The screenshot file, represented through the File class. 
+     *
+     * @var \Symfony\Component\HttpFoundation\File\File
+     *
      * @Assert\File(maxSize="2M")
      */
     public $file;
 
     /**
+     * This represents the ManyToOne project-screenshots relationship.
+     *
+     * @var Project
+     *
      * @ORM\ManyToOne(targetEntity="Project", inversedBy="screenshots")
      * @ORM\JoinColumn(name="project_id", referencedColumnName="id")
      */
     protected $project;
 
     /**
+     * The translation locale code.
+     *
+     * @var string
+     *
      * @Gedmo\Locale
      */
     protected $locale;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-    }
     
     /**
-     * Get id
+     * Gets the ID.
      *
-     * @return integer
+     * @return  integer 
      */
     public function getId()
     {
@@ -76,10 +106,10 @@ class ProjectScreenshot
     }
 
     /**
-     * Set name
+     * Sets the name.
      *
-     * @param string $name
-     * @return ProjectScreenshot
+     * @param   string  $name
+     * @return  ProjectScreenshot
      */
     public function setName($name)
     {
@@ -89,9 +119,9 @@ class ProjectScreenshot
     }
 
     /**
-     * Get name
+     * Gets the name.
      *
-     * @return string
+     * @return  string
      */
     public function getName()
     {
@@ -99,10 +129,10 @@ class ProjectScreenshot
     }
 
     /**
-     * Set path
+     * Sets the path.
      *
-     * @param string $path
-     * @return ProjectScreenshot
+     * @param   string  $path
+     * @return  ProjectScreenshot
      */
     public function setPath($path)
     {
@@ -112,9 +142,9 @@ class ProjectScreenshot
     }
 
     /**
-     * Get path
+     * Gets the path.
      *
-     * @return string $path
+     * @return  string  $path
      */
     public function getPath()
     {
@@ -122,10 +152,10 @@ class ProjectScreenshot
     }
 
     /**
-     * Set weight
+     * Sets the weight.
      *
-     * @param integer $weight
-     * @return ProjectScreenshot
+     * @param   integer $weight
+     * @return  ProjectScreenshot
      */
     public function setWeight($weight)
     {
@@ -135,9 +165,9 @@ class ProjectScreenshot
     }
 
     /**
-     * Get weight
+     * Gets the weight.
      *
-     * @return integer $weight
+     * @return  integer $weight
      */
     public function getWeight()
     {
@@ -145,10 +175,10 @@ class ProjectScreenshot
     }
 
     /**
-     * Set project
+     * Sets the project.
      *
-     * @param AitorGarcia\PortfolioBundle\Entity\Project $project
-     * @return ProjectScreenshot
+     * @param   Project $project
+     * @return  ProjectScreenshot
      */
     public function setProject(\AitorGarcia\PortfolioBundle\Entity\Project $project = null)
     {
@@ -158,9 +188,9 @@ class ProjectScreenshot
     }
 
     /**
-     * Get project
+     * Gets the project.
      *
-     * @return AitorGarcia\PortfolioBundle\Entity\Project
+     * @return  Project
      */
     public function getProject()
     {
@@ -168,6 +198,10 @@ class ProjectScreenshot
     }
 
     /**
+     * Gets the file name and sets the path.
+     *
+     * This is a lifecycle callback that executes before persisting/updating the project screenshot in the database.
+     *
      * @ORM\PrePersist()
      * @ORM\PreUpdate()
      */
@@ -184,6 +218,10 @@ class ProjectScreenshot
     }
 
     /**
+     * Moves the file to the correct place.
+     *
+     * This is a lifecycle callback that executes after persisting/updating the project screenshot in the database.
+     *
      * @ORM\PostPersist()
      * @ORM\PostUpdate()
      */
@@ -206,6 +244,10 @@ class ProjectScreenshot
     }
 
     /**
+     * Deletes the file.
+     *
+     * This is a lifecycle callback that executes after deleting the project screenshot in the database.
+     *
      * @ORM\PostRemove()
      */
     public function removeUpload()
@@ -220,7 +262,10 @@ class ProjectScreenshot
     }
 
     /**
-     * Creates a thumbnail with the specified size
+     * Creates a thumbnail with the specified size.
+     *
+     * @param   integer $dest_width     The thumbnail width. Default is 300px.
+     * @param   integer $dest_height    The thumbnail height. Default is 200px.
      */
     protected function createThumbnail($dest_width = 300, $dest_height = 200)
     {
@@ -251,9 +296,9 @@ class ProjectScreenshot
     }
 
     /**
-     * Get the absolute directory path where screenshots should be stored
+     * Gets the absolute directory path where screenshots should be stored.
      *
-     * @return string
+     * @return  string
      */
     protected function getUploadRootDir()
     {
@@ -261,9 +306,9 @@ class ProjectScreenshot
     }
 
     /**
-     * Get the screenshots directory (relative to /web/files/)
+     * Gets the screenshots directory (relative to /web/files/).
      *
-     * @return string
+     * @return  string
      */
     protected function getUploadDir()
     {
@@ -272,7 +317,9 @@ class ProjectScreenshot
     }
 
     /**
-     * Get the absolute path
+     * Gets the absolute path.
+     *
+     * @return  string|null
      */
     public function getAbsolutePath()
     {
@@ -280,7 +327,9 @@ class ProjectScreenshot
     }
 
     /**
-     * Get the thumb absolute path
+     * Gets the thumbnail absolute path.
+     *
+     * @return  string|null
      */
     public function getThumbAbsolutePath()
     {
@@ -288,7 +337,9 @@ class ProjectScreenshot
     }
 
     /**
-     * Get the web path (relative to /web/)
+     * Gets the web path (relative to /web/).
+     *
+     * @return  string|null
      */
     public function getWebPath()
     {
@@ -296,7 +347,9 @@ class ProjectScreenshot
     }
 
     /**
-     * Get the thumb web path (relative to /web/)
+     * Gets the thumb web path (relative to /web/).
+     *
+     * @return  string|null
      */
     public function getThumbWebPath()
     {
@@ -304,9 +357,9 @@ class ProjectScreenshot
     }
 
     /**
-     * Set locale
+     * Sets the locale.
      *
-     * @param string $locale
+     * @param   string  $locale
      */
     public function setTranslatableLocale($locale)
     {
