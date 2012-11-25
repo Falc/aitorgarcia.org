@@ -407,7 +407,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/l3pp4rd/DoctrineExtensions/archive/3d838ada9a100ca56ec2487294761e64001f48c2.zip",
+                "url": "https://github.com/l3pp4rd/DoctrineExtensions/archive/f3a7af78896f5b3947557635bd73fa8256a0beca.zip",
                 "reference": "75bd4b73d8900a217c49baf4c7fc73da7609c847",
                 "shasum": ""
             },
@@ -982,19 +982,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/stfalcon/TinymceBundle",
-                "reference": "c344aca589076d4096dea95bb6f5eada36522a02"
+                "reference": "9bffbd91aa6ee397cb26bb0a5826caca2a2263fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/stfalcon/TinymceBundle/archive/c344aca589076d4096dea95bb6f5eada36522a02.zip",
-                "reference": "c344aca589076d4096dea95bb6f5eada36522a02",
+                "url": "https://github.com/stfalcon/TinymceBundle/archive/9bffbd91aa6ee397cb26bb0a5826caca2a2263fb.zip",
+                "reference": "9bffbd91aa6ee397cb26bb0a5826caca2a2263fb",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0",
                 "symfony/symfony": ">=2.1"
             },
-            "time": "1352729930",
+            "time": "1353495773",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
