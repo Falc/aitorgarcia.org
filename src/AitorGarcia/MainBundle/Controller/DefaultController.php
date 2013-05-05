@@ -7,7 +7,7 @@
  * @license		https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE Simplified BSD License
  */
 
-namespace AitorGarcia\AppBundle\Controller;
+namespace AitorGarcia\MainBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -31,7 +31,7 @@ class DefaultController extends Controller
     public function indexAction()
     {
         // Render the index view
-        return $this->render('AitorGarciaAppBundle:Default:index.html.twig');
+        return $this->render('AitorGarciaMainBundle:Default:index.html.twig');
     }
 
     /**
@@ -40,6 +40,6 @@ class DefaultController extends Controller
     public function moreInfoAction()
     {
         // Render the more_info view
-        return $this->render('AitorGarciaAppBundle:Default:more_info.html.twig');
+        return $this->render('AitorGarciaMainBundle:Default:more_info.html.twig');
     }
 }

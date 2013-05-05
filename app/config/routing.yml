@@ -1,5 +1,5 @@
 _app:
-    resource: "@AitorGarciaAppBundle/Resources/config/routing.yml"
+    resource: "@AitorGarciaMainBundle/Resources/config/routing.yml"
     prefix: /
     type: be_simple_i18n
 

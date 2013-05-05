@@ -1,13 +1,13 @@
 <?php
 /**
- * This file contains the AppExtension class.
+ * This file contains the MainExtension class.
  *
  * @author		Aitor García <aitor.falc@gmail.com>
  * @copyright	2012 Aitor García <aitor.falc@gmail.com>
  * @license		https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE Simplified BSD License
  */
 
-namespace AitorGarcia\AppBundle\DependencyInjection;
+namespace AitorGarcia\MainBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -19,7 +19,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}.
  */
-class AitorGarciaAppExtension extends Extension
+class AitorGarciaMainExtension extends Extension
 {
     /**
      * Loads a specific configuration.

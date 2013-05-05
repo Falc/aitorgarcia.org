@@ -7,7 +7,7 @@
  * @license		https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE Simplified BSD License
  */
 
-namespace AitorGarcia\AppBundle\Controller;
+namespace AitorGarcia\MainBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -31,6 +31,6 @@ class AdminController extends Controller
     public function indexAction()
     {
         // Render the admin index view
-        return $this->render('AitorGarciaAppBundle:Admin:index.html.twig');
+        return $this->render('AitorGarciaMainBundle:Admin:index.html.twig');
     }
 }

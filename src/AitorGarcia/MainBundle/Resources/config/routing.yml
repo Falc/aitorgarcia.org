@@ -1,16 +1,16 @@
 _index:
     pattern:  /
-    defaults: { _controller: AitorGarciaAppBundle:Default:preIndex }
+    defaults: { _controller: AitorGarciaMainBundle:Default:preIndex }
 
 index:
     locales:  { en: "/home", es: "/portada" }
-    defaults: { _controller: AitorGarciaAppBundle:Default:index }
+    defaults: { _controller: AitorGarciaMainBundle:Default:index }
 
 more_info:
     locales:  { en: "/more-info", es: "/mas-informacion" }
-    defaults: { _controller: AitorGarciaAppBundle:Default:moreInfo }
+    defaults: { _controller: AitorGarciaMainBundle:Default:moreInfo }
 
 _admin:
-    resource: "@AitorGarciaAppBundle/Resources/config/admin_routing.yml"
+    resource: "@AitorGarciaMainBundle/Resources/config/admin_routing.yml"
     prefix: /admin
     type: be_simple_i18n

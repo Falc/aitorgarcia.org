@@ -1,7 +1,7 @@
 _admin_index:
     pattern:  /
-    defaults: { _controller: AitorGarciaAppBundle:Admin:preIndex }
+    defaults: { _controller: AitorGarciaMainBundle:Admin:preIndex }
 
 admin_index:
     locales:  { en: "/home", es: "/portada" }
-    defaults: { _controller: AitorGarciaAppBundle:Admin:index }
+    defaults: { _controller: AitorGarciaMainBundle:Admin:index }
