@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "3ff461bb59f3c84ac1e994c9226b5017",
+    "hash": "26f161f95adbc1cc7e0d5a4ca5868a0a",
     "packages": [
         {
             "name": "besimple/i18n-routing-bundle",
@@ -405,12 +405,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/l3pp4rd/DoctrineExtensions.git",
-                "reference": "75bd4b73d8900a217c49baf4c7fc73da7609c847"
+                "reference": "9ff77bf1a13b3847a09e1dcf6d7e27cdeab89f6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/l3pp4rd/DoctrineExtensions/zipball/6b263e633615003fe9026fc8146a0e6a5a7f80b4",
-                "reference": "75bd4b73d8900a217c49baf4c7fc73da7609c847",
+                "url": "https://api.github.com/repos/l3pp4rd/DoctrineExtensions/zipball/9ff77bf1a13b3847a09e1dcf6d7e27cdeab89f6b",
+                "reference": "9ff77bf1a13b3847a09e1dcf6d7e27cdeab89f6b",
                 "shasum": ""
             },
             "require": {
@@ -476,7 +476,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2012-11-06 19:20:18"
+            "time": "2013-05-04 12:20:35"
         },
         {
             "name": "jms/aop-bundle",

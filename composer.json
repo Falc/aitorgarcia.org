@@ -21,7 +21,7 @@
         "kriswallsmith/assetic": "1.1.*@dev",
         "stfalcon/tinymce-bundle": "dev-master",
         "besimple/i18n-routing-bundle": "2.1.*@dev",
-        "gedmo/doctrine-extensions": "dev-master#75bd4b73d8900a217c49baf4c7fc73da7609c847",
+        "gedmo/doctrine-extensions": "dev-master",
         "stof/doctrine-extensions-bundle": "dev-master",
         "friendsofsymfony/user-bundle": "*"
     },
