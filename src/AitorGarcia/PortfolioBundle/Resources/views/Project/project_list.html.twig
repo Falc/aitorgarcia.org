@@ -23,7 +23,7 @@
 <ul id="project-list">
 {% for project in projects %}
     <li class="{{ cycle(['odd', 'even'], loop.index0) }}">
-        <a class="project bg-dark-diamonds" href="{{ path('project_show', { 'url': project.url }) }}">
+        <a class="project bg-dark-diamonds" href="{{ path('project_show', { 'slug': project.slug }) }}">
         {% if project.screenshots is empty %}
             <img src="/files/no-project-screenshot.jpg" alt="{{ project.name }}" title="{{ project.name }}" />
         {% else %}

@@ -3,7 +3,7 @@ project_list:
     defaults: { _controller: AitorGarciaPortfolioBundle:Project:list }
 
 project_show:
-    locales:  { en: "/projects/{url}", es: "/proyectos/{url}" }
+    locales:  { en: "/projects/{slug}", es: "/proyectos/{slug}" }
     defaults: { _controller: AitorGarciaPortfolioBundle:Project:show }
 
 contact:

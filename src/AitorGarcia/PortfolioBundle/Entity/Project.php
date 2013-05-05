@@ -102,7 +102,7 @@ class Project
      * @Gedmo\Translatable
      * @ORM\Column(type="string", unique=true)
      */
-    protected $url;
+    protected $slug;
 
     /**
      * This represents the ManyToMany projects-technologies relationship.
@@ -279,26 +279,26 @@ class Project
     }
 
     /**
-     * Sets the url.
+     * Sets the slug.
      *
-     * @param   string  $url
+     * @param   string  $slug
      * @return  Project
      */
-    public function setUrl($url)
+    public function setSlug($slug)
     {
-        $this->url = $url;
+        $this->slug = $slug;
     
         return $this;
     }
 
     /**
-     * Gets the url.
+     * Gets the slug.
      *
      * @return  string
      */
-    public function getUrl()
+    public function getSlug()
     {
-        return $this->url;
+        return $this->slug;
     }
 
     /**

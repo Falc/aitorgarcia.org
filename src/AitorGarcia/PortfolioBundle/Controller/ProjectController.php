@@ -42,13 +42,13 @@ class ProjectController extends Controller
     /**
      * Displays the project view.
      *
-     * @param   string  $url    The project url/slug.
+     * @param   string  $slug   The project slug.
      */
-    public function showAction($url)
+    public function showAction($slug)
     {
         // Get the entity manager and find the selected project
         $entityManager = $this->get('doctrine')->getEntityManager();
-        $project = $entityManager->getRepository('AitorGarciaPortfolioBundle:Project')->findOneByUrl($url);
+        $project = $entityManager->getRepository('AitorGarciaPortfolioBundle:Project')->findOneBySlug($slug);
 
         // If the project does not exist, display an error message
         if ($project === null)
