@@ -17,7 +17,7 @@ Changelog
     * Add an optional *source link* field that will render a button like the *view project* one
 
 * Others
-    * Bundles were renamed according [these "best practices"](http://symfony.com/doc/current/cookbook/bundles/best_practices.html)
+    * Bundles were renamed according to [these "best practices"](http://symfony.com/doc/current/cookbook/bundles/best_practices.html)
     * Index logic was moved from *PortfolioBundle* to *AppBundle*
     * Added validation constraints to all the entities
     * Added *title* blocks to all the views
