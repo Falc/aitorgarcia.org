@@ -1,8 +1,7 @@
 /app/bootstrap*
-app/cache/
-app/config/parameters.yml
-app/logs/
-src/Acme/
-src/AitorGarcia/*Bundle/Tests/
-vendor/
-web/bundles/
+/app/cache/*
+/app/config/parameters.yml
+/app/logs/*
+/src/AitorGarcia/*Bundle/Tests/
+/vendor/
+/web/bundles/
