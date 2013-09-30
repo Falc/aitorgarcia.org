@@ -41,7 +41,7 @@ class Enquiry
      * @var string
      *
      * @Assert\NotBlank()
-     * @Assert\MaxLength(80)
+     * @Assert\Length(max="80")
      */
     protected $subject;
 
@@ -51,7 +51,7 @@ class Enquiry
      * @var string
      *
      * @Assert\NotBlank()
-     * @Assert\MinLength(20)
+     * @Assert\Length(min="20")
      */
     protected $body;
 

@@ -41,7 +41,7 @@ class Project
      * @Gedmo\Translatable
      * @ORM\Column(type="string")
      * @Assert\NotBlank()
-     * @Assert\MaxLength(255)
+     * @Assert\Length(max="255")
      */
     protected $name;
 
@@ -64,7 +64,7 @@ class Project
      * @var string|null
      *
      * @ORM\Column(type="string", nullable=true)
-     * @Assert\MaxLength(255)
+     * @Assert\Length(max="255")
      */
     protected $client;
 
@@ -75,7 +75,7 @@ class Project
      *
      * @ORM\Column(type="string")
      * @Assert\NotBlank()
-     * @Assert\MaxLength(255)
+     * @Assert\Length(max="255")
      * @Assert\Url()
      */
     protected $link;
@@ -88,7 +88,7 @@ class Project
      * @var string|null
      *
      * @ORM\Column(type="string", nullable=true)
-     * @Assert\MaxLength(255)
+     * @Assert\Length(max="255")
      * @Assert\Url()
      */
     protected $sourceLink;
