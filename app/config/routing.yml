@@ -1,14 +1,14 @@
-_app:
-    resource: "@AitorGarciaMainBundle/Resources/config/routing.yml"
+aitorgarcia_main:
+    resource: "@AitorGarciaMainBundle/Resources/config/routing/i18n.yml"
     prefix: /
     type: be_simple_i18n
 
-_portfolio:
-    resource: "@AitorGarciaPortfolioBundle/Resources/config/routing.yml"
+aitorgarcia_portfolio:
+    resource: "@AitorGarciaPortfolioBundle/Resources/config/routing/i18n.yml"
     prefix: /
     type: be_simple_i18n
 
-_user:
-    resource: "@AitorGarciaUserBundle/Resources/config/routing.yml"
+aitorgarcia_user:
+    resource: "@AitorGarciaUserBundle/Resources/config/routing/i18n.yml"
     prefix: /
     type: be_simple_i18n
