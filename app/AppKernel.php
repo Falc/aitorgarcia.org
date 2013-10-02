@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new BeSimple\I18nRoutingBundle\BeSimpleI18nRoutingBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new Lunetics\LocaleBundle\LuneticsLocaleBundle(),
             new AitorGarcia\MainBundle\AitorGarciaMainBundle(),
             new AitorGarcia\UserBundle\AitorGarciaUserBundle(),
             new AitorGarcia\PortfolioBundle\AitorGarciaPortfolioBundle()

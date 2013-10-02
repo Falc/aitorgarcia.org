@@ -23,7 +23,8 @@
         "besimple/i18n-routing-bundle": "dev-master",
         "gedmo/doctrine-extensions": "dev-master",
         "stof/doctrine-extensions-bundle": "dev-master",
-        "friendsofsymfony/user-bundle": "*"
+        "friendsofsymfony/user-bundle": "*",
+        "lunetics/locale-bundle": "2.2.*"
     },
     "scripts": {
         "post-install-cmd": [
