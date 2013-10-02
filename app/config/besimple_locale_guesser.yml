@@ -1,0 +1,6 @@
+services:
+    lunetics_locale.besimple_guesser:
+        class: AitorGarcia\MainBundle\LocaleGuesser\BeSimpleLocaleGuesser
+        arguments: [@lunetics_locale.validator.meta]
+        tags:
+            - { name: lunetics_locale.guesser, alias: besimple }

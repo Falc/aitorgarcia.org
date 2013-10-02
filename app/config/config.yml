@@ -6,6 +6,7 @@ imports:
     - { resource: stfalcon_tinymce.yml }
     - { resource: stof_doctrine_extensions.yml }
     - { resource: twig_core_extensions.yml }
+    - { resource: besimple_locale_guesser.yml }
 
 framework:
     #esi:             ~
@@ -81,3 +82,4 @@ swiftmailer:
 be_simple_i18n_routing:
     attribute_translator:
         type: translator
+    translation_domain: ~

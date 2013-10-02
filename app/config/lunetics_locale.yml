@@ -2,6 +2,7 @@ lunetics_locale:
     allowed_locales: %locales%
     strict_mode: true
     guessing_order:
+        - besimple
         - router
         - query
         - browser
