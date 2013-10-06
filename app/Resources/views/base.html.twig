@@ -1,29 +1,85 @@
+{% if form is defined %}
+{% form_theme form ':Form:fields.html.twig' %}
+{% endif %}
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Aitor García{% endblock %}</title>
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="apple-touch-icon-precomposed" href="{{ asset('favicon-152.png') }}">
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         {% block stylesheets %}{% endblock %}
         <!--[if IE 7]><link rel="stylesheet" type="text/css" href="{{ asset('css/ie7.css') }}" /><![endif]-->
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <!--[if lt IE 9]>
+        <script src="/js/html5shiv.js"></script>
+        <script src="/js/respond.min.js"></script>
+        <![endif]-->
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
         {% block javascripts %}{% endblock %}
     </head>
     <body>
-        <div id="header">
-            <div class="maxwidth">
-            {% block header %}{% endblock %}
+    {% set current_route = app.request.attributes.get('_route') %}
+        <div class="navbar navbar-aitorgarcia navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Aitor García</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li{% if 'index.' in current_route %} class="active"{% endif %}>
+                            <a href="{{ path('index') }}">{{ 'navigation.index' | trans }}</a>
+                        </li>
+                        <li{% if 'project_' in current_route %} class="active"{% endif %}>
+                            <a href="{{ path('project_list') }}">{{ 'navigation.projects' | trans }}</a>
+                        </li>
+                        <li{% if 'contact' in current_route %} class="active"{% endif %}>
+                            <a href="{{ path('contact') }}">{{ 'navigation.contact' | trans }}</a>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
             </div>
         </div>
-        <div id="subnavigation">
-            <div class="maxwidth">
-            {% block subnavigation %}{% endblock %}
+        <div id="infobar">
+            <div class="container">
+                <p>{% block infotext %}{% endblock %}</p>
             </div>
         </div>
         <div id="page">
-            <div class="maxwidth">
+            <div class="container">
             {% block page %}{% endblock %}
             </div>
         </div>
-        {% block footer %}{% endblock %}
+        <div id="footer">
+            <div class="container">
+                <div id="social-icons" class="pull-left">
+                    <ul class="icons list-inline">
+                        <li><a class="icon-twitter" href="https://twitter.com/Falc" title="Twitter">Twitter</a></li>
+                        <li><a class="icon-github" href="https://github.com/Falc" title="Github">Github</a></li>
+                        <li><a class="icon-bitbucket" href="https://bitbucket.org/Falc" title="Bitbucket">Bitbucket</a></li>
+                        <li><a class="icon-linkedin" href="http://www.linkedin.com/in/aitorgarciamartinez" title="Linkedin">Linkedin</a></li>
+                    </ul>
+                </div>
+                <div class="pull-right">
+                <div id="copyright" class="pull-left">
+                    <p>Aitor García Martínez</p>
+                </div>
+                <div id="more-info" class="pull-left">
+                    <ul class="icons list-inline">
+                        <li><a class="icon-more-info" href="{{ path('more_info') }}" title="{{ 'footer.more_information' | trans }}">{{ 'footer.more_information' | trans }}</a></li>
+                        <li><a class="icon-source-code" href="https://github.com/Falc/aitorgarcia.org" title="{{ 'footer.source_code' | trans }}">{{ 'footer.source_code' | trans }}</a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

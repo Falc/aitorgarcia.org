@@ -1,32 +1,32 @@
-{% extends "::layout.html.twig" %}
+{% extends "::base.html.twig" %}
 
 {% block stylesheets %}
 {% stylesheets filter="cssrewrite,?yui_css" output='css/frontend-*.css'
-    'css/main.css'
+    'css/base.css'
     'bundles/aitorgarciamain/css/index.css'
 %}
     <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
 {% endstylesheets %}
 {% endblock %}
 
-{% block subnavigation %}
-<h2>{{ 'index.subnavigation' | trans }}</h2>
-{{ parent() }}
-{% endblock %}
+{% block title %}Aitor García - Programador web{% endblock %}
+
+{% block infotext %}{{ 'index.subnavigation' | trans }}{% endblock %}
 
 {% block page %}
-<div id="block-aboutme" class="block">
-    <h3>{{ 'index.heading.about_me' | trans }}</h3>
-    <ul>
-        <li id="icon-user">{{ 'index.paragraph.info' | trans | raw }}</li>
-        <li id="icon-web-dev">{{ 'index.paragraph.web_dev' | trans | raw }}</li>
-        <li id="icon-desktop-dev">{{ 'index.paragraph.desktop_dev' | trans | raw }}</li>
-        <li id="icon-server">{{ 'index.paragraph.sys_admin' | trans | raw }}</li>
-    </ul>
+<div class="row">
+    <div id="block-aboutme" class="block col-sm-6">
+        <h3>{{ 'index.heading.about_me' | trans }}</h3>
+        <ul>
+            <li class="icon-user">{{ 'index.paragraph.info' | trans | raw }}</li>
+            <li class="icon-web-dev">{{ 'index.paragraph.web_dev' | trans | raw }}</li>
+            <li class="icon-desktop-dev">{{ 'index.paragraph.desktop_dev' | trans | raw }}</li>
+            <li class="icon-server">{{ 'index.paragraph.sys_admin' | trans | raw }}</li>
+        </ul>
+    </div>
+    <div id="block-technologies" class="block col-sm-6">
+        <h3>{{ 'index.heading.which_techs' | trans }}</h3>
+        <img src="{{ asset('bundles/aitorgarciamain/images/technologies.png') }}" alt="{{ 'index.image.tech_logos' | trans }}" />
+    </div>
 </div>
-<div id="block-technologies" class="block">
-    <h3>{{ 'index.heading.which_techs' | trans }}</h3>
-    <img src="{{ asset('bundles/aitorgarciamain/images/technologies.png') }}" alt="{{ 'index.image.tech_logos' | trans }}" />
-</div>
-<div class="clear"></div>
 {% endblock %}

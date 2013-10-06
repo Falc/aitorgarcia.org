@@ -1,84 +1,95 @@
-{% extends "::layout.html.twig" %}
-
-{% block title %}{{ project.name }} - Aitor García{% endblock %}
+{% extends "::base.html.twig" %}
 
 {% block stylesheets %}
 {% stylesheets filter="cssrewrite,?yui_css" output='css/frontend-*.css'
-    'css/main.css'
-    'css/tinyslider2.css'
-    'bundles/aitorgarciaportfolio/css/project.css'
+    'css/base.css'
+    'bundles/aitorgarciaportfolio/css/project_show.css'
 %}
     <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
 {% endstylesheets %}
 {% endblock %}
 
 {% block javascripts %}
-<script src="{{ asset('js/tinyslider2.min.js') }}" type="text/javascript"></script>
+<script src="/js/jquery.glide.min.js"></script>
 {% endblock %}
 
-{% block subnavigation %}
-<h2>{{ project.name }}</h2>
-{{ parent() }}
-{% endblock %}
+{% block title %}{{ project.name }} - Aitor García{% endblock %}
+
+{% block infotext %}{{ project.name }}{% endblock %}
 
 {% block page %}
-<div id="slider">
-{% if project.screenshots is empty %}
-    <img src="/files/no-project-screenshot.jpg" alt="{{ project.name }}" title="{{ project.name }}" />
-{% else %}
-    <div id="slider-content">
-        <ul class="bg-dark-diamonds">
-        {% for screenshot in project.screenshots %}
-            <li>
-                <img src="/{{ screenshot.getWebPath() }}" alt="{{ screenshot.name }}" title="{{ screenshot.name }}" />
-            </li>
-        {% endfor %}
-        </ul>
+<div class="row">
+    <div id="project-screenshots" class="block col-sm-6">
+        <div class="slider">
+        {% if project.screenshots is empty %}
+            <img src="/files/no-project-screenshot.jpg" alt="{{ project.name }}" title="{{ project.name }}" />
+        {% else %}
+            <ul class="slides bg-dark-diamonds">
+            {% for screenshot in project.screenshots %}
+                <li class="slide">
+                    <img src="/{{ screenshot.getWebPath() }}" alt="{{ screenshot.name }}" title="{{ screenshot.name }}" />
+                </li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        </div>
     </div>
-    <div class="slider-button" id="slider-left" onclick="slideshow.move(-1)"></div>
-    <div class="slider-button" id="slider-right" onclick="slideshow.move(1)"></div>
-    <ul id="slider-pager">
-    {% for i in 1..project.screenshots.count() %}
-        <li onclick="slideshow.pos({{ i-1 }})"></li>
-    {% endfor %}
-    </ul>
-    <script type="text/javascript">
-        var slideshow=new TINY.slider.slide('slideshow',{
-            id:'slider-content',
-            auto:5,
-            resume:true,
-            vertical:false,
-            navid:'slider-pager',
-            activeclass:'current',
-            position:0,
-            rewind:true,
-            elastic:false,
-            left:'slider-left',
-            right:'slider-right'
-        });
-    </script>
-{% endif %}
+    <div id="project-info" class="block col-sm-6">
+        <div class="row">
+            <div class="block">
+                <h3>{{ 'field.description' | trans }}</h3>
+                {{ project.description | raw }}
+            </div>
+        </div>
+        {% if project.client is not empty %}
+        <div class="row">
+            <div id="project-client" class="block">
+                <span class="icon icon-client" title="{{ 'field.client' | trans }}">{{ 'field.client' | trans }}:</span>
+                <span class="client-content">{{ project.client }}</span>
+            </div>
+        </div>
+        {% endif %}
+        <div class="row">
+            <div id="project-technologies" class="block">
+                <span class="icon icon-tag" title="{{ 'field.technologies' | trans }}">{{ 'field.technologies' | trans }}:</span>
+                <span class="technologies-content">
+                {% for technology in project.technologies -%}
+                    {{ technology.name }}{% if not loop.last %}, {% endif %}
+                {%- endfor -%}
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div id="project-actions" class="block">
+                <a class="btn btn-primary btn-icon" href="{{ project.link }}">
+                    <span class="icon icon-view"></span>{{ 'button.view_project' | trans }}
+                </a>
+                {%- if project.sourceLink is not empty -%}
+                    <a class="btn btn-primary btn-icon" href="{{ project.sourceLink }}">
+                        <span class="icon icon-source-code"></span>{{ 'button.source_code' | trans }}
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
 </div>
 
-<div id="project-info">
-    <h3>{{ 'field.description' | trans }}</h3>
-    {{ project.description | raw }}
-    {% if project.client is not empty %}
-    <h3>{{ 'field.client' | trans }}</h3>
-    <p>{{ project.client }}</p>
-    {% endif %}
-    <h3>{{ 'field.technologies' | trans }}</h3>
-    <p>
-    {%- for technology in project.technologies -%}
-        {{ technology.name }}{% if not loop.last %}, {% endif %}
-    {%- endfor -%}
-    </p>
-    <div id="project-view">
-        <a id="project-link" class="button" href="{{ project.link }}">{{ 'button.view_project' | trans }}</a>
-        {%- if project.sourceLink is not empty -%}
-            <a id="project-source" class="button" href="{{ project.sourceLink }}">{{ 'button.source_code' | trans }}</a>
-        {% endif %}
-    </div>
-</div>
-<div class="clear"></div>
+<script type="text/javascript">
+    $(function() {
+        $('.slider').glide({
+            autoplay: 5000,
+            animationTime: 500,
+            arrows: true,
+            arrowsWrapperClass: 'slider-buttons',
+            arrowMainClass: 'slider-button',
+            arrowRightClass: 'slider-next',
+            arrowLeftClass: 'slider-prev',
+            nav: true,
+            navClass: 'slider-nav',
+            navItemClass: 'slider-nav-item',
+            navCurrentItemClass: 'slider-nav-item-active'
+        });
+    });
+</script>
+
 {% endblock %}

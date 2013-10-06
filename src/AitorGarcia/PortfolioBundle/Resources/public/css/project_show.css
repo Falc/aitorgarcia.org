@@ -1,0 +1,208 @@
+/*
+ * SLIDER
+ */
+#project-screenshots {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.slider {
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slides {
+    height: 100%;
+    list-style: none;
+    -webkit-transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    -moz-transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    -ms-transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    -o-transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    background: #444 url(../images/pattern-diamond.png) repeat;
+    float: left;
+    clear: none;
+}
+
+.slider li img {
+    max-width: 80%;
+    margin: 10%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.slider-button {
+    width: 30px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+    cursor: pointer;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    filter: alpha(opacity=20);
+    -moz-opacity: 0.2;
+    -khtml-opacity: 0.2;
+    opacity: 0.2;
+    text-indent: -9999em;
+    overflow: hidden;
+}
+
+.slider-button:active,
+.slider-button:focus,
+.slider-button:hover {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+    -moz-opacity: 0.7;
+    -khtml-opacity: 0.7;
+    opacity: 0.7;
+}
+
+.slider-prev {
+    background: #000 url(/images/slide-buttons.png) left center no-repeat;
+    left: 0;
+}
+
+.slider-next {
+    background: #000 url(/images/slide-buttons.png) right center no-repeat;
+    right: 0;
+}
+
+.slider-nav {
+    line-height: 10px;
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    z-index: 9999;
+}
+
+.slider-nav-item {
+    width: 10px;
+    height: 10px;
+    background: #d0d0d0;
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 2px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow:  0px 0px 1px 0px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow:  0px 0px 1px 0px rgba(0, 0, 0, 0.6);
+    box-shadow:  0px 0px 1px 0px rgba(0, 0, 0, 0.6);
+}
+
+.slider-nav-item:hover,
+.slider-nav-item-active {
+    background: #349ad1;
+}
+
+
+/*
+ * INFO
+ */
+#project-info {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+#project-info .block {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#project-info .block span {
+    display: inline-block;
+}
+
+#project-info #project-client,
+#project-info #project-technologies {
+    padding-top: 0px;
+    padding-bottom: 10px;
+}
+
+#project-client,
+#project-technologies {
+    line-height: 32px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#project-actions {
+    text-align: center;
+}
+
+#project-actions a {
+    margin: 0 5px;
+}
+
+
+/*
+ * ACTIONS
+ */
+.btn-icon-view,
+.btn-icon-view:active {
+    background-image: url(../images/icon-view.png);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding-left: 40px;
+}
+
+.btn-icon-source-code,
+.btn-icon-source-code:active {
+    background-image: url(../images/icon-source-code.png);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding-left: 40px;
+}
+
+
+/*
+ * FINE TUNING
+ */
+@media (min-width: 320px) {
+    .slider-nav {
+        bottom: 5%;
+    }
+}
+
+@media (min-width: 480px) {
+    .slider-nav-item {
+        margin: 0 3px;
+    }
+}
+
+@media (min-width: 768px) {
+    .slider-nav-item {
+        margin: 0 2px;
+    }
+}
+
+@media (min-width: 992px) {
+    .slider-button {
+        width: 40px;
+    }
+
+    .slider-prev {
+        background-position: 5px center;
+    }
+
+    .slider-next {
+        background-position: -25px center;
+    }
+
+    .slider-nav-item {
+        margin: 0 3px;
+    }
+}

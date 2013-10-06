@@ -1,39 +1,42 @@
-{% extends "::layout.html.twig" %}
-
-{% block title %}{{ 'projects.title.list' | trans }} - Aitor García{% endblock %}
+{% extends "::base.html.twig" %}
 
 {% block stylesheets %}
 {% stylesheets filter="cssrewrite,?yui_css" output='css/frontend-*.css'
-    'css/main.css'
-    'bundles/aitorgarciaportfolio/css/project.css'
+    'css/base.css'
+    'bundles/aitorgarciaportfolio/css/project_list.css'
 %}
     <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
 {% endstylesheets %}
 {% endblock %}
 
-{% block subnavigation %}
-<h2>{{ 'projects.subnavigation.project_list' | trans }}</h2>
-{{ parent() }}
-{% endblock %}
+{% block title %}{{ 'projects.title.list' | trans }} - Aitor García{% endblock %}
+
+{% block infotext %}{{ 'projects.subnavigation.project_list' | trans }}{% endblock %}
 
 {% block page %}
+<div id="options" class="row">
+    <div id="actions" class="pull-right">
+        <a class="btn btn-primary btn-icon-sort" href="#">{{ 'button.sort' | trans }}</a>
+    </div>
+</div>
+<div id="project-list" class="row">
 {% if projects is empty %}
-<p>{{ 'projects.message.empty_list' | trans }}</p>
+    <p>{{ 'projects.message.empty_list' | trans }}</p>
 {% else %}
-<ul id="project-list">
 {% for project in projects %}
-    <li class="{{ cycle(['odd', 'even'], loop.index0) }}">
-        <a class="project bg-dark-diamonds" href="{{ path('project_show', { 'slug': project.slug }) }}">
+    <div class="block col-sm-6 col-md-4">
+        <a class="project" href="{{ path('project_show', { 'slug': project.slug }) }}">
+        <div>
         {% if project.screenshots is empty %}
-            <img src="/files/no-project-screenshot.jpg" alt="{{ project.name }}" title="{{ project.name }}" />
+            <img class="project-cover" src="/files/no-project-screenshot.jpg" alt="{{ project.name }}" title="{{ project.name }}" />
         {% else %}
-            <img src="/{{ project.screenshots[0].getWebPath() }}" alt="{{ project.name }}" title="{{ project.name }}" />
+            <img class="project-cover" src="/{{ project.screenshots[0].getWebPath() }}" alt="{{ project.name }}" title="{{ project.name }}" />
         {% endif %}
-            <span>{{ project.name }}</span>
+        </div>
+            <span class="project-name">{{ project.name }}</span>
         </a>
-    </li>
+    </div>
 {% endfor %}
-</ul>
-<div class="clear"></div>
 {% endif %}
+</div>
 {% endblock %}

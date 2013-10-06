@@ -73,6 +73,7 @@ button:
     remove_image:   Eliminar imagen
     save_changes:   Guardar cambios
     send:           Enviar
+    sort:           Ordenar
     source_code:    Código fuente
     view_project:   Ver proyecto
 

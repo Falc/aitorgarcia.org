@@ -1,56 +1,71 @@
-{% extends "::layout.html.twig" %}
-
-{% block title %}{{ 'contact.title' | trans }} - Aitor García{% endblock %}
+{% extends "::base.html.twig" %}
 
 {% block stylesheets %}
 {% stylesheets filter="cssrewrite,?yui_css" output='css/frontend-*.css'
-    'css/main.css'
+    'css/base.css'
     'css/forms.css'
 %}
     <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
 {% endstylesheets %}
 {% endblock %}
 
-{% block subnavigation %}
-<h2>{{ 'contact.subnavigation' | trans }}</h2>
-{{ parent() }}
-{% endblock %}
+{% block title %}{{ 'contact.title' | trans }} - Aitor García{% endblock %}
+
+{% block infotext %}{{ 'contact.subnavigation' | trans }}{% endblock %}
 
 {% block page %}
+<div class="row">
 {% for type, messages in app.session.flashbag.all() %}
     {% for message in messages %}
-        <div class="message-{{ type }}">
-            {{ message }}
-        </div>
+    <div class="message-{{ type }} block">
+        {{ message }}
+    </div>
     {% endfor %}
 {% endfor %}
 
-{{ form_errors(form) }}
-<form action="{{ path('contact') }}" method="post" {{ form_enctype(form) }}>
-	<fieldset>
-		<legend>{{ 'contact.legend.info' | trans }}</legend>
-        <div class="_50">
-            {{ form_label(form.name, 'field.name' | trans ) }}
-            {{ form_widget(form.name) }}
-            {{ form_errors(form.name) }}
-        </div>
-        <div class="_50">
-            {{ form_label(form.email, 'field.email' | trans ) }}
-            {{ form_widget(form.email) }}
-            {{ form_errors(form.email) }}
-        </div>
-        <div class="_100">
-            {{ form_label(form.subject, 'field.subject' | trans ) }}
-            {{ form_widget(form.subject) }}
-            {{ form_errors(form.subject) }}
-        </div>
-        <div class="_100">
-            {{ form_label(form.body, 'field.body' | trans ) }}
-            {{ form_widget(form.body) }}
-            {{ form_errors(form.body) }}
-        </div>
-        {{ form_rest(form) }}
-    </fieldset>
-	<input class="button" type="submit" name="send" value="{{ 'button.send' | trans }}" />
-</form>
+    {{ form_errors(form) }}
+
+    <div class="block">
+        <form action="{{ path('contact') }}" method="post" {{ form_enctype(form) }}>
+            <fieldset>
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        {{ form_label(form.name, 'field.name' | trans ) }}
+                        {{ form_widget(form.name) }}
+                        {{ form_errors(form.name) }}
+                    </div>
+                    <div class="form-group col-sm-4">
+                        {{ form_label(form.email, 'field.email' | trans ) }}
+                        {{ form_widget(form.email) }}
+                        {{ form_errors(form.email) }}
+                    </div>
+                    <div class="form-group col-sm-4">
+                        {{ form_label(form.subject, 'field.subject' | trans ) }}
+                        {{ form_widget(form.subject) }}
+                        {{ form_errors(form.subject) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.body, 'field.body' | trans ) }}
+                    {{ form_widget(form.body) }}
+                    {{ form_errors(form.body) }}
+                </div>
+                {{ form_rest(form) }}
+            </fieldset>
+            <input class="btn btn-primary" type="submit" name="send" value="{{ 'button.send' | trans }}" />
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        // Replace the submit input with a button+icon
+        var inputSend = $('input[name="send"]');
+
+        var btnSend = $('<button>').attr('type', 'submit').addClass('btn btn-primary btn-icon');
+        btnSend.append('<span class="icon icon-accept"></span>' + '{{ 'button.send' | trans }}');
+
+        inputSend.replaceWith(btnSend);
+    });
+</script>
 {% endblock %}

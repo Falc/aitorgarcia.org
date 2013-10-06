@@ -1,56 +1,51 @@
-@charset "utf-8";
+/*
+ * BLOCKS
+ */
+#block-aboutme,
+#block-technologies {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
 
-@media handheld, projection, screen, tv {
-    .block {
-        width: 450px;
-        float: left;
-    }
+.block h3 {
+    text-align: center;
+}
 
-    .block h3 {
-        font-size: 1.4285em;
-        font-weight: bold;
-        text-align: center;
-        margin-bottom: 1em;
-    }
+/*
+ * ABOUT ME
+ */
+#block-aboutme ul {
+    list-style-type: none;
+    padding-left: 0;
+}
 
-    #block-aboutme,
-    #block-philosophy {
-        margin-right: 20px;
-    }
+#block-aboutme li {
+    margin-bottom: 15px;
+    padding-top: 2px;
+    padding-left: 32px;
+}
 
-    #block-technologies,
-    #block-others {
-        margin-left: 20px;
-    }
+.icon-user {
+    background: url(../images/icon-user.png) no-repeat left top;
+}
 
-    #block-aboutme ul {
-        list-style-type: none;
-    }
+.icon-web-dev {
+    background: url(../images/icon-web-app.png) no-repeat left top;
+}
 
-    #block-aboutme li {
-        margin-bottom: 1.25em;
-        padding-top: 2px;
-        padding-left: 32px;
-    }
-    
-    #icon-user {
-        background: url(../images/icon-user.png) no-repeat left top;
-    }
+.icon-desktop-dev {
+    background: url(../images/icon-desktop-app.png) no-repeat left top;
+}
 
-    #icon-web-dev {
-        background: url(../images/icon-web-app.png) no-repeat left top;
-    }
+.icon-server {
+    background: url(../images/icon-server.png) no-repeat left top;
+}
 
-    #icon-desktop-dev {
-        background: url(../images/icon-desktop-app.png) no-repeat left top;
-    }
 
-    #icon-server {
-        background: url(../images/icon-server.png) no-repeat left top;
-    }
-
-    #block-technologies img {
-        display: block;
-        margin: 0 auto;
-    }
+/*
+ * TECHNOLOGIES
+ */
+#block-technologies img {
+    display: block;
+    margin: 0 auto;
 }

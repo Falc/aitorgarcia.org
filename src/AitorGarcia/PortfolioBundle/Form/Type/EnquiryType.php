@@ -27,19 +27,31 @@ class EnquiryType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('name', 'text', array(
-            'trim'  => true
+            'trim'  => true,
+            'attr'  => array(
+                'class' => 'form-control'
+            )
         ));
 
         $builder->add('email', 'email', array(
-            'trim'  => true
+            'trim'  => true,
+            'attr'  => array(
+                'class' => 'form-control'
+            )
         ));
 
         $builder->add('subject', 'text', array(
-            'trim'  => true
+            'trim'  => true,
+            'attr'  => array(
+                'class' => 'form-control'
+            )
         ));
 
         $builder->add('body', 'textarea', array(
-            'trim'  => true
+            'trim'  => true,
+            'attr'  => array(
+                'class' => 'form-control'
+            )
         ));
     }
 
