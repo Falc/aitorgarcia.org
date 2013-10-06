@@ -4,6 +4,7 @@
 {% stylesheets filter="cssrewrite,?yui_css" output='css/frontend-*.css'
     'css/base.css'
     'css/forms.css'
+    'bundles/aitorgarciaportfolio/css/contact.css'
 %}
     <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
 {% endstylesheets %}
@@ -25,30 +26,30 @@
 
     {{ form_errors(form) }}
 
-    <div class="block">
+    <div id="contact-form" class="block">
         <form action="{{ path('contact') }}" method="post" {{ form_enctype(form) }}>
             <fieldset>
                 <div class="row">
-                    <div class="form-group col-sm-4">
+                    <div class="form-group block col-sm-4">
                         {{ form_label(form.name, 'field.name' | trans ) }}
                         {{ form_widget(form.name) }}
                         {{ form_errors(form.name) }}
                     </div>
-                    <div class="form-group col-sm-4">
+                    <div class="form-group block col-sm-4">
                         {{ form_label(form.email, 'field.email' | trans ) }}
                         {{ form_widget(form.email) }}
                         {{ form_errors(form.email) }}
                     </div>
-                    <div class="form-group col-sm-4">
+                    <div class="form-group block col-sm-4">
                         {{ form_label(form.subject, 'field.subject' | trans ) }}
                         {{ form_widget(form.subject) }}
                         {{ form_errors(form.subject) }}
                     </div>
-                </div>
-                <div class="form-group">
-                    {{ form_label(form.body, 'field.body' | trans ) }}
-                    {{ form_widget(form.body) }}
-                    {{ form_errors(form.body) }}
+                    <div class="form-group block">
+                        {{ form_label(form.body, 'field.body' | trans ) }}
+                        {{ form_widget(form.body) }}
+                        {{ form_errors(form.body) }}
+                    </div>
                 </div>
                 {{ form_rest(form) }}
             </fieldset>
