@@ -4,9 +4,9 @@ lunetics_locale:
     guessing_order:
         - besimple
         - router
-        - query
-        - browser
+        #- query
         - session
         - cookie
+        - browser
     cookie:
         set_on_change: true

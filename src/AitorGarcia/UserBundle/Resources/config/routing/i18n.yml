@@ -2,14 +2,6 @@ fos_user_security_login:
     locales:  { en: "/login", es: "/iniciar-sesion" }
     defaults: { _controller: FOSUserBundle:Security:login }
 
-fos_user_security_check:
-    locales:  { en: "/login/check", es: "/iniciar-sesion/validar" }
-    defaults: { _controller: FOSUserBundle:Security:check }
-
-fos_user_security_logout:
-    locales:  { en: "/user/logout", es: "/usuario/cerrar-sesion" }
-    defaults: { _controller: FOSUserBundle:Security:logout }
-
 #fos_user_profile_show:
 #    locales:  { en: "/user/profile", es: "/usuario/perfil" }
 #    defaults: { _controller: FOSUserBundle:Profile:show }

@@ -8,7 +8,11 @@ aitorgarcia_portfolio:
     prefix: /
     type: be_simple_i18n
 
-aitorgarcia_user:
+aitorgarcia_user_i18n:
     resource: "@AitorGarciaUserBundle/Resources/config/routing/i18n.yml"
     prefix: /
     type: be_simple_i18n
+
+aitorgarcia_user_default:
+    resource: "@AitorGarciaUserBundle/Resources/config/routing/default.yml"
+    prefix: /

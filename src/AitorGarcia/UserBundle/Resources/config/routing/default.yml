@@ -1,0 +1,7 @@
+fos_user_security_check:
+    pattern:  /login/check
+    defaults: { _controller: FOSUserBundle:Security:check }
+
+fos_user_security_logout:
+    pattern:  /user/logout
+    defaults: { _controller: FOSUserBundle:Security:logout }
