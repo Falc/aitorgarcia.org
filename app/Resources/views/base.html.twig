@@ -25,6 +25,7 @@
     {% set current_route = app.request.attributes.get('_route') %}
         <div class="navbar navbar-aitorgarcia navbar-static-top">
             <div class="container">
+                {% block navbar_container %}
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
@@ -35,7 +36,7 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li{% if 'index.' in current_route %} class="active"{% endif %}>
+                        <li{% if 'admin_' not in current_route and 'index.' in current_route %} class="active"{% endif %}>
                             <a href="{{ path('index') }}">{{ 'navigation.index' | trans }}</a>
                         </li>
                         <li{% if 'project_' in current_route %} class="active"{% endif %}>
@@ -51,6 +52,7 @@
                         {% endif %}
                     </ul>
                 </div><!--/.nav-collapse -->
+                {% endblock %}
             </div>
         </div>
         <div id="infobar">
