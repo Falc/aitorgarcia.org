@@ -1,3 +1,12 @@
 textarea {
     min-height: 150px;
 }
+
+.checkbox {
+    margin-bottom: 15px;
+}
+
+.checkbox input[type="checkbox"] {
+    margin-left: 0;
+    margin-right: 5px;
+}

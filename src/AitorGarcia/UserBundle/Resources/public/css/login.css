@@ -1,0 +1,12 @@
+/*
+ * LOGIN
+ */
+#login-form {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#login-form .block {
+    padding-top: 0;
+    padding-bottom: 0;
+}
