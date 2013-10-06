@@ -1,5 +1,5 @@
 _index:
-    locales:  { de: "/", es: "/", en: "/" }
+    locales:  { es: "/", en: "/" }
     pattern:  /
     defaults: { _controller: AitorGarciaMainBundle:Default:preIndex }
 

@@ -1,4 +1,5 @@
 navigation:
+    admin:          Admin
     contact:        Contact
     index:          Home
     projects:       Projects
