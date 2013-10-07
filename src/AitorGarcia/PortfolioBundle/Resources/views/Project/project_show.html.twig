@@ -19,7 +19,7 @@
 
 {% block page %}
 <div class="row">
-    <div id="project-screenshots" class="block col-sm-6">
+    <div id="project-screenshots" class="block col-md-6">
         <div class="slider">
         {% if project.screenshots is empty %}
             <img src="/files/no-project-screenshot.jpg" alt="{{ project.name }}" title="{{ project.name }}" />
@@ -33,42 +33,40 @@
             </ul>
         {% endif %}
         </div>
+        <div id="project-actions" style="padding-top: 0; padding-bottom: 0;">
+            <a class="btn btn-primary btn-icon" href="{{ project.link }}">
+                <span class="icon icon-view"></span>{{ 'button.view_project' | trans }}
+            </a>
+            {%- if project.sourceLink is not empty -%}
+                <a class="btn btn-primary btn-icon" href="{{ project.sourceLink }}">
+                    <span class="icon icon-source-code"></span>{{ 'button.source_code' | trans }}
+                </a>
+            {% endif %}
+        </div>
     </div>
-    <div id="project-info" class="block col-sm-6">
+    <div id="project-info" class="block col-md-6">
         <div class="row">
-            <div class="block">
-                <h3>{{ 'field.description' | trans }}</h3>
+            <div id="project-description" class="block">
+                <h2>{{ 'field.description' | trans }}</h2>
                 {{ project.description | raw }}
             </div>
         </div>
         {% if project.client is not empty %}
         <div class="row">
             <div id="project-client" class="block">
-                <span class="icon icon-client" title="{{ 'field.client' | trans }}">{{ 'field.client' | trans }}:</span>
-                <span class="client-content">{{ project.client }}</span>
+                <h2>{{ 'field.client' | trans }}</h2>
+                <p class="client-content">{{ project.client }}</p>
             </div>
         </div>
         {% endif %}
         <div class="row">
             <div id="project-technologies" class="block">
-                <span class="icon icon-tag" title="{{ 'field.technologies' | trans }}">{{ 'field.technologies' | trans }}:</span>
-                <span class="technologies-content">
+                <h2>{{ 'field.technologies' | trans }}</h2>
+                <ul class="tags list-inline">
                 {% for technology in project.technologies -%}
-                    {{ technology.name }}{% if not loop.last %}, {% endif %}
+                    <li><a href="#">{{ technology.name }}</a></li>
                 {%- endfor -%}
-                </span>
-            </div>
-        </div>
-        <div class="row">
-            <div id="project-actions" class="block">
-                <a class="btn btn-primary btn-icon" href="{{ project.link }}">
-                    <span class="icon icon-view"></span>{{ 'button.view_project' | trans }}
-                </a>
-                {%- if project.sourceLink is not empty -%}
-                    <a class="btn btn-primary btn-icon" href="{{ project.sourceLink }}">
-                        <span class="icon icon-source-code"></span>{{ 'button.source_code' | trans }}
-                    </a>
-                {% endif %}
+                </ul>
             </div>
         </div>
     </div>
