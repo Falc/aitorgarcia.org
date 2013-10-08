@@ -1,6 +1,11 @@
 /*
  * MAIN
  */
+html,
+body {
+    height: 100%;
+}
+
 body {
     background: #fff;
     color: #333;
@@ -29,6 +34,14 @@ a:active, a:focus, a:hover {
 /*
  * CONTAINERS
  */
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
 .navbar-aitorgarcia .container,
 #infobar .container,
 #page .container,
@@ -120,7 +133,6 @@ a:active, a:focus, a:hover {
 #infobar {
     min-height: 60px;
     background-color: #349ad1;
-    margin-bottom: 20px;
 }
 
 #infobar p {
@@ -129,6 +141,15 @@ a:active, a:focus, a:hover {
     line-height: 20px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+/*
+ * PAGE
+ */
+#page {
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -278,7 +299,7 @@ ul.tags li a:active {
 #footer {
     background-color: #22303d;
     color: #f5f5f5;
-    margin-top: 20px;
+    height: 60px;
 }
 
 #footer p {

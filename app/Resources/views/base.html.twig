@@ -23,46 +23,48 @@
     </head>
     <body>
     {% set current_route = app.request.attributes.get('_route') %}
-        <div class="navbar navbar-aitorgarcia navbar-static-top">
-            <div class="container">
-                {% block navbar_container %}
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/">Aitor García</a>
+        <div id="wrap">
+            <div class="navbar navbar-aitorgarcia navbar-static-top">
+                <div class="container">
+                    {% block navbar_container %}
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/">Aitor García</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li{% if 'admin_' not in current_route and 'index.' in current_route %} class="active"{% endif %}>
+                                <a href="{{ path('index') }}">{{ 'navigation.index' | trans }}</a>
+                            </li>
+                            <li{% if 'project_' in current_route %} class="active"{% endif %}>
+                                <a href="{{ path('project_list') }}">{{ 'navigation.projects' | trans }}</a>
+                            </li>
+                            <li{% if 'contact' in current_route %} class="active"{% endif %}>
+                                <a href="{{ path('contact') }}">{{ 'navigation.contact' | trans }}</a>
+                            </li>
+                            {% if app.user is not null and is_granted('ROLE_ADMIN') %}
+                            <li{% if 'admin_' in current_route %} class="active"{% endif %}>
+                                <a href="{{ path('admin_index') }}">{{ 'navigation.admin' | trans }}</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                    {% endblock %}
                 </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li{% if 'admin_' not in current_route and 'index.' in current_route %} class="active"{% endif %}>
-                            <a href="{{ path('index') }}">{{ 'navigation.index' | trans }}</a>
-                        </li>
-                        <li{% if 'project_' in current_route %} class="active"{% endif %}>
-                            <a href="{{ path('project_list') }}">{{ 'navigation.projects' | trans }}</a>
-                        </li>
-                        <li{% if 'contact' in current_route %} class="active"{% endif %}>
-                            <a href="{{ path('contact') }}">{{ 'navigation.contact' | trans }}</a>
-                        </li>
-                        {% if app.user is not null and is_granted('ROLE_ADMIN') %}
-                        <li{% if 'admin_' in current_route %} class="active"{% endif %}>
-                            <a href="{{ path('admin_index') }}">{{ 'navigation.admin' | trans }}</a>
-                        </li>
-                        {% endif %}
-                    </ul>
-                </div><!--/.nav-collapse -->
-                {% endblock %}
             </div>
-        </div>
-        <div id="infobar">
-            <div class="container">
-                <p>{% block infotext %}{% endblock %}</p>
+            <div id="infobar">
+                <div class="container">
+                    <p>{% block infotext %}{% endblock %}</p>
+                </div>
             </div>
-        </div>
-        <div id="page">
-            <div class="container">
-            {% block page %}{% endblock %}
+            <div id="page">
+                <div class="container">
+                {% block page %}{% endblock %}
+                </div>
             </div>
         </div>
         <div id="footer">
