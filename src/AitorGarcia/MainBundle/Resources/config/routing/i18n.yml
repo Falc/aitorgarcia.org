@@ -7,10 +7,6 @@ index:
     locales:  { en: "/home", es: "/portada" }
     defaults: { _controller: AitorGarciaMainBundle:Default:index }
 
-more_info:
-    locales:  { en: "/more-info", es: "/mas-informacion" }
-    defaults: { _controller: AitorGarciaMainBundle:Default:moreInfo }
-
 _admin:
     resource: "@AitorGarciaMainBundle/Resources/config/admin_routing.yml"
     prefix: /admin

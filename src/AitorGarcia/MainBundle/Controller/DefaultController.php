@@ -21,7 +21,6 @@ class DefaultController extends Controller
      */
     public function preIndexAction()
     {
-        // Redirect to the localized index
         return $this->redirect($this->generateUrl('index'));
     }
 
@@ -30,16 +29,6 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        // Render the index view
         return $this->render('AitorGarciaMainBundle:Default:index.html.twig');
-    }
-
-    /**
-     * Displays the "more info" view.
-     */
-    public function moreInfoAction()
-    {
-        // Render the more_info view
-        return $this->render('AitorGarciaMainBundle:Default:more_info.html.twig');
     }
 }

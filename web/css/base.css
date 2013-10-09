@@ -422,11 +422,6 @@ ul.tags li a:active {
     background-position: -96px 0;
 }
 
-.icon-more-info {
-    background-image: url(../images/icons.png);
-    background-position: -128px 0;
-}
-
 .icon-view {
     background-image: url(../images/icons.png);
     background-position: -128px -32px;

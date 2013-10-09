@@ -1,4 +1,4 @@
-<li{% if app.request.attributes.get('_route') in ['index','more_info'] %} class="active"{% endif %}>
+<li{% if 'index' in app.request.attributes.get('_route') %} class="active"{% endif %}>
     <a href="{{ path('index') }}">{{ 'navigation.index' | trans }}</a>
 </li>
 <li{% if 'project_' in app.request.attributes.get('_route') %} class="active"{% endif %}>
