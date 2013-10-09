@@ -30,6 +30,15 @@ framework:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
+    globals:
+        account_links:
+            twitter_link:   %twitter_link%
+            github_link:    %github_link%
+            bitbucket_link: %bitbucket_link%
+            linkedin_link:  %linkedin_link%
+        project_links:
+            source_link:    %source_link%
+            license_link:   %license_link%
 
 # Assetic Configuration
 assetic:
