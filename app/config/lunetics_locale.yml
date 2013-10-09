@@ -10,3 +10,5 @@ lunetics_locale:
         - browser
     cookie:
         set_on_change: true
+    switcher:
+        template: "AitorGarciaMainBundle:Locale:locale_switcher.html.twig"

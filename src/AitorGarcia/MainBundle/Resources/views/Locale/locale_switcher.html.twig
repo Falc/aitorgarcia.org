@@ -1,0 +1,11 @@
+<div id="locale-selector" class="btn-group pull-right">
+    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+        {{ current_locale | locale(current_locale) | capitalize }} <span class="caret"></span>
+    </button>
+
+    <ul class="dropdown-menu" role="menu">
+    {% for locale in locales %}
+        <li><a href="{{ path(current_route | trim('.' ~ app.request.locale), {'locale':locale.locale}) }}">{{ locale.locale | locale(locale.locale) | capitalize }}</a></li>
+    {% endfor %}
+    </ul>
+</div>

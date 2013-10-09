@@ -58,7 +58,8 @@
             </div>
             <div id="infobar">
                 <div class="container">
-                    <p>{% block infotext %}{% endblock %}</p>
+                    <h1>{% block infotext %}{% endblock %}</h1>
+                    {{ locale_switcher() }}
                 </div>
             </div>
             <div id="page">
