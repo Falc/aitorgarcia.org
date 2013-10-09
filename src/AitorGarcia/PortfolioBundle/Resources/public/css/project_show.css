@@ -133,26 +133,6 @@
 
 
 /*
- * ACTIONS
- */
-.btn-icon-view,
-.btn-icon-view:active {
-    background-image: url(../images/icon-view.png);
-    background-repeat: no-repeat;
-    background-position: 10px center;
-    padding-left: 40px;
-}
-
-.btn-icon-source-code,
-.btn-icon-source-code:active {
-    background-image: url(../images/icon-source-code.png);
-    background-repeat: no-repeat;
-    background-position: 10px center;
-    padding-left: 40px;
-}
-
-
-/*
  * FINE TUNING
  */
 @media (min-width: 320px) {
