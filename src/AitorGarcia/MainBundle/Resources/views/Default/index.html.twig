@@ -9,24 +9,43 @@
 {% endstylesheets %}
 {% endblock %}
 
-{% block title %}Aitor García - Programador web{% endblock %}
+{% block title %}Aitor García - {{ 'index.title' | trans }}{% endblock %}
 
 {% block infotext %}{{ 'index.subnavigation' | trans }}{% endblock %}
 
 {% block page %}
 <div class="row">
-    <div id="block-aboutme" class="block col-sm-6">
-        <h3>{{ 'index.heading.about_me' | trans }}</h3>
-        <ul>
-            <li class="icon-user">{{ 'index.paragraph.info' | trans | raw }}</li>
-            <li class="icon-web-dev">{{ 'index.paragraph.web_dev' | trans | raw }}</li>
-            <li class="icon-desktop-dev">{{ 'index.paragraph.desktop_dev' | trans | raw }}</li>
-            <li class="icon-server">{{ 'index.paragraph.sys_admin' | trans | raw }}</li>
-        </ul>
+    <div id="about-me" class="block col-sm-6">
+        <h2>{{ 'index.heading.about_me' | trans }}</h2>
+        <span class="index-icon index-icon-person"></span>
+        <p>{{ 'index.paragraph.about_me' | trans | raw }}</p>
     </div>
-    <div id="block-technologies" class="block col-sm-6">
-        <h3>{{ 'index.heading.which_techs' | trans }}</h3>
-        <img src="{{ asset('bundles/aitorgarciamain/images/technologies.png') }}" alt="{{ 'index.image.tech_logos' | trans }}" />
+    <div id="web-developer" class="block col-sm-6">
+        <h2>{{ 'index.heading.web_developer' | trans }}</h2>
+        <span class="index-icon index-icon-document"></span>
+        <p>{{ 'index.paragraph.web_developer' | trans }}</p>
+    </div>
+    <div class="clearfix"></div>
+    <div id="free-software" class="block col-sm-6">
+        <h2>{{ 'index.heading.free_software' | trans }}</h2>
+        <span class="index-icon index-icon-linux"></span>
+        <p>{{ 'index.paragraph.free_software' | trans }}</p>
+    </div>
+    <div id="knowledge" class="block col-sm-6">
+        <h2>{{ 'index.heading.knowledge' | trans }}</h2>
+        <span class="index-icon index-icon-books"></span>
+        <p>{{ 'index.paragraph.knowledge' | trans }}</p>
+    </div>
+    <div class="clearfix"></div>
+    <div id="this-website" class="block col-sm-6">
+        <h2>{{ 'index.heading.this_website' | trans }}</h2>
+        <span class="index-icon index-icon-showcase"></span>
+        <p>{{ 'index.paragraph.this_website' | trans }}</p>
+    </div>
+    <div id="some-links" class="block col-sm-6">
+        <h2>{{ 'index.heading.some_links' | trans }}</h2>
+        <span class="index-icon index-icon-sign"></span>
+        <p>{{ 'index.paragraph.some_links' | trans (account_links) | raw }}</p>
     </div>
 </div>
 {% endblock %}

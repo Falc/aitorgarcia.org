@@ -1,51 +1,51 @@
-/*
- * BLOCKS
- */
-#block-aboutme,
-#block-technologies {
+#about-me,
+#web-developer,
+#free-software,
+#knowledge,
+#this-website,
+#some-links {
     padding-top: 10px;
     padding-bottom: 20px;
 }
 
-.block h3 {
-    text-align: center;
+#about-me p,
+#web-developer p,
+#free-software p,
+#knowledge p,
+#this-website p,
+#some-links p {
+    margin-left: 50px;
 }
 
-/*
- * ABOUT ME
- */
-#block-aboutme ul {
-    list-style-type: none;
-    padding-left: 0;
+.index-icon {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    text-indent: -9999em;
+    overflow: hidden;
+    float: left;
 }
 
-#block-aboutme li {
-    margin-bottom: 15px;
-    padding-top: 2px;
-    padding-left: 32px;
+.index-icon-person {
+    background: url(../images/index-icons.png) no-repeat 0 0;
 }
 
-.icon-user {
-    background: url(../images/icon-user.png) no-repeat left top;
+.index-icon-document {
+    background: url(../images/index-icons.png) no-repeat -40px 0;
 }
 
-.icon-web-dev {
-    background: url(../images/icon-web-app.png) no-repeat left top;
+.index-icon-linux {
+    background: url(../images/index-icons.png) no-repeat -80px 0;
 }
 
-.icon-desktop-dev {
-    background: url(../images/icon-desktop-app.png) no-repeat left top;
+.index-icon-books {
+    background: url(../images/index-icons.png) no-repeat 0 -40px;
 }
 
-.icon-server {
-    background: url(../images/icon-server.png) no-repeat left top;
+.index-icon-showcase {
+    background: url(../images/index-icons.png) no-repeat -40px -40px;
 }
 
-
-/*
- * TECHNOLOGIES
- */
-#block-technologies img {
-    display: block;
-    margin: 0 auto;
+.index-icon-sign {
+    background: url(../images/index-icons.png) no-repeat -80px -40px;
 }

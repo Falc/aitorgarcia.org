@@ -1,37 +1,21 @@
 navigation:
-    admin:          Admin
     contact:        Contacto
     index:          Portada
-    projects:       Proyectos
-    technologies:   Tecnologías
 
 index:
     heading:
-        about_me:       Sobre mí
-        which_techs:    ¿Qué tecnologías utilizo?
-    image:
-        tech_logos:     Tecnologías
+        about_me:       Mi nombre es...
+        web_developer:  Trabajo como...
+        free_software:  Me encanta...
+        knowledge:      Además sé...
+        this_website:   En esta web verás...
+        some_links:     Puedes encontrarme en...
     paragraph:
-        desktop_dev:    De vez en cuando programo <strong>aplicaciones de escritorio</strong> con Vala y GTK. Para mi <em>Proyecto de Fin de Carrera</em> utilicé Python.
-        info:           Me llamo Aitor García. Nací en Bilbao en 1987 y soy <em>Ingeniero Técnico en Informática de Gestión</em>.
-        sys_admin:      Estoy aprendiendo sobre <strong>administración de sistemas</strong>. Esta web está alojada en mi propio servidor virtual privado (<a href="http://en.wikipedia.org/wiki/Virtual_private_server">VPS</a>).
-        web_dev:        Tengo experiencia en <strong>desarrollo web</strong> con PHP y Symfony2, además de otras tecnologías relacionadas, como HTML, CSS y Javascript (jQuery).
+        about_me:       Aitor García Martínez. Nací en Bilbao en 1987 y soy Ingeniero Técnico en Informática de Gestión por la Universidad del País Vasco.
+        web_developer:  Desarrollador web. Utilizo PHP y Symfony2, además de otras tecnologías relacionadas, como HTML, CSS y Javascript.
+        free_software:  El software libre. Lo utilizo a diario y lo apoyo. Soy usuario de GNU/Linux desde 2005.
+        knowledge:      Python, Vala y, en menor medida, Haxe. También tengo nociones de administración de servidores.
+        this_website:   Algunos de mis proyectos y un blog en el que escribo sobre software libre y programación.
+        some_links:     "<a href=\"twitter_link\">Twitter</a> o <a href=\"linkedin_link\">Linkedin</a>. También subo código bajo licencia libre a mis cuentas de <a href=\"github_link\">Github</a> y <a href=\"bitbucket_link\">Bitbucket</a>."
     subnavigation:      Bienvenido a la web de Aitor García, desarrollador web.
-
-more_info:
-    heading:
-        icons:          Iconos
-        source_code:    Código fuente
-    paragraph:
-        developed_with: Este sitio ha sido desarrollado con Symfony2.
-        get_source:     Puedes <a href="https://github.com/Falc/aitorgarcia.org">acceder al código</a> en Github, está publicado bajo la <a href="https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE">Licencia BSD simplificada</a>.
-        yusuke_icons:   Algunos de los iconos utilizados en este sitio están diseñados por <a href="http://p.yusukekamiyamane.com/">Yusuke Kamiyamane</a>. Pertenecen al paquete "Fugue Icons", publicado bajo una licencia <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0</a>.
-    subnavigation:      Más información
-    title:              Más información
-
-admin:
-    index:
-        paragraph:
-            some_info:  Aquí puedes añadir información sobre el funcionamiento del panel de administración.
-        subnavigation:  Bienvenido al panel de administración!
-        title:          Portada
+    title:              Desarrollador web
