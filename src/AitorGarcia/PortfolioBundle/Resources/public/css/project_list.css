@@ -1,11 +1,14 @@
 /*
- * PROJECT
+ * PROJECT LIST
  */
+#project-list {
+    margin-top: 5px;
+}
+
 a.project {
     text-decoration: none;
     display: block;
     position: relative;
-    margin: 5px;
 }
 
 a.project > div {

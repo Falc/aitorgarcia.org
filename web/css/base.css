@@ -170,7 +170,19 @@ a:active, a:focus, a:hover {
 }
 
 #options {
-    padding: 0 20px;
+    padding: 0 15px;
+}
+
+
+/*
+ * TABLES
+ */
+.table {
+    font-size: 14px;
+}
+.table thead > tr > th {
+    background-color: #f0f0f0;
+    border-bottom: none;
 }
 
 
