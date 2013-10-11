@@ -1,3 +1,6 @@
+navigation:
+    projects:       Projects
+
 projects:
     legend:
         images:                 Images
