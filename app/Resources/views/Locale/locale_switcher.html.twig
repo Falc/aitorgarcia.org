@@ -6,7 +6,7 @@
     <ul class="dropdown-menu" role="menu">
     {% for locale in locales %}
         {% set route_params = app.request.attributes.get('_route_params') | merge({'locale': locale.locale}) %}
-        <li><a href="{{ path(current_route | trim('.' ~ app.request.locale), route_params) }}">{{ locale.locale | locale(locale.locale) | capitalize }}</a></li>
+        <li><a href="{{ path(current_route | slice(0, -3), route_params) }}">{{ locale.locale | locale(locale.locale) | capitalize }}</a></li>
     {% endfor %}
     </ul>
 </div>
