@@ -64,7 +64,7 @@
         var inputSend = $('input[name="send"]');
 
         var btnSend = $('<button>').attr('type', 'submit').addClass('btn btn-primary btn-icon');
-        btnSend.append('<span class="icon icon-accept"></span>' + '{{ 'button.send' | trans }}');
+        btnSend.append('<span class="icon icon-submit"></span>' + '{{ 'button.send' | trans }}');
 
         inputSend.replaceWith(btnSend);
     });
