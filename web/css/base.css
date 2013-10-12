@@ -175,18 +175,6 @@ a:active, a:focus, a:hover {
 
 
 /*
- * TABLES
- */
-.table {
-    font-size: 14px;
-}
-.table thead > tr > th {
-    background-color: #f0f0f0;
-    border-bottom: none;
-}
-
-
-/*
  * BUTTONS
  */
 .btn {
@@ -339,6 +327,14 @@ span.icon {
     overflow: hidden;
 }
 
+a.btn-icon-notext {
+    padding: 0;
+}
+
+a.btn-icon-notext span.icon {
+    margin: 0;
+}
+
 
 /*
  * TAGS
@@ -435,6 +431,33 @@ ul.tags li a:active {
 
 .icon-view {
     background-image: url(../images/icons.png);
+    background-position: -128px 0;
+}
+
+.icon-add {
+    background-image: url(../images/icons.png);
+    background-position: 0 -32px;
+}
+
+.icon-remove {
+    background-image: url(../images/icons.png);
+    background-position: -32px -32px;
+}
+
+.icon-edit {
+    background-image: url(../images/icons.png);
+    background-position: -64px -32px;
+}
+
+.icon-accept,
+.icon-submit {
+    background-image: url(../images/icons.png);
+    background-position: -96px -32px;
+}
+
+.icon-cancel,
+.icon-delete {
+    background-image: url(../images/icons.png);
     background-position: -128px -32px;
 }
 
@@ -456,16 +479,6 @@ ul.tags li a:active {
 .icon-tag {
     background-image: url(../images/icons.png);
     background-position: -96px -64px;
-}
-
-.icon-accept {
-    background-image: url(../images/icons.png);
-    background-position: 0 -96px;
-}
-
-.icon-cancel {
-    background-image: url(../images/icons.png);
-    background-position: -32px -96px;
 }
 
 
