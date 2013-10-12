@@ -19,3 +19,11 @@ index:
         some_links:     "<a href=\"twitter_link\">Twitter</a> or <a href=\"linkedin_link\">Linkedin</a>. I share code too, mainly under free licenses on <a href=\"github_link\">Github</a> and <a href=\"bitbucket_link\">Bitbucket</a>."
     subnavigation:      Welcome to the portfolio of Aitor García, web developer.
     title:              Web developer
+
+admin:
+    navigation:
+        overview:       Overview
+    overview:
+        title:          Overview
+        paragraph:
+            some_info:  You can add some information here about how the panel admin works.

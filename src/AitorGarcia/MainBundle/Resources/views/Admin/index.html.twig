@@ -1,20 +1,21 @@
-{% extends "::layout.html.twig" %}
-
-{% block title %}{{ 'admin.index.title' | trans }} - Aitor García (Backend){% endblock %}
+{% extends "::base_admin.html.twig" %}
 
 {% block stylesheets %}
 {% stylesheets filter="cssrewrite,?yui_css" output='css/backend-*.css'
-    'css/main.css'
+    'css/base.css'
+    'bundles/aitorgarciamain/css/admin_overview.css'
 %}
     <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
 {% endstylesheets %}
 {% endblock %}
 
-{% block subnavigation %}
-<h2>{{ 'admin.index.subnavigation' | trans }}</h2>
-{{ parent() }}
-{% endblock %}
+{% block infotext %}{{ 'admin.overview.title' | trans }}{% endblock %}
 
 {% block page %}
-<p>{{ 'admin.index.paragraph.some_info' | trans }}</p>
+<div class="row">
+    <div id="some_info" class="block">
+        <p>{{ 'admin.overview.paragraph.some_info' | trans }}</p>
+    </div>
+</div>
+
 {% endblock %}

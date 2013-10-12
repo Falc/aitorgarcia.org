@@ -1,0 +1,20 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AG Backend{% endblock %}
+
+{% block navbar_container %}
+<div class="navbar-header">
+    <a class="navbar-brand" href="/">AG Backend</a>
+</div>
+
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+        <li{% if 'index.' in current_route %} class="active"{% endif %}>
+            <a href="{{ path('admin_index') }}">{{ 'admin.navigation.overview' | trans }}</a>
+        </li>
+        <li{% if 'project_' in current_route %} class="active"{% endif %}>
+            <a href="{{ path('admin_project_list') }}">{{ 'navigation.projects' | trans }}</a>
+        </li>
+    </ul>
+</div><!--/.nav-collapse -->
+{% endblock %}

@@ -19,3 +19,11 @@ index:
         some_links:     "<a href=\"twitter_link\">Twitter</a> o <a href=\"linkedin_link\">Linkedin</a>. También subo código bajo licencia libre a mis cuentas de <a href=\"github_link\">Github</a> y <a href=\"bitbucket_link\">Bitbucket</a>."
     subnavigation:      Bienvenido a la web de Aitor García, desarrollador web.
     title:              Desarrollador web
+
+admin:
+    navigation:
+        overview:       Vista general
+    overview:
+        title:          Vista general
+        paragraph:
+            some_info:  Aquí puedes añadir información sobre el funcionamiento del panel de administración.
