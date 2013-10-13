@@ -10,6 +10,11 @@ security:
             logout:
                 path:   fos_user_security_logout
                 target: _index
+            remember_me:
+                key:      "%secret%"
+                lifetime: 2592000 # 30 days in seconds
+                path:     /
+                domain:   ~ # Defaults to the current domain from $_SERVER
             anonymous:    true
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
