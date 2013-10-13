@@ -481,6 +481,16 @@ ul.tags li a:active {
     background-position: -96px -64px;
 }
 
+.icon-up {
+    background-image: url(../images/icons.png);
+    background-position: 0 -96px;
+}
+
+.icon-down {
+    background-image: url(../images/icons.png);
+    background-position: -32px -96px;
+}
+
 
 /*
  * FINE TUNING
