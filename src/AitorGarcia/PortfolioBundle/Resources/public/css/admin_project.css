@@ -1,27 +1,70 @@
-@charset "utf-8";
+/*
+ * PROJECT LIST
+ */
+#project-list {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 
-@media handheld, projection, screen, tv {
-    #screenshots {
-        margin: 0.5em 0;
-    }
+#project-list .table {
+    margin-bottom: 0;
+}
 
-    #screenshots ._100 {
-        margin: 0.25em 2%;
-    }
+a.btn-lang {
+    width: 34px;
+    height: 34px;
+    text-align: center;
+    padding: 6px;
+}
 
-    #screenshots input[type="text"] {
-        margin: 0;
-        width: 40%;
-        margin-right: 0.5em;
-        margin-top: 2px;
-        margin-bottom: 2px;
-    }
 
-    #button-add-image {
-        display: none;
-    }
+/*
+ * CREATE/EDIT/DELETE PROJECT
+ */
+#project-create,
+#project-edit,
+#project-delete {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
-    .buttons-right {
-        display: none;
-    }
+#project-create .form-group,
+#project-edit .form-group {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#project-delete .block {
+    padding-top: 0px;
+    margin-bottom: 15px;
+}
+
+#project-create h2,
+#project-edit h2 {
+    font-size: 16px;
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+
+#screenshots {
+    padding: 0;
+}
+
+#screenshots-actions {
+    text-align: right;
+    margin-bottom: 15px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.screenshot {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.screenshot-actions {
+    text-align: right;
+    margin-bottom: 15px;
+    padding-top: 0;
+    padding-bottom: 0;
 }

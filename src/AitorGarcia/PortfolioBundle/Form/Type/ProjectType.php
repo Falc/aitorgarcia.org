@@ -28,28 +28,40 @@ class ProjectType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('name', 'text', array(
-            'trim'  => true
+            'trim'  => true,
+            'attr'  => array(
+                'class' => 'form-control'
+            )
         ));
 
         $builder->add('description', 'textarea', array(
             'attr'  => array(
-                'class'      => 'tinymce',
+                'class'      => 'tinymce form-control',
                 'data-theme' => 'advanced'
             )
         ));
 
         $builder->add('client', 'text', array(
             'required'  => false,
-            'trim'      => true
+            'trim'      => true,
+            'attr'  => array(
+                'class' => 'form-control'
+            )
         ));
 
         $builder->add('link', 'text', array(
-            'trim'  => true
+            'trim'  => true,
+            'attr'  => array(
+                'class' => 'form-control'
+            )
         ));
 
         $builder->add('sourceLink', 'text', array(
             'required'  => false,
-            'trim'      => true
+            'trim'      => true,
+            'attr'  => array(
+                'class' => 'form-control'
+            )
         ));
 
         $builder->add('technologies', 'entity', array(
@@ -57,7 +69,8 @@ class ProjectType extends AbstractType
             'property'  => 'name',
             'multiple'  => true,
             'attr'      => array(
-                'size'  => 6
+                'size'  => 6,
+                'class' => 'form-control'
             ),
             'required'  => false
         ));

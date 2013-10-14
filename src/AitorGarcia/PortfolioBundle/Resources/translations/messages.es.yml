@@ -62,6 +62,7 @@ field:
 button:
     add_image:      Añadir imagen
     cancel:         Cancelar
+    choose_image:   Elegir imagen...
     confirm:        Confirmar
     create:         Crear
     delete:         Eliminar

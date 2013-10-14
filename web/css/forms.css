@@ -2,6 +2,11 @@ textarea {
     min-height: 150px;
 }
 
+select.form-control {
+    min-height: 150px;
+    padding: 5px;
+}
+
 .checkbox {
     margin-bottom: 15px;
 }
@@ -9,4 +14,16 @@ textarea {
 .checkbox input[type="checkbox"] {
     margin-left: 0;
     margin-right: 5px;
+}
+
+input[type="file"] {
+    width: 100%;
+    font-size: 14px;
+    margin-top: 4px;
+    margin-bottom: 3px;
+}
+
+#form-actions {
+    border-top: 1px dotted #ddd;
+    padding-top: 15px;
 }

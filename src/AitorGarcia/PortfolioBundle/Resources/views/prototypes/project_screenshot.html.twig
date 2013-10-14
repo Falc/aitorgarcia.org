@@ -1,9 +1,28 @@
-<div class="_100">
-    {{ form_widget(screenshot.name) }} {{ form_widget(screenshot.file) }}
-    {{ form_widget(screenshot.weight, {'attr': {'value': '__name__'} } ) }}
-    <div class="buttons-right">
-        <a class="button-img button-move-up" href="#" title="{{ 'button.move_up_ext' | trans }}"><img alt="{{ 'button.move_up' | trans }}" src="/bundles/aitorgarciaportfolio/images/up.png"></a>
-        <a class="button-img button-move-down" href="#" title="{{ 'button.move_down_ext' | trans }}"><img alt="{{ 'button.move_down' | trans }}" src="/bundles/aitorgarciaportfolio/images/down.png"></a>
-        <a class="button-img button-remove-image" href="#" title="{{ 'button.remove_image' | trans }}"><img alt="{{ 'button.remove_image' | trans }}" src="/bundles/aitorgarciaportfolio/images/delete.png"></a>
+<div class="screenshot row">
+    <div class="screenshot-name form-group block col-md-5">
+        {{ form_widget(screenshot.name) }}
     </div>
+    <div class="screenshot-file form-group block col-md-5">
+        <div style="display: none;">
+            {{ form_widget(screenshot.file) }}
+        </div>
+        <div class="input-group">
+            <input type="text" class="form-control" readonly="readonly" />
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="button">{{ 'button.choose_image' | trans }}</button>
+            </span>
+        </div>
+    </div>
+    <div class="screenshot-actions block col-md-2">
+        <a class="btn btn-primary btn-icon btn-icon-notext" data-id="btn-up" href="javascript:;" title="{{ 'button.move_up_ext' | trans }}">
+            <span class="icon icon-up">{{ 'button.move_up' | trans }}</span>
+        </a>
+        <a class="btn btn-primary btn-icon btn-icon-notext" data-id="btn-down" href="javascript:;" title="{{ 'button.move_down_ext' | trans }}">
+            <span class="icon icon-down">{{ 'button.move_down' | trans }}</span>
+        </a>
+        <a class="btn btn-danger btn-icon btn-icon-notext" data-id="btn-remove" href="javascript:;" title="{{ 'button.remove_image' | trans }}">
+            <span class="icon icon-remove">{{ 'button.remove_image' | trans }}</span>
+        </a>
+    </div>
+    {{ form_widget(screenshot.weight, {'attr': {'value': '__name__'} } ) }}
 </div>

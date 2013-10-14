@@ -1,6 +1,18 @@
 function setLinkEvents(screenshotRow) {
+    var inputSelectScreenshot = screenshotRow.find('.screenshot-file input[type="file"]');
+    var inputFakeSelectScreenshot = screenshotRow.find('.screenshot-file input[type="text"]');
+    var btnFakeSelectScreenshot = screenshotRow.find('.screenshot-file button');
+
+    inputSelectScreenshot.on('change', function() {
+        inputFakeSelectScreenshot.val(inputSelectScreenshot.val());
+    });
+
+    btnFakeSelectScreenshot.on('click', function() {
+        inputSelectScreenshot.click();
+    });
+
     // Get the "move up" link
-    var linkMoveUp = screenshotRow.find('a.button-move-up');
+    var linkMoveUp = screenshotRow.find('a[data-id="btn-up"]');
     // On click, move the row up
     linkMoveUp.on('click', function(e) {
         e.preventDefault();
@@ -14,7 +26,7 @@ function setLinkEvents(screenshotRow) {
     });
 
     // Get the "move down" link
-    var linkMoveDown = screenshotRow.find('a.button-move-down');
+    var linkMoveDown = screenshotRow.find('a[data-id="btn-down"]');
     // On click, move the row down
     linkMoveDown.on('click', function(e) {
         e.preventDefault();
@@ -28,7 +40,7 @@ function setLinkEvents(screenshotRow) {
     });
 
     // Get the "remove" link
-    var linkRemove = screenshotRow.find('a.button-remove-image');
+    var linkRemove = screenshotRow.find('a[data-id="btn-remove"]');
     // On click, remove the row
     linkRemove.on('click', function(e) {
         e.preventDefault();
@@ -43,35 +55,37 @@ function setLinkEvents(screenshotRow) {
     });
 }
 
-function addScreenshotRow(collectionHolder) {
+function addScreenshotRow(screenshotsContainer) {
     // Get the data-prototype
-    var prototype = collectionHolder.attr('data-prototype');
+    var prototype = screenshotsContainer.attr('data-prototype');
 
-    // Replace '__name__' with a number based on the current collection's length
-    var screenshotRow = $(prototype.replace(/__name__/g, collectionHolder.children().length));
+    // Replace '__name__' with a number based on the number of screenshots
+    var screenshotRow = $(prototype.replace(/__name__/g, screenshotsContainer.children().length));
 
-    // Add the screenshot row to the collection holder
-    collectionHolder.append(screenshotRow);
+    // Add the screenshot row to the screenshots container
+    screenshotsContainer.append(screenshotRow);
 
-    // Display the buttons and set the events
-    screenshotRow.find('div.buttons-right').show();
+    // Set the events
     setLinkEvents(screenshotRow);
 }
 
-jQuery(document).ready(function() {
-    // Get the div that holds the screenshots collection
-    var collectionHolder = $('#screenshots');
+$(document).ready(function() {
+    var screenshotsContainer = $('#screenshots');
 
-    // For each screenshot row, display the buttons and set the events
-    collectionHolder.children('div').each(function() {
-        $(this).find('div.buttons-right').show();
-        setLinkEvents($(this));
+    // For each screenshot, set the events
+    screenshotsContainer.children('.screenshot').each(function() {
+        $(this).find('.screenshot-actions').each(function() {
+            setLinkEvents($(this));
+        });
     });
 
-    // Get the "add image" button, display it and set its event
-    var buttonAddImage = collectionHolder.parent().find('#button-add-image');
-    buttonAddImage.show();
-    buttonAddImage.on('click', function(e) {
-        addScreenshotRow(collectionHolder);
+    // Get the "add screenshot" button, display it and set its event
+    var buttonAddScreenshot = $('#btn-add-screenshot');
+    buttonAddScreenshot.show();
+    buttonAddScreenshot.on('click', function() {
+        addScreenshotRow(screenshotsContainer);
     });
+
+    // Display at least one screenshot row
+    buttonAddScreenshot.click();
 });
