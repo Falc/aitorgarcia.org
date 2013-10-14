@@ -15,6 +15,9 @@
         <li{% if 'project_' in current_route %} class="active"{% endif %}>
             <a href="{{ path('admin_project_list') }}">{{ 'navigation.projects' | trans }}</a>
         </li>
+        <li{% if 'technology_' in current_route %} class="active"{% endif %}>
+            <a href="{{ path('admin_technology_list') }}">{{ 'navigation.technologies' | trans }}</a>
+        </li>
     </ul>
 </div><!--/.nav-collapse -->
 {% endblock %}

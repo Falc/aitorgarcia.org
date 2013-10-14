@@ -1,30 +1,57 @@
-{% extends "::layout.html.twig" %}
-
-{% block title %}{{ 'technologies.title.delete' | trans }} - Aitor García (Backend){% endblock %}
+{% extends "::base_admin.html.twig" %}
 
 {% block stylesheets %}
 {% stylesheets filter="cssrewrite,?yui_css" output='css/backend-*.css'
-    'css/main.css'
+    'css/base.css'
+    'bundles/aitorgarciaportfolio/css/admin_technology.css'
 %}
     <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
 {% endstylesheets %}
 {% endblock %}
 
-{% block subnavigation %}
-<ul class="actions">
-    <li><a href="{{ path('admin_technology_list') }}">{{ 'button.list' | trans }}</a></li>
-    <li><a href="{{ path('admin_technology_create') }}">{{ 'button.create' | trans }}</a></li>
-</ul>
-{{ parent() }}
-<div class="clear"></div>
-{% endblock %}
+{% block infotext %}{{ 'technologies.title.delete' | trans }}{% endblock %}
 
 {% block page %}
-<h2>{{ 'technologies.title.delete' | trans }}</h2>
-<form action="{{ path('admin_technology_delete', { 'id': technology_id }) }}" method="post">
-    <p>{{ 'technologies.message.confirm_deletion' | trans }}</p>
-    {{ form_rest(form) }}
-	<input class="button" type="submit" name="save" value="{{ 'button.confirm' | trans }}" />
-	<input class="button" type="submit" name="cancel" value="{{ 'button.cancel' | trans }}" />
-</form>
+<div class="row">
+    <div id="technology-delete" class="block">
+        <form action="{{ path('admin_technology_delete', { 'id': technology_id }) }}" method="post">
+            <div class="row">
+                <div class="block">
+                    <p>{{ 'technologies.message.confirm_deletion' | trans }}</p>
+                </div>
+            </div>
+            {{ form_rest(form) }}
+
+            <div id="form-actions">
+                <input class="btn btn-success" type="submit" name="save" value="{{ 'button.confirm' | trans }}" />
+                <input class="btn btn-danger" type="submit" name="cancel" value="{{ 'button.cancel' | trans }}" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        // Replace every input with a button+icon
+        var inputConfirm = $('input[name="save"]');
+        var inputCancel = $('input[name="cancel"]');
+
+        var btnConfirm = $('<button>').attr({
+            'type': 'submit',
+            'name': 'save'
+        });
+        btnConfirm.addClass('btn btn-success btn-icon');
+        btnConfirm.append('<span class="icon icon-accept"></span>' + "{{ 'button.confirm' | trans }}");
+
+        var btnCancel = $('<button>').attr({
+            'type': 'submit',
+            'name': 'cancel'
+        });
+        btnCancel.addClass('btn btn-danger btn-icon');
+        btnCancel.append('<span class="icon icon-cancel"></span>' + "{{ 'button.cancel' | trans }}");
+
+        inputConfirm.replaceWith(btnConfirm);
+        inputCancel.replaceWith(btnCancel);
+    });
+</script>
 {% endblock %}

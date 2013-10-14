@@ -1,37 +1,51 @@
-{% extends "::layout.html.twig" %}
-
-{% block title %}{{ 'technologies.title.edit' | trans }} - Aitor García (Backend){% endblock %}
+{% extends "::base_admin.html.twig" %}
 
 {% block stylesheets %}
 {% stylesheets filter="cssrewrite,?yui_css" output='css/backend-*.css'
-    'css/main.css'
+    'css/base.css'
     'css/forms.css'
+    'bundles/aitorgarciaportfolio/css/admin_technology.css'
 %}
     <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
 {% endstylesheets %}
 {% endblock %}
 
-{% block subnavigation %}
-<ul class="actions">
-    <li><a href="{{ path('admin_technology_list') }}">{{ 'button.list' | trans }}</a></li>
-    <li class="active"><a href="{{ path('admin_technology_edit', { 'id': technology_id }) }}">{{ 'button.edit' | trans }}</a></li>
-</ul>
-{{ parent() }}
-<div class="clear"></div>
-{% endblock %}
+{% block infotext %}{{ 'technologies.title.edit' | trans }}{% endblock %}
 
 {% block page %}
-<h2>{{ 'technologies.title.edit' | trans }}</h2>
-<form action="{{ path('admin_technology_edit', { 'id': technology_id }) }}" method="post">
-	<fieldset>
-		<legend>{{ 'technologies.legend.info' | trans }}</legend>
-        <div class="_100">
-            {{ form_label(form.name, 'field.name' | trans ) }}
-            {{ form_widget(form.name) }}
-            {{ form_errors(form.name) }}
-        </div>
-        {{ form_rest(form) }}
-    </fieldset>
-	<input class="button" type="submit" name="save" value="{{ 'button.save_changes' | trans }}" />
-</form>
+<div class="row">
+    <div id="technology-edit" class="block">
+        <form action="{{ path('admin_technology_edit', { 'id': technology_id }) }}" method="post" {{ form_enctype(form) }}>
+            <fieldset>
+                <div class="row">
+                    <div class="form-group block">
+                        {{ form_label(form.name, 'field.name' | trans ) }}
+                        {{ form_widget(form.name) }}
+                        {{ form_errors(form.name) }}
+                    </div>
+                </div>
+                {{ form_widget(form._token) }}
+            </fieldset>
+            <div id="form-actions">
+                <input class="btn btn-primary" type="submit" name="save" value="{{ 'button.create' | trans }}" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        // Replace the submit input with a button+icon
+        var inputSave = $('input[name="save"]');
+
+        var btnSave = $('<button>').attr({
+            'type': 'submit',
+            'name': 'save'
+        });
+        btnSave.addClass('btn btn-primary btn-icon');
+        btnSave.append('<span class="icon icon-submit"></span>' + "{{ 'button.save_changes' | trans }}");
+
+        inputSave.replaceWith(btnSave);
+    });
+</script>
 {% endblock %}

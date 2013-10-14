@@ -1,5 +1,6 @@
 navigation:
     projects:       Projects
+    technologies:   Technologies
 
 projects:
     legend:

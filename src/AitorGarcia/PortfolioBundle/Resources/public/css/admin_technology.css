@@ -1,0 +1,33 @@
+/*
+ * TECHNOLOGY LIST
+ */
+#technology-list {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#technology-list .table {
+    margin-bottom: 0;
+}
+
+
+/*
+ * CREATE/EDIT/DELETE TECHNOLOGY
+ */
+#technology-create,
+#technology-edit,
+#technology-delete {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#technology-create .form-group,
+#technology-edit .form-group {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#technology-delete .block {
+    padding-top: 0px;
+    margin-bottom: 15px;
+}
