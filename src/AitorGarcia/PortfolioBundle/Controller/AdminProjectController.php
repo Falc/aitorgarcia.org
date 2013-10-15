@@ -25,7 +25,7 @@ class AdminProjectController extends Controller
     public function listAction()
     {
         // Get the entity manager and find all the projects
-        $entityManager = $this->get('doctrine')->getEntityManager();
+        $entityManager = $this->getDoctrine()->getManager();
         $projects = $entityManager->getRepository('AitorGarciaPortfolioBundle:Project')->findAll();
 
         // Render the view
@@ -47,7 +47,7 @@ class AdminProjectController extends Controller
         $form = $this->createForm(new ProjectType(), $project);
 
         // Get the request
-        $request = $this->get('request');
+        $request = $this->getRequest();
 
         // If the request method is POST, process the data
         if ($request->getMethod() === 'POST')
@@ -59,7 +59,7 @@ class AdminProjectController extends Controller
             if ($form->isValid())
             {
                 // 1) Get the entity manager and persist the entity
-                $entityManager = $this->get('doctrine')->getEntityManager();
+                $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($project);
                 $entityManager->flush();
 
@@ -87,7 +87,7 @@ class AdminProjectController extends Controller
     public function editAction($id)
     {
         // Get the entity manager and find the selected project
-        $entityManager = $this->get('doctrine')->getEntityManager();
+        $entityManager = $this->getDoctrine()->getManager();
         $project = $entityManager->find('AitorGarciaPortfolioBundle:Project', $id);
 
         // If the project does not exist, display an error message
@@ -108,7 +108,7 @@ class AdminProjectController extends Controller
         $form = $this->createForm(new ProjectType, $project);
 
         // Get the request
-        $request = $this->get('request');
+        $request = $this->getRequest();
 
         // If the request method is POST, process the data
         if ($request->getMethod() === 'POST')
@@ -170,7 +170,7 @@ class AdminProjectController extends Controller
     public function deleteAction($id)
     {
         // Get the entity manager and find the selected project
-        $entityManager = $this->get('doctrine')->getEntityManager();
+        $entityManager = $this->getDoctrine()->getManager();
         $project = $entityManager->find('AitorGarciaPortfolioBundle:Project', $id);
 
         // If the project does not exist, display an error message
@@ -181,7 +181,7 @@ class AdminProjectController extends Controller
         }
 
         // Get the request
-        $request = $this->get('request');
+        $request = $this->getRequest();
 
         // Create a "fake" form
         $form = $this->createDeleteForm($id);
@@ -233,7 +233,7 @@ class AdminProjectController extends Controller
     public function translationEditAction($id, $lang)
     {
         // Get the entity manager and find the selected project
-        $entityManager = $this->get('doctrine')->getEntityManager();
+        $entityManager = $this->getDoctrine()->getManager();
         $project = $entityManager->find('AitorGarciaPortfolioBundle:Project', $id);
 
         // If the project does not exist, display an error message
@@ -257,7 +257,7 @@ class AdminProjectController extends Controller
         $form = $this->createForm(new ProjectTranslationType(), $project);
 
         // Get the request
-        $request = $this->get('request');
+        $request = $this->getRequest();
 
         // If the request method is POST, process the data
         if ($request->getMethod() === 'POST')

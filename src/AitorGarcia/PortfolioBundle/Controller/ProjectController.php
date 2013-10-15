@@ -23,7 +23,7 @@ class ProjectController extends Controller
     public function listAction()
     {
         // Get the entity manager and the project repository
-        $entityManager = $this->get('doctrine')->getEntityManager();
+        $entityManager = $this->getDoctrine()->getManager();
         $projectRepository = $entityManager->getRepository('AitorGarciaPortfolioBundle:Project');
 
         // Find all the projects sorted by DESC creation date
@@ -47,7 +47,7 @@ class ProjectController extends Controller
     public function showAction($slug)
     {
         // Get the entity manager and find the selected project
-        $entityManager = $this->get('doctrine')->getEntityManager();
+        $entityManager = $this->getDoctrine()->getManager();
         $project = $entityManager->getRepository('AitorGarciaPortfolioBundle:Project')->findOneBySlug($slug);
 
         // If the project does not exist, display an error message

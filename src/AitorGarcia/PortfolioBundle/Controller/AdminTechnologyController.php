@@ -24,7 +24,7 @@ class AdminTechnologyController extends Controller
     public function listAction()
     {
         // Get the entity manager and find all the technologies
-        $entityManager = $this->get('doctrine')->getEntityManager();
+        $entityManager = $this->getDoctrine()->getManager();
         $technologies = $entityManager->getRepository('AitorGarciaPortfolioBundle:Technology')->findAll();
 
         // Render the view
@@ -46,7 +46,7 @@ class AdminTechnologyController extends Controller
         $form = $this->createForm(new TechnologyType(), $technology);
 
         // Get the request
-        $request = $this->get('request');
+        $request = $this->getRequest();
 
         // If the request method is POST, process the data
         if ($request->getMethod() === 'POST')
@@ -58,7 +58,7 @@ class AdminTechnologyController extends Controller
             if ($form->isValid())
             {
                 // 1) Get the entity manager and persist the entity
-                $entityManager = $this->get('doctrine')->getEntityManager();
+                $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($technology);
                 $entityManager->flush();
 
@@ -86,7 +86,7 @@ class AdminTechnologyController extends Controller
     public function editAction($id)
     {
         // Get the entity manager and find the selected technology
-        $entityManager = $this->get('doctrine')->getEntityManager();
+        $entityManager = $this->getDoctrine()->getManager();
         $technology = $entityManager->find('AitorGarciaPortfolioBundle:Technology', $id);
 
         // If the technology does not exist, display an error message
@@ -100,7 +100,7 @@ class AdminTechnologyController extends Controller
         $form = $this->createForm(new TechnologyType, $technology);
 
         // Get the request
-        $request = $this->get('request');
+        $request = $this->getRequest();
 
         // If the request method is POST, process the data
         if ($request->getMethod() === 'POST')
@@ -142,7 +142,7 @@ class AdminTechnologyController extends Controller
     public function deleteAction($id)
     {
         // Get the entity manager and find the selected technology
-        $entityManager = $this->get('doctrine')->getEntityManager();
+        $entityManager = $this->getDoctrine()->getManager();
         $technology = $entityManager->find('AitorGarciaPortfolioBundle:Technology', $id);
 
         // If the technology does not exist, display an error message
@@ -153,7 +153,7 @@ class AdminTechnologyController extends Controller
         }
 
         // Get the request
-        $request = $this->get('request');
+        $request = $this->getRequest();
 
         // Create a "fake" form
         $form = $this->createDeleteForm($id);

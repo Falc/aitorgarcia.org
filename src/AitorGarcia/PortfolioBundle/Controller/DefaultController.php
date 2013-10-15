@@ -30,7 +30,7 @@ class DefaultController extends Controller
         $form = $this->createForm(new EnquiryType(), $enquiry);
 
         // Get the request
-        $request = $this->get('request');
+        $request = $this->getRequest();
 
         // If the request method is POST, process the data
         if ($request->getMethod() === 'POST')
