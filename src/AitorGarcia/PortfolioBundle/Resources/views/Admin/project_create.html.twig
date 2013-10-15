@@ -91,6 +91,9 @@
         btnSave.append('<span class="icon icon-submit"></span>' + "{{ 'button.create' | trans }}");
 
         inputSave.replaceWith(btnSave);
+
+        // Display at least one screenshot row
+        $('#btn-add-screenshot').click();
     });
 </script>
 {% endblock %}
