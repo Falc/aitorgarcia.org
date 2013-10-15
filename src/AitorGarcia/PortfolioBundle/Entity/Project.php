@@ -9,6 +9,7 @@
 
 namespace AitorGarcia\PortfolioBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -149,8 +150,8 @@ class Project
      */
     public function __construct()
     {
-        $this->technologies = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->screenshots = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->technologies = new ArrayCollection();
+        $this->screenshots = new ArrayCollection();
     }
     
     /**
@@ -307,7 +308,7 @@ class Project
      * @param   Technology   $technology
      * @return  Project
      */
-    public function addTechnology(\AitorGarcia\PortfolioBundle\Entity\Technology $technology)
+    public function addTechnology(Technology $technology)
     {
         $this->technologies[] = $technology;
     
@@ -319,7 +320,7 @@ class Project
      *
      * @param   Technology   $technology
      */
-    public function removeTechnology(\AitorGarcia\PortfolioBundle\Entity\Technology $technology)
+    public function removeTechnology(Technology $technology)
     {
         $this->technologies->removeElement($technology);
     }
@@ -340,7 +341,7 @@ class Project
      * @param   ProjectScreenshot    $screenshot
      * @return  Project
      */
-    public function addScreenshot(\AitorGarcia\PortfolioBundle\Entity\ProjectScreenshot $screenshot)
+    public function addScreenshot(ProjectScreenshot $screenshot)
     {
         $screenshot->setProject($this);
         $this->screenshots[] = $screenshot;
@@ -353,7 +354,7 @@ class Project
      *
      * @param   ProjectScreenshot    $screenshot
      */
-    public function removeScreenshot(\AitorGarcia\PortfolioBundle\Entity\ProjectScreenshot $screenshot)
+    public function removeScreenshot(ProjectScreenshot $screenshot)
     {
         $this->screenshots->removeElement($screenshot);
     }

@@ -9,6 +9,7 @@
 
 namespace AitorGarcia\PortfolioBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -56,7 +57,7 @@ class Technology
      */
     public function __construct()
     {
-        $this->projects = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->projects = new ArrayCollection();
     }
     
     /**
@@ -98,7 +99,7 @@ class Technology
      * @param   Project $project
      * @return  Technology
      */
-    public function addProject(\AitorGarcia\PortfolioBundle\Entity\Project $project)
+    public function addProject(Project $project)
     {
         $this->projects[] = $project;
     
@@ -110,7 +111,7 @@ class Technology
      *
      * @param   Project $project
      */
-    public function removeProject(\AitorGarcia\PortfolioBundle\Entity\Project $project)
+    public function removeProject(Project $project)
     {
         $this->projects->removeElement($project);
     }

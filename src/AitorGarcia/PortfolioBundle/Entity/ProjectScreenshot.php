@@ -11,6 +11,7 @@ namespace AitorGarcia\PortfolioBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -200,7 +201,7 @@ class ProjectScreenshot
      * @param   Project $project
      * @return  ProjectScreenshot
      */
-    public function setProject(\AitorGarcia\PortfolioBundle\Entity\Project $project = null)
+    public function setProject(Project $project = null)
     {
         $this->project = $project;
     
