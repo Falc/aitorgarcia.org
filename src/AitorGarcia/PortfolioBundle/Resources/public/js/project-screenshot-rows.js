@@ -74,9 +74,7 @@ $(document).ready(function() {
 
     // For each screenshot, set the events
     screenshotsContainer.children('.screenshot').each(function() {
-        $(this).find('.screenshot-actions').each(function() {
-            setLinkEvents($(this));
-        });
+        setLinkEvents($(this));
     });
 
     // Get the "add screenshot" button, display it and set its event
@@ -85,7 +83,4 @@ $(document).ready(function() {
     buttonAddScreenshot.on('click', function() {
         addScreenshotRow(screenshotsContainer);
     });
-
-    // Display at least one screenshot row
-    buttonAddScreenshot.click();
 });
