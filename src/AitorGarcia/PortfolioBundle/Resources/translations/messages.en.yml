@@ -21,7 +21,7 @@ projects:
         delete:                 Delete Project
         edit:                   Edit Project
         list:                   Projects
-        translate:              Translate "%project_name%" to "%lang%"
+        translate:              Translate "%project_name%" to %lang%
 
 technologies:
     legend:

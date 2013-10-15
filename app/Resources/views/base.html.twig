@@ -23,6 +23,7 @@
     </head>
     <body>
     {% set current_route = app.request.attributes.get('_route') %}
+    {% set current_locale = app.session.get('lunetics_locale') %}
         <div id="wrap">
             <div class="navbar navbar-aitorgarcia navbar-static-top">
                 <div class="container">

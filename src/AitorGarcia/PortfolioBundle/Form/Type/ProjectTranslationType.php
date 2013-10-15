@@ -28,13 +28,16 @@ class ProjectTranslationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('name', 'text', array(
-            'trim' => true
+            'trim' => true,
+            'attr'  => array(
+                'class' => 'form-control'
+            )
         ));
 
         $builder->add('description', 'textarea', array(
             'label' => 'Descripción:',
             'attr'  => array(
-                'class'      => 'tinymce',
+                'class'      => 'tinymce form-control',
                 'data-theme' => 'advanced'
             )
         ));
