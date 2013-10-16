@@ -1,6 +1,6 @@
 <?php
 /**
- * This file contains the PortfolioBundle.
+ * This file contains the ContactBundle.
  *
  * @author		Aitor García <aitor.falc@gmail.com>
  * @copyright	2013 Aitor García <aitor.falc@gmail.com>

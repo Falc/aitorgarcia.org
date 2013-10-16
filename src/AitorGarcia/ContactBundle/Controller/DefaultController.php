@@ -3,14 +3,14 @@
  * This file contains the DefaultController class.
  *
  * @author		Aitor García <aitor.falc@gmail.com>
- * @copyright	2012 Aitor García <aitor.falc@gmail.com>
+ * @copyright	2012-2013 Aitor García <aitor.falc@gmail.com>
  * @license		https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE Simplified BSD License
  */
 
-namespace AitorGarcia\PortfolioBundle\Controller;
+namespace AitorGarcia\ContactBundle\Controller;
 
-use AitorGarcia\PortfolioBundle\Entity\Enquiry;
-use AitorGarcia\PortfolioBundle\Form\Type\EnquiryType;
+use AitorGarcia\ContactBundle\Entity\Enquiry;
+use AitorGarcia\ContactBundle\Form\Type\EnquiryType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
@@ -48,7 +48,7 @@ class DefaultController extends Controller
                 $message->setTo($this->container->getParameter('contact_email'));
                 $message->setBody(
                     $this->renderView(
-                        'AitorGarciaPortfolioBundle:Default:contact_email.txt.twig',
+                        'AitorGarciaContactBundle:Default:contact_email.txt.twig',
                         array('enquiry' => $enquiry)
                     )
                 );
@@ -67,7 +67,7 @@ class DefaultController extends Controller
 
         // Render the form
         return $this->render(
-            'AitorGarciaPortfolioBundle:Default:contact.html.twig',
+            'AitorGarciaContactBundle:Default:contact.html.twig',
             array('form' => $form->createView())
         );
     }

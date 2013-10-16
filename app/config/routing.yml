@@ -1,6 +1,7 @@
 aitorgarcia_contact:
     resource: "@AitorGarciaContactBundle/Resources/config/routing/i18n.yml"
     prefix:   /
+    type: be_simple_i18n
 
 aitorgarcia_main:
     resource: "@AitorGarciaMainBundle/Resources/config/routing/i18n.yml"
