@@ -28,22 +28,9 @@ a.btn-lang {
     padding-bottom: 10px;
 }
 
-#project-create .form-group,
-#project-edit .form-group {
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
 #project-delete .block {
     padding-top: 0px;
     margin-bottom: 15px;
-}
-
-#project-create h2,
-#project-edit h2 {
-    font-size: 16px;
-    margin-left: 15px;
-    margin-bottom: 5px;
 }
 
 #screenshots {
@@ -76,15 +63,4 @@ a.btn-lang {
 #project-translation-edit {
     padding-top: 10px;
     padding-bottom: 10px;
-}
-
-#project-translation-edit .form-group {
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-#project-translation-edit h2 {
-    font-size: 16px;
-    margin-left: 15px;
-    margin-bottom: 5px;
 }

@@ -21,12 +21,6 @@
     padding-bottom: 10px;
 }
 
-#technology-create .form-group,
-#technology-edit .form-group {
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
 #technology-delete .block {
     padding-top: 0px;
     margin-bottom: 15px;

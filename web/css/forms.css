@@ -23,6 +23,17 @@ input[type="file"] {
     margin-bottom: 3px;
 }
 
+form h2 {
+    font-size: 16px;
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+
+form .form-group {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
 #form-actions {
     border-top: 1px dotted #ddd;
     padding-top: 15px;
