@@ -38,25 +38,14 @@ technologies:
         edit:               Modificar tecnología
         list:               Tecnologías
 
-contact:
-    legend:
-        info:           Information
-    message:
-        success_send:   El mensaje ha sido enviado correctamente.
-    subnavigation:      Formulario de contacto
-    title:              Contacto
-
 field:
     actions:        Acciones
-    body:           Mensaje
     client:         Cliente
     description:    Descripción
-    email:          Email
     id:             ID
     link:           Enlace al proyecto
     name:           Nombre
     source_link:    Enlace al código fuente
-    subject:        Asunto
     technologies:   Tecnologías
     translations:   Traducciones
 

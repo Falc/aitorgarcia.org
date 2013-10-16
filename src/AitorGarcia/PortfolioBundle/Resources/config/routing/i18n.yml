@@ -6,10 +6,6 @@ project_show:
     locales:  { en: "/projects/{slug}", es: "/proyectos/{slug}" }
     defaults: { _controller: AitorGarciaPortfolioBundle:Project:show }
 
-contact:
-    locales:  { en: "/contact", es: "/contacto" }
-    defaults: { _controller: AitorGarciaPortfolioBundle:Default:contact }
-
 _portfolio_admin:
     resource: "@AitorGarciaPortfolioBundle/Resources/config/admin_routing.yml"
     prefix: /admin

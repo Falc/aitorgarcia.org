@@ -38,25 +38,14 @@ technologies:
         edit:               Edit Technology
         list:               Technologies
 
-contact:
-    legend:
-        info:           Information
-    message:
-        success_send:   The message was sent successfully.
-    subnavigation:      Contact Form
-    title:              Contact
-
 field:
     actions:        Actions
-    body:           Message
     client:         Client
     description:    Description
-    email:          Email
     id:             ID
     link:           Project Link
     name:           Name
     source_link:    Source Code Link
-    subject:        Subject
     technologies:   Technologies
     translations:   Translations
 

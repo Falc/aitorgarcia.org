@@ -24,7 +24,8 @@ class AppKernel extends Kernel
             new Lunetics\LocaleBundle\LuneticsLocaleBundle(),
             new AitorGarcia\MainBundle\AitorGarciaMainBundle(),
             new AitorGarcia\UserBundle\AitorGarciaUserBundle(),
-            new AitorGarcia\PortfolioBundle\AitorGarciaPortfolioBundle()
+            new AitorGarcia\ContactBundle\AitorGarciaContactBundle(),
+            new AitorGarcia\PortfolioBundle\AitorGarciaPortfolioBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

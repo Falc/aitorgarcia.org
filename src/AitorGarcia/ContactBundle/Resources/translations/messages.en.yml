@@ -1,0 +1,19 @@
+navigation:
+    contact:        Contact
+
+contact:
+    legend:
+        info:           Information
+    message:
+        success_send:   The message was sent successfully.
+    subnavigation:      Contact Form
+    title:              Contact
+
+field:
+    body:           Message
+    email:          Email
+    name:           Name
+    subject:        Subject
+
+button:
+    send:           Send

@@ -1,0 +1,19 @@
+navigation:
+    contact:        Contacto
+
+contact:
+    legend:
+        info:           Informacion
+    message:
+        success_send:   El mensaje ha sido enviado correctamente.
+    subnavigation:      Formulario de contacto
+    title:              Contacto
+
+field:
+    body:           Mensaje
+    email:          Email
+    name:           Nombre
+    subject:        Asunto
+
+button:
+    send:           Enviar
