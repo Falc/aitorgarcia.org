@@ -97,6 +97,10 @@ a:active, a:focus, a:hover {
     padding-bottom: 20px;
 }
 
+.navbar-aitorgarcia .navbar-nav a .caret {
+    border-top-color: #f5f5f5;
+}
+
 .navbar-aitorgarcia .navbar-toggle {
     margin-top: 13px;
     margin-bottom: 13px;
@@ -116,10 +120,36 @@ a:active, a:focus, a:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.200) inset;
 }
 
+.navbar-aitorgarcia .caret {
+    border-top-color: #f5f5f5;
+}
+
 .navbar ul.icons {
     height: 32px;
     list-style: none;
     margin: 14px 0;
+}
+
+
+/*
+ * LOCALE SWITCHER
+ */
+#locale-switcher.open > a {
+    background-color: #349ad1;
+    color: #f5f5f5;
+}
+
+#locale-switcher ul {
+    background-color: #19232d;
+}
+
+#locale-switcher ul li a {
+    color: #f5f5f5;
+}
+
+#locale-switcher ul li a:hover,
+#locale-switcher ul li a:focus {
+    background-color: #349ad1;
 }
 
 
@@ -492,8 +522,19 @@ ul.tags li a:active {
     }
 
     .navbar-aitorgarcia .navbar-nav > li > a:hover,
-    .navbar-aitorgarcia .navbar-nav > li > a:focus {
-        background-color: transparent;
+    .navbar-aitorgarcia .navbar-nav > li > a:focus,
+    #locale-switcher.open > a {
+        background-color: #19232d;
         color: #349ad1;
+    }
+
+    .navbar-aitorgarcia .navbar-nav a:hover .caret,
+    .navbar-aitorgarcia .navbar-nav a:focus .caret,
+    .navbar-aitorgarcia .navbar-nav a:active .caret {
+        border-top-color: #349ad1;
+    }
+
+    #locale-switcher.open > a > .caret {
+        border-top-color: #349ad1;
     }
 }
