@@ -1,6 +1,7 @@
 navigation:
     contact:        Contact
     index:          Home
+    language:       Lang
 
 index:
     heading:

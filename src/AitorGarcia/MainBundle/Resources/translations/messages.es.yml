@@ -1,6 +1,7 @@
 navigation:
     contact:        Contacto
     index:          Portada
+    language:       Idioma
 
 index:
     heading:
