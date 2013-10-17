@@ -21,7 +21,7 @@ projects:
         delete:                 Delete Project
         edit:                   Edit Project
         list:                   Projects
-        translate:              Translate "%project_name%" to %lang%
+        translate:              Translate "%project_name%" to %project_locale%
 
 technologies:
     legend:
@@ -71,5 +71,5 @@ button:
     source_code:    Source code
     view_project:   View project
 
-lang:
+locale:
     english:    English

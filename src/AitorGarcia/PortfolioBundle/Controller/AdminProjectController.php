@@ -227,11 +227,13 @@ class AdminProjectController extends Controller
     /**
      * Displays the "project translation edit" form and processes it.
      *
-     * @param   integer $id     The ID of the project to translate.
-     * @param   string  $lang   The locale code of the translation language.
+     * @param   integer $id             The ID of the project to translate.
+     * @param   string  $transLocale    The locale code.
      */
-    public function translationEditAction($id, $lang)
+    public function translationEditAction($id, $transLocale)
     {
+        $locale = $transLocale;
+
         // Get the entity manager and find the selected project
         $entityManager = $this->getDoctrine()->getManager();
         $project = $entityManager->find('AitorGarciaPortfolioBundle:Project', $id);
@@ -243,13 +245,13 @@ class AdminProjectController extends Controller
             throw $this->createNotFoundException($successMessage);
         }
 
-        // Load the translations specified by $lang
-        $project->setTranslatableLocale($lang);
+        // Load the translations specified by $locale
+        $project->setTranslatableLocale($locale);
         $entityManager->refresh($project);
 
         foreach ($project->getScreenshots() as $screenshot)
         {
-            $screenshot->setTranslatableLocale($lang);
+            $screenshot->setTranslatableLocale($locale);
             $entityManager->refresh($screenshot);
         }
 
@@ -269,7 +271,7 @@ class AdminProjectController extends Controller
             if ($form->isValid())
             {
                 // 1) Persist the entity translation
-                $project->setTranslatableLocale($lang);
+                $project->setTranslatableLocale($locale);
                 $entityManager->persist($project);
                 $entityManager->flush();
 
@@ -289,7 +291,7 @@ class AdminProjectController extends Controller
                 'form' => $form->createView(),
                 'project_id' => $project->getId(),
                 'project_name' => $project->getName(),
-                'lang' => $lang
+                'project_locale' => $locale
             )
         );
     }

@@ -15,7 +15,7 @@ admin_project_delete:
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminProject:delete }
 
 admin_project_translation_edit:
-    locales:  { en: "/project/{id}/translation/{lang}/edit", es: "/proyectos/{id}/traduccion/{lang}/modificar" }
+    locales:  { en: "/project/{id}/translation/{transLocale}/edit", es: "/proyectos/{id}/traduccion/{transLocale}/modificar" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminProject:translationEdit }
 
 admin_technology_list:

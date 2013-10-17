@@ -14,12 +14,12 @@
 <script src="{{ asset('bundles/aitorgarciaportfolio/js/project-screenshot-rows.js') }}" type="text/javascript"></script>
 {% endblock %}
 
-{% block infotext %}{{ 'projects.title.translate' | trans({'%project_name%': project_name, '%lang%': (lang | locale(current_locale) | lower)}) }}{% endblock %}
+{% block infotext %}{{ 'projects.title.translate' | trans({'%project_name%': project_name, '%project_locale%': (project_locale | locale(current_locale) | lower)}) }}{% endblock %}
 
 {% block page %}
 <div class="row">
     <div id="project-translation-edit" class="block">
-        <form action="{{ path('admin_project_translation_edit', { 'id': project_id, 'lang': lang }) }}" method="post" {{ form_enctype(form) }}>
+        <form action="{{ path('admin_project_translation_edit', { 'id': project_id, 'transLocale': project_locale }) }}" method="post" {{ form_enctype(form) }}>
             <fieldset>
                 <div class="row">
                     <div class="form-group block">

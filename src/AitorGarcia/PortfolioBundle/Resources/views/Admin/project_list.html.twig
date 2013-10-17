@@ -49,7 +49,7 @@
                         <td>{{ project.name }}</td>
                         <td><a href="{{ project.link }}">{{ project.link }}</a></td>
                         <td class="text-center">
-                            <a class="btn btn-secondary btn-lang" href="{{ path('admin_project_translation_edit', { 'id': project.id, 'lang': 'en' }) }}" title="{{ 'lang.english' | trans }}">EN</a>
+                            <a class="btn btn-secondary btn-locale" href="{{ path('admin_project_translation_edit', { 'id': project.id, 'transLocale': 'en' }) }}" title="{{ 'locale.english' | trans }}">EN</a>
                         </td>
                         <td class="text-center">
                             <a class="btn btn-primary btn-icon btn-icon-notext" href="{{ path('admin_project_edit', { 'id': project.id }) }}" title="{{ 'button.edit_ext' | trans }}">
