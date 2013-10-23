@@ -53,7 +53,8 @@ class ProjectController extends Controller
         // If the project does not exist, display an error message
         if ($project === null)
         {
-            throw $this->createNotFoundException('No existe el proyecto seleccionado');
+            $errorMessage = $this->get('translator')->trans('projects.message.do_not_exist');
+            throw $this->createNotFoundException($errorMessage);
         }
 
         // Render the view

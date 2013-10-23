@@ -92,8 +92,8 @@ class AdminTechnologyController extends Controller
         // If the technology does not exist, display an error message
         if ($technology === null)
         {
-            $successMessage = $this->get('translator')->trans('technologies.message.do_not_exist');
-            throw $this->createNotFoundException($successMessage);
+            $errorMessage = $this->get('translator')->trans('technologies.message.do_not_exist');
+            throw $this->createNotFoundException($errorMessage);
         }
 
         // Create the form and set the data
@@ -148,8 +148,8 @@ class AdminTechnologyController extends Controller
         // If the technology does not exist, display an error message
         if ($technology === null)
         {
-            $successMessage = $this->get('translator')->trans('technologies.message.do_not_exist');
-            throw $this->createNotFoundException($successMessage);
+            $errorMessage = $this->get('translator')->trans('technologies.message.do_not_exist');
+            throw $this->createNotFoundException($errorMessage);
         }
 
         // Get the request

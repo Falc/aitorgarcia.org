@@ -93,8 +93,8 @@ class AdminProjectController extends Controller
         // If the project does not exist, display an error message
         if ($project === null)
         {
-            $successMessage = $this->get('translator')->trans('projects.message.do_not_exist');
-            throw $this->createNotFoundException($successMessage);
+            $errorMessage = $this->get('translator')->trans('projects.message.do_not_exist');
+            throw $this->createNotFoundException($errorMessage);
         }
 
         // Get a copy of the screenshots contained in the project before the form submission
@@ -176,8 +176,8 @@ class AdminProjectController extends Controller
         // If the project does not exist, display an error message
         if ($project === null)
         {
-            $successMessage = $this->get('translator')->trans('projects.message.do_not_exist');
-            throw $this->createNotFoundException($successMessage);
+            $errorMessage = $this->get('translator')->trans('projects.message.do_not_exist');
+            throw $this->createNotFoundException($errorMessage);
         }
 
         // Get the request
@@ -241,8 +241,8 @@ class AdminProjectController extends Controller
         // If the project does not exist, display an error message
         if ($project === null)
         {
-            $successMessage = $this->get('translator')->trans('projects.message.do_not_exist');
-            throw $this->createNotFoundException($successMessage);
+            $errorMessage = $this->get('translator')->trans('projects.message.do_not_exist');
+            throw $this->createNotFoundException($errorMessage);
         }
 
         // Load the translations specified by $locale
