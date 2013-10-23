@@ -32,15 +32,18 @@ img.project-cover {
 span.project-name {
     background-color: #eee;
     color: #333;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
     border: 1px solid #e5e5e5;
     display: block;
     text-align: center;
     padding: 10px;
 }
 
-a.project:hover span.project-name {
+a.project:hover span.project-name,
+a.project:focus span.project-name,
+a.project:active span.project-name {
     background-color: #349ad1;
-    color: #ffffff;
+    color: #fafafa;
     border: 1px solid #349ad1;
 }
 
