@@ -7,7 +7,7 @@ projects:
         images:                 Images
         info:                   Project Information
     message:
-        confirm_deletion:       Are you sure to delete the project?
+        confirm_deletion:       Are you sure to delete the project "%project_name%"?
         empty_list:             There is not any project.
         do_not_exist:           The selected project does not exist.
         success_creation:       The project was created successfully.
@@ -27,7 +27,7 @@ technologies:
     legend:
         info:               Technology Information
     message:
-        confirm_deletion:   Are you sure to delete the technology?
+        confirm_deletion:   Are you sure to delete the technology "%technology_name%"?
         do_not_exist:       The selected technology does not exist.
         success_creation:   The technology was created successfully.
         success_deletion:   The technology was deleted successfully.

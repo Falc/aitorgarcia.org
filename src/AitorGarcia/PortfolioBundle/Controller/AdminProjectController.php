@@ -31,7 +31,9 @@ class AdminProjectController extends Controller
         // Render the view
         return $this->render(
             'AitorGarciaPortfolioBundle:Admin:project_list.html.twig',
-            array('projects' => $projects)
+            array(
+                'projects' => $projects
+            )
         );
     }
 
@@ -75,7 +77,9 @@ class AdminProjectController extends Controller
         // Render the form
         return $this->render(
             'AitorGarciaPortfolioBundle:Admin:project_create.html.twig',
-            array('form' => $form->createView())
+            array(
+                'form' => $form->createView()
+            )
         );
     }
 
@@ -156,8 +160,8 @@ class AdminProjectController extends Controller
         return $this->render(
             'AitorGarciaPortfolioBundle:Admin:project_edit.html.twig',
             array(
-                'form' => $form->createView(),
-                'project_id' => $project->getId()
+                'form'          => $form->createView(),
+                'project_id'    => $project->getId()
             )
         );
     }
@@ -218,8 +222,9 @@ class AdminProjectController extends Controller
         return $this->render(
             'AitorGarciaPortfolioBundle:Admin:project_delete.html.twig',
             array(
-                'form' => $form->createView(),
-                'project_id' => $project->getId()
+                'form'          => $form->createView(),
+                'project_id'    => $project->getId(),
+                'project_name'  => $project->getName()
             )
         );
     }
@@ -288,10 +293,10 @@ class AdminProjectController extends Controller
         return $this->render(
             'AitorGarciaPortfolioBundle:Admin:project_translation_edit.html.twig',
             array(
-                'form' => $form->createView(),
-                'project_id' => $project->getId(),
-                'project_name' => $project->getName(),
-                'project_locale' => $locale
+                'form'              => $form->createView(),
+                'project_id'        => $project->getId(),
+                'project_name'      => $project->getName(),
+                'project_locale'    => $locale
             )
         );
     }

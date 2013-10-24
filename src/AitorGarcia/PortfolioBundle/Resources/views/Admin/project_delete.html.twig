@@ -17,13 +17,13 @@
         <form action="{{ path('admin_project_delete', { 'id': project_id }) }}" method="post">
             <div class="row">
                 <div class="block">
-                    <p>{{ 'projects.message.confirm_deletion' | trans }}</p>
+                    <p>{{ 'projects.message.confirm_deletion' | trans({'%project_name%': project_name}) }}</p>
                 </div>
             </div>
             {{ form_rest(form) }}
 
             <div id="form-actions">
-                <input class="btn btn-success" type="submit" name="save" value="{{ 'button.confirm' | trans }}" />
+                <input class="btn btn-success" type="submit" name="confirm" value="{{ 'button.confirm' | trans }}" />
                 <input class="btn btn-danger" type="submit" name="cancel" value="{{ 'button.cancel' | trans }}" />
             </div>
         </form>
@@ -33,12 +33,12 @@
 <script type="text/javascript">
     $(function() {
         // Replace every input with a button+icon
-        var inputConfirm = $('input[name="save"]');
+        var inputConfirm = $('input[name="confirm"]');
         var inputCancel = $('input[name="cancel"]');
 
         var btnConfirm = $('<button>').attr({
             'type': 'submit',
-            'name': 'save'
+            'name': 'confirm'
         });
         btnConfirm.addClass('btn btn-success btn-icon');
         btnConfirm.append('<span class="icon icon-accept"></span>' + "{{ 'button.confirm' | trans }}");

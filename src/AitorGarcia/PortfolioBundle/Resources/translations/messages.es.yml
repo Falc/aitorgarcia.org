@@ -7,7 +7,7 @@ projects:
         images:                 Imágenes
         info:                   Información del proyecto
     message:
-        confirm_deletion:       ¿Estás seguro de que quieres eliminar el proyecto?
+        confirm_deletion:       ¿Estás seguro de que quieres eliminar el proyecto "%project_name%"?
         empty_list:             No hay ningún proyecto.
         do_not_exist:           El proyecto seleccionado no existe.
         success_creation:       El proyecto ha sido creado correctamente.
@@ -27,7 +27,7 @@ technologies:
     legend:
         info:               Información de la tecnología
     message:
-        confirm_deletion:   ¿Estás seguro de que quieres eliminar la tecnología?
+        confirm_deletion:   ¿Estás seguro de que quieres eliminar la tecnología "%technology_name%"?
         do_not_exist:       La tecnología seleccionada no existe.
         success_creation:   La tecnología ha sido creada correctamente.
         success_deletion:   La tecnología ha sido eliminada correctamente.

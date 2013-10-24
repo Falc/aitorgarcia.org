@@ -30,7 +30,9 @@ class AdminTechnologyController extends Controller
         // Render the view
         return $this->render(
             'AitorGarciaPortfolioBundle:Admin:technology_list.html.twig',
-            array('technologies' => $technologies)
+            array(
+                'technologies' => $technologies
+            )
         );
     }
 
@@ -74,7 +76,9 @@ class AdminTechnologyController extends Controller
         // Render the form
         return $this->render(
             'AitorGarciaPortfolioBundle:Admin:technology_create.html.twig',
-            array('form' => $form->createView())
+            array(
+                'form' => $form->createView()
+            )
         );
     }
 
@@ -128,7 +132,7 @@ class AdminTechnologyController extends Controller
         return $this->render(
             'AitorGarciaPortfolioBundle:Admin:technology_edit.html.twig',
             array(
-                'form' => $form->createView(),
+                'form'          => $form->createView(),
                 'technology_id' => $technology->getId()
             )
         );
@@ -190,8 +194,9 @@ class AdminTechnologyController extends Controller
         return $this->render(
             'AitorGarciaPortfolioBundle:Admin:technology_delete.html.twig',
             array(
-                'form' => $form->createView(),
-                'technology_id' => $technology->getId()
+                'form'              => $form->createView(),
+                'technology_id'     => $technology->getId(),
+                'technology_name'   => $technology->getName()
             )
         );
     }
