@@ -3,7 +3,7 @@
  * This file contains the ProjectController class.
  *
  * @author		Aitor García <aitor.falc@gmail.com>
- * @copyright	2012 Aitor García <aitor.falc@gmail.com>
+ * @copyright	2012-2013 Aitor García <aitor.falc@gmail.com>
  * @license		https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE Simplified BSD License
  */
 
@@ -22,20 +22,22 @@ class ProjectController extends Controller
      */
     public function listAction()
     {
-        // Get the entity manager and the project repository
-        $entityManager = $this->getDoctrine()->getManager();
-        $projectRepository = $entityManager->getRepository('AitorGarciaPortfolioBundle:Project');
+        $em = $this->getDoctrine()->getManager();
 
         // Find all the projects sorted by DESC creation date
-        $projects = $projectRepository->findBy(
+        $projects = $em->getRepository('AitorGarciaPortfolioBundle:Project')->findBy(
             array(),
-            array('created' => 'DESC')
+            array(
+                'created' => 'DESC'
+            )
         );
 
         // Render the view
         return $this->render(
             'AitorGarciaPortfolioBundle:Project:project_list.html.twig',
-            array('projects' => $projects)
+            array(
+                'projects' => $projects
+            )
         );
     }
 
@@ -46,9 +48,10 @@ class ProjectController extends Controller
      */
     public function showAction($slug)
     {
-        // Get the entity manager and find the selected project
-        $entityManager = $this->getDoctrine()->getManager();
-        $project = $entityManager->getRepository('AitorGarciaPortfolioBundle:Project')->findOneBySlug($slug);
+        $em = $this->getDoctrine()->getManager();
+
+        // Find the selected project
+        $project = $em->getRepository('AitorGarciaPortfolioBundle:Project')->findOneBySlug($slug);
 
         // If the project does not exist, display an error message
         if ($project === null)
@@ -60,7 +63,9 @@ class ProjectController extends Controller
         // Render the view
         return $this->render(
             'AitorGarciaPortfolioBundle:Project:project_show.html.twig',
-            array('project' => $project)
+            array(
+                'project' => $project
+            )
         );
     }
 }

@@ -3,7 +3,7 @@
  * This file contains the AdminProjectController class.
  *
  * @author		Aitor García <aitor.falc@gmail.com>
- * @copyright	2012 Aitor García <aitor.falc@gmail.com>
+ * @copyright	2012-2013 Aitor García <aitor.falc@gmail.com>
  * @license		https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE Simplified BSD License
  */
 
@@ -24,9 +24,10 @@ class AdminProjectController extends Controller
      */
     public function listAction()
     {
-        // Get the entity manager and find all the projects
-        $entityManager = $this->getDoctrine()->getManager();
-        $projects = $entityManager->getRepository('AitorGarciaPortfolioBundle:Project')->findAll();
+        $em = $this->getDoctrine()->getManager();
+
+        // Find all the projects
+        $projects = $em->getRepository('AitorGarciaPortfolioBundle:Project')->findAll();
 
         // Render the view
         return $this->render(
@@ -42,36 +43,27 @@ class AdminProjectController extends Controller
      */
     public function createAction()
     {
-        // Create a blank project
+        // Create a blank project and the form
         $project = new Project();
-
-        // Create the form and set the data
         $form = $this->createForm(new ProjectType(), $project);
 
-        // Get the request
         $request = $this->getRequest();
+        $form->handleRequest($request);
 
-        // If the request method is POST, process the data
-        if ($request->getMethod() === 'POST')
+        // If the form data is valid:
+        if ($form->isValid())
         {
-            // Bind the request
-            $form->bind($request);
+            // 1) Get the entity manager and persist the entity
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($project);
+            $em->flush();
 
-            // If the form data is valid:
-            if ($form->isValid())
-            {
-                // 1) Get the entity manager and persist the entity
-                $entityManager = $this->getDoctrine()->getManager();
-                $entityManager->persist($project);
-                $entityManager->flush();
+            // 2) Display a success message
+            $successMessage = $this->get('translator')->trans('projects.message.success_creation');
+            $request->getSession()->getFlashBag()->add('success', $successMessage);
 
-                // 2) Display a success message
-                $successMessage = $this->get('translator')->trans('projects.message.success_creation');
-                $request->getSession()->getFlashBag()->add('success', $successMessage);
-
-                // 3) Redirect the user to the project list
-                return $this->redirect($this->generateUrl('admin_project_list'));
-            }
+            // 3) Redirect the user to the project list
+            return $this->redirect($this->generateUrl('admin_project_list'));
         }
 
         // Render the form
@@ -90,9 +82,10 @@ class AdminProjectController extends Controller
      */
     public function editAction($id)
     {
-        // Get the entity manager and find the selected project
-        $entityManager = $this->getDoctrine()->getManager();
-        $project = $entityManager->find('AitorGarciaPortfolioBundle:Project', $id);
+        $em = $this->getDoctrine()->getManager();
+
+        // Find the selected project
+        $project = $em->getRepository('AitorGarciaPortfolioBundle:Project')->find($id);
 
         // If the project does not exist, display an error message
         if ($project === null)
@@ -103,6 +96,7 @@ class AdminProjectController extends Controller
 
         // Get a copy of the screenshots contained in the project before the form submission
         $originalScreenshots = array();
+
         foreach ($project->getScreenshots() as $screenshot)
         {
             $originalScreenshots[] = $screenshot;
@@ -111,49 +105,42 @@ class AdminProjectController extends Controller
         // Create the form and set the data
         $form = $this->createForm(new ProjectType, $project);
 
-        // Get the request
         $request = $this->getRequest();
+        $form->handleRequest($request);
 
-        // If the request method is POST, process the data
-        if ($request->getMethod() === 'POST')
+        // If the form data is valid:
+        if ($form->isValid())
         {
-            // Bind the request
-            $form->bind($request);
-
-            // If the form data is valid:
-            if ($form->isValid())
+            // Compare the submitted screenshots with the original ones
+            foreach ($project->getScreenshots() as $screenshot)
             {
-                // Compare the submitted screenshots with the original ones
-                foreach ($project->getScreenshots() as $screenshot)
+                foreach ($originalScreenshots as $key => $originalScreenshot)
                 {
-                    foreach ($originalScreenshots as $key => $originalScreenshot)
+                    // $originalScreenshots will contain only the screenshots that should be deleted
+                    if ($originalScreenshot->getId() === $screenshot->getId())
                     {
-                        // $originalScreenshots will contain only the screenshots that should be deleted
-                        if ($originalScreenshot->getId() === $screenshot->getId())
-                        {
-                            unset($originalScreenshots[$key]);
-                        }
+                        unset($originalScreenshots[$key]);
                     }
                 }
-
-                // Delete every screenshot in $originalScreenshot
-                foreach ($originalScreenshots as $screenshot)
-                {
-                    $project->removeScreenshot($screenshot);
-                    $entityManager->remove($screenshot);
-                }
-
-                // 1) Persist the entity
-                $entityManager->persist($project);
-                $entityManager->flush();
-
-                // 2) Display a success message
-                $successMessage = $this->get('translator')->trans('projects.message.success_edition');
-                $request->getSession()->getFlashBag()->add('success', $successMessage);
-
-                // 3) Redirect the user to the project list
-                return $this->redirect($this->generateUrl('admin_project_list'));
             }
+
+            // Delete every screenshot in $originalScreenshot
+            foreach ($originalScreenshots as $screenshot)
+            {
+                $project->removeScreenshot($screenshot);
+                $em->remove($screenshot);
+            }
+
+            // 1) Persist the entity
+            $em->persist($project);
+            $em->flush();
+
+            // 2) Display a success message
+            $successMessage = $this->get('translator')->trans('projects.message.success_edition');
+            $request->getSession()->getFlashBag()->add('success', $successMessage);
+
+            // 3) Redirect the user to the project list
+            return $this->redirect($this->generateUrl('admin_project_list'));
         }
 
         // Render the form
@@ -173,9 +160,10 @@ class AdminProjectController extends Controller
      */
     public function deleteAction($id)
     {
-        // Get the entity manager and find the selected project
-        $entityManager = $this->getDoctrine()->getManager();
-        $project = $entityManager->find('AitorGarciaPortfolioBundle:Project', $id);
+        $em = $this->getDoctrine()->getManager();
+
+        // Find the selected project
+        $project = $em->getRepository('AitorGarciaPortfolioBundle:Project')->find($id);
 
         // If the project does not exist, display an error message
         if ($project === null)
@@ -184,38 +172,32 @@ class AdminProjectController extends Controller
             throw $this->createNotFoundException($errorMessage);
         }
 
-        // Get the request
-        $request = $this->getRequest();
-
         // Create a "fake" form
         $form = $this->createDeleteForm($id);
 
-        // If the request method is POST, process the data
-        if ($request->getMethod() === 'POST')
+        $request = $this->getRequest();
+
+        // If the cancel button was pressed, redirect the user to the project list
+        if ($request->request->has('cancel') === true)
         {
-            // If the cancel button was pressed, redirect the user to the project list
-            if ($request->request->has('cancel') === true)
-            {
-                return $this->redirect($this->generateUrl('admin_project_list'));
-            }
+            return $this->redirect($this->generateUrl('admin_project_list'));
+        }
 
-            // Bind the request
-            $form->bind($request);
+        $form->handleRequest($request);
 
-            // If the form data is valid:
-            if ($form->isValid())
-            {
-                // 1) Remove the entity
-                $entityManager->remove($project);
-                $entityManager->flush();
+        // If the form data is valid:
+        if ($form->isValid())
+        {
+            // 1) Remove the entity
+            $em->remove($project);
+            $em->flush();
 
-                // 2) Display a success message
-                $successMessage = $this->get('translator')->trans('projects.message.success_deletion');
-                $request->getSession()->getFlashBag()->add('success', $successMessage);
+            // 2) Display a success message
+            $successMessage = $this->get('translator')->trans('projects.message.success_deletion');
+            $request->getSession()->getFlashBag()->add('success', $successMessage);
 
-                // 3) Redirect the user to the project list
-                return $this->redirect($this->generateUrl('admin_project_list'));
-            }
+            // 3) Redirect the user to the project list
+            return $this->redirect($this->generateUrl('admin_project_list'));
         }
 
         // Render the form
@@ -239,9 +221,10 @@ class AdminProjectController extends Controller
     {
         $locale = $transLocale;
 
-        // Get the entity manager and find the selected project
-        $entityManager = $this->getDoctrine()->getManager();
-        $project = $entityManager->find('AitorGarciaPortfolioBundle:Project', $id);
+        $em = $this->getDoctrine()->getManager();
+
+        // Find the selected project
+        $project = $em->getRepository('AitorGarciaPortfolioBundle:Project')->find($id);
 
         // If the project does not exist, display an error message
         if ($project === null)
@@ -252,41 +235,34 @@ class AdminProjectController extends Controller
 
         // Load the translations specified by $locale
         $project->setTranslatableLocale($locale);
-        $entityManager->refresh($project);
+        $em->refresh($project);
 
         foreach ($project->getScreenshots() as $screenshot)
         {
             $screenshot->setTranslatableLocale($locale);
-            $entityManager->refresh($screenshot);
+            $em->refresh($screenshot);
         }
 
         // Create the form and set the data
         $form = $this->createForm(new ProjectTranslationType(), $project);
 
-        // Get the request
         $request = $this->getRequest();
+        $form->handleRequest($request);
 
-        // If the request method is POST, process the data
-        if ($request->getMethod() === 'POST')
+        // If the form data is valid:
+        if ($form->isValid())
         {
-            // Bind the request
-            $form->bind($request);
+            // 1) Persist the entity translation
+            $project->setTranslatableLocale($locale);
+            $em->persist($project);
+            $em->flush();
 
-            // If the form data is valid:
-            if ($form->isValid())
-            {
-                // 1) Persist the entity translation
-                $project->setTranslatableLocale($locale);
-                $entityManager->persist($project);
-                $entityManager->flush();
+            // 2) Display a success message
+            $successMessage = $this->get('translator')->trans('projects.message.success_translation');
+            $request->getSession()->getFlashBag()->add('success', $successMessage);
 
-                // 2) Display a success message
-                $successMessage = $this->get('translator')->trans('projects.message.success_translation');
-                $request->getSession()->getFlashBag()->add('success', $successMessage);
-
-                // 3) Redirect the user to the project translation list
-                return $this->redirect($this->generateUrl('admin_project_list'));
-            }
+            // 3) Redirect the user to the project translation list
+            return $this->redirect($this->generateUrl('admin_project_list'));
         }
 
         // Render the form
