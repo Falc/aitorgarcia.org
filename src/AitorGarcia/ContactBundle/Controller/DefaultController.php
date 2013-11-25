@@ -23,52 +23,47 @@ class DefaultController extends Controller
      */
     public function contactAction()
     {
-        // Create a blank enquiry
+        // Create a blank enquiry and the form
         $enquiry = new Enquiry();
-
-        // Create the form and set the data
         $form = $this->createForm(new EnquiryType(), $enquiry);
 
-        // Get the request
         $request = $this->getRequest();
+        $form->handleRequest($request);
 
-        // If the request method is POST, process the data
-        if ($request->getMethod() === 'POST')
+        // If the form data is valid:
+        if ($form->isValid())
         {
-            // Bind the request
-            $form->bind($request);
-
-            // If the form data is valid:
-            if ($form->isValid())
-            {
-                // 1) Create the email
-                $message = \Swift_Message::newInstance();
-                $message->setSubject('Email de contacto');
-                $message->setFrom($this->container->getParameter('contact_from'));
-                $message->setTo($this->container->getParameter('contact_email'));
-                $message->setBody(
-                    $this->renderView(
-                        'AitorGarciaContactBundle:Default:contact_email.txt.twig',
-                        array('enquiry' => $enquiry)
+            // 1) Create the email
+            $message = \Swift_Message::newInstance();
+            $message->setSubject('Email de contacto');
+            $message->setFrom($this->container->getParameter('contact_from'));
+            $message->setTo($this->container->getParameter('contact_email'));
+            $message->setBody(
+                $this->renderView(
+                    'AitorGarciaContactBundle:Default:contact_email.txt.twig',
+                    array(
+                        'enquiry' => $enquiry
                     )
-                );
+                )
+            );
 
-                // 2) Send the email
-                $this->get('mailer')->send($message);
+            // 2) Send the email
+            $this->get('mailer')->send($message);
 
-                // 3) Display a success message
-                $successMessage = $this->get('translator')->trans('contact.message.success_send');
-                $request->getSession()->getFlashBag()->add('success', $successMessage);
+            // 3) Display a success message
+            $successMessage = $this->get('translator')->trans('contact.message.success_send');
+            $request->getSession()->getFlashBag()->add('success', $successMessage);
 
-                // 4) Redirect the user to the contact page again
-                return $this->redirect($this->generateUrl('contact'));
-            }
+            // 4) Redirect the user to the contact page again
+            return $this->redirect($this->generateUrl('contact'));
         }
 
         // Render the form
         return $this->render(
             'AitorGarciaContactBundle:Default:contact.html.twig',
-            array('form' => $form->createView())
+            array(
+                'form' => $form->createView()
+            )
         );
     }
 }
