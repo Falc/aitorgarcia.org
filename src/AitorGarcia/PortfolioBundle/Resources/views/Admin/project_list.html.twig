@@ -13,14 +13,6 @@
 {% block infotext %}{{ 'projects.title.list' | trans }}{% endblock %}
 
 {% block page %}
-{% for type, messages in app.session.flashbag.all() %}
-    {% for message in messages %}
-        <div class="message-{{ type }}">
-            {{ message }}
-        </div>
-    {% endfor %}
-{% endfor %}
-
 <div class="row" id="options">
     <div class="pull-right" id="actions">
         <a href="{{ path('admin_project_create') }}" class="btn btn-primary btn-icon">
@@ -28,6 +20,19 @@
         </a>
     </div>
 </div>
+
+{% if app.session.flashbag.keys() is not empty %}
+<div id="alerts" class="row">
+{% for type, messages in app.session.flashbag.all() %}
+    <div class="alert alert-dismissable alert-{{ type }}">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+{% endfor %}
+</div>
+{% endif %}
 
 <div class="row">
     <div id="project-list" class="block">

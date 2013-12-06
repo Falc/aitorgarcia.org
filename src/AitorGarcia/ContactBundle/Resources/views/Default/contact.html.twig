@@ -15,32 +15,37 @@
 {% block infotext %}{{ 'contact.subnavigation' | trans }}{% endblock %}
 
 {% block page %}
-<div class="row">
+{% if app.session.flashbag.keys() is not empty %}
+<div id="alerts" class="row">
 {% for type, messages in app.session.flashbag.all() %}
-    {% for message in messages %}
-    <div class="message-{{ type }} block">
-        {{ message }}
+    <div class="alert alert-dismissable alert-{{ type }}">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
     </div>
-    {% endfor %}
 {% endfor %}
+</div>
+{% endif %}
 
+<div class="row">
     {{ form_errors(form) }}
 
     <div id="contact-form" class="block">
         <form action="{{ path('contact') }}" method="post" {{ form_enctype(form) }}>
             <fieldset>
                 <div class="row">
-                    <div class="form-group block col-sm-4">
+                    <div class="form-group block col-sm-6">
                         {{ form_label(form.name, 'field.name' | trans ) }}
                         {{ form_widget(form.name) }}
                         {{ form_errors(form.name) }}
                     </div>
-                    <div class="form-group block col-sm-4">
+                    <div class="form-group block col-sm-6">
                         {{ form_label(form.email, 'field.email' | trans ) }}
                         {{ form_widget(form.email) }}
                         {{ form_errors(form.email) }}
                     </div>
-                    <div class="form-group block col-sm-4">
+                    <div class="form-group block">
                         {{ form_label(form.subject, 'field.subject' | trans ) }}
                         {{ form_widget(form.subject) }}
                         {{ form_errors(form.subject) }}
