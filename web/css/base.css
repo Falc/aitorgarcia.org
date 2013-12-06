@@ -152,6 +152,10 @@ a:active, a:focus, a:hover {
     background-color: #349ad1;
 }
 
+#locale-switcher ul.dropdown-menu {
+    margin-top: 1px;
+}
+
 
 /*
  * INFOBAR
