@@ -59,7 +59,7 @@
             <fieldset>
                 <div class="row">
                     <h2>{{ 'projects.legend.images' | trans }}</h2>
-                    <div id="screenshots" class="block" data-prototype="{% filter escape %}{% include 'AitorGarciaPortfolioBundle:prototypes:project_screenshot.html.twig' with {'screenshot': form.screenshots.vars.prototype} %}{% endfilter %}">
+                    <div id="screenshots" class="block" data-prototype="{% filter escape %}{% include 'AitorGarciaPortfolioBundle:Admin:project_screenshot_row.html.twig' with {'screenshot': form.screenshots.vars.prototype} %}{% endfilter %}">
                     </div>
                 </div>
                 <div class="row">
