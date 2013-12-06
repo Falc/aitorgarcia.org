@@ -6,7 +6,7 @@ contact:
         info:           Information
     message:
         success_send:   The message was sent successfully.
-    subnavigation:      Contact Form
+    subnavigation:      Contact form
     title:              Contact
 
 field:
