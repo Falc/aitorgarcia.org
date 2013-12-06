@@ -3,13 +3,14 @@
  * This file contains the ProjectType class.
  *
  * @author		Aitor García <aitor.falc@gmail.com>
- * @copyright	2012 Aitor García <aitor.falc@gmail.com>
+ * @copyright	2012-2013 Aitor García <aitor.falc@gmail.com>
  * @license		https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE Simplified BSD License
  */
 
 namespace AitorGarcia\PortfolioBundle\Form\Type;
 
 use AitorGarcia\PortfolioBundle\Entity\Technology;
+use AitorGarcia\PortfolioBundle\Form\DataTransformer\TechnologiesToCSVTransformer;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
@@ -36,7 +37,7 @@ class ProjectType extends AbstractType
 
         $builder->add('description', 'textarea', array(
             'attr'  => array(
-                'class'      => 'tinymce form-control',
+                'class'      => 'form-control tinymce',
                 'data-theme' => 'advanced'
             )
         ));
@@ -64,16 +65,18 @@ class ProjectType extends AbstractType
             )
         ));
 
-        $builder->add('technologies', 'entity', array(
-            'class'     => 'AitorGarcia\PortfolioBundle\Entity\Technology',
-            'property'  => 'name',
-            'multiple'  => true,
-            'attr'      => array(
-                'size'  => 6,
-                'class' => 'form-control'
+        $technologies = $builder->create('technologies', 'text', array(
+            'attr'  => array(
+                'class'         => 'form-control typeahead',
+                'data-source'   => json_encode(array_map('htmlspecialchars', $options['technologies'])),
+                'autocomplete'  => 'off'
             ),
             'required'  => false
         ));
+
+        $technologies->addModelTransformer(new TechnologiesToCSVTransformer($options['em']));
+
+        $builder->add($technologies);
 
         $builder->add('screenshots', 'collection', array(
             'type'          => new ProjectScreenshotType(),
@@ -93,6 +96,16 @@ class ProjectType extends AbstractType
     {
         $resolver->setDefaults(array(
             'data_class' => 'AitorGarcia\PortfolioBundle\Entity\Project'
+        ));
+
+        $resolver->setRequired(array(
+            'em',
+            'technologies'
+        ));
+
+        $resolver->setAllowedTypes(array(
+            'em'            => 'Doctrine\Common\Persistence\ObjectManager',
+            'technologies'  => 'array'
         ));
     }
 

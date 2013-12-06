@@ -43,9 +43,24 @@ class AdminProjectController extends Controller
      */
     public function createAction()
     {
+        $em = $this->getDoctrine()->getManager();
+
         // Create a blank project and the form
         $project = new Project();
-        $form = $this->createForm(new ProjectType(), $project);
+
+        // Find all the technologies
+        $technologiesRepository = $em->getRepository('AitorGarciaPortfolioBundle:Technology');
+        $technologies = $technologiesRepository->findAllTechnologyNames();
+
+        // Create the form and set the data
+        $form = $this->createForm(
+            new ProjectType(),
+            $project,
+            array(
+                'em'            => $em,
+                'technologies'  => $technologies
+            )
+        );
 
         $request = $this->getRequest();
         $form->handleRequest($request);
@@ -53,8 +68,7 @@ class AdminProjectController extends Controller
         // If the form data is valid:
         if ($form->isValid())
         {
-            // 1) Get the entity manager and persist the entity
-            $em = $this->getDoctrine()->getManager();
+            // 1) Persist the entity
             $em->persist($project);
             $em->flush();
 
@@ -102,8 +116,19 @@ class AdminProjectController extends Controller
             $originalScreenshots[] = $screenshot;
         }
 
+        // Find all the technologies
+        $technologiesRepository = $em->getRepository('AitorGarciaPortfolioBundle:Technology');
+        $technologies = $technologiesRepository->findAllTechnologyNames();
+
         // Create the form and set the data
-        $form = $this->createForm(new ProjectType, $project);
+        $form = $this->createForm(
+            new ProjectType(),
+            $project,
+            array(
+                'em'            => $em,
+                'technologies'  => $technologies
+            )
+        );
 
         $request = $this->getRequest();
         $form->handleRequest($request);

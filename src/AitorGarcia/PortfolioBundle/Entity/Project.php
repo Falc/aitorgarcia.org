@@ -3,7 +3,7 @@
  * This file contains the Project class.
  *
  * @author		Aitor García <aitor.falc@gmail.com>
- * @copyright	2012 Aitor García <aitor.falc@gmail.com>
+ * @copyright	2012-2013 Aitor García <aitor.falc@gmail.com>
  * @license		https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE Simplified BSD License
  */
 
@@ -110,8 +110,9 @@ class Project
      *
      * @var Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Technology", inversedBy="projects")
+     * @ORM\ManyToMany(targetEntity="Technology", inversedBy="projects", cascade={"persist", "remove"})
      * @ORM\JoinTable(name="project_technologies")
+     * @ORM\OrderBy({"name" = "ASC"})
      * @Assert\Count(min = "1", minMessage = "projects.select_min_technologies")
      */
     protected $technologies;
