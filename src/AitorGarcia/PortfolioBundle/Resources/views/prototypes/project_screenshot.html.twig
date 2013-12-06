@@ -5,9 +5,10 @@
     <div class="screenshot-file form-group block col-md-5">
         <div style="display: none;">
             {{ form_widget(screenshot.file) }}
+            {{ form_widget(screenshot.path) }}
         </div>
         <div class="input-group">
-            <input type="text" class="form-control" readonly="readonly" />
+            <input type="text" class="form-control" readonly="readonly" value="{{ screenshot.vars.value.path | default('') }}" />
             <span class="input-group-btn">
                 <button class="btn btn-primary" type="button">{{ 'button.choose_image' | trans }}</button>
             </span>
