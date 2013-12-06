@@ -51,7 +51,18 @@ class ProjectController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         // Find the selected project
-        $project = $em->getRepository('AitorGarciaPortfolioBundle:Project')->findOneBySlug($slug);
+        $query = $em->createQueryBuilder()
+            ->select('project')
+            ->from('AitorGarciaPortfolioBundle:Project', 'project')
+            ->where('project.slug = :slug')
+            ->setParameter('slug', $slug)
+            ->getQuery()
+            ->setHint(
+                \Doctrine\ORM\Query::HINT_CUSTOM_OUTPUT_WALKER,
+                'Gedmo\Translatable\Query\TreeWalker\TranslationWalker'
+            );
+
+        $project = $query->getOneOrNullResult();
 
         // If the project does not exist, display an error message
         if ($project === null)
