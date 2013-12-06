@@ -21,17 +21,19 @@
 <div class="row">
     <div id="project-screenshots" class="block col-md-6">
         <div class="slider">
-        {% if project.screenshots is empty %}
-            <img src="/files/no-project-screenshot.jpg" alt="{{ project.name }}" title="{{ project.name }}" />
-        {% else %}
             <ul class="slides bg-dark-diamonds">
+        {% if project.screenshots is empty %}
+            <li class="slide">
+                <img src="/files/no-project-screenshot.jpg" alt="{{ project.name }}" title="{{ project.name }}" />
+            </li>
+        {% else %}
             {% for screenshot in project.screenshots %}
                 <li class="slide">
                     <img src="/{{ screenshot.getWebPath() }}" alt="{{ screenshot.name }}" title="{{ screenshot.name }}" />
                 </li>
             {% endfor %}
-            </ul>
         {% endif %}
+            </ul>
         </div>
         <div id="project-actions" style="padding-top: 0; padding-bottom: 0;">
             <a class="btn btn-primary btn-icon" href="{{ project.link }}">
