@@ -8,7 +8,7 @@ projects:
         info:                   Project Information
     message:
         confirm_deletion:       Are you sure to delete the project "%project_name%"?
-        empty_list:             There is not any project.
+        empty_list:             No projects found.
         do_not_exist:           The selected project does not exist.
         success_creation:       The project was created successfully.
         success_deletion:       The project was deleted successfully.
@@ -28,6 +28,7 @@ technologies:
         info:               Technology Information
     message:
         confirm_deletion:   Are you sure to delete the technology "%technology_name%"?
+        empty_list:         No technologies found.
         do_not_exist:       The selected technology does not exist.
         success_creation:   The technology was created successfully.
         success_deletion:   The technology was deleted successfully.
@@ -73,3 +74,4 @@ button:
 
 locale:
     english:    English
+    spanish:    Español

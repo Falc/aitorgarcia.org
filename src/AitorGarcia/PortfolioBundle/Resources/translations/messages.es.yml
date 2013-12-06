@@ -28,6 +28,7 @@ technologies:
         info:               Información de la tecnología
     message:
         confirm_deletion:   ¿Estás seguro de que quieres eliminar la tecnología "%technology_name%"?
+        empty_list:         No hay ninguna tecnología.
         do_not_exist:       La tecnología seleccionada no existe.
         success_creation:   La tecnología ha sido creada correctamente.
         success_deletion:   La tecnología ha sido eliminada correctamente.
@@ -73,3 +74,4 @@ button:
 
 locale:
     english:    Inglés
+    spanish:    Español
