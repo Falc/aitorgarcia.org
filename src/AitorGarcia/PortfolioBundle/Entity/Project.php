@@ -99,8 +99,8 @@ class Project
      *
      * @var string
      *
-     * @Gedmo\Slug(fields={"name"})
      * @Gedmo\Translatable
+     * @Gedmo\Slug(fields={"name"})
      * @ORM\Column(type="string", unique=true)
      */
     protected $slug;
