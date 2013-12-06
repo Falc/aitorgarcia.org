@@ -181,8 +181,8 @@ a:active, a:focus, a:hover {
  * PAGE
  */
 #page {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 
@@ -194,7 +194,15 @@ a:active, a:focus, a:hover {
 }
 
 #options {
-    padding: 0 15px;
+    padding: 10px 15px;
+}
+
+
+/*
+ * ALERTS
+ */
+.alert {
+    margin: 10px 15px;
 }
 
 
@@ -363,12 +371,6 @@ a.btn-icon-notext span.icon {
 /*
  * TAGS
  */
-
-/*
-ul.tags {
-}
-*/
-
 ul.tags li {
     margin-right: 5px;
     padding: 0;

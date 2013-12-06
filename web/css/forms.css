@@ -26,11 +26,12 @@ form h2 {
 }
 
 form .form-group {
+    margin-bottom: 20px;
     padding-top: 0;
     padding-bottom: 0;
 }
 
 #form-actions {
     border-top: 1px dotted #ddd;
-    padding-top: 15px;
+    padding-top: 20px;
 }

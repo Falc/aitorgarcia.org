@@ -2,8 +2,8 @@
  * PROJECT LIST
  */
 #project-list {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #project-list .table {
@@ -37,9 +37,13 @@ a.btn-locale {
     padding: 0;
 }
 
+#screenshots .form-group {
+    margin-bottom: 15px;
+}
+
 #screenshots-actions {
     text-align: right;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     padding-top: 0;
     padding-bottom: 0;
 }
