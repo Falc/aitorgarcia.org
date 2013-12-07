@@ -18,6 +18,8 @@
         "sensio/distribution-bundle": "2.3.*",
         "sensio/framework-extra-bundle": "2.3.*",
         "sensio/generator-bundle": "2.3.*",
+        "components/jquery": "1.10.*",
+        "components/bootstrap": "3.*",
         "kriswallsmith/assetic": "1.1.*@dev",
         "stfalcon/tinymce-bundle": "dev-master",
         "besimple/i18n-routing-bundle": "dev-master",
@@ -43,7 +45,8 @@
     },
     "minimum-stability": "stable",
     "config": {
-        "bin-dir": "bin"
+        "bin-dir": "bin",
+        "component-dir": "web/components"
     },
     "repositories": [
        {
