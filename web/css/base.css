@@ -90,7 +90,6 @@ a:active, a:focus, a:hover {
 }
 
 .navbar-aitorgarcia .navbar-nav > li > a:hover,
-.navbar-aitorgarcia .navbar-nav > li > a:focus,
 #subnavbar {
     background-color: #349ad1;
     padding-top: 20px;
@@ -150,10 +149,6 @@ a:active, a:focus, a:hover {
 #locale-switcher ul li a:hover,
 #locale-switcher ul li a:focus {
     background-color: #349ad1;
-}
-
-#locale-switcher ul.dropdown-menu {
-    margin-top: 1px;
 }
 
 
@@ -538,6 +533,10 @@ ul.tags li a:active {
     .navbar-aitorgarcia .navbar-nav a:focus .caret,
     .navbar-aitorgarcia .navbar-nav a:active .caret {
         border-top-color: #349ad1;
+    }
+
+    #locale-switcher ul.dropdown-menu {
+        margin-top: 1px;
     }
 
     #locale-switcher.open > a > .caret {
