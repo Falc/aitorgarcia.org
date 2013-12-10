@@ -406,16 +406,18 @@ ul.tags li a:active {
 #footer {
     background-color: #22303d;
     color: #fafafa;
-    height: 60px;
+    min-height: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #footer p {
     margin: 0;
-    padding: 20px 15px;
+    padding: 10px 15px;
 }
 
 #footer a {
-    color: #aaa;
+    color: #bbb;
 }
 
 #footer a:hover {
@@ -423,11 +425,20 @@ ul.tags li a:active {
     text-decoration: underline;
 }
 
-#social-icons ul,
-#more-info ul {
+#copyright,
+#more-info,
+#social-icons {
+    text-align: center;
+}
+
+#copyright p {
+    font-size: 18px;
+}
+
+#social-icons ul {
     height: 32px;
     list-style: none;
-    margin: 14px 0;
+    margin: 4px 0;
 }
 
 .icon-twitter {
@@ -487,29 +498,14 @@ ul.tags li a:active {
     background-position: 0 -64px;
 }
 
-.icon-source-code {
+.icon-up {
     background-image: url(../images/icons.png);
     background-position: -32px -64px;
 }
 
-.icon-client {
-    background-image: url(../images/icons.png);
-    background-position: -64px -64px;
-}
-
-.icon-tag {
-    background-image: url(../images/icons.png);
-    background-position: -96px -64px;
-}
-
-.icon-up {
-    background-image: url(../images/icons.png);
-    background-position: 0 -96px;
-}
-
 .icon-down {
     background-image: url(../images/icons.png);
-    background-position: -32px -96px;
+    background-position: -64px -64px;
 }
 
 
@@ -541,5 +537,19 @@ ul.tags li a:active {
 
     #locale-switcher.open > a > .caret {
         border-top-color: #349ad1;
+    }
+}
+
+@media (min-width: 1200px) {
+    #social-icons {
+        float: right;
+    }
+
+    #copyright {
+        float: left;
+    }
+
+    #more-info {
+        float: left;
     }
 }
