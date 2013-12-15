@@ -30,7 +30,7 @@
         <a class="project" href="{{ path('project_show', { 'slug': project.slug }) }}">
         <div>
         {% if project.screenshots is empty %}
-            <img class="project-cover" src="/files/no-project-screenshot.jpg" alt="{{ project.name }}" title="{{ project.name }}" />
+            <img class="project-cover" src="/files/no-project-screenshot.png" alt="{{ project.name }}" title="{{ project.name }}" />
         {% else %}
             <img class="project-cover" src="/{{ project.screenshots[0].getWebPath() }}" alt="{{ project.name }}" title="{{ project.name }}" />
         {% endif %}
