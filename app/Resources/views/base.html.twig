@@ -47,6 +47,7 @@
                             <li{% if 'contact' in current_route %} class="active"{% endif %}>
                                 <a href="{{ path('contact') }}">{{ 'navigation.contact' | trans }}</a>
                             </li>
+                            {% block locale_switcher %}
                             <li id="locale-switcher" class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">
                                     {{ 'navigation.language' | trans }} ({{ current_locale | upper }})
@@ -54,6 +55,7 @@
                                 </a>
                                 {{ locale_switcher() }}
                             </li>
+                            {% endblock %}
                         </ul>
                     </div><!--/.nav-collapse -->
                     {% endblock %}

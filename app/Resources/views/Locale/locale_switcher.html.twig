@@ -1,6 +1,14 @@
     <ul class="dropdown-menu" role="menu">
     {% for locale in locales %}
         {% set route_params = app.request.attributes.get('_route_params') | merge({'locale': locale.locale}) %}
+        {# Patch for translated slugs #}
+        {% if current_route | slice(0, -3) == 'project_show' %}
+            {% set translatedSlug = app.request.attributes.get('slug.' ~ locale.locale) %}
+            {% if translatedSlug is not null %}
+                {% set route_params = route_params | merge({'slug': translatedSlug}) %}
+            {% endif %}
+        {% endif %}
+        {# End of patch #}
         <li><a href="{{ path(current_route | slice(0, -3), route_params) }}">{{ locale.locale | locale(locale.locale) | capitalize }} ({{ locale.locale | upper }})</a></li>
     {% endfor %}
     </ul>
