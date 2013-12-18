@@ -1,5 +1,6 @@
 app/bootstrap*
 app/cache/*
+app/config/deploy.rb
 app/config/parameters.yml
 app/logs/*
 bin/*
@@ -9,3 +10,5 @@ src/AitorGarcia/*Bundle/Tests/
 vendor/*
 web/bundles/*
 web/components/*
+web/files/project-screenshots/*
+Capfile
