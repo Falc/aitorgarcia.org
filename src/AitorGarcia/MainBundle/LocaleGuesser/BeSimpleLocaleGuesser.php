@@ -55,7 +55,6 @@ class BeSimpleLocaleGuesser extends AbstractLocaleGuesser
 
                 return true;
             }
-            
         }
 
         return false;
