@@ -1,8 +1,9 @@
 {% extends "::base.html.twig" %}
 
 {% block stylesheets %}
-{% stylesheets filter="cssrewrite,?yui_css" output='css/frontend-*.css'
+{% stylesheets filter="cssrewrite,?yui_css" output='css/min/frontend-*.css'
     'css/base.css'
+    'bundles/aitorgarciaportfolio/css/project_list.css'
     'bundles/aitorgarciaportfolio/css/project_show.css'
 %}
     <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
