@@ -17,7 +17,9 @@
 {% block page %}
 <div id="project-list" class="row">
 {% if projects is empty %}
-    <p>{{ 'projects.message.empty_list' | trans }}</p>
+    <div class="block">
+        <p>{{ 'projects.message.empty_list' | trans }}</p>
+    </div>
 {% else %}
 {% for project in projects %}
     <div class="block col-sm-6 col-md-4">
