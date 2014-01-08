@@ -198,6 +198,11 @@ a:active, a:focus, a:hover {
  */
 .alert {
     margin: 10px 15px;
+    padding: 10px;
+}
+
+.alert-dismissable .close {
+    right: 0;
 }
 
 

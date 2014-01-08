@@ -31,6 +31,10 @@ form .form-group {
     padding-bottom: 0;
 }
 
+form .form-group .alert {
+    margin: 10px 0;
+}
+
 #form-actions {
     border-top: 1px dotted #ddd;
     padding-top: 20px;
