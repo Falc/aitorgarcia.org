@@ -31,7 +31,7 @@
 <div class="row">
     {{ form_errors(form) }}
 
-    <div id="contact-form" class="block">
+    <div id="contact-form" class="block col-sm-12">
         <form action="{{ path('contact') }}" method="post" {{ form_enctype(form) }}>
             <fieldset>
                 <div class="row">
@@ -45,12 +45,12 @@
                         {{ form_widget(form.email) }}
                         {{ form_errors(form.email) }}
                     </div>
-                    <div class="form-group block">
+                    <div class="form-group block col-sm-12">
                         {{ form_label(form.subject, 'field.subject' | trans ) }}
                         {{ form_widget(form.subject) }}
                         {{ form_errors(form.subject) }}
                     </div>
-                    <div class="form-group block">
+                    <div class="form-group block col-sm-12">
                         {{ form_label(form.body, 'field.body' | trans ) }}
                         {{ form_widget(form.body) }}
                         {{ form_errors(form.body) }}

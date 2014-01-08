@@ -49,21 +49,21 @@
     </div>
     <div id="project-info" class="block col-md-6">
         <div class="row">
-            <div id="project-description" class="block">
+            <div id="project-description" class="block col-sm-12">
                 <h2>{{ 'field.description' | trans }}</h2>
                 {{ project.description | raw }}
             </div>
         </div>
         {% if project.client is not empty %}
         <div class="row">
-            <div id="project-client" class="block">
+            <div id="project-client" class="block col-sm-12">
                 <h2>{{ 'field.client' | trans }}</h2>
                 <p class="client-content">{{ project.client }}</p>
             </div>
         </div>
         {% endif %}
         <div class="row">
-            <div id="project-technologies" class="block">
+            <div id="project-technologies" class="block col-sm-12">
                 <h2>{{ 'field.technologies' | trans }}</h2>
                 <ul class="tags list-inline">
                 {% for technology in project.technologies -%}

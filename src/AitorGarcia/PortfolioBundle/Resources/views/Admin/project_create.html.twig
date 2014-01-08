@@ -21,36 +21,36 @@
 
 {% block page %}
 <div class="row">
-    <div id="project-create" class="block">
+    <div id="project-create" class="block col-sm-12">
         <form action="{{ path('admin_project_create') }}" method="post" {{ form_enctype(form) }}>
             <fieldset>
                 <div class="row">
-                    <div class="form-group block">
+                    <div class="form-group block col-sm-12">
                         {{ form_label(form.name, 'field.name' | trans ) }}
                         {{ form_widget(form.name) }}
                         {{ form_errors(form.name) }}
                     </div>
-                    <div class="form-group block">
+                    <div class="form-group block col-sm-12">
                         {{ form_label(form.description, 'field.description' | trans ) }}
                         {{ form_widget(form.description) }}
                         {{ form_errors(form.description) }}
                     </div>
-                    <div class="form-group block">
+                    <div class="form-group block col-sm-12">
                         {{ form_label(form.client, 'field.client' | trans ) }}
                         {{ form_widget(form.client) }}
                         {{ form_errors(form.client) }}
                     </div>
-                    <div class="form-group block">
+                    <div class="form-group block col-sm-12">
                         {{ form_label(form.link, 'field.link' | trans ) }}
                         {{ form_widget(form.link) }}
                         {{ form_errors(form.link) }}
                     </div>
-                    <div class="form-group block">
+                    <div class="form-group block col-sm-12">
                         {{ form_label(form.sourceLink, 'field.source_link' | trans ) }}
                         {{ form_widget(form.sourceLink) }}
                         {{ form_errors(form.sourceLink) }}
                     </div>
-                    <div class="form-group block">
+                    <div class="form-group block col-sm-12">
                         {{ form_label(form.technologies, 'field.technologies' | trans ) }}
                         {{ form_widget(form.technologies) }}
                         {{ form_errors(form.technologies) }}
@@ -61,11 +61,11 @@
             <fieldset>
                 <div class="row">
                     <h2>{{ 'projects.legend.images' | trans }}</h2>
-                    <div id="screenshots" class="block" data-prototype="{% filter escape %}{% include 'AitorGarciaPortfolioBundle:Admin:project_screenshot_row.html.twig' with {'screenshot': form.screenshots.vars.prototype} %}{% endfilter %}">
+                    <div id="screenshots" class="block col-sm-12" data-prototype="{% filter escape %}{% include 'AitorGarciaPortfolioBundle:Admin:project_screenshot_row.html.twig' with {'screenshot': form.screenshots.vars.prototype} %}{% endfilter %}">
                     </div>
                 </div>
                 <div class="row">
-                    <div id="screenshots-actions" class="block">
+                    <div id="screenshots-actions" class="block col-sm-12">
                         <button id="btn-add-screenshot" class="btn btn-primary btn-icon" type="button">
                             <span class="icon icon-add"></span>{{ 'button.add_image' | trans }}
                         </button>

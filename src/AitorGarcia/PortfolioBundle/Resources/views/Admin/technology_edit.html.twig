@@ -15,11 +15,11 @@
 
 {% block page %}
 <div class="row">
-    <div id="technology-edit" class="block">
+    <div id="technology-edit" class="block col-sm-12">
         <form action="{{ path('admin_technology_edit', { 'id': technology_id }) }}" method="post" {{ form_enctype(form) }}>
             <fieldset>
                 <div class="row">
-                    <div class="form-group block">
+                    <div class="form-group block col-sm-12">
                         {{ form_label(form.name, 'field.name' | trans ) }}
                         {{ form_widget(form.name) }}
                         {{ form_errors(form.name) }}

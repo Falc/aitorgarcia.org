@@ -20,16 +20,16 @@
 
 {% block page %}
 <div class="row">
-    <div id="project-translation-edit" class="block">
+    <div id="project-translation-edit" class="block col-sm-12">
         <form action="{{ path('admin_project_translation_edit', { 'id': project_id, 'transLocale': project_locale }) }}" method="post" {{ form_enctype(form) }}>
             <fieldset>
                 <div class="row">
-                    <div class="form-group block">
+                    <div class="form-group block col-sm-12">
                         {{ form_label(form.name, 'field.name' | trans ) }}
                         {{ form_widget(form.name) }}
                         {{ form_errors(form.name) }}
                     </div>
-                    <div class="form-group block">
+                    <div class="form-group block col-sm-12">
                         {{ form_label(form.description, 'field.description' | trans ) }}
                         {{ form_widget(form.description) }}
                         {{ form_errors(form.description) }}
@@ -40,7 +40,7 @@
             <fieldset>
                 <div class="row">
                     <h2>{{ 'projects.legend.images' | trans }}</h2>
-                    <div id="screenshots" class="block">
+                    <div id="screenshots" class="block col-sm-12">
                         {% for screenshot in form.screenshots %}
                             {% include 'AitorGarciaPortfolioBundle:Admin:project_translation_screenshot_row.html.twig' with {'screenshot': screenshot} %}
                         {% endfor %}
