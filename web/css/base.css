@@ -517,6 +517,11 @@ ul.tags li a:active {
     background-position: -64px -64px;
 }
 
+.icon-source-code {
+    background-image: url(../images/icons.png);
+    background-position: -96px -64px;
+}
+
 
 /*
  * FINE TUNING
