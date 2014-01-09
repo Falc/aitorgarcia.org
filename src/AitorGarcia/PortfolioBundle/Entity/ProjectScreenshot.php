@@ -64,7 +64,7 @@ class ProjectScreenshot
      * @var integer
      *
      * @ORM\Column(type="integer")
-     * @Assert\Type(type="integer")
+     * @Assert\Type(type="numeric")
      */
     protected $weight = 0;
 
