@@ -124,7 +124,7 @@
                 return this.$element.val().replace(/[^,]*$/,'')+item+',';
             },
             matcher: function (item) {
-              var tquery = typeaheadExtractor(this.query);
+              var tquery = typeaheadExtractor(this.query).toLowerCase();
               if(!tquery) return false;
               return ~item.toLowerCase().indexOf(tquery)
             },
