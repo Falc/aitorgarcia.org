@@ -61,9 +61,11 @@
             <fieldset>
                 <div class="row">
                     <h2>{{ 'projects.legend.images' | trans }}</h2>
-                    <div id="screenshots" class="block col-sm-12" data-prototype="{% filter escape %}{% include 'AitorGarciaPortfolioBundle:Admin:project_screenshot_row.html.twig' with {'screenshot': form.screenshots.vars.prototype} %}{% endfilter %}">
+                    <div id="screenshots" class="block col-sm-12" data-empty="{% filter escape %}<div class="alert alert-warning">{{ 'projects.message.no_screenshots' | trans }}</div>{% endfilter %}" data-prototype="{% filter escape %}{% include 'AitorGarciaPortfolioBundle:Admin:project_screenshot_row.html.twig' with {'screenshot': form.screenshots.vars.prototype} %}{% endfilter %}">
                         {% for screenshot in form.screenshots %}
                             {% include 'AitorGarciaPortfolioBundle:Admin:project_screenshot_row.html.twig' with {'screenshot': screenshot} %}
+                        {% else %}
+                            <div class="alert alert-warning">{{ 'projects.message.no_screenshots' | trans }}</div>
                         {% endfor %}
                     </div>
                 </div>

@@ -52,6 +52,12 @@ function setLinkEvents(screenshotRow) {
         weightInputs.each(function(index) {
             $(this).val(index);
         });
+
+        // If there are no images in the container, display the "is empty" message
+        if (container.children().length === 0) {
+            var emptyMessage = container.attr('data-empty');
+            container.append(emptyMessage);
+        }
     });
 }
 
@@ -61,6 +67,9 @@ function addScreenshotRow(screenshotsContainer) {
 
     // Replace '__name__' with a number based on the number of screenshots
     var screenshotRow = $(prototype.replace(/__name__/g, screenshotsContainer.children().length));
+
+    // Remove the alerts, if any
+    screenshotsContainer.find('.alert').remove();
 
     // Add the screenshot row to the screenshots container
     screenshotsContainer.append(screenshotRow);

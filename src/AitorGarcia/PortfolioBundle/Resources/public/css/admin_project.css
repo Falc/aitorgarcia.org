@@ -37,6 +37,11 @@ a.btn-locale {
     padding: 0;
 }
 
+#screenshots .alert {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
 #screenshots .form-group {
     margin-bottom: 15px;
 }
