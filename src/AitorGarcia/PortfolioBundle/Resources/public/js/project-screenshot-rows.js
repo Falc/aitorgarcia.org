@@ -62,14 +62,14 @@ function setLinkEvents(screenshotRow) {
 }
 
 function addScreenshotRow(screenshotsContainer) {
+    // Remove the alerts, if any
+    screenshotsContainer.find('.alert').remove();
+
     // Get the data-prototype
     var prototype = screenshotsContainer.attr('data-prototype');
 
     // Replace '__name__' with a number based on the number of screenshots
     var screenshotRow = $(prototype.replace(/__name__/g, screenshotsContainer.children().length));
-
-    // Remove the alerts, if any
-    screenshotsContainer.find('.alert').remove();
 
     // Add the screenshot row to the screenshots container
     screenshotsContainer.append(screenshotRow);
