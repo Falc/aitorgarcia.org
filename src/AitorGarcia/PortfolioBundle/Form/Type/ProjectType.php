@@ -83,7 +83,9 @@ class ProjectType extends AbstractType
             'allow_add'     => true,
             'allow_delete'  => true,
             'by_reference'  => false,
-            'required'      => false
+            'options'       => array(
+                'required'  => false
+            )
         ));
     }
 
@@ -95,7 +97,8 @@ class ProjectType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AitorGarcia\PortfolioBundle\Entity\Project'
+            'data_class'         => 'AitorGarcia\PortfolioBundle\Entity\Project',
+            'cascade_validation' => true
         ));
 
         $resolver->setRequired(array(
