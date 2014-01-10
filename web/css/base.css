@@ -376,7 +376,8 @@ ul.tags li {
     padding: 0;
 }
 
-ul.tags li a {
+ul.tags li a,
+ul.tags li span {
     background: #349ad1 url(../images/icon-tag-16.png) no-repeat 6px center;
     color: #fafafa;
     font-size: 12px;

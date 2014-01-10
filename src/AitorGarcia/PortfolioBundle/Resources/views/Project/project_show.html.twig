@@ -67,7 +67,7 @@
                 <h2>{{ 'field.technologies' | trans }}</h2>
                 <ul class="tags list-inline">
                 {% for technology in project.technologies -%}
-                    <li><a href="#">{{ technology.name }}</a></li>
+                    <li><span>{{ technology.name }}</span></li>
                 {%- endfor -%}
                 </ul>
             </div>
