@@ -1,4 +1,21 @@
-#some_info {
+/*
+ * ADMIN INDEX
+ */
+#admin-index {
+    margin-top: -5px;
+}
+
+#some-info {
     padding-top: 10px;
     padding-bottom: 20px;
+}
+
+
+/*
+ * FINE TUNING
+ */
+@media (min-width: 768px) {
+    #admin-index {
+        margin-top: 0;
+    }
 }

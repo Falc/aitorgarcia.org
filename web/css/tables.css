@@ -1,13 +1,16 @@
+/*
+ * TABLES
+ */
 .table {
     font-size: 14px;
 }
+
 .table thead > tr > th {
     background-color: #f0f0f0;
     border-bottom: none;
 }
 
 .table tbody > tr > td {
-    white-space: nowrap;
     vertical-align: middle;
 }
 

@@ -5,6 +5,10 @@
     margin-top: -5px;
 }
 
+#project-list > .block {
+    padding-bottom: 10px;
+}
+
 a.project {
     text-decoration: none;
     display: block;
@@ -57,4 +61,18 @@ a.project:active span.project-name {
     background-repeat: no-repeat;
     background-position: 10px center;
     padding-left: 40px;
+}
+
+
+/*
+ * FINE TUNING
+ */
+@media (min-width: 768px) {
+    #project-list {
+        margin-top: 5px;
+    }
+
+    #project-list > .block {
+        padding-bottom: 15px;
+    }
 }

@@ -1,12 +1,10 @@
-#about-me,
-#web-developer,
-#free-software,
-#knowledge,
-#this-website,
-#some-links {
-    padding-top: 20px;
-    padding-bottom: 20px;
+/*
+ * INDEX
+ */
+#index {
+    margin-top: -5px;
 }
+
 
 #about-me p,
 #web-developer p,
@@ -48,4 +46,14 @@
 
 .index-icon-sign {
     background: url(../images/index-icons.png) no-repeat -80px -40px;
+}
+
+
+/*
+ * FINE TUNING
+ */
+@media (min-width: 768px) {
+    #index {
+        margin-top: 0;
+    }
 }

@@ -1,11 +1,14 @@
 /*
- * SLIDER
+ * PROJECT SHOW
  */
-#project-screenshots {
-    padding-top: 10px;
-    padding-bottom: 20px;
+#project-show {
+    margin-top: -5px;
 }
 
+
+/*
+ * SLIDER
+ */
 .slider {
     max-width: 100%;
     position: relative;
@@ -112,11 +115,6 @@
 /*
  * INFO
  */
-#project-info {
-    padding-top: 10px;
-    padding-bottom: 20px;
-}
-
 #project-info .block {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -148,6 +146,14 @@
 }
 
 @media (min-width: 768px) {
+    #project-show {
+        margin-top: 5px;
+    }
+
+    #project-list > .block {
+        padding-bottom: 15px;
+    }
+
     .slider-nav-item {
         margin: 0 2px;
     }

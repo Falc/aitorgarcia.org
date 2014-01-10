@@ -189,7 +189,8 @@ a:active, a:focus, a:hover {
 }
 
 #options {
-    padding: 10px 15px;
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
 
 
@@ -203,6 +204,20 @@ a:active, a:focus, a:hover {
 
 .alert-dismissable .close {
     right: 0;
+}
+
+
+/*
+ * ACTIONS
+ */
+#actions > .btn {
+    margin-left: 0;
+    margin-right: 11px;
+}
+
+#actions.pull-right > a.btn {
+    margin-left: 11px;
+    margin-right: 0;
 }
 
 
@@ -525,6 +540,14 @@ ul.tags li a:active {
 
 
 /*
+ * MISC
+ */
+.nowrap {
+    white-space: nowrap;
+}
+
+
+/*
  * FINE TUNING
  */
 @media (min-width: 768px) {
@@ -552,6 +575,10 @@ ul.tags li a:active {
 
     #locale-switcher.open > a > .caret {
         border-top-color: #349ad1;
+    }
+
+    #options {
+        margin-bottom: 0;
     }
 }
 

@@ -1,11 +1,6 @@
 /*
  * PROJECT LIST
  */
-#project-list {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
 #project-list .table {
     margin-bottom: 0;
 }
@@ -24,8 +19,7 @@ a.btn-locale {
 #project-create,
 #project-edit,
 #project-delete {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    margin-top: -5px;
 }
 
 #project-delete .block {
@@ -47,7 +41,8 @@ a.btn-locale {
 }
 
 #screenshots-actions {
-    text-align: right;
+    text-align: center;
+    margin-top: 5px;
     margin-bottom: 20px;
     padding-top: 0;
     padding-bottom: 0;
@@ -72,4 +67,23 @@ a.btn-locale {
 #project-translation-edit {
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+
+/*
+ * FINE TUNING
+ */
+@media (min-width: 768px) {
+    #project-list,
+    #project-create,
+    #project-edit,
+    #project-delete {
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    #screenshots-actions {
+        text-align: right;
+    }
 }
