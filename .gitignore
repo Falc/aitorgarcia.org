@@ -10,5 +10,6 @@ src/AitorGarcia/*Bundle/Tests/
 vendor/*
 web/bundles/*
 web/components/*
+web/css/min/*
 web/files/project-screenshots/*
 Capfile
