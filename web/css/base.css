@@ -388,6 +388,7 @@ a.btn-icon-notext span.icon {
  */
 ul.tags li {
     margin-right: 5px;
+    margin-bottom: 5px;
     padding: 0;
 }
 
