@@ -1,0 +1,22 @@
+{% extends "::base.html.twig" %}
+
+{% block stylesheets %}
+{% stylesheets filter="cssrewrite,?yui_css" output='css/min/frontend-*.css'
+    'css/base.css'
+    'bundles/aitorgarciablog/css/post_list.css'
+%}
+    <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
+{% endstylesheets %}
+{% endblock %}
+
+{% block title %}{{ 'posts.title.list' | trans }} - Aitor García{% endblock %}
+
+{% block infotext %}{{ 'posts.subnavigation.post_list' | trans }}{% endblock %}
+
+{% block page %}
+<div id="post-list" class="row">
+    <div class="block col-sm-12">
+        <p>{{ 'posts.message.empty_list' | trans }}</p>
+    </div>
+</div>
+{% endblock %}

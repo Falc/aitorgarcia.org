@@ -1,0 +1,3 @@
+blog_post_list:
+    locales:  { en: "/blog-en", es: "/blog" }
+    defaults: { _controller: AitorGarciaBlogBundle:Post:list }

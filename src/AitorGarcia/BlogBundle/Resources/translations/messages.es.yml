@@ -1,0 +1,11 @@
+navigation:
+    projects:       Proyectos
+    technologies:   Tecnologías
+
+posts:
+    message:
+        empty_list:     No hay ninguna entrada.
+    subnavigation:
+        post_list:      Tecnología, programación y otras historias
+    title:
+        list:           Blog

@@ -1,0 +1,16 @@
+/*
+ * POST LIST
+ */
+#post-list {
+    margin-top: -5px;
+}
+
+
+/*
+ * FINE TUNING
+ */
+@media (min-width: 768px) {
+    #post-list {
+        margin-top: 5px;
+    }
+}
