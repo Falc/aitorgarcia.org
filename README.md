@@ -1,28 +1,28 @@
-Aitor García's website
-======================
+# Aitor García's website
 
 This is the source code for [aitorgarcia.org](http://aitorgarcia.org), built on Symfony2.
 
 * Author: Aitor García Martínez (Falc)
 * License: Simplified BSD License
 
-Why do I release this?
-----------------------
+## Why do I release this?
 
 One of the goals behind this project was to learn things about Symfony2. And I definitely learnt a lot from other projects source code, so I think that my source code could be useful for others in my situation.
 
-About the bundles
------------------
+## About the bundles
 
-### AppBundle
+### ContactBundle
+
+A simple contact section.
+
+### MainBundle
 
 Contains everything that does not fit inside other bundles. This bundle is not intended to be reusable.
 
 It includes:
 
-* "More information" section.
-* Admin index
-* Main and admin navigation views (menu links).
+* Index page
+* Admin index page
 
 ### PortfolioBundle
 
@@ -32,7 +32,6 @@ The frontend includes:
 
 * Project list
 * Project view
-* Contact
 
 The backend includes:
 
