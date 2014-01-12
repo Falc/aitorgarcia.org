@@ -4,6 +4,7 @@ select.form-control {
 }
 
 .checkbox {
+    margin-top: 0;
     margin-bottom: 15px;
 }
 
