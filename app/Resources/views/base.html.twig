@@ -41,12 +41,17 @@
                             <li{% if 'admin_' not in current_route and 'index.' in current_route %} class="active"{% endif %}>
                                 <a href="{{ path('index') }}">{{ 'navigation.index' | trans }}</a>
                             </li>
+                            <li{% if 'blog_' in current_route %} class="active"{% endif %}>
+                                {# Force "es" route, the blog is written in spanish #}
+                                <a href="{{ path('blog_post_list.es') }}">{{ 'navigation.blog' | trans }}</a>
+                            </li>
                             <li{% if 'project_' in current_route %} class="active"{% endif %}>
                                 <a href="{{ path('project_list') }}">{{ 'navigation.projects' | trans }}</a>
                             </li>
                             <li{% if 'contact' in current_route %} class="active"{% endif %}>
                                 <a href="{{ path('contact') }}">{{ 'navigation.contact' | trans }}</a>
                             </li>
+                            {% if 'blog_' not in current_route %}
                             {% block locale_switcher %}
                             <li id="locale-switcher" class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">
@@ -56,6 +61,7 @@
                                 {{ locale_switcher() }}
                             </li>
                             {% endblock %}
+                            {% endif %}
                         </ul>
                     </div><!--/.nav-collapse -->
                     {% endblock %}
