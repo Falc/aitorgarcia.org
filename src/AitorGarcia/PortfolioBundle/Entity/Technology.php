@@ -44,13 +44,13 @@ class Technology
     protected $name;
 
     /**
-     * This represents the ManyToMany project-technologies relationship.
+     * This represents the ManyToMany Projects-Technologies relationship.
      *
      * @var Doctrine\Common\Collections\Collection
      *
      * @ORM\ManyToMany(targetEntity="Project", mappedBy="technologies")
      */
-	protected $projects;
+    protected $projects;
 
     /**
      * Constructor.

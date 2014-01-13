@@ -106,11 +106,11 @@ class Project
     protected $slug;
 
     /**
-     * This represents the ManyToMany projects-technologies relationship.
+     * This represents the ManyToMany Projects-Technologies relationship.
      *
      * @var Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Technology", inversedBy="projects", cascade={"persist", "remove"})
+     * @ORM\ManyToMany(targetEntity="Technology", inversedBy="projects", cascade={"persist"})
      * @ORM\JoinTable(name="project_technologies")
      * @ORM\OrderBy({"name" = "ASC"})
      * @Assert\Count(min = "1", minMessage = "projects.select_min_technologies")
@@ -118,7 +118,7 @@ class Project
     protected $technologies;
 
     /**
-     * This represents the OneToMany project-screenshots relationship.
+     * This represents the OneToMany Project-Screenshots relationship.
      *
      * @var Doctrine\Common\Collections\Collection
      *
@@ -327,7 +327,7 @@ class Project
     }
 
     /**
-     * Get the technologies.
+     * Gets the technologies.
      *
      * @return  Doctrine\Common\Collections\Collection
      */
