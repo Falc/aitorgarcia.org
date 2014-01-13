@@ -3,12 +3,15 @@ navigation:
 
 posts:
     message:
+        do_not_exist:       La entrada seleccionada no existe.
         empty_list:         No hay ninguna entrada.
         success_creation:   La entrada ha sido creada correctamente.
+        success_edition:    La entrada ha sido modificada correctamente.
     subnavigation:
         post_list:          Tecnología, programación y otras historias
     title:
         create:             Nueva entrada
+        edit:               Modificar entrada
         list:               Blog
 
 field:

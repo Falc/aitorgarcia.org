@@ -87,4 +87,65 @@ class AdminPostController extends Controller
             )
         );
     }
+
+    /**
+     * Displays the "post edit" form and processes it.
+     *
+     * @param   integer $id The ID of the post to edit.
+     */
+    public function editAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        // Find the selected post
+        $post = $em->getRepository('AitorGarciaBlogBundle:Post')->find($id);
+
+        // If the post does not exist, display an error message
+        if ($post === null)
+        {
+            $errorMessage = $this->get('translator')->trans('posts.message.do_not_exist');
+            throw $this->createNotFoundException($errorMessage);
+        }
+
+        // Find all the tags
+        $tagRepository = $em->getRepository('AitorGarciaBlogBundle:Tag');
+        $tags = $tagRepository->findAllTagNames();
+
+        // Create the form and set the data
+        $form = $this->createForm(
+            new PostType(),
+            $post,
+            array(
+                'em'    => $em,
+                'tags'  => $tags
+            )
+        );
+
+        $request = $this->getRequest();
+        $form->handleRequest($request);
+
+        // If the form data is valid:
+        if ($form->isValid())
+        {
+            // 1) Persist the entity
+            $em->persist($post);
+            $em->flush();
+
+            // 2) Display a success message
+            $successMessage = $this->get('translator')->trans('posts.message.success_edition');
+            $request->getSession()->getFlashBag()->add('success', $successMessage);
+
+            // 3) Redirect the user to the post list
+            return $this->redirect($this->generateUrl('blog_admin_post_list'));
+        }
+
+        // Render the form
+        return $this->render(
+            'AitorGarciaBlogBundle:Admin:post_edit.html.twig',
+            array(
+                'form'      => $form->createView(),
+                'post_id'   => $post->getId()
+            )
+        );
+    }
 }

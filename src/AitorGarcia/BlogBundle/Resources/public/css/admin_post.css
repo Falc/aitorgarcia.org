@@ -7,9 +7,10 @@
 
 
 /*
- * CREATE POST
+ * CREATE/EDIT POST
  */
-#project-create {
+#project-create,
+#project-edit {
     margin-top: -5px;
 }
 
@@ -19,7 +20,8 @@
  */
 @media (min-width: 768px) {
     #project-list,
-    #project-create {
+    #project-create,
+    #project-edit {
         margin-top: 0;
     }
 }
