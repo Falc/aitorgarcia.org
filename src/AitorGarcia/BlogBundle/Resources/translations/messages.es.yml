@@ -3,17 +3,20 @@ navigation:
 
 posts:
     message:
-        empty_list:     No hay ninguna entrada.
+        empty_list:         No hay ninguna entrada.
+        success_creation:   La entrada ha sido creada correctamente.
     subnavigation:
-        post_list:      Tecnología, programación y otras historias
+        post_list:          Tecnología, programación y otras historias
     title:
-        list:           Blog
+        create:             Nueva entrada
+        list:               Blog
 
 field:
     actions:        Acciones
     body:           Contenido
     created_at:     Creado
     id:             ID
+    tags:           Etiquetas
     title:          Título
 
 button:

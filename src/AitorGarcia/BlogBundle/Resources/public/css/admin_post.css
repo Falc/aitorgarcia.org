@@ -1,0 +1,25 @@
+/*
+ * POST LIST
+ */
+#post-list .table {
+    margin-bottom: 0;
+}
+
+
+/*
+ * CREATE POST
+ */
+#project-create {
+    margin-top: -5px;
+}
+
+
+/*
+ * FINE TUNING
+ */
+@media (min-width: 768px) {
+    #project-list,
+    #project-create {
+        margin-top: 0;
+    }
+}

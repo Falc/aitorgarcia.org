@@ -1,0 +1,101 @@
+{% extends "::base_admin.html.twig" %}
+
+{% block stylesheets %}
+{% stylesheets filter="cssrewrite,?yui_css" output='css/min/backend-*.css'
+    'css/base.css'
+    'css/tables.css'
+    'css/forms.css'
+    'css/tinymce.css'
+    'bundles/aitorgarciablog/css/admin_post.css'
+%}
+    <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
+{% endstylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ asset('js/bootstrap3-typeahead.min.js') }}" type="text/javascript"></script>
+{% endblock %}
+
+{% block infotext %}{{ 'posts.title.create' | trans }}{% endblock %}
+
+{% block page %}
+<div class="row">
+    <div id="post-create" class="block col-sm-12">
+        <form action="{{ path('blog_admin_post_create') }}" method="post" {{ form_enctype(form) }}>
+            <fieldset>
+                <div class="row">
+                    <div class="form-group block col-sm-12">
+                        {{ form_label(form.title, 'field.title' | trans ) }}
+                        {{ form_widget(form.title) }}
+                        {{ form_errors(form.title) }}
+                    </div>
+                    <div class="form-group block col-sm-12">
+                        {{ form_label(form.body, 'field.body' | trans ) }}
+                        {{ form_widget(form.body) }}
+                        {{ form_errors(form.body) }}
+                    </div>
+                    <div class="form-group block col-sm-12">
+                        {{ form_label(form.tags, 'field.tags' | trans ) }}
+                        {{ form_widget(form.tags) }}
+                        {{ form_errors(form.tags) }}
+                    </div>
+                </div>
+                {{ form_widget(form._token) }}
+            </fieldset>
+            <div id="form-actions">
+                <input class="btn btn-primary" type="submit" name="save" value="{{ 'button.create' | trans }}" />
+            </div>
+        </form>
+    </div>
+</div>
+
+{{ tinymce_init() }}
+
+<script type="text/javascript">
+    $(function() {
+        // Replace the submit input with a button+icon
+        var inputSave = $('input[name="save"]');
+
+        var btnSave = $('<button>').attr({
+            'type': 'submit',
+            'name': 'save'
+        });
+        btnSave.addClass('btn btn-primary btn-icon');
+        btnSave.append('<span class="icon icon-submit"></span>' + "{{ 'button.create' | trans }}");
+
+        inputSave.replaceWith(btnSave);
+
+        // Typeahead Extractor
+        function typeaheadExtractor(query) {
+            var result = /([^,]+)$/.exec(query);
+            if(result && result[1])
+                return result[1].trim();
+            return '';
+        }
+
+        /*
+         * Typeahead
+         *
+         * The customized updater, matcher and highlighter allows to use typeahead for every value in a CSV
+         */
+        $('.typeahead').typeahead({
+            source: JSON.parse($('.typeahead').attr('data-source')),
+            items: 5,
+            updater: function(item) {
+                return this.$element.val().replace(/[^,]*$/,'')+item+',';
+            },
+            matcher: function (item) {
+              var tquery = typeaheadExtractor(this.query).toLowerCase();
+              if(!tquery) return false;
+              return ~item.toLowerCase().indexOf(tquery)
+            },
+            highlighter: function (item) {
+              var query = typeaheadExtractor(this.query).replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, '\\$&')
+              return item.replace(new RegExp('(' + query + ')', 'ig'), function ($1, match) {
+                return '<strong>' + match + '</strong>'
+              })
+            }
+        });
+    });
+</script>
+{% endblock %}

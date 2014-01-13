@@ -1,3 +1,7 @@
 blog_admin_post_list:
     locales:  { en: "/posts/list", es: "/entradas/lista" }
     defaults: { _controller: AitorGarciaBlogBundle:AdminPost:list }
+
+blog_admin_post_create:
+    locales:  { en: "/posts/create", es: "/entradas/crear" }
+    defaults: { _controller: AitorGarciaBlogBundle:AdminPost:create }

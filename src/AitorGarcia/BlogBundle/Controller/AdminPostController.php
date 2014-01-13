@@ -36,4 +36,55 @@ class AdminPostController extends Controller
             )
         );
     }
+
+    /**
+     * Displays the "post create" form and processes it.
+     */
+    public function createAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        // Create a blank post and the form
+        $post = new Post();
+
+        // Find all the tags
+        $tagRepository = $em->getRepository('AitorGarciaBlogBundle:Tag');
+        $tags = $tagRepository->findAllTagNames();
+
+        // Create the form and set the data
+        $form = $this->createForm(
+            new PostType(),
+            $post,
+            array(
+                'em'    => $em,
+                'tags'  => $tags
+            )
+        );
+
+        $request = $this->getRequest();
+        $form->handleRequest($request);
+
+        // If the form data is valid:
+        if ($form->isValid())
+        {
+            // 1) Persist the entity
+            $em->persist($post);
+            $em->flush();
+
+            // 2) Display a success message
+            $successMessage = $this->get('translator')->trans('posts.message.success_creation');
+            $request->getSession()->getFlashBag()->add('success', $successMessage);
+
+            // 3) Redirect the user to the post list
+            return $this->redirect($this->generateUrl('blog_admin_post_list'));
+        }
+
+        // Render the form
+        return $this->render(
+            'AitorGarciaBlogBundle:Admin:post_create.html.twig',
+            array(
+                'form' => $form->createView()
+            )
+        );
+    }
 }
