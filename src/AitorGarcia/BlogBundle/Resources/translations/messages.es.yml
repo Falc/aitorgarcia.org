@@ -1,6 +1,5 @@
 navigation:
-    projects:       Proyectos
-    technologies:   Tecnologías
+    posts:      Entradas
 
 posts:
     message:
@@ -9,3 +8,22 @@ posts:
         post_list:      Tecnología, programación y otras historias
     title:
         list:           Blog
+
+field:
+    actions:        Acciones
+    body:           Contenido
+    created_at:     Creado
+    id:             ID
+    title:          Título
+
+button:
+    cancel:         Cancelar
+    confirm:        Confirmar
+    create:         Crear
+    delete:         Eliminar
+    delete_ext:     Eliminar este elemento
+    edit:           Modificar
+    edit_ext:       Modificar este elemento
+    save_changes:   Guardar cambios
+    send:           Enviar
+    sort:           Ordenar

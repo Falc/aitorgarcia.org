@@ -17,6 +17,9 @@
         <li{% if 'index.' in current_route %} class="active"{% endif %}>
             <a href="{{ path('admin_index') }}">{{ 'admin.navigation.overview' | trans }}</a>
         </li>
+        <li{% if 'blog_' in current_route %} class="active"{% endif %}>
+            <a href="{{ path('blog_admin_post_list') }}">{{ 'navigation.posts' | trans }}</a>
+        </li>
         <li{% if 'project_' in current_route %} class="active"{% endif %}>
             <a href="{{ path('admin_project_list') }}">{{ 'navigation.projects' | trans }}</a>
         </li>
