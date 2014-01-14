@@ -9,3 +9,7 @@ blog_admin_post_create:
 blog_admin_post_edit:
     locales:  { en: "/posts/{id}/edit", es: "/entradas/{id}/modificar" }
     defaults: { _controller: AitorGarciaBlogBundle:AdminPost:edit }
+
+blog_admin_post_delete:
+    locales:  { en: "/posts/{id}/delete", es: "/entradas/{id}/eliminar" }
+    defaults: { _controller: AitorGarciaBlogBundle:AdminPost:delete }

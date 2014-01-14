@@ -3,14 +3,17 @@ navigation:
 
 posts:
     message:
+        confirm_deletion:   ¿Estás seguro de que quieres eliminar la entrada "%post_title%"?
         do_not_exist:       La entrada seleccionada no existe.
         empty_list:         No hay ninguna entrada.
         success_creation:   La entrada ha sido creada correctamente.
+        success_deletion:   La entrada ha sido eliminada correctamente.
         success_edition:    La entrada ha sido modificada correctamente.
     subnavigation:
         post_list:          Tecnología, programación y otras historias
     title:
         create:             Nueva entrada
+        delete:             Eliminar entrada
         edit:               Modificar entrada
         list:               Blog
 

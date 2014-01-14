@@ -7,10 +7,11 @@
 
 
 /*
- * CREATE/EDIT POST
+ * CREATE/EDIT/DELETE POST
  */
-#project-create,
-#project-edit {
+#post-create,
+#post-edit,
+#post-delete {
     margin-top: -5px;
 }
 
@@ -19,9 +20,10 @@
  * FINE TUNING
  */
 @media (min-width: 768px) {
-    #project-list,
-    #project-create,
-    #project-edit {
+    #post-list,
+    #post-create,
+    #post-edit,
+    #post-delete {
         margin-top: 0;
     }
 }
