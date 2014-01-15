@@ -28,7 +28,7 @@ class ProjectController extends Controller
         $projects = $em->getRepository('AitorGarciaPortfolioBundle:Project')->findBy(
             array(),
             array(
-                'created' => 'DESC'
+                'createdAt' => 'DESC'
             )
         );
 

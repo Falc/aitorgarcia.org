@@ -92,7 +92,7 @@ class AdminProjectController extends Controller
     /**
      * Displays the "project edit" form and processes it.
      *
-     * @param   integer $id The ID of the project to edit.
+     * @param   integer $id     The ID of the project to edit.
      */
     public function editAction($id)
     {
@@ -181,7 +181,7 @@ class AdminProjectController extends Controller
     /**
      * Displays the "project delete" form and processes it.
      *
-     * @param   integer $id The ID of the project to delete.
+     * @param   integer $id     The ID of the project to delete.
      */
     public function deleteAction($id)
     {
