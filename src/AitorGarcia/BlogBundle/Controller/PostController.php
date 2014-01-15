@@ -18,6 +18,22 @@ class PostController extends Controller
 {
     public function listAction()
     {
-        return $this->render('AitorGarciaBlogBundle:Post:post_list.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        // Find all the posts sorted by DESC creation date
+        $posts = $em->getRepository('AitorGarciaBlogBundle:Post')->findBy(
+            array(),
+            array(
+                'createdAt' => 'DESC'
+            )
+        );
+
+        // Render the view
+        return $this->render(
+            'AitorGarciaBlogBundle:Post:post_list.html.twig',
+            array(
+                'posts' => $posts
+            )
+        );
     }
 }

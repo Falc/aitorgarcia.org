@@ -5,6 +5,57 @@
     margin-top: -5px;
 }
 
+#posts,
+#sidebar {
+    padding-top: 0;
+}
+
+#sidebar {
+    padding-left: 30px;
+}
+
+.post {
+    margin-bottom: 30px;
+}
+
+.post h2 {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 20px;
+}
+
+.post-info {
+    font-size: 14px;
+    border-top: 1px solid #e2e6ea;
+    border-bottom: 1px solid #e2e6ea;
+    padding: 10px;
+}
+
+.post-info > .date {
+    background: url(../images/date.png) no-repeat scroll left top;
+    color: #313131;
+    line-height: 26px;
+    display: inline-block;
+    padding: 0 10px 0 30px;
+}
+
+.post-body {
+    margin: 20px 0;
+}
+
+.post-tags {
+    color: #313131;
+    font-size: 14px;
+    border-top: 1px solid #e2e6ea;
+    border-bottom: 1px solid #e2e6ea;
+    padding: 10px 10px 5px 10px;
+    margin-bottom: 20px;
+}
+
+.post-tags > ul {
+    margin-bottom: 0;
+}
+
 
 /*
  * FINE TUNING
