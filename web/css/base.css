@@ -29,11 +29,21 @@ h2 {
 }
 
 a {
-    color: #1974a6;
+    color: #0681bf;
 }
 
 a:active, a:focus, a:hover {
     color: #333;
+}
+
+h2 > a {
+    color: #22303D;
+}
+
+h2 > a:active,
+h2 > a:focus,
+h2 > a:hover {
+    color: #0681bf;
 }
 
 
