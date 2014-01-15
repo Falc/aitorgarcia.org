@@ -6,3 +6,7 @@ blog_admin_post:
 blog_post_list:
     locales:  { en: "/blog-en", es: "/blog" }
     defaults: { _controller: AitorGarciaBlogBundle:Post:list }
+
+blog_post_show:
+    locales:  { en: "/blog-en/{slug}", es: "/blog/{slug}" }
+    defaults: { _controller: AitorGarciaBlogBundle:Post:show }

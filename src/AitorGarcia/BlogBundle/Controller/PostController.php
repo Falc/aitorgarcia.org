@@ -36,4 +36,27 @@ class PostController extends Controller
             )
         );
     }
+
+    public function showAction($slug)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        // Find the selected post
+        $post = $em->getRepository('AitorGarciaBlogBundle:Post')->findOneBySlug($slug);
+
+        // If the post does not exist, display an error message
+        if ($post === null)
+        {
+            $errorMessage = $this->get('translator')->trans('posts.message.do_not_exist');
+            throw $this->createNotFoundException($errorMessage);
+        }
+
+        // Render the view
+        return $this->render(
+            'AitorGarciaBlogBundle:Post:post_show.html.twig',
+            array(
+                'post' => $post
+            )
+        );
+    }
 }
