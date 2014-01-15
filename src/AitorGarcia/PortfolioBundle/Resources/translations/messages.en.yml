@@ -8,13 +8,13 @@ projects:
         info:                   Project Information
     message:
         confirm_deletion:       Are you sure to delete the project "%project_name%"?
-        empty_list:             No projects found.
         do_not_exist:           The selected project does not exist.
+        empty_list:             No projects found.
+        no_screenshots:         This project has no screenshots associated.
         success_creation:       The project was created successfully.
         success_deletion:       The project was deleted successfully.
         success_edition:        The project was edited successfully.
         success_translation:    The translation was saved successfully.
-        no_screenshots:         This project has no screenshots associated.
     subnavigation:
         project_list:           These are some of my projects
     title:
@@ -29,8 +29,8 @@ technologies:
         info:               Technology Information
     message:
         confirm_deletion:   Are you sure to delete the technology "%technology_name%"?
-        empty_list:         No technologies found.
         do_not_exist:       The selected technology does not exist.
+        empty_list:         No technologies found.
         success_creation:   The technology was created successfully.
         success_deletion:   The technology was deleted successfully.
         success_edition:    The technology was edited successfully.

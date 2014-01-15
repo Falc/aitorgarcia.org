@@ -8,13 +8,13 @@ projects:
         info:                   Información del proyecto
     message:
         confirm_deletion:       ¿Estás seguro de que quieres eliminar el proyecto "%project_name%"?
-        empty_list:             No hay ningún proyecto.
         do_not_exist:           El proyecto seleccionado no existe.
+        empty_list:             No hay ningún proyecto.
+        no_screenshots:         Este proyecto no tiene asociada ninguna imagen.
         success_creation:       El proyecto ha sido creado correctamente.
         success_deletion:       El proyecto ha sido eliminado correctamente.
         success_edition:        El proyecto ha sido modificado correctamente.
         success_translation:    La traducción se ha guardado correctamente.
-        no_screenshots:         Este proyecto no tiene asociada ninguna imagen.
     subnavigation:
         project_list:           Estos son algunos de mis proyectos
     title:
@@ -29,8 +29,8 @@ technologies:
         info:               Información de la tecnología
     message:
         confirm_deletion:   ¿Estás seguro de que quieres eliminar la tecnología "%technology_name%"?
-        empty_list:         No hay ninguna tecnología.
         do_not_exist:       La tecnología seleccionada no existe.
+        empty_list:         No hay ninguna tecnología.
         success_creation:   La tecnología ha sido creada correctamente.
         success_deletion:   La tecnología ha sido eliminada correctamente.
         success_edition:    La tecnología ha sido modificada correctamente.
