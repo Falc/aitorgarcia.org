@@ -1,12 +1,7 @@
-project_list:
+portfolio_project_list:
     locales:  { en: "/projects", es: "/proyectos" }
     defaults: { _controller: AitorGarciaPortfolioBundle:Project:list }
 
-project_show:
+portfolio_project_show:
     locales:  { en: "/projects/{slug}", es: "/proyectos/{slug}" }
     defaults: { _controller: AitorGarciaPortfolioBundle:Project:show }
-
-_portfolio_admin:
-    resource: "@AitorGarciaPortfolioBundle/Resources/config/admin_routing.yml"
-    prefix: /admin
-    type: be_simple_i18n

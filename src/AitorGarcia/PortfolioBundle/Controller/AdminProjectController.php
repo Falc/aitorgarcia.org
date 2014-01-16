@@ -77,7 +77,7 @@ class AdminProjectController extends Controller
             $request->getSession()->getFlashBag()->add('success', $successMessage);
 
             // 3) Redirect the user to the project list
-            return $this->redirect($this->generateUrl('admin_project_list'));
+            return $this->redirect($this->generateUrl('portfolio_admin_project_list'));
         }
 
         // Render the form
@@ -165,7 +165,7 @@ class AdminProjectController extends Controller
             $request->getSession()->getFlashBag()->add('success', $successMessage);
 
             // 3) Redirect the user to the project list
-            return $this->redirect($this->generateUrl('admin_project_list'));
+            return $this->redirect($this->generateUrl('portfolio_admin_project_list'));
         }
 
         // Render the form
@@ -205,7 +205,7 @@ class AdminProjectController extends Controller
         // If the cancel button was pressed, redirect the user to the project list
         if ($request->request->has('cancel') === true)
         {
-            return $this->redirect($this->generateUrl('admin_project_list'));
+            return $this->redirect($this->generateUrl('portfolio_admin_project_list'));
         }
 
         $form->handleRequest($request);
@@ -222,7 +222,7 @@ class AdminProjectController extends Controller
             $request->getSession()->getFlashBag()->add('success', $successMessage);
 
             // 3) Redirect the user to the project list
-            return $this->redirect($this->generateUrl('admin_project_list'));
+            return $this->redirect($this->generateUrl('portfolio_admin_project_list'));
         }
 
         // Render the form
@@ -287,7 +287,7 @@ class AdminProjectController extends Controller
             $request->getSession()->getFlashBag()->add('success', $successMessage);
 
             // 3) Redirect the user to the project translation list
-            return $this->redirect($this->generateUrl('admin_project_list'));
+            return $this->redirect($this->generateUrl('portfolio_admin_project_list'));
         }
 
         // Render the form

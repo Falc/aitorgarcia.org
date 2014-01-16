@@ -9,22 +9,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="{{ path('index') }}">AG Backend</a>
+    <a class="navbar-brand" href="{{ path('main_index') }}">AG Backend</a>
 </div>
 
 <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-right">
-        <li{% if 'index.' in current_route %} class="active"{% endif %}>
-            <a href="{{ path('admin_index') }}">{{ 'admin.navigation.overview' | trans }}</a>
+        <li{% if 'main_admin_index.' in current_route %} class="active"{% endif %}>
+            <a href="{{ path('main_admin_index') }}">{{ 'admin.navigation.overview' | trans }}</a>
         </li>
         <li{% if 'blog_' in current_route %} class="active"{% endif %}>
             <a href="{{ path('blog_admin_post_list') }}">{{ 'navigation.posts' | trans }}</a>
         </li>
         <li{% if 'project_' in current_route %} class="active"{% endif %}>
-            <a href="{{ path('admin_project_list') }}">{{ 'navigation.projects' | trans }}</a>
+            <a href="{{ path('portfolio_admin_project_list') }}">{{ 'navigation.projects' | trans }}</a>
         </li>
         <li{% if 'technology_' in current_route %} class="active"{% endif %}>
-            <a href="{{ path('admin_technology_list') }}">{{ 'navigation.technologies' | trans }}</a>
+            <a href="{{ path('portfolio_admin_technology_list') }}">{{ 'navigation.technologies' | trans }}</a>
         </li>
         <li id="locale-switcher" class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">

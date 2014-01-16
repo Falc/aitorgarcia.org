@@ -18,7 +18,7 @@
 <div class="row" id="options">
     <div class="block col-sm-12">
         <div class="pull-right" id="actions">
-            <a href="{{ path('admin_project_create') }}" class="btn btn-primary btn-icon">
+            <a href="{{ path('portfolio_admin_project_create') }}" class="btn btn-primary btn-icon">
                 <span class="icon icon-add"></span>{{ 'button.create' | trans }}
             </a>
         </div>
@@ -58,13 +58,13 @@
                         <td>{{ project.name }}</td>
                         <td><a href="{{ project.link }}">{{ project.link }}</a></td>
                         <td class="text-center nowrap">
-                            <a class="btn btn-secondary btn-locale" href="{{ path('admin_project_translation_edit', { 'id': project.id, 'transLocale': 'en' }) }}" title="{{ 'locale.english' | trans }}">EN</a>
+                            <a class="btn btn-secondary btn-locale" href="{{ path('portfolio_admin_project_translation_edit', { 'id': project.id, 'transLocale': 'en' }) }}" title="{{ 'locale.english' | trans }}">EN</a>
                         </td>
                         <td class="text-center nowrap">
-                            <a class="btn btn-primary btn-icon btn-icon-notext" href="{{ path('admin_project_edit', { 'id': project.id }) }}" title="{{ 'button.edit_ext' | trans }}">
+                            <a class="btn btn-primary btn-icon btn-icon-notext" href="{{ path('portfolio_admin_project_edit', { 'id': project.id }) }}" title="{{ 'button.edit_ext' | trans }}">
                                 <span class="icon icon-edit">{{ 'button.edit' | trans }}</span>
                             </a>
-                            <a class="btn btn-danger btn-icon btn-icon-notext" href="{{ path('admin_project_delete', { 'id': project.id }) }}" title="{{ 'button.delete_ext' | trans }}">
+                            <a class="btn btn-danger btn-icon btn-icon-notext" href="{{ path('portfolio_admin_project_delete', { 'id': project.id }) }}" title="{{ 'button.delete_ext' | trans }}">
                                 <span class="icon icon-cancel">{{ 'button.delete' | trans }}</span>
                             </a>
                         </td>

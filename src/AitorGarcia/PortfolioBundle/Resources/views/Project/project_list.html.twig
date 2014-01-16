@@ -23,7 +23,7 @@
 {% else %}
 {% for project in projects %}
     <div class="block col-sm-6 col-md-4">
-        <a class="project" href="{{ path('project_show', { 'slug': project.slug }) }}">
+        <a class="project" href="{{ path('portfolio_project_show', { 'slug': project.slug }) }}">
             <div>
             {% if project.screenshots is empty %}
                 <img class="project-cover" src="/files/no-project-screenshot.png" alt="{{ project.name }}" title="{{ project.name }}" />

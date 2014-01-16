@@ -62,7 +62,7 @@ class AdminTechnologyController extends Controller
             $request->getSession()->getFlashBag()->add('success', $successMessage);
 
             // 3) Redirect the user to the technology list
-            return $this->redirect($this->generateUrl('admin_technology_list'));
+            return $this->redirect($this->generateUrl('portfolio_admin_technology_list'));
         }
 
         // Render the form
@@ -111,7 +111,7 @@ class AdminTechnologyController extends Controller
             $request->getSession()->getFlashBag()->add('success', $successMessage);
 
             // 3) Redirect the user to the technology list
-            return $this->redirect($this->generateUrl('admin_technology_list'));
+            return $this->redirect($this->generateUrl('portfolio_admin_technology_list'));
         }
 
         // Render the form
@@ -151,7 +151,7 @@ class AdminTechnologyController extends Controller
         // If the cancel button was pressed, redirect the user to the technology list
         if ($request->request->has('cancel') === true)
         {
-            return $this->redirect($this->generateUrl('admin_technology_list'));
+            return $this->redirect($this->generateUrl('portfolio_admin_technology_list'));
         }
 
         $form->handleRequest($request);
@@ -168,7 +168,7 @@ class AdminTechnologyController extends Controller
             $request->getSession()->getFlashBag()->add('success', $successMessage);
 
             // 3) Redirect the user to the technology list
-            return $this->redirect($this->generateUrl('admin_technology_list'));
+            return $this->redirect($this->generateUrl('portfolio_admin_technology_list'));
         }
 
         // Render the form

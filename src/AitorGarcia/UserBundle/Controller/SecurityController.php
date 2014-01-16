@@ -29,7 +29,7 @@ class SecurityController extends BaseSecurityController
             $request = $this->container->get('request');
             $locale = $request->getSession()->get('lunetics_locale') ?: $this->container->getParameter('locale');
 
-            return new RedirectResponse($this->container->get('router')->generate('index'.'.'.$locale));
+            return new RedirectResponse($this->container->get('router')->generate('main_index'.'.'.$locale));
         }
 
         return parent::loginAction();

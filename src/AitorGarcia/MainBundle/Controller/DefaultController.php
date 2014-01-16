@@ -21,7 +21,7 @@ class DefaultController extends Controller
      */
     public function preIndexAction()
     {
-        return $this->redirect($this->generateUrl('index'));
+        return $this->redirect($this->generateUrl('main_index'));
     }
 
     /**

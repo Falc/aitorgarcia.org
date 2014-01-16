@@ -1,13 +1,8 @@
-_index:
+_main_index:
     locales:  { es: "/", en: "/" }
     pattern:  /
     defaults: { _controller: AitorGarciaMainBundle:Default:preIndex }
 
-index:
+main_index:
     locales:  { en: "/home", es: "/portada" }
     defaults: { _controller: AitorGarciaMainBundle:Default:index }
-
-_admin:
-    resource: "@AitorGarciaMainBundle/Resources/config/admin_routing.yml"
-    prefix: /admin
-    type: be_simple_i18n

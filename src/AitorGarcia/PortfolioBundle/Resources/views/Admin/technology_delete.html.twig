@@ -16,7 +16,7 @@
 {% block page %}
 <div class="row">
     <div id="technology-delete" class="block col-sm-12">
-        <form action="{{ path('admin_technology_delete', { 'id': technology_id }) }}" method="post">
+        <form action="{{ path('portfolio_admin_technology_delete', { 'id': technology_id }) }}" method="post">
             <div class="row">
                 <div class="block col-sm-12">
                     <p>{{ 'technologies.message.confirm_deletion' | trans({'%technology_name%': technology_name}) }}</p>

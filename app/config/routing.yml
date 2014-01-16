@@ -3,6 +3,11 @@ aitorgarcia_blog:
     prefix:   /
     type: be_simple_i18n
 
+aitorgarcia_blog_admin:
+    resource: "@AitorGarciaBlogBundle/Resources/config/routing/backend_routing.yml"
+    prefix: /admin
+    type: be_simple_i18n
+
 aitorgarcia_contact:
     resource: "@AitorGarciaContactBundle/Resources/config/routing/frontend_routing.yml"
     prefix:   /
@@ -13,9 +18,19 @@ aitorgarcia_main:
     prefix: /
     type: be_simple_i18n
 
+aitorgarcia_main_admin:
+    resource: "@AitorGarciaMainBundle/Resources/config/routing/backend_routing.yml"
+    prefix: /admin
+    type: be_simple_i18n
+
 aitorgarcia_portfolio:
     resource: "@AitorGarciaPortfolioBundle/Resources/config/routing/frontend_routing.yml"
     prefix: /
+    type: be_simple_i18n
+
+aitorgarcia_portfolio_admin:
+    resource: "@AitorGarciaPortfolioBundle/Resources/config/routing/backend_routing.yml"
+    prefix: /admin
     type: be_simple_i18n
 
 aitorgarcia_user:

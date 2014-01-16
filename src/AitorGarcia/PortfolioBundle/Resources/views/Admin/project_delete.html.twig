@@ -17,7 +17,7 @@
 {% block page %}
 <div class="row">
     <div id="project-delete" class="block col-sm-12">
-        <form action="{{ path('admin_project_delete', { 'id': project_id }) }}" method="post">
+        <form action="{{ path('portfolio_admin_project_delete', { 'id': project_id }) }}" method="post">
             <div class="row">
                 <div class="block col-sm-12">
                     <p>{{ 'projects.message.confirm_deletion' | trans({'%project_name%': project_name}) }}</p>

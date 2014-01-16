@@ -21,7 +21,7 @@
 {% block page %}
 <div class="row">
     <div id="project-translation-edit" class="block col-sm-12">
-        <form action="{{ path('admin_project_translation_edit', { 'id': project_id, 'transLocale': project_locale }) }}" method="post" {{ form_enctype(form) }}>
+        <form action="{{ path('portfolio_admin_project_translation_edit', { 'id': project_id, 'transLocale': project_locale }) }}" method="post" {{ form_enctype(form) }}>
             <fieldset>
                 <div class="row">
                     <div class="form-group block col-sm-12">

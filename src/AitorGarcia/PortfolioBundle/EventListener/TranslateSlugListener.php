@@ -47,7 +47,7 @@ class TranslateSlugListener
 
         switch ($route)
         {
-            case 'project_show':
+            case 'portfolio_project_show':
                 $slug = $request->attributes->get('slug');
 
                 if ($slug === null)

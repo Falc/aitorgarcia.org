@@ -22,7 +22,7 @@ class AdminController extends Controller
     public function preIndexAction()
     {
         // Redirect to the localized index
-        return $this->redirect($this->generateUrl('admin_index'));
+        return $this->redirect($this->generateUrl('main_admin_index'));
     }
 
     /**
