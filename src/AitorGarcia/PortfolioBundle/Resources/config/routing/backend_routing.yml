@@ -1,35 +1,43 @@
 portfolio_admin_project_list:
-    locales:  { en: "/project/list", es: "/proyectos/lista" }
+    locales:  { en: "/projects/list", es: "/proyectos/lista" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminProject:list }
 
 portfolio_admin_project_create:
-    locales:  { en: "/project/create", es: "/proyectos/crear" }
+    locales:  { en: "/projects/create", es: "/proyectos/crear" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminProject:create }
 
 portfolio_admin_project_edit:
-    locales:  { en: "/project/{id}/edit", es: "/proyectos/{id}/modificar" }
+    locales:  { en: "/projects/{id}/edit", es: "/proyectos/{id}/modificar" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminProject:edit }
+    requirements:
+        page: \d+
 
 portfolio_admin_project_delete:
-    locales:  { en: "/project/{id}/delete", es: "/proyectos/{id}/eliminar" }
+    locales:  { en: "/projects/{id}/delete", es: "/proyectos/{id}/eliminar" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminProject:delete }
+    requirements:
+        page: \d+
 
 portfolio_admin_project_translation_edit:
-    locales:  { en: "/project/{id}/translation/{transLocale}/edit", es: "/proyectos/{id}/traduccion/{transLocale}/modificar" }
+    locales:  { en: "/projects/{id}/translations/{transLocale}/edit", es: "/proyectos/{id}/traducciones/{transLocale}/modificar" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminProject:translationEdit }
 
 portfolio_admin_technology_list:
-    locales:  { en: "/technology/list", es: "/tecnologias/lista" }
+    locales:  { en: "/technologies/list", es: "/tecnologias/lista" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminTechnology:list }
 
 portfolio_admin_technology_create:
-    locales:  { en: "/technology/create", es: "/tecnologias/crear" }
+    locales:  { en: "/technologies/create", es: "/tecnologias/crear" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminTechnology:create }
 
 portfolio_admin_technology_edit:
-    locales:  { en: "/technology/{id}/edit", es: "/tecnologias/{id}/modificar" }
+    locales:  { en: "/technologies/{id}/edit", es: "/tecnologias/{id}/modificar" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminTechnology:edit }
+    requirements:
+        page: \d+
 
 portfolio_admin_technology_delete:
-    locales:  { en: "/technology/{id}/delete", es: "/tecnologias/{id}/eliminar" }
+    locales:  { en: "/technologies/{id}/delete", es: "/tecnologias/{id}/eliminar" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminTechnology:delete }
+    requirements:
+        page: \d+
