@@ -20,7 +20,7 @@
             <span class="date">{{ post.createdAt | date('d/F/Y') }}</span>
         </div>
         <div class="post-body">
-            {{ post.body | raw }}
+            <p>{{ post.body | replace({'<br /><br />':'</p><p>'}) | raw }}</p>
         </div>
         {% if post.tags is not empty %}
         <div class="post-tags">
