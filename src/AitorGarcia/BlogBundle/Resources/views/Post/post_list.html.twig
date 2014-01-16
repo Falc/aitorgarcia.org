@@ -17,7 +17,7 @@
 <div id="post-list" class="row">
     <div id="posts" class="block col-md-9">
     {% for post in posts %}
-        <div class="post row"">
+        <div class="post row">
             <div class="block col-sm-12">
                 <h2>
                     <a href="{{ path('blog_post_show', { 'slug': post.slug }) }}">{{ post.title }}</a>
@@ -26,7 +26,16 @@
                     <span class="date">{{ post.createdAt | date('d/F/Y') }}</span>
                 </div>
                 <div class="post-body">
-                    {{ post.body | raw }}
+                {% set numParagraphs = 3 %}
+                {% set paragraphs = post.body | split('<br /><br />') %}
+                {% for i in 0..(numParagraphs - 1) %}
+                    {% if paragraphs[i] is defined %}
+                        <p>{{ paragraphs[i] | raw }}</p>
+                    {% endif %}
+                {% endfor %}
+                {% if (paragraphs | length) > numParagraphs %}
+                    <p>(...)</p>
+                {% endif %}
                 </div>
                 {% if post.tags is not empty %}
                 <div class="post-tags">
