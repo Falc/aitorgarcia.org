@@ -5,6 +5,7 @@ stfalcon_tinymce:
     theme:
         advanced:
             convert_urls: false
+            forced_root_block: false
             entity_encoding: "raw"
             plugins: "anchor code image link lists media paste table"
             menubar: false
