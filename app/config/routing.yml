@@ -1,25 +1,25 @@
-aitorgarcia_blog_i18n:
-    resource: "@AitorGarciaBlogBundle/Resources/config/routing/i18n.yml"
+aitorgarcia_blog:
+    resource: "@AitorGarciaBlogBundle/Resources/config/routing/frontend_routing.yml"
     prefix:   /
     type: be_simple_i18n
 
 aitorgarcia_contact:
-    resource: "@AitorGarciaContactBundle/Resources/config/routing/i18n.yml"
+    resource: "@AitorGarciaContactBundle/Resources/config/routing/frontend_routing.yml"
     prefix:   /
     type: be_simple_i18n
 
 aitorgarcia_main:
-    resource: "@AitorGarciaMainBundle/Resources/config/routing/i18n.yml"
+    resource: "@AitorGarciaMainBundle/Resources/config/routing/frontend_routing.yml"
     prefix: /
     type: be_simple_i18n
 
 aitorgarcia_portfolio:
-    resource: "@AitorGarciaPortfolioBundle/Resources/config/routing/i18n.yml"
+    resource: "@AitorGarciaPortfolioBundle/Resources/config/routing/frontend_routing.yml"
     prefix: /
     type: be_simple_i18n
 
-aitorgarcia_user_i18n:
-    resource: "@AitorGarciaUserBundle/Resources/config/routing/i18n.yml"
+aitorgarcia_user:
+    resource: "@AitorGarciaUserBundle/Resources/config/routing/frontend_routing.yml"
     prefix: /
     type: be_simple_i18n
 
