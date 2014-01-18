@@ -1,4 +1,6 @@
 navigation:
+    blog:       Blog
+    comments:   Comentarios
     posts:      Entradas
 
 comments:
