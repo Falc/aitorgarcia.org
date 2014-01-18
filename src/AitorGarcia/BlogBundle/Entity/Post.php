@@ -96,11 +96,21 @@ class Post
     protected $tags;
 
     /**
+     * This represents the OneToMany Post-Comments relationship.
+     *
+     * @var Doctrine\Common\Collections\Collection
+     *
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="post", cascade={"remove"})
+     */
+    protected $comments;
+
+    /**
      * Constructor.
      */
     public function __construct()
     {
         $this->tags = new ArrayCollection();
+        $this->comments = new ArrayCollection();
     }
     
     /**
@@ -233,5 +243,38 @@ class Post
     public function getTags()
     {
         return $this->tags;
+    }
+
+    /**
+     * Adds a comment.
+     *
+     * @param   Comment     $comment
+     * @return  Post
+     */
+    public function addComment(Comment $comment)
+    {
+        $this->comments[] = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Removes a comment.
+     *
+     * @param   Comment     $comment
+     */
+    public function removeComment(Comment $comment)
+    {
+        $this->comments->removeElement($comment);
+    }
+
+    /**
+     * Gets the comments.
+     *
+     * @return  Doctrine\Common\Collections\Collection
+     */
+    public function getComments()
+    {
+        return $this->comments;
     }
 }
