@@ -52,7 +52,7 @@
                             <a class="btn btn-primary btn-icon btn-icon-notext" href="{{ path('blog_admin_comment_edit', { 'id': comment.id }) }}" title="{{ 'button.edit_ext' | trans }}">
                                 <span class="icon icon-edit">{{ 'button.edit' | trans }}</span>
                             </a>
-                            <a class="btn btn-danger btn-icon btn-icon-notext" href="#" title="{{ 'button.delete_ext' | trans }}">
+                            <a class="btn btn-danger btn-icon btn-icon-notext" href="{{ path('blog_admin_comment_delete', { 'id': comment.id }) }}" title="{{ 'button.delete_ext' | trans }}">
                                 <span class="icon icon-cancel">{{ 'button.delete' | trans }}</span>
                             </a>
                         </td>

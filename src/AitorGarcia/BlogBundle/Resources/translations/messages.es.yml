@@ -5,10 +5,13 @@ navigation:
 
 comments:
     message:
+        confirm_deletion:   ¿Estás seguro de que quieres eliminar el comentario de "%comment_author%"?
         do_not_exist:       El comentario seleccionado no existe.
         empty_list:         No hay ningún comentario.
         success_deletion:   El comentario ha sido eliminado correctamente.
+        success_edition:    El comentario ha sido modificado correctamente.
     title:
+        delete:             Eliminar comentario
         edit:               Modificar comentario
         list:               Comentarios
 

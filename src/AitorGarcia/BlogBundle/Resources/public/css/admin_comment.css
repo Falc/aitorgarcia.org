@@ -7,9 +7,10 @@
 
 
 /*
- * EDIT COMMENT
+ * EDIT COMMENT/DELETE
  */
-#comment-edit {
+#comment-edit,
+#comment-delete {
     margin-top: -5px;
 }
 
@@ -18,11 +19,8 @@
  * FINE TUNING
  */
 @media (min-width: 768px) {
-    #comment-list {
-
-    }
-
-    #comment-edit {
+    #comment-edit,
+    #comment-delete {
         margin-top: 5px;
     }
 }

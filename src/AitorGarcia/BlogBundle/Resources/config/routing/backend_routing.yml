@@ -27,3 +27,9 @@ blog_admin_comment_edit:
     defaults: { _controller: AitorGarciaBlogBundle:AdminComment:edit }
     requirements:
         page: \d+
+
+blog_admin_comment_delete:
+    locales:  { en: "/comments/{id}/delete", es: "/comentarios/{id}/eliminar" }
+    defaults: { _controller: AitorGarciaBlogBundle:AdminComment:delete }
+    requirements:
+        page: \d+

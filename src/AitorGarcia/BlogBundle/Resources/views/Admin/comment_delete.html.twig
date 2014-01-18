@@ -1,0 +1,60 @@
+{% extends "::base_admin.html.twig" %}
+
+{% block stylesheets %}
+{% stylesheets filter="cssrewrite,?yui_css" output='css/min/backend-*.css'
+    'css/base.css'
+    'css/tables.css'
+    'css/forms.css'
+    'css/tinymce.css'
+    'bundles/aitorgarciablog/css/admin_comment.css'
+%}
+    <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
+{% endstylesheets %}
+{% endblock %}
+
+{% block infotext %}{{ 'comments.title.delete' | trans }}{% endblock %}
+
+{% block page %}
+<div class="row">
+    <div id="comment-delete" class="block col-sm-12">
+        <form action="{{ path('blog_admin_comment_delete', { 'id': comment_id }) }}" method="post">
+            <div class="row">
+                <div class="block col-sm-12">
+                    <p>{{ 'comments.message.confirm_deletion' | trans({'%comment_author%': comment_author}) }}</p>
+                </div>
+            </div>
+            {{ form_rest(form) }}
+
+            <div id="form-actions">
+                <input class="btn btn-success" type="submit" name="confirm" value="{{ 'button.confirm' | trans }}" />
+                <input class="btn btn-danger" type="submit" name="cancel" value="{{ 'button.cancel' | trans }}" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        // Replace every input with a button+icon
+        var inputConfirm = $('input[name="confirm"]');
+        var inputCancel = $('input[name="cancel"]');
+
+        var btnConfirm = $('<button>').attr({
+            'type': 'submit',
+            'name': 'confirm'
+        });
+        btnConfirm.addClass('btn btn-success btn-icon');
+        btnConfirm.append('<span class="icon icon-accept"></span>' + "{{ 'button.confirm' | trans }}");
+
+        var btnCancel = $('<button>').attr({
+            'type': 'submit',
+            'name': 'cancel'
+        });
+        btnCancel.addClass('btn btn-danger btn-icon');
+        btnCancel.append('<span class="icon icon-cancel"></span>' + "{{ 'button.cancel' | trans }}");
+
+        inputConfirm.replaceWith(btnConfirm);
+        inputCancel.replaceWith(btnCancel);
+    });
+</script>
+{% endblock %}
