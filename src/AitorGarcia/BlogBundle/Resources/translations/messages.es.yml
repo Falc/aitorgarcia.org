@@ -5,8 +5,11 @@ navigation:
 
 comments:
     message:
+        do_not_exist:       El comentario seleccionado no existe.
         empty_list:         No hay ningún comentario.
+        success_deletion:   El comentario ha sido eliminado correctamente.
     title:
+        edit:               Modificar comentario
         list:               Comentarios
 
 posts:

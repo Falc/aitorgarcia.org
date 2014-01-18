@@ -1,0 +1,28 @@
+/*
+ * COMMENT LIST
+ */
+#comment-list .table {
+    margin-bottom: 0;
+}
+
+
+/*
+ * EDIT COMMENT
+ */
+#comment-edit {
+    margin-top: -5px;
+}
+
+
+/*
+ * FINE TUNING
+ */
+@media (min-width: 768px) {
+    #comment-list {
+
+    }
+
+    #comment-edit {
+        margin-top: 5px;
+    }
+}

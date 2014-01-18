@@ -21,3 +21,9 @@ blog_admin_post_delete:
 blog_admin_comment_list:
     locales:  { en: "/comments/list", es: "/comentarios/lista" }
     defaults: { _controller: AitorGarciaBlogBundle:AdminComment:list }
+
+blog_admin_comment_edit:
+    locales:  { en: "/comments/{id}/edit", es: "/comentarios/{id}/modificar" }
+    defaults: { _controller: AitorGarciaBlogBundle:AdminComment:edit }
+    requirements:
+        page: \d+

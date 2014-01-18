@@ -4,6 +4,9 @@
 {% stylesheets filter="cssrewrite,?yui_css" output='css/min/backend-*.css'
     'css/base.css'
     'css/tables.css'
+    'css/forms.css'
+    'css/tinymce.css'
+    'bundles/aitorgarciablog/css/admin_comment.css'
 %}
     <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
 {% endstylesheets %}
@@ -46,7 +49,7 @@
                         <td>{{ comment.body | striptags | truncate(40, true) }}</td>
                         <td>{{ comment.createdAt | date("d-m-Y H:i") }}</td>
                         <td class="text-center nowrap">
-                            <a class="btn btn-primary btn-icon btn-icon-notext" href="#" title="{{ 'button.edit_ext' | trans }}">
+                            <a class="btn btn-primary btn-icon btn-icon-notext" href="{{ path('blog_admin_comment_edit', { 'id': comment.id }) }}" title="{{ 'button.edit_ext' | trans }}">
                                 <span class="icon icon-edit">{{ 'button.edit' | trans }}</span>
                             </a>
                             <a class="btn btn-danger btn-icon btn-icon-notext" href="#" title="{{ 'button.delete_ext' | trans }}">
