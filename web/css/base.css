@@ -214,11 +214,11 @@ li.dropdown.open .dropdown-menu > a {
  */
 #actions > .btn {
     margin-left: 0;
-    margin-right: 11px;
+    margin-right: 6px;
 }
 
 #actions.pull-right > a.btn {
-    margin-left: 11px;
+    margin-left: 6px;
     margin-right: 0;
 }
 
