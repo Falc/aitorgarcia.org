@@ -17,14 +17,33 @@
         <li{% if 'main_admin_index.' in current_route %} class="active"{% endif %}>
             <a href="{{ path('main_admin_index') }}">{{ 'admin.navigation.overview' | trans }}</a>
         </li>
-        <li{% if 'blog_' in current_route %} class="active"{% endif %}>
-            <a href="{{ path('blog_admin_post_list') }}">{{ 'navigation.posts' | trans }}</a>
+        <li class="dropdown{% if 'blog_' in current_route %} active{% endif %}">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">
+                {{ 'navigation.blog' | trans }}
+                <b class="caret"></b>
+            </a>
+            <ul role="menu" class="dropdown-menu">
+                <li{% if 'blog_post_' in current_route %} class="active"{% endif %}>
+                    <a href="{{ path('blog_admin_post_list') }}">{{ 'navigation.posts' | trans }}</a>
+                </li>
+                <li{% if 'blog_comment_' in current_route %} class="active"{% endif %}>
+                    <a href="{{ path('blog_admin_comment_list') }}">{{ 'navigation.comments' | trans }}</a>
+                </li>
+            </ul>
         </li>
-        <li{% if 'project_' in current_route %} class="active"{% endif %}>
-            <a href="{{ path('portfolio_admin_project_list') }}">{{ 'navigation.projects' | trans }}</a>
-        </li>
-        <li{% if 'technology_' in current_route %} class="active"{% endif %}>
-            <a href="{{ path('portfolio_admin_technology_list') }}">{{ 'navigation.technologies' | trans }}</a>
+        <li class="dropdown{% if 'portfolio_' in current_route %} active{% endif %}">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">
+                {{ 'navigation.portfolio' | trans }}
+                <b class="caret"></b>
+            </a>
+            <ul role="menu" class="dropdown-menu">
+                <li{% if 'project_' in current_route %} class="active"{% endif %}>
+                    <a href="{{ path('portfolio_admin_project_list') }}">{{ 'navigation.projects' | trans }}</a>
+                </li>
+                <li{% if 'technology_' in current_route %} class="active"{% endif %}>
+                    <a href="{{ path('portfolio_admin_technology_list') }}">{{ 'navigation.technologies' | trans }}</a>
+                </li>
+            </ul>
         </li>
         <li id="locale-switcher" class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">
