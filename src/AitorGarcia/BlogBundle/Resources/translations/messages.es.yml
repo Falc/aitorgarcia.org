@@ -1,6 +1,12 @@
 navigation:
     posts:      Entradas
 
+comments:
+    message:
+        empty_list:         No hay ningún comentario.
+    title:
+        list:               Comentarios
+
 posts:
     message:
         confirm_deletion:   ¿Estás seguro de que quieres eliminar la entrada "%post_title%"?
@@ -15,10 +21,11 @@ posts:
         create:             Nueva entrada
         delete:             Eliminar entrada
         edit:               Modificar entrada
-        list:               Blog
+        list:               Entradas
 
 field:
     actions:        Acciones
+    author:         Autor
     body:           Contenido
     created_at:     Creado
     id:             ID

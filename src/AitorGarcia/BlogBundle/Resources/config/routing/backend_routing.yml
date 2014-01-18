@@ -17,3 +17,7 @@ blog_admin_post_delete:
     defaults: { _controller: AitorGarciaBlogBundle:AdminPost:delete }
     requirements:
         page: \d+
+
+blog_admin_comment_list:
+    locales:  { en: "/comments/list", es: "/comentarios/lista" }
+    defaults: { _controller: AitorGarciaBlogBundle:AdminComment:list }

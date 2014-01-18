@@ -1,0 +1,67 @@
+{% extends "::base_admin.html.twig" %}
+
+{% block stylesheets %}
+{% stylesheets filter="cssrewrite,?yui_css" output='css/min/backend-*.css'
+    'css/base.css'
+    'css/tables.css'
+%}
+    <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
+{% endstylesheets %}
+{% endblock %}
+
+{% block infotext %}{{ 'comments.title.list' | trans }}{% endblock %}
+
+{% block page %}
+{% if app.session.flashbag.keys() is not empty %}
+<div id="alerts" class="row">
+{% for type, messages in app.session.flashbag.all() %}
+    <div class="alert alert-dismissable alert-{{ type }}">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+{% endfor %}
+</div>
+{% endif %}
+
+<div class="row">
+    <div id="comment-list" class="block col-sm-12">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="shrink text-center">{{ 'field.id' | trans }}</th>
+                        <th>{{ 'field.author' | trans }}</th>
+                        <th>{{ 'field.body' | trans }}</th>
+                        <th>{{ 'field.created_at' | trans }}</th>
+                        <th class="shrink text-center">{{ 'field.actions' | trans }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for comment in comments %}
+                    <tr>
+                        <td class="text-center">{{ comment.id }}</td>
+                        <td>{{ comment.authorName }} ({{ comment.authorEmail }})</td>
+                        <td>{{ comment.body | striptags | truncate(40, true) }}</td>
+                        <td>{{ comment.createdAt | date("d-m-Y H:i") }}</td>
+                        <td class="text-center nowrap">
+                            <a class="btn btn-primary btn-icon btn-icon-notext" href="#" title="{{ 'button.edit_ext' | trans }}">
+                                <span class="icon icon-edit">{{ 'button.edit' | trans }}</span>
+                            </a>
+                            <a class="btn btn-danger btn-icon btn-icon-notext" href="#" title="{{ 'button.delete_ext' | trans }}">
+                                <span class="icon icon-cancel">{{ 'button.delete' | trans }}</span>
+                            </a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">{{ 'comments.message.empty_list' | trans }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
