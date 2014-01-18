@@ -74,11 +74,10 @@ a.btn-locale {
  * FINE TUNING
  */
 @media (min-width: 768px) {
-    #project-list,
     #project-create,
     #project-edit,
     #project-delete {
-        margin-top: 0;
+        margin-top: 5px;
     }
 }
 

@@ -25,10 +25,9 @@
  * FINE TUNING
  */
 @media (min-width: 768px) {
-    #technology-list,
     #technology-create,
     #technology-edit,
     #technology-delete {
-        margin-top: 0;
+        margin-top: 5px;
     }
 }
