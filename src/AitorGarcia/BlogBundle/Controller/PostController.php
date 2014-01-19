@@ -18,6 +18,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
  */
 class PostController extends Controller
 {
+    /**
+     * Displays a list of posts.
+     */
     public function listAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -39,6 +42,11 @@ class PostController extends Controller
         );
     }
 
+    /**
+     * Displays the post view.
+     *
+     * @param   string  $slug   The post slug.
+     */
     public function showAction($slug)
     {
         $em = $this->getDoctrine()->getManager();
@@ -59,6 +67,26 @@ class PostController extends Controller
         // Create the form and set the data
         $form = $this->createForm(new CommentType, $comment);
 
+        $request = $this->getRequest();
+        $form->handleRequest($request);
+
+        // If the form data is valid:
+        if ($form->isValid())
+        {
+            // 1) Set the relationship and persist the entity
+            $comment->setPost($post);
+            $em->persist($comment);
+            $em->flush();
+
+            // 2) Display a success message
+            $successMessage = $this->get('translator')->trans('comments.message.success_send');
+            $request->getSession()->getFlashBag()->add('success', $successMessage);
+
+            // 3) Redirect the user to the post list
+            $url = $this->generateUrl('blog_post_show', array('slug' => $slug));
+            $url .= '#comment-'.$post->getComments()->count();
+            return $this->redirect($url);
+        }
 
         // Render the view
         return $this->render(

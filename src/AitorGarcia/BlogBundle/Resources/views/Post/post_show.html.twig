@@ -51,7 +51,7 @@
         </div>
         <div id="comment-add">
             <h3>{{ 'field.leave_comment' | trans }}</h3>
-            <form action="#" method="post" {{ form_enctype(form) }}>
+            <form action="{{ path('blog_post_show',  { 'slug': post.slug }) }}" method="post" {{ form_enctype(form) }}>
                 <fieldset>
                     <div class="row">
                         <div class="form-group col-sm-6">
