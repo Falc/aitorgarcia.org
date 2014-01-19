@@ -83,7 +83,7 @@
                     {{ form_widget(form._token) }}
                 </fieldset>
                 <div id="form-actions">
-                    <input class="btn btn-primary" type="submit" name="save" value="{{ 'button.send' | trans }}" />
+                    <input class="btn btn-primary" type="submit" name="send" value="{{ 'button.send' | trans }}" />
                 </div>
             </form>
         </div>
@@ -102,4 +102,16 @@
 </div>
 
 {{ tinymce_init() }}
+
+<script type="text/javascript">
+    $(function() {
+        // Replace the submit input with a button+icon
+        var inputSend = $('input[name="send"]');
+
+        var btnSend = $('<button>').attr('type', 'submit').addClass('btn btn-primary btn-icon');
+        btnSend.append('<span class="icon icon-submit"></span>' + '{{ 'button.send_comment' | trans }}');
+
+        inputSend.replaceWith(btnSend);
+    });
+</script>
 {% endblock %}
