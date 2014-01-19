@@ -36,6 +36,16 @@ form .mce-tinymce.mce-container {
     min-height: 150px !important;
 }
 
+#comment-add .mce-tinymce iframe,
+#contact .mce-tinymce iframe {
+    min-height: 200px !important;
+}
+
+#post-create .mce-tinymce iframe,
+#post-edit .mce-tinymce iframe {
+    min-height: 400px !important;
+}
+
 /*
  * Main containers
  */
