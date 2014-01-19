@@ -16,4 +16,4 @@ field:
     subject:        Asunto
 
 button:
-    send:           Enviar
+    send_message:   Enviar mensaje

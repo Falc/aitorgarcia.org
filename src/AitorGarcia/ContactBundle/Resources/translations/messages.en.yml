@@ -16,4 +16,4 @@ field:
     subject:        Subject
 
 button:
-    send:           Send
+    send_message:   Send Message

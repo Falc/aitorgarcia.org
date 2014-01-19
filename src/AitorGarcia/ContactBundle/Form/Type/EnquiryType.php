@@ -50,7 +50,8 @@ class EnquiryType extends AbstractType
         $builder->add('body', 'textarea', array(
             'trim'  => true,
             'attr'  => array(
-                'class' => 'form-control'
+                'class'      => 'form-control tinymce',
+                'data-theme' => 'simple'
             )
         ));
     }
