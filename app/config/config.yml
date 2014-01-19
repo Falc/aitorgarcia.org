@@ -7,6 +7,7 @@ imports:
     - { resource: stof_doctrine_extensions.yml }
     - { resource: twig_core_extensions.yml }
     - { resource: besimple_locale_guesser.yml }
+    - { resource: eo_honeypot.yml }
 
 framework:
     #esi:             ~

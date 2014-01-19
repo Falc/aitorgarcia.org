@@ -27,7 +27,8 @@
         "stof/doctrine-extensions-bundle": "dev-master",
         "friendsofsymfony/user-bundle": "*",
         "lunetics/locale-bundle": "2.2.*",
-        "sonata-project/intl-bundle": "2.1.*"
+        "sonata-project/intl-bundle": "2.1.*",
+        "eo/honeypot-bundle": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
@@ -49,10 +50,10 @@
         "component-dir": "web/components"
     },
     "repositories": [
-       {
-         "type": "vcs",
-         "url": "https://github.com/Bilbous/BeSimpleI18nRoutingBundle"
-       }
+        {
+            "type": "vcs",
+            "url": "https://github.com/Bilbous/BeSimpleI18nRoutingBundle"
+        }
     ],
     "extra": {
         "symfony-app-dir": "app",

@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "e1a11f5c56690c650b88cf04059a556c",
+    "hash": "006cd5eb3a9ebcddae6a8bad259aea20",
     "packages": [
         {
             "name": "besimple/i18n-routing-bundle",
@@ -779,6 +779,52 @@
             "time": "2013-05-11 07:51:12"
         },
         {
+            "name": "eo/honeypot-bundle",
+            "version": "dev-master",
+            "target-dir": "Eo/HoneypotBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eymengunay/EoHoneypotBundle.git",
+                "reference": "1d67ad6f9fdb68317c952f63be036d67896c02c6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eymengunay/EoHoneypotBundle/zipball/1d67ad6f9fdb68317c952f63be036d67896c02c6",
+                "reference": "1d67ad6f9fdb68317c952f63be036d67896c02c6",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/symfony": "~2.1"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Eo\\HoneypotBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Eymen Gunay",
+                    "email": "eymen@egunay.com"
+                }
+            ],
+            "description": "Honeypot trap for Symfony2 forms.",
+            "keywords": [
+                "Honeypot",
+                "spam"
+            ],
+            "time": "2013-10-03 04:57:19"
+        },
+        {
             "name": "friendsofsymfony/user-bundle",
             "version": "v1.3.3",
             "target-dir": "FOS/UserBundle",
@@ -852,12 +898,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/l3pp4rd/DoctrineExtensions.git",
-                "reference": "c7b53f20f764982b8aa5ff1bd47ab92cd61acdb1"
+                "reference": "35adcaae1a3f50d0d5b73aa50ed8fd28ee35ce54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/l3pp4rd/DoctrineExtensions/zipball/c7b53f20f764982b8aa5ff1bd47ab92cd61acdb1",
-                "reference": "c7b53f20f764982b8aa5ff1bd47ab92cd61acdb1",
+                "url": "https://api.github.com/repos/l3pp4rd/DoctrineExtensions/zipball/35adcaae1a3f50d0d5b73aa50ed8fd28ee35ce54",
+                "reference": "35adcaae1a3f50d0d5b73aa50ed8fd28ee35ce54",
                 "shasum": ""
             },
             "require": {
@@ -924,20 +970,20 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2014-01-09 23:15:21"
+            "time": "2014-01-12 16:34:06"
         },
         {
             "name": "jdorn/sql-formatter",
-            "version": "v1.2.16",
+            "version": "v1.2.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jdorn/sql-formatter.git",
-                "reference": "8859d664737492d313c34796731b35eca851b362"
+                "reference": "64990d96e0959dff8e059dfcdc1af130728d92bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jdorn/sql-formatter/zipball/8859d664737492d313c34796731b35eca851b362",
-                "reference": "8859d664737492d313c34796731b35eca851b362",
+                "url": "https://api.github.com/repos/jdorn/sql-formatter/zipball/64990d96e0959dff8e059dfcdc1af130728d92bc",
+                "reference": "64990d96e0959dff8e059dfcdc1af130728d92bc",
                 "shasum": ""
             },
             "require": {
@@ -974,7 +1020,7 @@
                 "highlight",
                 "sql"
             ],
-            "time": "2013-11-27 22:51:13"
+            "time": "2014-01-12 16:20:24"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -1472,12 +1518,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/stfalcon/TinymceBundle.git",
-                "reference": "32051165ccb6bde327ec121b3f294d807ceb427e"
+                "reference": "8b1d34ed0ed6439d944a1e9bcbe410143da8424e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stfalcon/TinymceBundle/zipball/32051165ccb6bde327ec121b3f294d807ceb427e",
-                "reference": "32051165ccb6bde327ec121b3f294d807ceb427e",
+                "url": "https://api.github.com/repos/stfalcon/TinymceBundle/zipball/8b1d34ed0ed6439d944a1e9bcbe410143da8424e",
+                "reference": "8b1d34ed0ed6439d944a1e9bcbe410143da8424e",
                 "shasum": ""
             },
             "require": {
@@ -1521,7 +1567,7 @@
                 "tinymce",
                 "wysiwyg"
             ],
-            "time": "2013-11-11 08:58:10"
+            "time": "2014-01-14 13:12:13"
         },
         {
             "name": "stof/doctrine-extensions-bundle",
@@ -2075,7 +2121,8 @@
         "stfalcon/tinymce-bundle": 20,
         "besimple/i18n-routing-bundle": 20,
         "gedmo/doctrine-extensions": 20,
-        "stof/doctrine-extensions-bundle": 20
+        "stof/doctrine-extensions-bundle": 20,
+        "eo/honeypot-bundle": 20
     },
     "platform": {
         "php": ">=5.3.3"

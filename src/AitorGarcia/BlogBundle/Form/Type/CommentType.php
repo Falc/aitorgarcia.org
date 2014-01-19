@@ -44,7 +44,8 @@ class CommentType extends AbstractType
             'trim'  => true,
             'attr'  => array(
                 'class' => 'form-control'
-            )
+            ),
+            'required'  => false
         ));
 
         $builder->add('body', 'textarea', array(
@@ -53,6 +54,9 @@ class CommentType extends AbstractType
                 'data-theme' => 'advanced'
             )
         ));
+
+        // Honeypot
+        $builder->add('subject', 'honeypot');
     }
 
     /**
