@@ -3,7 +3,6 @@ eo_honeypot:
         file:
             enabled: true
             output: "%kernel.root_dir%/logs/eo_honeypot.log"
-            output: /var/log/honeypot.log
     redirect:
         enabled: true
         to: "/"
