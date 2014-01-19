@@ -78,11 +78,7 @@ class PostController extends Controller
             $em->persist($comment);
             $em->flush();
 
-            // 2) Display a success message
-            $successMessage = $this->get('translator')->trans('comments.message.success_send');
-            $request->getSession()->getFlashBag()->add('success', $successMessage);
-
-            // 3) Redirect the user to the post list
+            // 2) Redirect the user to the post list
             $url = $this->generateUrl('blog_post_show', array('slug' => $slug));
             $url .= '#comment-'.$post->getComments()->count();
             return $this->redirect($url);
