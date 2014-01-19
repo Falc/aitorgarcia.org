@@ -1,5 +1,5 @@
 blog_admin_post_list:
-    locales:  { en: "/posts/list", es: "/entradas/lista" }
+    locales:  { en: "/posts", es: "/entradas" }
     defaults: { _controller: AitorGarciaBlogBundle:AdminPost:list }
 
 blog_admin_post_create:
@@ -19,7 +19,7 @@ blog_admin_post_delete:
         page: \d+
 
 blog_admin_comment_list:
-    locales:  { en: "/comments/list", es: "/comentarios/lista" }
+    locales:  { en: "/comments", es: "/comentarios" }
     defaults: { _controller: AitorGarciaBlogBundle:AdminComment:list }
 
 blog_admin_comment_edit:

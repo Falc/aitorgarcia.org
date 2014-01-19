@@ -1,5 +1,5 @@
 portfolio_admin_project_list:
-    locales:  { en: "/projects/list", es: "/proyectos/lista" }
+    locales:  { en: "/projects", es: "/proyectos" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminProject:list }
 
 portfolio_admin_project_create:
@@ -23,7 +23,7 @@ portfolio_admin_project_translation_edit:
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminProject:translationEdit }
 
 portfolio_admin_technology_list:
-    locales:  { en: "/technologies/list", es: "/tecnologias/lista" }
+    locales:  { en: "/technologies", es: "/tecnologias" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminTechnology:list }
 
 portfolio_admin_technology_create:
