@@ -35,19 +35,23 @@ field:
     actions:        Acciones
     author:         Autor
     body:           Contenido
+    comments:       Comentarios
     created_at:     Creado
     id:             ID
+    leave_comment:  Deja un comentario
     tags:           Etiquetas
     title:          Título
 
 button:
     cancel:         Cancelar
+    comments:       Comentarios
     confirm:        Confirmar
     create:         Crear
     delete:         Eliminar
     delete_ext:     Eliminar este elemento
     edit:           Modificar
     edit_ext:       Modificar este elemento
+    read_more:      Leer más
     save_changes:   Guardar cambios
     send:           Enviar
     sort:           Ordenar

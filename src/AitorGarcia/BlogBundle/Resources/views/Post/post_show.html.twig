@@ -15,12 +15,9 @@
 
 {% block page %}
 <div id="post-show" class="row">
-    <div class="block col-md-9">
+    <div id="post" class="block col-md-9">
         <div class="post-info">
             <span class="date">{{ post.createdAt | date('d/F/Y') }}</span>
-        </div>
-        <div class="post-body">
-            <p>{{ post.body | replace({'<br /><br />':'</p><p>'}) | raw }}</p>
         </div>
         {% if post.tags is not empty %}
         <div class="post-tags">
@@ -31,22 +28,38 @@
             </ul>
         </div>
         {% endif %}
+        <div class="post-body">
+            <p>{{ post.body | replace({'<br /><br />':'</p><p>'}) | raw }}</p>
+        </div>
+        <div id="comments">
+            <h3>{{ 'field.comments' | trans }}: {{ post.comments | length }}</h3>
+            {% for comment in post.comments %}
+            <div id="comment-{{ loop.index }}" class="comment">
+                <div class="comment-author">
+                    {{ comment.authorName }}
+                </div>
+                <div class="comment-date">
+                    {{ comment.createdAt | date('d/F/Y | H:i') }}
+                </div>
+                <div class="comment-body">
+                    {{ comment.body | raw }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div id="comment-add">
+            <h3>{{ 'field.leave_comment' | trans }}</h3>
+        </div>
     </div>
     <div id="sidebar" class="block col-md-3">
-        <div class="row">
-            <div class="block col-sm-12">
-                <h3>Block 1</h3>
-            </div>
+        <div class="block">
+            <h3>Block 1</h3>
         </div>
-        <div class="row">
-            <div class="block col-sm-12">
-                <h3>Block 2</h3>
-            </div>
+        <div class="block">
+            <h3>Block 2</h3>
         </div>
-        <div class="row">
-            <div class="block col-sm-12">
-                <h3>Block 3</h3>
-            </div>
+        <div class="block">
+            <h3>Block 3</h3>
         </div>
     </div>
 </div>

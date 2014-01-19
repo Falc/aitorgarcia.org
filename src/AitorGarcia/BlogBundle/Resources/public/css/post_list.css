@@ -5,30 +5,30 @@
     margin-top: -5px;
 }
 
-#posts,
-#sidebar {
-    padding-top: 0;
-}
-
 #sidebar {
     padding-left: 30px;
 }
 
+#sidebar h3,
+#comments h3 {
+    margin-top: 0;
+}
+
 .post {
+    border-bottom: 1px solid #e2e6ea;
     margin-bottom: 30px;
+    padding-bottom: 30px;
 }
 
 .post h2 {
     font-size: 20px;
     line-height: 28px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .post-info {
     font-size: 14px;
-    border-top: 1px solid #e2e6ea;
-    border-bottom: 1px solid #e2e6ea;
-    padding: 10px;
+    margin-bottom: 15px;
 }
 
 .post-info > .date {
@@ -39,21 +39,42 @@
     padding: 0 10px 0 30px;
 }
 
-.post-body {
-    margin: 20px 0;
-}
-
 .post-tags {
     color: #313131;
     font-size: 14px;
-    border-top: 1px solid #e2e6ea;
-    border-bottom: 1px solid #e2e6ea;
-    padding: 10px 10px 5px 10px;
-    margin-bottom: 20px;
 }
 
 .post-tags > ul {
     margin-bottom: 0;
+}
+
+.post-body {
+    padding: 25px 0 30px 0;
+}
+
+#comments {
+    border-top: 1px solid #e2e6ea;
+    padding-top: 30px;
+}
+
+.comment {
+    border-bottom: 1px solid #e2e6ea;
+    margin-top: 30px;
+    padding-bottom: 20px;
+}
+
+.comment-author {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.comment-date {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.comment-body {
+    padding: 10px 0;
 }
 
 
@@ -61,7 +82,8 @@
  * FINE TUNING
  */
 @media (min-width: 768px) {
-    #post-list {
+    #post-list,
+    #post-show {
         margin-top: 5px;
     }
 }
