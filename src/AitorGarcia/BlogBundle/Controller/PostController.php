@@ -28,9 +28,7 @@ class PostController extends Controller
         // Find all the posts sorted by DESC creation date
         $posts = $em->getRepository('AitorGarciaBlogBundle:Post')->findBy(
             array(),
-            array(
-                'createdAt' => 'DESC'
-            )
+            array('createdAt' => 'DESC')
         );
 
         // Render the view

@@ -19,14 +19,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class AdminPostController extends Controller
 {
     /**
-     * Displays a list of post.
+     * Displays a list of posts.
      */
     public function listAction()
     {
         $em = $this->getDoctrine()->getManager();
 
         // Find all the posts
-        $posts = $em->getRepository('AitorGarciaBlogBundle:Post')->findAll();
+        $posts = $em->getRepository('AitorGarciaBlogBundle:Post')->findBy(
+            array(),
+            array('id' => 'DESC')
+        );
 
         // Render the view
         return $this->render(

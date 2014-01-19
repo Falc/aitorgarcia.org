@@ -26,7 +26,10 @@ class AdminCommentController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         // Find all the comments
-        $comments = $em->getRepository('AitorGarciaBlogBundle:Comment')->findAll();
+        $comments = $em->getRepository('AitorGarciaBlogBundle:Comment')->findBy(
+            array(),
+            array('id' => 'DESC')
+        );
 
         // Render the view
         return $this->render(
