@@ -1,0 +1,58 @@
+navigation:
+    blog:       Blog
+    comments:   Comments
+    posts:      Posts
+
+comments:
+    message:
+        confirm_deletion:   Are you sure to delete the comment written by "%comment_author%"?
+        do_not_exist:       The selected comment does not exist.
+        empty_list:         No comments found.
+        success_deletion:   The comment was deleted successfully.
+        success_edition:    The comment was edited successfully.
+    title:
+        delete:             Delete Comment
+        edit:               Edit Comment
+        list:               Comments
+
+posts:
+    message:
+        confirm_deletion:   Are you sure to delete the post "%post_title%"?
+        do_not_exist:       The selected post does not exist.
+        empty_list:         No posts found.
+        success_creation:   The post was created successfully.
+        success_deletion:   The post was deleted successfully.
+        success_edition:    The post was edited successfully.
+    subnavigation:
+        post_list:          Technology, programming and other stuff
+    title:
+        create:             Create Post
+        delete:             Delete Post
+        edit:               Edit Post
+        list:               Posts
+
+field:
+    actions:        Actions
+    author:         Author
+    body:           Content
+    comments:       Comments
+    created_at:     Created
+    id:             ID
+    leave_comment:  Leave a comment
+    tags:           Tags
+    title:          Title
+    website:        Website
+
+button:
+    cancel:         Cancel
+    comments:       Comments
+    confirm:        Confirm
+    create:         Create
+    delete:         Delete
+    delete_ext:     Delete this element
+    edit:           Edit
+    edit_ext:       Edit this element
+    read_more:      Read More
+    save_changes:   Save Changes
+    send:           Send
+    sort:           Sort
