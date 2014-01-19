@@ -541,6 +541,16 @@ ul.tags li a:active {
     background-position: -96px -64px;
 }
 
+.icon-read-more {
+    background-image: url(../images/icons.png);
+    background-position: -128px -64px;
+}
+
+.icon-comment {
+    background-image: url(../images/icons.png);
+    background-position: 0 -96px;
+}
+
 
 /*
  * MISC
