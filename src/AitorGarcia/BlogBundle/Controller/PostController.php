@@ -9,6 +9,8 @@
 
 namespace AitorGarcia\BlogBundle\Controller;
 
+use AitorGarcia\BlogBundle\Entity\Comment;
+use AitorGarcia\BlogBundle\Form\Type\CommentType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
@@ -51,11 +53,19 @@ class PostController extends Controller
             throw $this->createNotFoundException($errorMessage);
         }
 
+        // Create a blank comment
+        $comment = new Comment();
+
+        // Create the form and set the data
+        $form = $this->createForm(new CommentType, $comment);
+
+
         // Render the view
         return $this->render(
             'AitorGarciaBlogBundle:Post:post_show.html.twig',
             array(
-                'post' => $post
+                'post' => $post,
+                'form' => $form->createView()
             )
         );
     }
