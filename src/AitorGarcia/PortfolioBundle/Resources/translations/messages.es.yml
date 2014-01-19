@@ -73,7 +73,3 @@ button:
     sort:           Ordenar
     source_code:    Código fuente
     view_project:   Ver proyecto
-
-locale:
-    english:    Inglés
-    spanish:    Español
