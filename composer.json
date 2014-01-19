@@ -22,6 +22,7 @@
         "components/bootstrap": "3.*",
         "kriswallsmith/assetic": "1.1.*@dev",
         "stfalcon/tinymce-bundle": "dev-master",
+        "exercise/htmlpurifier-bundle": "dev-master",
         "besimple/i18n-routing-bundle": "dev-master",
         "gedmo/doctrine-extensions": "dev-master",
         "stof/doctrine-extensions-bundle": "dev-master",

@@ -1,0 +1,5 @@
+exercise_html_purifier:
+    comments:
+        Cache.SerializerPath: "%kernel.cache_dir%/htmlpurifier"
+        HTML.Allowed: "p,br,b,strong,i,em,a[href|title]"
+        AutoFormat.RemoveEmpty: true

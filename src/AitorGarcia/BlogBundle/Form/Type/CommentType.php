@@ -9,12 +9,13 @@
 
 namespace AitorGarcia\BlogBundle\Form\Type;
 
+use Exercise\HTMLPurifierBundle\Form\HTMLPurifierTransformer;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
- * This form type will be used for the comment edition forms.
+ * This form type will be used for the comment edition form.
  */
 class CommentType extends AbstractType
 {
@@ -48,12 +49,15 @@ class CommentType extends AbstractType
             'required'  => false
         ));
 
-        $builder->add('body', 'textarea', array(
-            'attr'  => array(
-                'class'      => 'form-control tinymce',
+        $body = $builder->create('body', 'textarea', array(
+            'attr' => array(
+                'class'      => 'tinymce',
                 'data-theme' => 'advanced'
             )
         ));
+
+        $body->addViewTransformer(new HTMLPurifierTransformer($options['purifier']));
+        $builder->add($body);
 
         // Honeypot
         $builder->add('subject', 'honeypot');
@@ -68,6 +72,14 @@ class CommentType extends AbstractType
     {
         $resolver->setDefaults(array(
             'data_class' => 'AitorGarcia\BlogBundle\Entity\Comment'
+        ));
+
+        $resolver->setRequired(array(
+            'purifier'
+        ));
+
+        $resolver->setAllowedTypes(array(
+            'purifier' => 'HtmlPurifier'
         ));
     }
 
