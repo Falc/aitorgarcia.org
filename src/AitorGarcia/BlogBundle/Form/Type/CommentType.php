@@ -52,7 +52,7 @@ class CommentType extends AbstractType
         $body = $builder->create('body', 'textarea', array(
             'attr' => array(
                 'class'      => 'tinymce',
-                'data-theme' => 'advanced'
+                'data-theme' => 'simple'
             )
         ));
 
