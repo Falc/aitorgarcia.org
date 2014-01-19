@@ -51,7 +51,7 @@ class Comment
      * @Assert\NotBlank()
      * @Assert\Length(max="255")
      */
-    protected $authorName;
+    protected $author;
 
     /**
      * The email of the author.
@@ -63,7 +63,18 @@ class Comment
      * @Assert\Length(max="255")
      * @Assert\Email()
      */
-    protected $authorEmail;
+    protected $email;
+
+    /**
+     * The website of the author.
+     *
+     * @var string|null
+     *
+     * @ORM\Column(type="string", nullable=true)
+     * @Assert\Length(max="255")
+     * @Assert\Url()
+     */
+    protected $website;
 
     /**
      * The post creation date.
@@ -130,20 +141,20 @@ class Comment
      *
      * @return  string
      */
-    public function getAuthorName()
+    public function getAuthor()
     {
-        return $this->authorName;
+        return $this->author;
     }
 
     /**
      * Sets the name of the author.
      *
-     * @param   string  $authorName
+     * @param   string  $author
      * @return  Comment
      */
-    public function setAuthorName($authorName)
+    public function setAuthor($author)
     {
-        $this->authorName = $authorName;
+        $this->author = $author;
 
         return $this;
     }
@@ -153,20 +164,43 @@ class Comment
      *
      * @return  string
      */
-    public function getAuthorEmail()
+    public function getEmail()
     {
-        return $this->authorEmail;
+        return $this->email;
     }
 
     /**
      * Sets the email of the author.
      *
-     * @param   string  $authorEmail
+     * @param   string  $email
      * @return  Comment
      */
-    public function setAuthorEmail($authorEmail)
+    public function setEmail($email)
     {
-        $this->authorEmail = $authorEmail;
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets the website of the author.
+     *
+     * @return  string
+     */
+    public function getWebsite()
+    {
+        return $this->website;
+    }
+
+    /**
+     * Sets the website of the author.
+     *
+     * @param   string  $website
+     * @return  Comment
+     */
+    public function setWebsite($website)
+    {
+        $this->website = $website;
 
         return $this;
     }

@@ -140,7 +140,7 @@ class AdminCommentController extends Controller
             array(
                 'form'           => $form->createView(),
                 'comment_id'     => $comment->getId(),
-                'comment_author' => $comment->getAuthorName()
+                'comment_author' => $comment->getAuthor()
             )
         );
     }

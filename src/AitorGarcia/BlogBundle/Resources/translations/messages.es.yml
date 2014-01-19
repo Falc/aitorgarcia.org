@@ -41,6 +41,7 @@ field:
     leave_comment:  Deja un comentario
     tags:           Etiquetas
     title:          Título
+    website:        Web
 
 button:
     cancel:         Cancelar
