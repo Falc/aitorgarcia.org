@@ -4,6 +4,7 @@ stfalcon_tinymce:
     language: %locale%
     theme:
         simple:
+            content_css: "/css/tinymce-body.css"
             convert_urls: false
             forced_root_block: false
             entity_encoding: "raw"
@@ -12,6 +13,7 @@ stfalcon_tinymce:
             statusbar: false
             toolbar: "undo redo | bold italic | bullist numlist | link"
         advanced:
+            content_css: "/css/tinymce-body.css"
             convert_urls: false
             forced_root_block: false
             entity_encoding: "raw"
