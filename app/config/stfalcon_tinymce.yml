@@ -3,6 +3,14 @@ stfalcon_tinymce:
     selector: ".tinymce"
     language: %locale%
     theme:
+        simple:
+            convert_urls: false
+            forced_root_block: false
+            entity_encoding: "raw"
+            plugins: "anchor link lists paste"
+            menubar: false
+            statusbar: false
+            toolbar: "undo redo | bold italic | bullist numlist | link"
         advanced:
             convert_urls: false
             forced_root_block: false
