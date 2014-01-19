@@ -3,7 +3,7 @@
  * This file contains the AdminTechnologyController class.
  *
  * @author		Aitor García <aitor.falc@gmail.com>
- * @copyright	2012-2013 Aitor García <aitor.falc@gmail.com>
+ * @copyright	2012-2014 Aitor García <aitor.falc@gmail.com>
  * @license		https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE Simplified BSD License
  */
 
@@ -26,7 +26,10 @@ class AdminTechnologyController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         // Find all the technologies
-        $technologies = $em->getRepository('AitorGarciaPortfolioBundle:Technology')->findAll();
+        $technologies = $em->getRepository('AitorGarciaPortfolioBundle:Technology')->findBy(
+            array(),
+            array('id' => 'DESC')
+        );
 
         // Render the view
         return $this->render(

@@ -27,9 +27,7 @@ class ProjectController extends Controller
         // Find all the projects sorted by DESC creation date
         $projects = $em->getRepository('AitorGarciaPortfolioBundle:Project')->findBy(
             array(),
-            array(
-                'createdAt' => 'DESC'
-            )
+            array('createdAt' => 'DESC')
         );
 
         // Render the view
