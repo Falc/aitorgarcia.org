@@ -20,7 +20,7 @@
     <div id="posts" class="block col-md-9">
         <div class="post">
             <div class="post-info">
-                <span class="date">{{ post.createdAt | date('d/F/Y') }}</span>
+                <span class="date">{{ post.createdAt | localizeddate('long', 'none', current_locale) }}</span>
             </div>
             {% if post.tags is not empty %}
             <div class="post-tags">
@@ -57,7 +57,8 @@
                 {% endif %}
                 </div>
                 <div class="comment-date">
-                    {{ comment.createdAt | date('d/F/Y | H:i') }}
+                    {# I don't like to repeat the localization, but the format option is uglier #}
+                    {{ comment.createdAt | localizeddate('long', 'none', current_locale) }} - {{ comment.createdAt | localizeddate('none', 'short', current_locale) }}
                 </div>
                 <div class="comment-body">
                     {{ comment.body | raw }}
