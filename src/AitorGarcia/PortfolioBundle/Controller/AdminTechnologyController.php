@@ -97,7 +97,7 @@ class AdminTechnologyController extends Controller
         }
 
         // Create the form and set the data
-        $form = $this->createForm(new TechnologyType, $technology);
+        $form = $this->createForm(new TechnologyType(), $technology);
 
         $request = $this->getRequest();
         $form->handleRequest($request);
