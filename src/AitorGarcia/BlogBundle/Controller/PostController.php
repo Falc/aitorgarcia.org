@@ -64,7 +64,7 @@ class PostController extends Controller
 
         // Create the form and set the data
         $form = $this->createForm(
-            new CommentType,
+            new CommentType(),
             $comment,
             array(
                 'purifier' => $this->get('exercise_html_purifier.comments')
