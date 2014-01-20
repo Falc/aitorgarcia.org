@@ -16,11 +16,6 @@
 
 {% block page %}
 <div id="project-list" class="row">
-{% if projects is empty %}
-    <div class="block col-sm-12">
-        <p>{{ 'projects.message.empty_list' | trans }}</p>
-    </div>
-{% else %}
 {% for project in projects %}
     <div class="block col-sm-6 col-md-4">
         <a class="project" href="{{ path('portfolio_project_show', { 'slug': project.slug }) }}">
@@ -34,7 +29,10 @@
             <span class="project-name">{{ project.name }}</span>
         </a>
     </div>
+{% else %}
+    <div class="block col-sm-12">
+        <p>{{ 'projects.message.empty_list' | trans }}</p>
+    </div>
 {% endfor %}
-{% endif %}
 </div>
 {% endblock %}
