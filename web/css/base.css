@@ -210,6 +210,38 @@ li.dropdown.open .dropdown-menu > a {
 
 
 /*
+ * PAGINATION
+ */
+.pagination {
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+    padding: 5px 12px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #dddddd;
+}
+
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus,
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+    background-color: #349ad1;
+    color: #fafafa;
+    border-color: #349ad1;
+}
+
+
+/*
  * ACTIONS
  */
 #actions > .btn {

@@ -27,6 +27,7 @@
         "gedmo/doctrine-extensions": "dev-master",
         "stof/doctrine-extensions-bundle": "dev-master",
         "friendsofsymfony/user-bundle": "*",
+        "knplabs/knp-paginator-bundle": "~2.4",
         "lunetics/locale-bundle": "2.2.*",
         "sonata-project/intl-bundle": "2.1.*",
         "eo/honeypot-bundle": "dev-master"

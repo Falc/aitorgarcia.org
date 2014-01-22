@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new Sonata\IntlBundle\SonataIntlBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Lunetics\LocaleBundle\LuneticsLocaleBundle(),
             new Eo\HoneypotBundle\EoHoneypotBundle(),
             new AitorGarcia\MainBundle\AitorGarciaMainBundle(),

@@ -9,6 +9,7 @@ imports:
     - { resource: besimple_locale_guesser.yml }
     - { resource: eo_honeypot.yml }
     - { resource: exercise_htmlpurifier.yml }
+    - { resource: knp_paginator.yml }
 
 framework:
     #esi:             ~
