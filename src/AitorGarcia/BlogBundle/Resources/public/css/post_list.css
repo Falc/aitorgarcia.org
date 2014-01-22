@@ -5,6 +5,10 @@
     margin-top: -5px;
 }
 
+#post-list .pagination {
+    margin-top: 0;
+}
+
 #sidebar {
     padding-left: 30px;
 }

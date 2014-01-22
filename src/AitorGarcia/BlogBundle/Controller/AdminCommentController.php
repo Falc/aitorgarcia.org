@@ -25,7 +25,7 @@ class AdminCommentController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        // Find all the comments
+        // Find all the comments and paginate them
         $query = $em->createQuery('
             SELECT comment
             FROM AitorGarciaBlogBundle:Comment comment

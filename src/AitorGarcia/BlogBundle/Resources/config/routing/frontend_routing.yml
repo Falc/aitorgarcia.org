@@ -1,6 +1,8 @@
 blog_post_list:
-    locales:  { en: "/blog-en", es: "/blog" }
-    defaults: { _controller: AitorGarciaBlogBundle:Post:list }
+    locales:  { en: "/blog-en/{page}", es: "/blog/{page}" }
+    defaults: { _controller: AitorGarciaBlogBundle:Post:list, page: 1 }
+    requirements:
+        page: \d+
 
 blog_post_show:
     locales:  { en: "/blog-en/{slug}", es: "/blog/{slug}" }

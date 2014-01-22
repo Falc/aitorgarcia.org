@@ -25,7 +25,7 @@ class AdminPostController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        // Find all the posts
+        // Find all the posts and paginate them
         $query = $em->createQuery('
             SELECT post
             FROM AitorGarciaBlogBundle:Post post

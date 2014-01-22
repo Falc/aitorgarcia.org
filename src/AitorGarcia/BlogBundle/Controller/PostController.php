@@ -21,15 +21,19 @@ class PostController extends Controller
     /**
      * Displays a list of posts.
      */
-    public function listAction()
+    public function listAction($page)
     {
         $em = $this->getDoctrine()->getManager();
 
-        // Find all the posts sorted by DESC creation date
-        $posts = $em->getRepository('AitorGarciaBlogBundle:Post')->findBy(
-            array(),
-            array('createdAt' => 'DESC')
-        );
+        // Find all the posts and paginate them
+        $query = $em->createQuery('
+            SELECT post
+            FROM AitorGarciaBlogBundle:Post post
+            ORDER BY post.createdAt DESC
+        ');
+
+        $paginator = $this->get('knp_paginator');
+        $posts = $paginator->paginate($query, $page, 3);
 
         // Render the view
         return $this->render(
