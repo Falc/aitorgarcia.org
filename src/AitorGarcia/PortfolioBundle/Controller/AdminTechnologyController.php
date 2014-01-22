@@ -21,15 +21,19 @@ class AdminTechnologyController extends Controller
     /**
      * Displays a list of technologies.
      */
-    public function listAction()
+    public function listAction($page)
     {
         $em = $this->getDoctrine()->getManager();
 
         // Find all the technologies
-        $technologies = $em->getRepository('AitorGarciaPortfolioBundle:Technology')->findBy(
-            array(),
-            array('id' => 'DESC')
-        );
+        $query = $em->createQuery('
+            SELECT technology
+            FROM AitorGarciaPortfolioBundle:Technology technology
+            ORDER BY technology.id ASC
+        ');
+
+        $paginator = $this->get('knp_paginator');
+        $technologies = $paginator->paginate($query, $page, 3);
 
         // Render the view
         return $this->render(

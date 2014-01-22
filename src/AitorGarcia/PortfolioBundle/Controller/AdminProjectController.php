@@ -22,15 +22,19 @@ class AdminProjectController extends Controller
     /**
      * Displays a list of projects.
      */
-    public function listAction()
+    public function listAction($page)
     {
         $em = $this->getDoctrine()->getManager();
 
         // Find all the projects
-        $projects = $em->getRepository('AitorGarciaPortfolioBundle:Project')->findBy(
-            array(),
-            array('id' => 'DESC')
-        );
+        $query = $em->createQuery('
+            SELECT project
+            FROM AitorGarciaPortfolioBundle:Project project
+            ORDER BY project.createdAt DESC
+        ');
+
+        $paginator = $this->get('knp_paginator');
+        $projects = $paginator->paginate($query, $page, 3);
 
         // Render the view
         return $this->render(

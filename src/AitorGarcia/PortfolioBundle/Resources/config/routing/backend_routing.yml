@@ -1,6 +1,8 @@
 portfolio_admin_project_list:
-    locales:  { en: "/projects", es: "/proyectos" }
-    defaults: { _controller: AitorGarciaPortfolioBundle:AdminProject:list }
+    locales:  { en: "/projects/{page}", es: "/proyectos/{page}" }
+    defaults: { _controller: AitorGarciaPortfolioBundle:AdminProject:list, page: 1 }
+    requirements:
+        page: \d+
 
 portfolio_admin_project_create:
     locales:  { en: "/projects/create", es: "/proyectos/crear" }
@@ -10,21 +12,23 @@ portfolio_admin_project_edit:
     locales:  { en: "/projects/{id}/edit", es: "/proyectos/{id}/modificar" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminProject:edit }
     requirements:
-        page: \d+
+        id: \d+
 
 portfolio_admin_project_delete:
     locales:  { en: "/projects/{id}/delete", es: "/proyectos/{id}/eliminar" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminProject:delete }
     requirements:
-        page: \d+
+        id: \d+
 
 portfolio_admin_project_translation_edit:
     locales:  { en: "/projects/{id}/translations/{transLocale}/edit", es: "/proyectos/{id}/traducciones/{transLocale}/modificar" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminProject:translationEdit }
 
 portfolio_admin_technology_list:
-    locales:  { en: "/technologies", es: "/tecnologias" }
-    defaults: { _controller: AitorGarciaPortfolioBundle:AdminTechnology:list }
+    locales:  { en: "/technologies/{page}", es: "/tecnologias/{page}" }
+    defaults: { _controller: AitorGarciaPortfolioBundle:AdminTechnology:list, page: 1 }
+    requirements:
+        page: \d+
 
 portfolio_admin_technology_create:
     locales:  { en: "/technologies/create", es: "/tecnologias/crear" }
@@ -34,10 +38,10 @@ portfolio_admin_technology_edit:
     locales:  { en: "/technologies/{id}/edit", es: "/tecnologias/{id}/modificar" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminTechnology:edit }
     requirements:
-        page: \d+
+        id: \d+
 
 portfolio_admin_technology_delete:
     locales:  { en: "/technologies/{id}/delete", es: "/tecnologias/{id}/eliminar" }
     defaults: { _controller: AitorGarciaPortfolioBundle:AdminTechnology:delete }
     requirements:
-        page: \d+
+        id: \d+
