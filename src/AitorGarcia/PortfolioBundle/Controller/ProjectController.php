@@ -20,15 +20,19 @@ class ProjectController extends Controller
     /**
      * Displays a list of projects.
      */
-    public function listAction()
+    public function listAction($page)
     {
         $em = $this->getDoctrine()->getManager();
 
-        // Find all the projects sorted by DESC creation date
-        $projects = $em->getRepository('AitorGarciaPortfolioBundle:Project')->findBy(
-            array(),
-            array('createdAt' => 'DESC')
-        );
+        // Find all the projects and paginate them
+        $query = $em->createQuery('
+            SELECT project
+            FROM AitorGarciaPortfolioBundle:Project project
+            ORDER BY project.createdAt DESC
+        ');
+
+        $paginator = $this->get('knp_paginator');
+        $projects = $paginator->paginate($query, $page, 6);
 
         // Render the view
         return $this->render(

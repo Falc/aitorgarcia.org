@@ -1,6 +1,8 @@
 portfolio_project_list:
-    locales:  { en: "/projects", es: "/proyectos" }
-    defaults: { _controller: AitorGarciaPortfolioBundle:Project:list }
+    locales:  { en: "/projects/{page}", es: "/proyectos/{page}" }
+    defaults: { _controller: AitorGarciaPortfolioBundle:Project:list, page: 1 }
+    requirements:
+        page: \d+
 
 portfolio_project_show:
     locales:  { en: "/projects/{slug}", es: "/proyectos/{slug}" }

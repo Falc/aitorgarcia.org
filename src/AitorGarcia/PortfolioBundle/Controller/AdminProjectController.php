@@ -26,7 +26,7 @@ class AdminProjectController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        // Find all the projects
+        // Find all the projects and paginate them
         $query = $em->createQuery('
             SELECT project
             FROM AitorGarciaPortfolioBundle:Project project

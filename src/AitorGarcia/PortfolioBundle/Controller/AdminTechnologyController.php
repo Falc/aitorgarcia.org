@@ -25,7 +25,7 @@ class AdminTechnologyController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        // Find all the technologies
+        // Find all the technologies and paginate them
         $query = $em->createQuery('
             SELECT technology
             FROM AitorGarciaPortfolioBundle:Technology technology

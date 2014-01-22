@@ -34,5 +34,8 @@
         <p>{{ 'projects.message.empty_list' | trans }}</p>
     </div>
 {% endfor %}
+    <div class="text-center col-sm-12">
+    {{ knp_pagination_render(projects) }}
+    </div>
 </div>
 {% endblock %}
