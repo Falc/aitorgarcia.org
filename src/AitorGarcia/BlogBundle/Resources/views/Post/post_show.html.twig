@@ -17,7 +17,7 @@
 
 {% block page %}
 <div id="post-show" class="row">
-    <div id="posts" class="block col-md-9">
+    <div id="posts" class="block">
         <div class="post">
             <div class="post-info">
                 <span class="date">{{ post.createdAt | localizeddate('long', 'none', current_locale) }}</span>
@@ -97,17 +97,6 @@
                     <input class="btn btn-primary" type="submit" name="send" value="{{ 'button.send' | trans }}" />
                 </div>
             </form>
-        </div>
-    </div>
-    <div id="sidebar" class="block col-md-3">
-        <div class="block">
-            <h3>Block 1</h3>
-        </div>
-        <div class="block">
-            <h3>Block 2</h3>
-        </div>
-        <div class="block">
-            <h3>Block 3</h3>
         </div>
     </div>
 </div>
