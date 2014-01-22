@@ -64,11 +64,15 @@
                     </tr>
                 {% else %}
                     <tr>
-                        <td colspan="5">{{ 'comments.message.empty_list' | trans }}</td>
+                        <td colspan="6">{{ 'comments.message.empty_list' | trans }}</td>
                     </tr>
                 {% endfor %}
                 </tbody>
             </table>
+        </div>
+
+        <div class="text-center">
+        {{ knp_pagination_render(comments) }}
         </div>
     </div>
 </div>

@@ -21,15 +21,19 @@ class AdminPostController extends Controller
     /**
      * Displays a list of posts.
      */
-    public function listAction()
+    public function listAction($page)
     {
         $em = $this->getDoctrine()->getManager();
 
         // Find all the posts
-        $posts = $em->getRepository('AitorGarciaBlogBundle:Post')->findBy(
-            array(),
-            array('id' => 'DESC')
-        );
+        $query = $em->createQuery('
+            SELECT post
+            FROM AitorGarciaBlogBundle:Post post
+            ORDER BY post.createdAt DESC
+        ');
+
+        $paginator = $this->get('knp_paginator');
+        $posts = $paginator->paginate($query, $page, 10);
 
         // Render the view
         return $this->render(

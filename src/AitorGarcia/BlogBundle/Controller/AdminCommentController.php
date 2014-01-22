@@ -21,15 +21,19 @@ class AdminCommentController extends Controller
     /**
      * Displays a list of comments.
      */
-    public function listAction()
+    public function listAction($page)
     {
         $em = $this->getDoctrine()->getManager();
 
         // Find all the comments
-        $comments = $em->getRepository('AitorGarciaBlogBundle:Comment')->findBy(
-            array(),
-            array('id' => 'DESC')
-        );
+        $query = $em->createQuery('
+            SELECT comment
+            FROM AitorGarciaBlogBundle:Comment comment
+            ORDER BY comment.createdAt DESC
+        ');
+
+        $paginator = $this->get('knp_paginator');
+        $comments = $paginator->paginate($query, $page, 10);
 
         // Render the view
         return $this->render(
