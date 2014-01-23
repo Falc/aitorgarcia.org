@@ -34,7 +34,7 @@ class AdminProjectController extends Controller
         ');
 
         $paginator = $this->get('knp_paginator');
-        $projects = $paginator->paginate($query, $page, 3);
+        $projects = $paginator->paginate($query, $page, 10);
 
         // Render the view
         return $this->render(
