@@ -1,12 +1,21 @@
 /*
  * LOGIN
  */
-#login-form {
-    padding-top: 10px;
-    padding-bottom: 10px;
+#login {
+    margin-top: -5px;
 }
 
-#login-form .block {
+#login .block {
     padding-top: 0;
     padding-bottom: 0;
+}
+
+
+/*
+ * FINE TUNING
+ */
+@media (min-width: 768px) {
+    #login {
+        margin-top: 5px;
+    }
 }

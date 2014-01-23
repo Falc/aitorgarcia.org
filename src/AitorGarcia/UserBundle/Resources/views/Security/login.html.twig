@@ -16,13 +16,16 @@
 
 {% block fos_user_content %}
 {% if error %}
-    <div id="login-error" class="message-error">
-        {{ error|trans({}, 'FOSUserBundle') }}
+<div id="alerts" class="row">
+    <div class="alert alert-dismissable alert-danger">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <p>{{ error | trans({}, 'FOSUserBundle') }}</p>
     </div>
+</div>
 {% endif %}
 
 <div class="row">
-    <div id="login-form" class="block col-sm-6">
+    <div id="login" class="block col-sm-6">
         <form action="{{ path("fos_user_security_check") }}" method="post">
             <fieldset>
                 <div class="row">
@@ -42,7 +45,9 @@
                 </div>
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
             </fieldset>
-            <input class="button" type="submit" id="_submit" name="_submit" value="{{ 'button.log_in' | trans }}" />
+            <div id="form-actions">
+                <input class="btn btn-primary" type="submit" id="_submit" name="_submit" value="{{ 'button.log_int' | trans }}" />
+            </div>
         </form>
     </div>
 </div>
