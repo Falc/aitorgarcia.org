@@ -29,6 +29,7 @@ class PostController extends Controller
         $query = $em->createQuery('
             SELECT post
             FROM AitorGarciaBlogBundle:Post post
+            WHERE post.status = 1
             ORDER BY post.createdAt DESC
         ');
 
