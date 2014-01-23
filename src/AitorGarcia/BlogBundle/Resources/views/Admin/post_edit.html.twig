@@ -39,6 +39,10 @@
                         {{ form_widget(form.tags) }}
                         {{ form_errors(form.tags) }}
                     </div>
+                    <div class="form-group block col-sm-6">
+                        {{ form_label(form.status, 'field.status' | trans) }}
+                        {{ form_widget(form.status) }}
+                    </div>
                 </div>
                 {{ form_widget(form._token) }}
             </fieldset>
