@@ -15,13 +15,11 @@
 {% block infotext %}{{ 'posts.title.list' | trans }}{% endblock %}
 
 {% block page %}
-<div class="row" id="options">
-    <div class="block col-sm-12">
-        <div class="pull-right" id="actions">
-            <a href="{{ path('blog_admin_post_create') }}" class="btn btn-primary btn-icon">
-                <span class="icon icon-add"></span>{{ 'button.create' | trans }}
-            </a>
-        </div>
+<div id="options" class="row">
+    <div id="actions" class="block pull-right">
+        <a href="{{ path('blog_admin_post_create') }}" class="btn btn-primary btn-icon">
+            <span class="icon icon-add"></span>{{ 'button.create' | trans }}
+        </a>
     </div>
 </div>
 
@@ -39,7 +37,7 @@
 {% endif %}
 
 <div class="row">
-    <div id="post-list" class="block col-sm-12">
+    <div id="post-list" class="block col-sm-12 table-responsive">
         <div class="table-responsive">
             <table class="table table-bordered">
                 <thead>
@@ -78,10 +76,7 @@
                 </tbody>
             </table>
         </div>
-
-        <div class="text-center">
-        {{ knp_pagination_render(posts) }}
-        </div>
     </div>
+    {{ knp_pagination_render(posts) }}
 </div>
 {% endblock %}
