@@ -24,11 +24,13 @@
             </div>
             {% if post.tags is not empty %}
             <div class="post-tags">
+                {% spaceless %}
                 <ul class="tags list-inline">
-                {% for tag in post.tags %}
+                    {% for tag in post.tags %}
                     <li><span>{{ tag.name }}</span></li>
-                {% endfor %}
+                    {% endfor %}
                 </ul>
+                {% endspaceless %}
             </div>
             {% endif %}
             <div class="post-body">
@@ -50,11 +52,11 @@
                 </div>
                 {% endif %}
                 <div class="comment-author">
-                {% if comment.website is empty %}
+                    {% if comment.website is empty %}
                     {{ comment.author }}
-                {% else %}
+                    {% else %}
                     <a href="{{ comment.website }}">{{ comment.author }}</a>
-                {% endif %}
+                    {% endif %}
                 </div>
                 <div class="comment-date">
                     {# I don't like to repeat the localization, but the format option is uglier #}

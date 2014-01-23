@@ -5,10 +5,6 @@
     margin-top: -5px;
 }
 
-#post-list > .block:last-child {
-    margin-top: -30px;
-}
-
 #sidebar {
     padding-left: 30px;
 }
@@ -54,6 +50,16 @@
 
 .post-actions {
     margin-top: 15px;
+}
+
+.post-actions > .btn {
+    margin-left: 0;
+    margin-right: 5px;
+}
+
+.post-actions.pull-right > .btn {
+    margin-left: 5px;
+    margin-right: 0;
 }
 
 #comments {

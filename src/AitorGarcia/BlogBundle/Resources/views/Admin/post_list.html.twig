@@ -25,14 +25,14 @@
 
 {% if app.session.flashbag.keys() is not empty %}
 <div id="alerts" class="row">
-{% for type, messages in app.session.flashbag.all() %}
+    {% for type, messages in app.session.flashbag.all() %}
     <div class="alert alert-dismissable alert-{{ type }}">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         {% for message in messages %}
-            <p>{{ message }}</p>
+        <p>{{ message }}</p>
         {% endfor %}
     </div>
-{% endfor %}
+    {% endfor %}
 </div>
 {% endif %}
 
@@ -50,7 +50,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                {% for post in posts %}
+                    {% for post in posts %}
                     <tr>
                         <td class="text-center">{{ post.id }}</td>
                         <td>{{ post.title | truncate(35, true) }}</td>
@@ -68,11 +68,11 @@
                             </a>
                         </td>
                     </tr>
-                {% else %}
+                    {% else %}
                     <tr>
                         <td colspan="5">{{ 'posts.message.empty_list' | trans }}</td>
                     </tr>
-                {% endfor %}
+                    {% endfor %}
                 </tbody>
             </table>
         </div>

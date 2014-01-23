@@ -18,7 +18,7 @@
 {% block page %}
 <div id="post-list" class="row">
     <div id="posts" class="block">
-    {% for post in posts %}
+        {% for post in posts %}
         <div class="post clearfix">
             <h2>
                 <a href="{{ path('blog_post_show', { 'slug': post.slug }) }}">{{ post.title }}</a>
@@ -28,11 +28,13 @@
             </div>
             {% if post.tags is not empty %}
             <div class="post-tags">
+                {% spaceless %}
                 <ul class="tags list-inline">
-                {% for tag in post.tags %}
+                    {% for tag in post.tags %}
                     <li><span>{{ tag.name }}</span></li>
-                {% endfor %}
+                    {% endfor %}
                 </ul>
+                {% endspaceless %}
             </div>
             {% endif %}
             <div class="post-body">
@@ -40,13 +42,14 @@
             {% set paragraphs = post.body | split('<br /><br />') %}
             {% for i in 0..(numParagraphs - 1) %}
                 {% if paragraphs[i] is defined %}
-                    <p>{{ paragraphs[i] | raw }}</p>
+                <p>{{ paragraphs[i] | raw }}</p>
                 {% endif %}
             {% endfor %}
             {% if (paragraphs | length) > numParagraphs %}
                 <p>(...)</p>
             {% endif %}
             </div>
+            {% spaceless %}
             <div class="post-actions pull-right">
                 <a class="btn btn-primary btn-icon" href="{{ path('blog_post_show', { 'slug': post.slug }) }}#comments">
                     <span class="icon icon-comment"></span>{{ post.comments | length }} {{ 'button.comments' | trans }}
@@ -55,12 +58,13 @@
                     <span class="icon icon-read-more"></span>{{ 'button.read_more' | trans }}
                 </a>
             </div>
+            {% endspaceless %}
         </div>
-    {% else %}
+        {% else %}
         <div class="block col-sm-12">
             <p>{{ 'posts.message.empty_list' | trans }}</p>
         </div>
-    {% endfor %}
+        {% endfor %}
     </div>
     {{ knp_pagination_render(posts) }}
 </div>
