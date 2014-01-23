@@ -1,25 +1,6 @@
-select.form-control {
-    min-height: 150px;
-    padding: 5px;
-}
-
-.checkbox {
-    margin-top: 0;
-    margin-bottom: 15px;
-}
-
-.checkbox input[type="checkbox"] {
-    margin-left: 0;
-    margin-right: 5px;
-}
-
-input[type="file"] {
-    width: 100%;
-    font-size: 14px;
-    margin-top: 4px;
-    margin-bottom: 3px;
-}
-
+/*
+ * FORMS
+ */
 form h2 {
     font-size: 16px;
     margin-left: 15px;
@@ -36,6 +17,35 @@ form .form-group .alert {
     margin: 10px 0;
 }
 
+
+/*
+ * CONTROLS
+ */
+.checkbox {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.checkbox input[type="checkbox"] {
+    margin-left: 0;
+    margin-right: 8px;
+}
+
+input[type="file"] {
+    width: 100%;
+    font-size: 14px;
+    margin-top: 4px;
+    margin-bottom: 3px;
+}
+
+select.form-dropdown {
+    padding: 6px 8px;
+}
+
+
+/*
+ * ACTIONS
+ */
 #form-actions {
     border-top: 1px dotted #ddd;
     margin-top: 10px;
