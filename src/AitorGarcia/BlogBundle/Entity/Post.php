@@ -85,6 +85,19 @@ class Post
     protected $updatedAt;
 
     /**
+     * The post status.
+     *
+     * Values:
+     * 0 - Draft
+     * 1 - Published
+     *
+     * @var boolean
+     *
+     * @ORM\Column(type="integer")
+     */
+    protected $status;
+
+    /**
      * This represents the ManyToMany Posts-Tags relationship.
      *
      * @var Doctrine\Common\Collections\Collection
@@ -210,6 +223,48 @@ class Post
     public function getUpdatedAt()
     {
         return $this->updatedAt;
+    }
+
+    /**
+     * Gets the post status.
+     *
+     * @return  string
+     */
+    public function getStatus()
+    {
+        $status = 'draft';
+
+        if ($this->status === 1)
+        {
+            $status = 'published';
+        }
+
+        return $status;
+    }
+
+    /**
+     * Sets the post status.
+     *
+     * @param   string
+     * @return  Post
+     */
+    public function setStatus($status)
+    {
+        $status = trim(strtolower($status));
+
+        switch ($status)
+        {
+            case 'draft':
+                $this->status = 0;
+                break;
+            case 'published':
+                $this->status = 1;
+                break;
+            default:
+                break;
+        }
+
+        return $this;
     }
 
     /**
