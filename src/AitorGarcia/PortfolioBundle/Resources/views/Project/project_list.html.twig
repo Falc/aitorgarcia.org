@@ -16,26 +16,26 @@
 
 {% block page %}
 <div id="project-list" class="row">
-{% for project in projects %}
-    <div class="block col-sm-6 col-md-4">
-        <a class="project" href="{{ path('portfolio_project_show', { 'slug': project.slug }) }}">
-            <div>
-            {% if project.screenshots is empty %}
-                <img class="project-cover" src="/files/no-project-screenshot.png" alt="{{ project.name }}" title="{{ project.name }}" />
-            {% else %}
-                <img class="project-cover" src="/{{ project.screenshots[0].getWebPath() }}" alt="{{ project.name }}" title="{{ project.name }}" />
-            {% endif %}
-            </div>
-            <span class="project-name">{{ project.name }}</span>
-        </a>
+    <div id="projects" class="clear">
+        {% for project in projects %}
+        <div class="block col-sm-6 col-md-4">
+            <a class="project" href="{{ path('portfolio_project_show', { 'slug': project.slug }) }}">
+                <div>
+                {% if project.screenshots is empty %}
+                    <img class="project-cover" src="/files/no-project-screenshot.png" alt="{{ project.name }}" title="{{ project.name }}" />
+                {% else %}
+                    <img class="project-cover" src="/{{ project.screenshots[0].getWebPath() }}" alt="{{ project.name }}" title="{{ project.name }}" />
+                {% endif %}
+                </div>
+                <span class="project-name">{{ project.name }}</span>
+            </a>
+        </div>
+        {% else %}
+        <div class="block col-sm-12">
+            <p>{{ 'projects.message.empty_list' | trans }}</p>
+        </div>
+        {% endfor %}
     </div>
-{% else %}
-    <div class="block col-sm-12">
-        <p>{{ 'projects.message.empty_list' | trans }}</p>
-    </div>
-{% endfor %}
-    <div class="text-center col-sm-12">
     {{ knp_pagination_render(projects) }}
-    </div>
 </div>
 {% endblock %}
