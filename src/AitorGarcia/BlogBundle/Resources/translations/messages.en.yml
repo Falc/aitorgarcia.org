@@ -25,6 +25,9 @@ posts:
         success_edition:    The post was edited successfully.
     subnavigation:
         post_list:          Technology, programming and other stuff
+    status:
+        draft:              Draft
+        published:          Published
     title:
         create:             Create Post
         delete:             Delete Post
@@ -39,6 +42,7 @@ field:
     created_at:     Created
     id:             ID
     leave_comment:  Leave a comment
+    status:         Status
     tags:           Tags
     title:          Title
     website:        Website

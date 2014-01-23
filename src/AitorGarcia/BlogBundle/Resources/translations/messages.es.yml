@@ -25,6 +25,9 @@ posts:
         success_edition:    La entrada ha sido modificada correctamente.
     subnavigation:
         post_list:          Tecnología, programación y otras historias
+    status:
+        draft:              Borrador
+        published:          Publicada
     title:
         create:             Nueva entrada
         delete:             Eliminar entrada
@@ -39,6 +42,7 @@ field:
     created_at:     Creado
     id:             ID
     leave_comment:  Deja un comentario
+    status:         Estado
     tags:           Etiquetas
     title:          Título
     website:        Web
