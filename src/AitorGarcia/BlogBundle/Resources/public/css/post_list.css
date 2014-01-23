@@ -13,6 +13,10 @@
     margin-top: 0;
 }
 
+#posts + div {
+    margin-top: -30px;
+}
+
 .post {
     border-bottom: 1px solid #e2e6ea;
     margin-bottom: 30px;
