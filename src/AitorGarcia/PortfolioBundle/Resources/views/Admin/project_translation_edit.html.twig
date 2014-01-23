@@ -42,9 +42,9 @@
                     <h2>{{ 'projects.legend.images' | trans }}</h2>
                     <div id="screenshots" class="block col-sm-12" data-empty="{% filter escape %}<div class="alert alert-warning">{{ 'projects.message.no_screenshots' | trans }}</div>{% endfilter %}">
                         {% for screenshot in form.screenshots %}
-                            {% include 'AitorGarciaPortfolioBundle:Admin:project_translation_screenshot_row.html.twig' with {'screenshot': screenshot} %}
+                        {% include 'AitorGarciaPortfolioBundle:Admin:project_translation_screenshot_row.html.twig' with {'screenshot': screenshot} %}
                         {% else %}
-                            <div class="alert alert-warning">{{ 'projects.message.no_screenshots' | trans }}</div>
+                        <div class="alert alert-warning">{{ 'projects.message.no_screenshots' | trans }}</div>
                         {% endfor %}
                     </div>
                 </div>

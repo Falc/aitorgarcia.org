@@ -21,11 +21,11 @@
         <div class="block col-sm-6 col-md-4">
             <a class="project" href="{{ path('portfolio_project_show', { 'slug': project.slug }) }}">
                 <div>
-                {% if project.screenshots is empty %}
+                    {% if project.screenshots is empty %}
                     <img class="project-cover" src="/files/no-project-screenshot.png" alt="{{ project.name }}" title="{{ project.name }}" />
-                {% else %}
+                    {% else %}
                     <img class="project-cover" src="/{{ project.screenshots[0].getWebPath() }}" alt="{{ project.name }}" title="{{ project.name }}" />
-                {% endif %}
+                    {% endif %}
                 </div>
                 <span class="project-name">{{ project.name }}</span>
             </a>

@@ -23,17 +23,17 @@
     <div id="project-screenshots" class="block col-md-6">
         <div class="slider">
             <ul class="slides bg-dark-diamonds">
-        {% if project.screenshots is empty %}
+            {% if project.screenshots is empty %}
             <li class="slide">
                 <img src="/files/no-project-screenshot.png" alt="{{ project.name }}" title="{{ project.name }}" />
             </li>
-        {% else %}
-            {% for screenshot in project.screenshots %}
+            {% else %}
+                {% for screenshot in project.screenshots %}
                 <li class="slide">
                     <img src="/{{ screenshot.getWebPath() }}" alt="{{ screenshot.name }}" title="{{ screenshot.name }}" />
                 </li>
-            {% endfor %}
-        {% endif %}
+                {% endfor %}
+            {% endif %}
             </ul>
         </div>
         <div id="project-actions" style="padding-top: 0; padding-bottom: 0;">
@@ -41,9 +41,9 @@
                 <span class="icon icon-view"></span>{{ 'button.view_project' | trans }}
             </a>
             {%- if project.sourceLink is not empty -%}
-                <a class="btn btn-primary btn-icon" href="{{ project.sourceLink }}">
-                    <span class="icon icon-source-code"></span>{{ 'button.source_code' | trans }}
-                </a>
+            <a class="btn btn-primary btn-icon" href="{{ project.sourceLink }}">
+                <span class="icon icon-source-code"></span>{{ 'button.source_code' | trans }}
+            </a>
             {% endif %}
         </div>
     </div>
@@ -65,11 +65,13 @@
         <div class="row">
             <div id="project-technologies" class="block col-sm-12">
                 <h2>{{ 'field.technologies' | trans }}</h2>
+                {% spaceless %}
                 <ul class="tags list-inline">
-                {% for technology in project.technologies -%}
+                    {% for technology in project.technologies %}
                     <li><span>{{ technology.name }}</span></li>
-                {%- endfor -%}
+                    {% endfor %}
                 </ul>
+                {% endspaceless %}
             </div>
         </div>
     </div>
