@@ -25,10 +25,12 @@
             </div>
             {{ form_rest(form) }}
 
+            {% spaceless %}
             <div id="form-actions">
                 <input class="btn btn-success" type="submit" name="confirm" value="{{ 'button.confirm' | trans }}" />
                 <input class="btn btn-danger" type="submit" name="cancel" value="{{ 'button.cancel' | trans }}" />
             </div>
+            {% endspaceless %}
         </form>
     </div>
 </div>
