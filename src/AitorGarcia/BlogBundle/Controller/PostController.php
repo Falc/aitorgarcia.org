@@ -102,4 +102,57 @@ class PostController extends Controller
             )
         );
     }
+
+    /**
+     * Displays the blog feed.
+     */
+    public function feedAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        // Find the latest posts
+        $query = $em->createQuery('
+            SELECT post
+            FROM AitorGarciaBlogBundle:Post post
+            WHERE post.status = 1
+            ORDER BY post.createdAt DESC
+        ');
+
+        // Use the paginator to limit the results
+        $paginator = $this->get('knp_paginator');
+        $posts = $paginator->paginate($query, 1, 5);
+
+        $items = array();
+
+        foreach ($posts as $post)
+        {
+            $items[] = array(
+                'title'         => $post->getTitle(),
+                'link'          => $this->generateUrl('blog_post_show', array('slug' => $post->getSlug()), true),
+                'description'   => $post->getBody(),
+                'pubDate'       => $post->getCreatedAt(),
+                'guid'          => $this->generateUrl('blog_post_show', array('slug' => $post->getSlug()), true)
+            );
+        }
+
+        // Render the view
+        $response = $this->render(
+            '::base.rss.twig',
+            array(
+                'title'         => 'Aitor García',
+                'link'          => $this->generateUrl('blog_post_list', array(), true),
+                'description'   => $this->get('translator')->trans('posts.subnavigation.post_list'),
+                'language'      => 'es',
+                'pubDate'       => time(),
+                'lastBuildDate' => time(),
+                'items'         => $items
+            )
+        );
+
+        // Set max-age to 21.600 seconds (6 hours)
+        $response->setPublic();
+        $response->setSharedMaxAge(21600);
+
+        return $response;
+    }
 }

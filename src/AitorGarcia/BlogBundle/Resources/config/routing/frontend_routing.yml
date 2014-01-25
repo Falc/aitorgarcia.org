@@ -1,3 +1,7 @@
+blog_post_feed:
+    locales:  { en: "/blog-en/feed", es: "/blog/feed" }
+    defaults: { _controller: AitorGarciaBlogBundle:Post:feed }
+
 blog_post_list:
     locales:  { en: "/blog-en/{page}", es: "/blog/{page}" }
     defaults: { _controller: AitorGarciaBlogBundle:Post:list, page: 1 }
