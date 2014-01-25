@@ -191,8 +191,7 @@ li.dropdown.open .dropdown-menu > a {
 }
 
 #options {
-    margin-top: 5px;
-    margin-bottom: 15px;
+    margin: 10px 0 5px 0;
 }
 
 
@@ -249,7 +248,7 @@ li.dropdown.open .dropdown-menu > a {
     margin-right: 6px;
 }
 
-#actions.pull-right > a.btn {
+#actions.pull-right > .btn {
     margin-left: 6px;
     margin-right: 0;
 }
@@ -620,7 +619,7 @@ ul.tags li a:active {
     }
 
     #options {
-        margin-bottom: 0;
+        margin: 20px 0 15px 0;
     }
 }
 
