@@ -197,9 +197,9 @@ class PostController extends Controller
             )
         );
 
-        // Set max-age to 21.600 seconds (6 hours)
+        // Set max-age to 10.800 seconds (3 hours)
         $response->setPublic();
-        $response->setSharedMaxAge(21600);
+        $response->setSharedMaxAge(10800);
 
         return $response;
     }
