@@ -68,7 +68,7 @@ class PostController extends Controller
         {
             $tagName = $tag->getName();
 
-            // Find all the posts tagged with $tag
+            // Find all the posts tagged with the specified tag
             $query = $em->createQuery('
                 SELECT post
                 FROM AitorGarciaBlogBundle:Post post
