@@ -25,6 +25,7 @@ posts:
         success_edition:    The post was edited successfully.
     subnavigation:
         post_list:          Technology, programming and other stuff
+        posts_by_tag:       Posts about
     status:
         draft:              Draft
         published:          Published

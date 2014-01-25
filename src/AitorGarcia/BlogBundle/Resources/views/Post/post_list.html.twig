@@ -13,7 +13,15 @@
 
 {% block title %}{{ 'posts.title.list' | trans }} - Aitor García{% endblock %}
 
-{% block infotext %}{{ 'posts.subnavigation.post_list' | trans }}{% endblock %}
+{% block infotext %}
+{% spaceless %}
+    {% if tagName is defined %}
+        {{ 'posts.subnavigation.posts_by_tag' | trans }} "{{ tagName }}"
+    {% else %}
+        {{ 'posts.subnavigation.post_list' | trans }}
+    {% endif %}
+{% endspaceless %}
+{% endblock %}
 
 {% block page %}
 <div id="post-list" class="row">
@@ -31,7 +39,7 @@
                 {% spaceless %}
                 <ul class="tags list-inline">
                     {% for tag in post.tags %}
-                    <li><span>{{ tag.name }}</span></li>
+                    <li><a href="{{ path('blog_post_list_by_tag', { 'slug': tag.slug }) }}">{{ tag.name }}</a></li>
                     {% endfor %}
                 </ul>
                 {% endspaceless %}
@@ -66,6 +74,6 @@
         </div>
         {% endfor %}
     </div>
-    {{ knp_pagination_render(posts) }}
+    {% if posts is not empty %}{{ knp_pagination_render(posts) }}{% endif %}
 </div>
 {% endblock %}

@@ -25,6 +25,7 @@ posts:
         success_edition:    La entrada ha sido modificada correctamente.
     subnavigation:
         post_list:          Tecnología, programación y otras historias
+        posts_by_tag:       Entradas sobre
     status:
         draft:              Borrador
         published:          Publicada

@@ -20,6 +20,8 @@ class PostController extends Controller
 {
     /**
      * Displays a list of posts.
+     *
+     * @param   integer $page   Current page.
      */
     public function listAction($page)
     {
@@ -41,6 +43,52 @@ class PostController extends Controller
             'AitorGarciaBlogBundle:Post:post_list.html.twig',
             array(
                 'posts' => $posts
+            )
+        );
+    }
+
+    /**
+     * Displays the list of posts tagged with the specified tag.
+     *
+     * @param   string  $slug   Tag slug.
+     * @param   integer $page   Current page.
+     */
+    public function listByTagAction($slug, $page)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        // Find the selected tag
+        $tag = $em->getRepository('AitorGarciaBlogBundle:Tag')->findOneBySlug($slug);
+
+        // These are the default values
+        $tagName = $slug;
+        $posts = array();
+
+        if ($tag !== null)
+        {
+            $tagName = $tag->getName();
+
+            // Find all the posts tagged with $tag
+            $query = $em->createQuery('
+                SELECT post
+                FROM AitorGarciaBlogBundle:Post post
+                LEFT JOIN post.tags tag
+                WHERE post.status = 1
+                AND tag.slug = :slug
+                ORDER BY post.createdAt DESC
+            ');
+            $query->setParameter('slug', $slug);
+
+            $paginator = $this->get('knp_paginator');
+            $posts = $paginator->paginate($query, $page, 3);
+        }
+
+        // Render the view
+        return $this->render(
+            'AitorGarciaBlogBundle:Post:post_list.html.twig',
+            array(
+                'posts'     => $posts,
+                'tagName'   => $tagName
             )
         );
     }
