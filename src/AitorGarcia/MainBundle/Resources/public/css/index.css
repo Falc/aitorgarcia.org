@@ -24,28 +24,20 @@
     float: left;
 }
 
-.index-icon-person {
+.index-icon-document {
     background: url(../images/index-icons.png) no-repeat 0 0;
 }
 
-.index-icon-document {
-    background: url(../images/index-icons.png) no-repeat -40px 0;
+.index-icon-books {
+    background: url(../images/index-icons.png) no-repeat -40px -0;
 }
 
 .index-icon-linux {
     background: url(../images/index-icons.png) no-repeat -80px 0;
 }
 
-.index-icon-books {
-    background: url(../images/index-icons.png) no-repeat 0 -40px;
-}
-
-.index-icon-showcase {
-    background: url(../images/index-icons.png) no-repeat -40px -40px;
-}
-
 .index-icon-sign {
-    background: url(../images/index-icons.png) no-repeat -80px -40px;
+    background: url(../images/index-icons.png) no-repeat -120px 0;
 }
 
 
