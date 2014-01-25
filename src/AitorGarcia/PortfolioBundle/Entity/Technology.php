@@ -3,7 +3,7 @@
  * This file contains the Technology class.
  *
  * @author		Aitor García <aitor.falc@gmail.com>
- * @copyright	2012-2013 Aitor García <aitor.falc@gmail.com>
+ * @copyright	2012-2014 Aitor García <aitor.falc@gmail.com>
  * @license		https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE Simplified BSD License
  */
 
@@ -11,6 +11,7 @@ namespace AitorGarcia\PortfolioBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -44,6 +45,16 @@ class Technology
     protected $name;
 
     /**
+     * The technology slug.
+     *
+     * @var string
+     *
+     * @Gedmo\Slug(fields={"name"})
+     * @ORM\Column(type="string", unique=true)
+     */
+    protected $slug;
+
+    /**
      * This represents the ManyToMany Projects-Technologies relationship.
      *
      * @var Doctrine\Common\Collections\Collection
@@ -71,6 +82,16 @@ class Technology
     }
 
     /**
+     * Gets the name.
+     *
+     * @return  string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
      * Sets the name.
      *
      * @param   string  $name
@@ -84,13 +105,26 @@ class Technology
     }
 
     /**
-     * Gets the name.
+     * Gets the slug.
      *
-     * @return  string 
+     * @return  string
      */
-    public function getName()
+    public function getSlug()
     {
-        return $this->name;
+        return $this->slug;
+    }
+
+    /**
+     * Sets the slug.
+     *
+     * @param   string  $slug
+     * @return  Tag
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    
+        return $this;
     }
 
     /**

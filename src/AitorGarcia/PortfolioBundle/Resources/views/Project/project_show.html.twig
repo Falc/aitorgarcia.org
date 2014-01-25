@@ -68,7 +68,7 @@
                 {% spaceless %}
                 <ul class="tags list-inline">
                     {% for technology in project.technologies %}
-                    <li><span>{{ technology.name }}</span></li>
+                    <li><a href="{{ path('portfolio_project_list_by_technology', { 'slug': technology.slug }) }}">{{ technology.name }}</a></li>
                     {% endfor %}
                 </ul>
                 {% endspaceless %}

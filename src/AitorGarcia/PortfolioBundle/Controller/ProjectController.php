@@ -3,7 +3,7 @@
  * This file contains the ProjectController class.
  *
  * @author		Aitor García <aitor.falc@gmail.com>
- * @copyright	2012-2013 Aitor García <aitor.falc@gmail.com>
+ * @copyright	2012-2014 Aitor García <aitor.falc@gmail.com>
  * @license		https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE Simplified BSD License
  */
 
@@ -19,6 +19,8 @@ class ProjectController extends Controller
 {
     /**
      * Displays a list of projects.
+     *
+     * @param   integer $page   Current page.
      */
     public function listAction($page)
     {
@@ -39,6 +41,51 @@ class ProjectController extends Controller
             'AitorGarciaPortfolioBundle:Project:project_list.html.twig',
             array(
                 'projects' => $projects
+            )
+        );
+    }
+
+    /**
+     * Displays the list of projects tagged with the specified technology.
+     *
+     * @param   string  $slug   Technology slug.
+     * @param   integer $page   Current page.
+     */
+    public function listByTechnologyAction($slug, $page)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        // Find the selected technology
+        $technology = $em->getRepository('AitorGarciaPortfolioBundle:Technology')->findOneBySlug($slug);
+
+        // These are the default values
+        $technologyName = $slug;
+        $projects = array();
+
+        if ($technology !== null)
+        {
+            $technologyName = $technology->getName();
+
+            // Find all the projects tagged with the specified technology
+            $query = $em->createQuery('
+                SELECT project
+                FROM AitorGarciaPortfolioBundle:Project project
+                LEFT JOIN project.technologies technology
+                WHERE technology.slug = :slug
+                ORDER BY project.createdAt DESC
+            ');
+            $query->setParameter('slug', $slug);
+
+            $paginator = $this->get('knp_paginator');
+            $projects = $paginator->paginate($query, $page, 6);
+        }
+
+        // Render the view
+        return $this->render(
+            'AitorGarciaPortfolioBundle:Project:project_list.html.twig',
+            array(
+                'projects'       => $projects,
+                'technologyName' => $technologyName
             )
         );
     }

@@ -15,6 +15,25 @@
 {% block infotext %}{{ 'projects.subnavigation.project_list' | trans }}{% endblock %}
 
 {% block page %}
+{% if projects is not empty %}
+<div id="options" class="row">
+    <div id="actions" class="btn-group pull-right">
+        <button type="button" class="btn btn-primary btn-icon dropdown-toggle" data-toggle="dropdown">
+            <span class="icon icon-technology"></span>{% if technologyName is defined %}{{ technologyName }}{% else %}{{ 'technologies.title.list' | trans }}{% endif %} <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="{{ path('portfolio_project_list') }}">{{ 'button.show_all' | trans }}</a></li>
+            <li class="divider"></li>
+            <li><a href="{{ path('portfolio_project_list_by_technology', { 'slug': 'php' }) }}">PHP</a></li>
+            <li><a href="{{ path('portfolio_project_list_by_technology', { 'slug': 'symfony-2' }) }}">Symfony 2</a></li>
+            <li><a href="{{ path('portfolio_project_list_by_technology', { 'slug': 'mysql' }) }}">MySQL</a></li>
+            <li><a href="{{ path('portfolio_project_list_by_technology', { 'slug': 'jquery' }) }}">jQuery</a></li>
+        </ul>
+    </div>
+</div>
+{% endif %}
+
+
 <div id="project-list" class="row">
     <div id="projects" class="clear">
         {% for project in projects %}
@@ -36,6 +55,6 @@
         </div>
         {% endfor %}
     </div>
-    {{ knp_pagination_render(projects) }}
+    {% if projects is not empty %}{{ knp_pagination_render(projects) }}{% endif %}
 </div>
 {% endblock %}

@@ -1,10 +1,6 @@
 /*
  * PROJECT LIST
  */
-#project-list {
-    margin-top: -5px;
-}
-
 #project-list > .block {
     padding-bottom: 10px;
 }
