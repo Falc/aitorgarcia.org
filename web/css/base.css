@@ -153,6 +153,10 @@ li.dropdown.open .dropdown-menu > a {
     color: #fafafa;
 }
 
+.dropdown-menu .divider {
+    background-color: #555;
+}
+
 
 /*
  * INFOBAR
