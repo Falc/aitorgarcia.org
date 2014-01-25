@@ -586,6 +586,11 @@ ul.tags li a:active {
     background-position: 0 -96px;
 }
 
+.icon-technology {
+    background-image: url(../images/icons.png);
+    background-position: -32px -96px;
+}
+
 
 /*
  * MISC
