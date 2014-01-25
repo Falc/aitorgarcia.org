@@ -7,3 +7,7 @@ services:
         class: Twig_Extensions_Extension_Intl
         tags:
             - { name: twig.extension }
+    twig.extension.falc_text:
+        class: Falc\Twig\Extension\TextExtension
+        tags:
+            - { name: twig.extension }

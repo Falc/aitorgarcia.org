@@ -5,7 +5,7 @@ imports:
     - { resource: lunetics_locale.yml }
     - { resource: stfalcon_tinymce.yml }
     - { resource: stof_doctrine_extensions.yml }
-    - { resource: twig_core_extensions.yml }
+    - { resource: twig_extensions.yml }
     - { resource: besimple_locale_guesser.yml }
     - { resource: eo_honeypot.yml }
     - { resource: exercise_htmlpurifier.yml }
