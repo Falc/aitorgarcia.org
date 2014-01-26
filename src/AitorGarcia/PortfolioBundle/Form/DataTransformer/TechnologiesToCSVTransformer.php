@@ -2,9 +2,9 @@
 /**
  * This file contains the TechnologiesToCSVTransformer class.
  *
- * @author		Aitor García <aitor.falc@gmail.com>
- * @copyright	2013 Aitor García <aitor.falc@gmail.com>
- * @license		https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE Simplified BSD License
+ * @author      Aitor García (Falc) <aitor.falc@gmail.com>
+ * @copyright   2013 Aitor García (Falc) <aitor.falc@gmail.com>
+ * @license     https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE Simplified BSD License
  */
 
 namespace AitorGarcia\PortfolioBundle\Form\DataTransformer;
