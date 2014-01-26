@@ -6,7 +6,6 @@ stfalcon_tinymce:
         simple:
             content_css: "/css/tinymce-body.css"
             convert_urls: false
-            forced_root_block: false
             entity_encoding: "raw"
             plugins: "anchor link lists paste"
             menubar: false
@@ -15,7 +14,6 @@ stfalcon_tinymce:
         advanced:
             content_css: "/css/tinymce-body.css"
             convert_urls: false
-            forced_root_block: false
             entity_encoding: "raw"
             plugins: "anchor code image link lists media paste table"
             menubar: false
