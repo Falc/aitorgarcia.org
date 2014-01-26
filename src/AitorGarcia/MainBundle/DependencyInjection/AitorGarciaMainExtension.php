@@ -3,7 +3,7 @@
  * This file contains the MainExtension class.
  *
  * @author		Aitor García <aitor.falc@gmail.com>
- * @copyright	2012 Aitor García <aitor.falc@gmail.com>
+ * @copyright	2012-2014 Aitor García <aitor.falc@gmail.com>
  * @license		https://github.com/Falc/aitorgarcia.org/blob/master/LICENSE Simplified BSD License
  */
 
