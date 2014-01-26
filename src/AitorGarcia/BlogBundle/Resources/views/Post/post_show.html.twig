@@ -44,7 +44,7 @@
             </div>
             {% endif %}
             <div class="post-body">
-                <p>{{ post.body | replace({'<br /><br />':'</p><p>'}) | raw }}</p>
+                {{ post.body | raw }}
             </div>
         </div>
         <div id="comments">
@@ -106,7 +106,7 @@
                     {{ form_widget(form._token) }}
                 </fieldset>
                 <div id="form-actions">
-                    <input class="btn btn-primary" type="submit" name="send" value="{{ 'button.send' | trans }}" />
+                    <input class="btn btn-primary" type="submit" name="send" value="{{ 'button.send_comment' | trans }}" />
                 </div>
             </form>
         </div>

@@ -46,13 +46,9 @@
             </div>
             {% endif %}
             <div class="post-body">
-            {% set numParagraphs = 3 %}
-            {% set paragraphs = post.body | split('<br /><br />') %}
-            {% for i in 0..(numParagraphs - 1) %}
-                {% if paragraphs[i] is defined %}
-                <p>{{ paragraphs[i] | raw }}</p>
-                {% endif %}
-            {% endfor %}
+            {% set numParagraphs = 2 %}
+            {% set paragraphs = post.body | paragraphs_slice %}
+            {{ paragraphs | slice(0,numParagraphs) | join | raw }}
             {% if (paragraphs | length) > numParagraphs %}
                 <p>(...)</p>
             {% endif %}
