@@ -5,10 +5,15 @@
     'css/base.css'
     'css/forms.css'
     'css/tinymce.css'
+    'css/min/highlight.sunburst.css'
     'bundles/aitorgarciablog/css/post.css'
 %}
     <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
 {% endstylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ asset('js/min/highlight.pack.js') }}" type="text/javascript"></script>
 {% endblock %}
 
 {% block title %}{{ post.title }} - Aitor García{% endblock %}
@@ -124,6 +129,8 @@
         btnSend.append('<span class="icon icon-submit"></span>' + '{{ 'button.send_comment' | trans }}');
 
         inputSend.replaceWith(btnSend);
+
+        $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
     });
 </script>
 {% endblock %}
