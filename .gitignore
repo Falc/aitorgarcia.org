@@ -11,5 +11,6 @@ vendor/*
 web/bundles/*
 web/components/*
 web/css/min/*
+web/js/min/*
 web/files/project-screenshots/*
 Capfile
