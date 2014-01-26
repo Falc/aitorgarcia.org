@@ -46,6 +46,10 @@ h2 > a:hover {
     color: #0681bf;
 }
 
+pre {
+    margin: 15px 0;
+}
+
 
 /*
  * CONTAINERS
