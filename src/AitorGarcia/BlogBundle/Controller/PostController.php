@@ -31,7 +31,7 @@ class PostController extends Controller
         $query = $em->createQuery('
             SELECT post
             FROM AitorGarciaBlogBundle:Post post
-            WHERE post.status = 1
+            WHERE post.isPublished = 1
             ORDER BY post.createdAt DESC
         ');
 
@@ -73,7 +73,7 @@ class PostController extends Controller
                 SELECT post
                 FROM AitorGarciaBlogBundle:Post post
                 LEFT JOIN post.tags tag
-                WHERE post.status = 1
+                WHERE post.isPublished = 1
                 AND tag.slug = :slug
                 ORDER BY post.createdAt DESC
             ');
@@ -162,7 +162,7 @@ class PostController extends Controller
         $query = $em->createQuery('
             SELECT post
             FROM AitorGarciaBlogBundle:Post post
-            WHERE post.status = 1
+            WHERE post.isPublished = 1
             ORDER BY post.createdAt DESC
         ');
 

@@ -55,13 +55,13 @@ class PostType extends AbstractType
 
         $builder->add($tags);
 
-        $builder->add('status', 'choice', array(
-            'attr'  => array(
+        $builder->add('isPublished', 'choice', array(
+            'attr' => array(
                 'class' => 'form-control form-dropdown'
             ),
             'choices' => array(
-                'draft'     => 'posts.status.draft',
-                'published' => 'posts.status.published'
+                false   => 'posts.status.draft',
+                true    => 'posts.status.published'
             )
         ));
     }

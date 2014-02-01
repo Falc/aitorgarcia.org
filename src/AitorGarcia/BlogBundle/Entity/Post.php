@@ -85,17 +85,13 @@ class Post
     protected $updatedAt;
 
     /**
-     * The post status.
-     *
-     * Values:
-     * 0 - Draft
-     * 1 - Published
+     * Whether the post is published.
      *
      * @var boolean
      *
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="boolean")
      */
-    protected $status;
+    protected $isPublished;
 
     /**
      * This represents the ManyToMany Posts-Tags relationship.
@@ -178,7 +174,7 @@ class Post
     public function setBody($body)
     {
         $this->body = $body;
-    
+
         return $this;
     }
 
@@ -201,7 +197,7 @@ class Post
     public function setSlug($slug)
     {
         $this->slug = $slug;
-    
+
         return $this;
     }
 
@@ -226,43 +222,24 @@ class Post
     }
 
     /**
-     * Gets the post status.
+     * Gets whether the post is published.
      *
-     * @return  string
+     * @return  boolean
      */
-    public function getStatus()
+    public function getIsPublished()
     {
-        $status = 'draft';
-
-        if ($this->status === 1)
-        {
-            $status = 'published';
-        }
-
-        return $status;
+        return $this->isPublished;
     }
 
     /**
-     * Sets the post status.
+     * Sets whether the post is published.
      *
-     * @param   string
+     * @param   boolean
      * @return  Post
      */
-    public function setStatus($status)
+    public function setIsPublished($isPublished)
     {
-        $status = trim(strtolower($status));
-
-        switch ($status)
-        {
-            case 'draft':
-                $this->status = 0;
-                break;
-            case 'published':
-                $this->status = 1;
-                break;
-            default:
-                break;
-        }
+        $this->isPublished = $isPublished;
 
         return $this;
     }
