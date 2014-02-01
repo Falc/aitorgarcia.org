@@ -922,12 +922,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Falc/TwigTextExtension.git",
-                "reference": "a1021fd2e0c0198b236e6e542d87c0222450261b"
+                "reference": "79c1c112b725dcee35c866628d22840d723469ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Falc/TwigTextExtension/zipball/a1021fd2e0c0198b236e6e542d87c0222450261b",
-                "reference": "a1021fd2e0c0198b236e6e542d87c0222450261b",
+                "url": "https://api.github.com/repos/Falc/TwigTextExtension/zipball/79c1c112b725dcee35c866628d22840d723469ea",
+                "reference": "79c1c112b725dcee35c866628d22840d723469ea",
                 "shasum": ""
             },
             "require": {
@@ -956,7 +956,7 @@
                 "text",
                 "twig"
             ],
-            "time": "2014-01-25 20:55:13"
+            "time": "2014-01-25 23:23:45"
         },
         {
             "name": "friendsofsymfony/user-bundle",

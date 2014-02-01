@@ -11,6 +11,21 @@ One of the goals behind this project was to learn things about Symfony2. And I d
 
 ## About the bundles
 
+### BlogBundle
+
+A blog system with published/draft posts, tags, comments and RSS feed.
+
+The frontend includes:
+
+* Post list (displays published posts by creation date or by tag)
+* Post view (with a comment submission form)
+* RSS feed
+
+The backend includes:
+
+* Post management (create, edit, delete, publish/unpublish)
+* Comment management (edit and delete)
+
 ### ContactBundle
 
 A simple contact section.

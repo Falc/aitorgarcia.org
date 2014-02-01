@@ -1,5 +1,31 @@
 # Changelog
 
+## 1.3 (2014-Feb-01)
+
+### Main
+
+* Add *BlogBundle*
+* Simplify the backend navbar
+
+### Projects
+
+* Display projects by technology
+* Add pagination
+
+### Vendors
+
+* Add HTMLPurifier
+* Add highlight.js
+
+### Others
+
+* Code cleaning
+* Rename and organize routes
+* Join CSS files by section to reduce the number of packed files
+* Remove unused images
+* Localize dates
+* Binding updates :P
+
 ## 1.2 (2014-Jan-12)
 
 ### Main
