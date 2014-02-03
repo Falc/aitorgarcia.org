@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "fe4db4a6f9ef8b0896b91020f7953dda",
+    "hash": "781f1101e3c6475cab550203c32b56ce",
     "packages": [
         {
             "name": "besimple/i18n-routing-bundle",
@@ -69,16 +69,16 @@
         },
         {
             "name": "components/bootstrap",
-            "version": "3.0.3",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/components/bootstrap.git",
-                "reference": "ed686e60f966ba415e34f8825fad454993afac4b"
+                "reference": "6e8250ef03379911c2aa410665ad15b638e2ca14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/components/bootstrap/zipball/ed686e60f966ba415e34f8825fad454993afac4b",
-                "reference": "ed686e60f966ba415e34f8825fad454993afac4b",
+                "url": "https://api.github.com/repos/components/bootstrap/zipball/6e8250ef03379911c2aa410665ad15b638e2ca14",
+                "reference": "6e8250ef03379911c2aa410665ad15b638e2ca14",
                 "shasum": ""
             },
             "require": {
@@ -121,7 +121,7 @@
                 "bootstrap",
                 "css"
             ],
-            "time": "2013-12-08 11:53:27"
+            "time": "2014-02-02 23:09:56"
         },
         {
             "name": "components/jquery",
@@ -922,12 +922,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Falc/TwigTextExtension.git",
-                "reference": "79c1c112b725dcee35c866628d22840d723469ea"
+                "reference": "43ce82bbbb2cdb7b47f3755d3819f0c8f733c22a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Falc/TwigTextExtension/zipball/79c1c112b725dcee35c866628d22840d723469ea",
-                "reference": "79c1c112b725dcee35c866628d22840d723469ea",
+                "url": "https://api.github.com/repos/Falc/TwigTextExtension/zipball/43ce82bbbb2cdb7b47f3755d3819f0c8f733c22a",
+                "reference": "43ce82bbbb2cdb7b47f3755d3819f0c8f733c22a",
                 "shasum": ""
             },
             "require": {
@@ -956,7 +956,7 @@
                 "text",
                 "twig"
             ],
-            "time": "2014-01-25 23:23:45"
+            "time": "2014-01-25 23:27:28"
         },
         {
             "name": "friendsofsymfony/user-bundle",
@@ -1032,12 +1032,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/l3pp4rd/DoctrineExtensions.git",
-                "reference": "645ba4cd4e7f9aa9f3730567931bea456c4d28c6"
+                "reference": "49246b152c37882f449871716639d7743c2690c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/l3pp4rd/DoctrineExtensions/zipball/645ba4cd4e7f9aa9f3730567931bea456c4d28c6",
-                "reference": "645ba4cd4e7f9aa9f3730567931bea456c4d28c6",
+                "url": "https://api.github.com/repos/l3pp4rd/DoctrineExtensions/zipball/49246b152c37882f449871716639d7743c2690c3",
+                "reference": "49246b152c37882f449871716639d7743c2690c3",
                 "shasum": ""
             },
             "require": {
@@ -1104,7 +1104,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2014-01-23 16:52:56"
+            "time": "2014-01-30 13:09:03"
         },
         {
             "name": "jdorn/sql-formatter",
@@ -1772,12 +1772,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/stfalcon/TinymceBundle.git",
-                "reference": "8b1d34ed0ed6439d944a1e9bcbe410143da8424e"
+                "reference": "435bced3dd39cb2fcc2de26ea2a14c8573abbdbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stfalcon/TinymceBundle/zipball/8b1d34ed0ed6439d944a1e9bcbe410143da8424e",
-                "reference": "8b1d34ed0ed6439d944a1e9bcbe410143da8424e",
+                "url": "https://api.github.com/repos/stfalcon/TinymceBundle/zipball/435bced3dd39cb2fcc2de26ea2a14c8573abbdbb",
+                "reference": "435bced3dd39cb2fcc2de26ea2a14c8573abbdbb",
                 "shasum": ""
             },
             "require": {
@@ -1821,7 +1821,7 @@
                 "tinymce",
                 "wysiwyg"
             ],
-            "time": "2014-01-14 13:12:13"
+            "time": "2014-01-29 13:57:45"
         },
         {
             "name": "stof/doctrine-extensions-bundle",
@@ -2105,17 +2105,17 @@
         },
         {
             "name": "symfony/swiftmailer-bundle",
-            "version": "v2.3.4",
+            "version": "v2.3.5",
             "target-dir": "Symfony/Bundle/SwiftmailerBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/SwiftmailerBundle.git",
-                "reference": "f5e5d12629c26a835c7aa1d74e2e041486b92d93"
+                "reference": "fcefa9dbd5a1ed20547b0f8a2afd5ad6837ea321"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/SwiftmailerBundle/zipball/f5e5d12629c26a835c7aa1d74e2e041486b92d93",
-                "reference": "f5e5d12629c26a835c7aa1d74e2e041486b92d93",
+                "url": "https://api.github.com/repos/symfony/SwiftmailerBundle/zipball/fcefa9dbd5a1ed20547b0f8a2afd5ad6837ea321",
+                "reference": "fcefa9dbd5a1ed20547b0f8a2afd5ad6837ea321",
                 "shasum": ""
             },
             "require": {
@@ -2156,7 +2156,7 @@
             ],
             "description": "Symfony SwiftmailerBundle",
             "homepage": "http://symfony.com",
-            "time": "2013-08-22 13:32:58"
+            "time": "2013-11-21 12:29:01"
         },
         {
             "name": "symfony/symfony",

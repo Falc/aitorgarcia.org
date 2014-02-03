@@ -19,7 +19,7 @@
         "sensio/framework-extra-bundle": "2.3.*",
         "sensio/generator-bundle": "2.3.*",
         "components/jquery": "1.10.*",
-        "components/bootstrap": "3.*",
+        "components/bootstrap": "3.1.*",
         "kriswallsmith/assetic": "1.1.*@dev",
         "stfalcon/tinymce-bundle": "dev-master",
         "exercise/htmlpurifier-bundle": "dev-master",
