@@ -42,6 +42,7 @@
                     <div class="form-group block col-sm-6">
                         {{ form_label(form.isPublished, 'field.status' | trans) }}
                         {{ form_widget(form.isPublished) }}
+                        {{ form_errors(form.isPublished) }}
                     </div>
                 </div>
                 {{ form_widget(form._token) }}

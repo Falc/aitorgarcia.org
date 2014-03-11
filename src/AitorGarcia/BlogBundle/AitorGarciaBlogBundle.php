@@ -1,6 +1,6 @@
 <?php
 /**
- * This file contains the PortfolioBundle.
+ * This file contains the BlogBundle.
  *
  * @author      Aitor García (Falc) <aitor.falc@gmail.com>
  * @copyright   2014 Aitor García (Falc) <aitor.falc@gmail.com>
