@@ -46,6 +46,7 @@ class DefaultController extends Controller
                     )
                 )
             );
+            $message->setContentType('text/html');
 
             // 2) Send the email
             $this->get('mailer')->send($message);
